@@ -10,7 +10,7 @@
 		"ExpectedData":
 		{
 			"AreaNodePath":["楼宇配置测试","L1","L2","L3","L4"] ,
-			"Messages":["$@Common.Label.ConfirmDelete|(L3),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip", "$@Common.Label.ConfirmDelete|(L1),($@Common.Glossary.AreaDimensionNode),()"],
+			"Messages":["$@Common.Label.ConfirmDelete|(L3),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip", "$@Common.Label.ConfirmDelete|(L1),($@Common.Glossary.AreaDimensionNode),()", "无法删除该区域维度节点。请先删除该节点下的所有子节点。"],
 		}
 	}
 ]

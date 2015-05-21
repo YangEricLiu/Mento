@@ -32,6 +32,16 @@ namespace Mento.ScriptCommon.Library.Functions
 
             return data;
         }
+
+        public DataTable ImportExpectedFileToDataTable(string fileName, string sheetName)
+        {
+            string filePath = Path.Combine(ExecutionConfig.expectedDataViewExcelFileDirectory, fileName);
+            DataTable data = new DataTable();
+
+            ExcelHelper.ImportToDataTable(filePath, sheetName, out data);
+
+            return data;
+        }
         #endregion
 
         #region Export expected dictionary data to Excel
@@ -48,6 +58,13 @@ namespace Mento.ScriptCommon.Library.Functions
             string filePath = Path.Combine(ExecutionConfig.expectedDataViewExcelFileDirectory, fileName);
 
             ExcelHelper.ImportDictionaryToExcel(data, filePath, sheetName);
+        }
+
+        public void MoveDataTableExpectedDataToExcel(DataTable data, string fileName, string sheetName)
+        {
+            string filePath = Path.Combine(ExecutionConfig.expectedDataViewExcelFileDirectory, fileName);
+
+            ExcelHelper.ExportToExcel(data, filePath, sheetName);
         }
 
         /// <summary>
@@ -121,6 +138,18 @@ namespace Mento.ScriptCommon.Library.Functions
 
             ExcelHelper.ImportStringToExcel(data, filePath, sheetName);
         }
+
+        public void ExportFailedDataToExcel(DataTable data, string fileName, string sheetName)
+        {
+            DateTime today = new DateTime();
+            today = DateTime.Now.ToLocalTime();
+            string dashPath = today.ToString("yyyyMMddHH");
+
+            string failTimePath = Path.Combine(ExecutionConfig.failedDataViewExcelFileDirectory, dashPath);
+            string filePath = Path.Combine(failTimePath, fileName);
+
+            ExcelHelper.ExportToExcel(data, filePath, sheetName);
+        }
         #endregion
 
         #region Compare Dictionary
@@ -165,6 +194,93 @@ namespace Mento.ScriptCommon.Library.Functions
             }        
 
             return areEqual; 
+        }
+
+        #endregion
+
+
+        #region Compare DataTable
+        
+        public bool CompareMultiTimeDataTables(DataTable expectedDataTable, DataTable actualDataTable, string fileName)
+        {
+            bool areEqual = true;
+            DataTable diversityTable = new DataTable();
+
+            if (expectedDataTable.Rows.Count != actualDataTable.Rows.Count)
+            {
+                areEqual = false;
+                throw new Exception(String.Format("The rows count not equal, expected is {0}, actual is {1}", expectedDataTable.Rows.Count, actualDataTable.Rows.Count));
+            }
+
+            foreach (DataColumn column in expectedDataTable.Columns)
+            {
+                diversityTable.Columns.Add(column.ColumnName);
+            }
+
+            for (int i = 0; i < expectedDataTable.Rows.Count; i++)
+            {
+                for (int j = 0; j < expectedDataTable.Columns.Count; j++)
+                {
+                    if (!String.Equals(expectedDataTable.Rows[i][j].ToString(), actualDataTable.Rows[i][j].ToString()))
+                    {
+                        areEqual = false;
+
+                        DataRow myRow = diversityTable.NewRow();
+
+                        myRow[j] = "期望值:" + expectedDataTable.Rows[i][j].ToString() + "\n" + "实际值:" + actualDataTable.Rows[i][j].ToString();
+
+                        diversityTable.Rows.Add(myRow);
+                    }
+                }
+            }
+
+            if (!areEqual)
+            {
+                ExportFailedDataToExcel(diversityTable, fileName, sheetNameFailed);
+            }
+
+            return areEqual;
+        }
+
+        public bool ComparePieDataTables(DataTable expectedDataTable, DataTable actualDataTable, string fileName)
+        {
+            bool areEqual = true;
+            DataTable diversityTable = new DataTable();
+
+            if (expectedDataTable.Rows.Count != actualDataTable.Rows.Count)
+            {
+                areEqual = false;
+                throw new Exception(String.Format("The rows count not equal, expected is {0}, actual is {1}", expectedDataTable.Rows.Count, actualDataTable.Rows.Count));
+            }
+
+            foreach (DataColumn column in expectedDataTable.Columns)
+            {
+                diversityTable.Columns.Add(column.ColumnName);
+            }
+
+            for (int i = 0; i < expectedDataTable.Rows.Count; i++)
+            {
+                for (int j = 0; j < expectedDataTable.Columns.Count; j++)
+                {
+                    if (!String.Equals(expectedDataTable.Rows[i][j].ToString(), actualDataTable.Rows[i][j].ToString()))
+                    {
+                        areEqual = false;
+
+                        DataRow myRow = diversityTable.NewRow();
+
+                        myRow[j] = "期望值:" + expectedDataTable.Rows[i][j].ToString() + "\n" + "实际值:" + actualDataTable.Rows[i][j].ToString();
+
+                        diversityTable.Rows.Add(myRow);
+                    }
+                }
+            }
+
+            if (!areEqual)
+            {
+                ExportFailedDataToExcel(diversityTable, fileName, sheetNameFailed);
+            }
+
+            return areEqual;
         }
 
         #endregion

@@ -97,6 +97,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
             IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             //Click "Save to dashboard"（保存到仪表盘）to save the  chart to dashboard. 
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
@@ -129,7 +131,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //Assert.AreEqual(8, Widget.GetLabellingNumber());
             Widget.CompareMaxWidgetStringData(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3], IndustryLabellingPanel.IndustryLabellingPath);
 
-            Widget.ClickCloseMaxDialogButton(); 
+            Widget.ClickCloseMaxDialogButton();
+            */
+            #endregion
         }
 
         [Test]

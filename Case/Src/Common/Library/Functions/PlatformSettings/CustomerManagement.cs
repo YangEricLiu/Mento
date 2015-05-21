@@ -76,6 +76,13 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.ShortPause();
         }
 
+        public void NavigateToTimeSetting()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TimeSettings);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.ShortPause();
+        }
+
         /// <summary>
         /// Click Modify button to update add user
         /// </summary>

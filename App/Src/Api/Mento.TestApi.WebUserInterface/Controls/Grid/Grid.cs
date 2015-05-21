@@ -1268,7 +1268,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                     if (PageCount > 1)
                     {
                         NextPage();
-                        TimeManager.LongPause();
+                        TimeManager.Pause(3000);
                     }
                 }
            }
@@ -1361,7 +1361,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                     if (PageCount > 1)
                     {
                         NextPage();
-                        TimeManager.LongPause();
+                        TimeManager.Pause(3000);
                     }
                 }
             }

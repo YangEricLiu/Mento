@@ -170,8 +170,11 @@ namespace Mento.Script.Customer.TagManagement
 
             //2. Verify that vtag is updated on energy view tag list and  its legend name
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
             TimeManager.LongPause();
             //Commodity updated
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName);
@@ -229,9 +232,11 @@ namespace Mento.Script.Customer.TagManagement
 
              //Verify that vtag Uom is updated on energy view tag list and  Uom updated on its chart view y-axis
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
             TimeManager.LongPause();
 
             //Uom updated
@@ -280,25 +285,16 @@ namespace Mento.Script.Customer.TagManagement
 
             //Verify that vtag Step is updated on energy view tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
             TimeManager.LongPause();
 
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName));
             //Step updated
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
-            /*
-            JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-            Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(),input.ExpectedData.Message);
-            //JazzMessageBox.MessageBox.Equals(input.ExpectedData.Message);
-            TimeManager.LongPause();
-            JazzMessageBox.MessageBox.Cancel();
-            TimeManager.MediumPause();
-            //Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists("小时"));
-            //Assert.AreEqual(VTagSettings.GetVTagUOMExpectedValue(input.ExpectedData.Step), JazzFunction.EnergyAnalysisPanel.GetUomValue());
-            */
         }
 
         [Test]

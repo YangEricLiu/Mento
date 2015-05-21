@@ -45,9 +45,6 @@ namespace Mento.Script.Customer.TagAssociation
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(DisassociateTagSuite), "TC-J1-FVT-TagAssociation-Disassociate-101-1")]
         public void DisassociateTagVerify(AssociateTagData input)
         {
-            //navigate and select node
-            //AssociateSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            
             int i =0;
             while (i<=3)
             {
@@ -83,9 +80,11 @@ namespace Mento.Script.Customer.TagAssociation
                 TimeManager.MediumPause();
                 //Go to Energy Usage Analysis, select above hierarchy node then select ‘全部数据点’ try to find the above tag.
 
-                JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+                AssociateSettings.NavigateToEnergyAnalysis();
                 JazzFunction.EnergyAnalysisPanel.SelectHierarchy(HierarchyNewPath);
-                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+                TimeManager.ShortPause();
+                JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
                 TimeManager.LongPause();
                 Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[i]));
 
@@ -118,9 +117,12 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
 
             //Check if the tag disassociation can be inflected in tag chart
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            AssociateSettings.NavigateToEnergyAnalysis();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
-            TimeManager.MediumPause();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
+            TimeManager.LongPause();
             //select ‘全部数据点’ try to find the above tag.
             Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.TagNames[0]));
             //Select '区域数据点' try to find the above tag.
@@ -160,9 +162,13 @@ namespace Mento.Script.Customer.TagAssociation
                 Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagNames[i]));
                 i++;
             }
-          
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+
+            AssociateSettings.NavigateToEnergyAnalysis();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
+            TimeManager.LongPause();
             i = 0;
             while (i < input.InputData.TagNames.Length)
             {
@@ -202,9 +208,8 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
 
             //Select 不可关联 checkbox.
-            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
-            TimeManager.ShortPause();
-            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            AssociateSettings.OnlyCheckDisassociatedCheckbox();
+            TimeManager.LongPause();
 
             //The tag is not list in there.
             Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
@@ -239,13 +244,10 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.InputData.TagName));
 
             //Check 不可关联 checkbox.
-            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
-            TimeManager.ShortPause();
-            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);      
+            AssociateSettings.OnlyCheckDisassociatedCheckbox();
             TimeManager.LongPause();
 
             //• Loading icon appear and check box is gray and cannot be select.
-            TimeManager.LongPause();
             AssociateSettings.IsAllTagsDisabled();
             Assert.IsTrue(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
 
@@ -257,9 +259,8 @@ namespace Mento.Script.Customer.TagAssociation
             TimeManager.MediumPause();
 
             //Select checkbox of the tag disassociated in step6
-            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[0]);
-            TimeManager.ShortPause();
-            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[1]);
+            //Check 可关联 checkbox again.
+            AssociateSettings.OnlyCheckAssociatedCheckbox();
             TimeManager.LongPause();
 
             AssociateSettings.CheckedTag(input.ExpectedData.TagName);
@@ -269,9 +270,8 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(AssociateSettings.IsRemoveTagExisted(input.ExpectedData.TagName));
 
             //Refresh the tag list or switch to other pages then switch back. The tag which was dissociated in step6 disappeared from '不可关联' list now.
-            AssociateSettings.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
-            TimeManager.ShortPause();
-            AssociateSettings.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);      
+            //Check 不可关联 checkbox.
+            AssociateSettings.OnlyCheckDisassociatedCheckbox();
             TimeManager.LongPause();
             Assert.IsFalse(AssociateSettings.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
 

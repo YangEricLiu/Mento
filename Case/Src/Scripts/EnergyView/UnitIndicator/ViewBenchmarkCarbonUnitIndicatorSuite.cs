@@ -44,7 +44,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static Widget Widget = JazzFunction.Widget;
         private static WidgetMaxChartDialog WidgetMaxChartDlg = JazzFunction.WidgetMaxChartDialog;
 
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkCarbonUnitIndicatorSuite), "TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101-1")]
         public void ViewCarbonUnitIndicator01(UnitIndicatorData input)
@@ -314,6 +316,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[0]);
             TimeManager.ShortPause();
 
+            #region Not use code for predefined time
+
+            /*下面的代码检测的没有什么意义，新框架里面会考虑删除
             //之前7天
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last7Days);
             TimeManager.ShortPause();
@@ -343,6 +348,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
             Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
+            */
+            #endregion
         }
 
         [Test]
@@ -394,6 +401,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.SelectSingleCommodityUnitCarbon(input.InputData.Commodity[1]);
             TimeManager.ShortPause();
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*下面的代码检测的没有什么意义，新框架里面会考虑删
             //Select time range 上周
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
             EnergyViewToolbar.ClickViewButton();
@@ -447,8 +457,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //Check ·  There is 1 Benchmark line in trend chart.
             HomePagePanel.ClickOnWidget(dashboard.WigetName);
-            //Assert.AreEqual(5, WidgetMaxChartDlg.GetLegendItemTexts().Length);//5 legends include:Calculated,Target,Baseline,Original and Benchmark(Cold region Clothing retail)
-            //Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
+            */
+            #endregion
         }
     }
 }

@@ -88,13 +88,8 @@
     <Compile Include="TagManagement\AddValidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\AddInvalidVtagSuite.cs" />
-    <Compile Include="TagManagement\BatchRevertAbnormalDataSuite.cs" />
-    <Compile Include="TagManagement\BatchIgnoreAbnormalDataSuite.cs" />
     <Compile Include="TagManagement\CalculateReviseTargetBaselineSuite.cs" />
     <Compile Include="TagManagement\DiffValueCalcPtagRawDataSuite.cs" />
-    <Compile Include="TagManagement\BatchModifyAbnormalDataSuite.cs" />
-    <Compile Include="TagManagement\ModifyAbnormalDataSuite.cs" />
-    <Compile Include="TagManagement\ViewAbnormalDataSuite.cs" />
     <Compile Include="TagManagement\ViewPtagRawDataSuite.cs" />
     <Compile Include="TagManagement\ModifyPtagRawDataSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidTargetBaselineSuite.cs" />
@@ -108,7 +103,6 @@
     <Compile Include="TagManagement\DeletePtagSuite.cs" />
     <Compile Include="TagManagement\ModifyInvalidPtagSuite.cs" />
     <Compile Include="TagManagement\ModifyValidPtagSuite.cs" />
-    <Compile Include="TagManagement\ModifyValidVEERuleSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">

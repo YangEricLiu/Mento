@@ -244,10 +244,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[9], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            
+
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingPrecision from Hierarchy Tree. Click Function Type button, select Energy Consumption. Verify precision display for Unit display.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.LongPause();
@@ -466,22 +463,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
-
-            //Select 1 more Hierarchy to 组织A->园区A->楼宇B.
-            //UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //TimeManager.MediumPause();
-
-            ////Select tags:BuildingB_P1_Electricity,BuildingB_P2_Water,BuildingB_P3_Coal; Optional step=Raw;
-            //UnitKPIPanel.CheckTag(input.InputData.tagNames[2]);
-            //UnitKPIPanel.CheckTag(input.InputData.tagNames[3]);
-            //UnitKPIPanel.CheckTag(input.InputData.tagNames[4]);
-
-            ////check value
-            //UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
-            //TimeManager.MediumPause();
-            //UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-
         }
     }
 }

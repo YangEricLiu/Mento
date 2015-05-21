@@ -226,37 +226,6 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
-
-
-            //Go to NancyCustomer1, select GreenieBuilding which is not define calendar. Select V(11), 行业基准值=夏热冬暖地区轨学校行业 to display 公休比.
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.ShortPause();
-
-            RadioPanel.NavigateToRatio();
-            TimeManager.MediumPause();
-
-            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
-            TimeManager.ShortPause();
-
-            RadioPanel.CheckTag(input.InputData.tagNames[3]);
-            TimeManager.ShortPause();
-
-            //2014/2/1 to 2014/2/11
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.ClickViewButton();
-            TimeManager.LongPause();
-
-            //· Warning message show config calendar first.
-            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
-
-            Assert.IsFalse(EnergyViewToolbar.View(EnergyViewType.Distribute));
-            TimeManager.ShortPause();
         }
     }
 }

@@ -50,6 +50,11 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
         }
 
+        public void WaitTagListAppear(int maxtime)
+        {
+            TagGrid.WaitControlDisplayed(maxtime);
+        }
+
         /// <summary>
         /// Switch among "全部数据点", "系统数据点", "区域数据点"
         /// </summary>
@@ -314,6 +319,12 @@ namespace Mento.ScriptCommon.Library.Functions
             ExportExpectedDictionaryToExcel(hierarchyPaths, manualTimeRange, fileName, EAPiePath);
         }
 
+        public void ExportExpectedPieDataToExcel(string[] hierarchyPaths, string fileName, ManualTimeRange manualTimeRange = null)
+        {
+            ExportExpectedPieDataTableToExcel(hierarchyPaths, manualTimeRange, fileName, EAPiePath);
+        }
+
+        #region 多时间用字典，会有键值重复的情况，改用datatable数据表存储饼图的数据
         /// <summary>
         /// Export expected dictionary data to excel file
         /// </summary>
@@ -322,7 +333,14 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             ExportMulTimePieDictionaryToExcel(hierarchyPaths, manualTimeRange, fileName, EAPiePath);
         }
+        #endregion
 
+        public void ExportMulTimePieDataTableToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName)
+        {
+            ExportMulTimePieDataTableToExcel(hierarchyPaths, manualTimeRange, fileName, EAPiePath);
+        }
+
+        
         /// <summary>
         /// Import expected data file and compare to the data view currently, if not equal, export to another file
         /// </summary>
@@ -331,6 +349,16 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool CompareDictionaryDataOfEnergyAnalysis(string expectedFileName, string failedFileName)
         {
             return CompareDictionaryDataOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
+        }
+
+        public bool CompareMultiTimeDataTableOfEnergyAnalysis(string expectedFileName, string failedFileName)
+        {
+            return CompareMultiTimeDataTableOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
+        }
+
+        public bool ComparePieDataTableOfEnergyAnalysis(string expectedFileName, string failedFileName)
+        {
+            return ComparePieDataTableOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
         }
 
         #region pie chart operation for mutiple hierarchy nodes
@@ -344,6 +372,11 @@ namespace Mento.ScriptCommon.Library.Functions
             ExportExpectedDictionaryToExcelMultiHiearachy(manualTimeRange, fileName, EAPiePath);
         }
 
+        public void ExportExpectedDataTableForMultipleHierarchyToExcel(ManualTimeRange manualTimeRange, string fileName)
+        {
+            ExportExpectedDataTableToExcelMultiHiearachy(manualTimeRange, fileName, EAPiePath);
+        }
+
         /// <summary>
         /// Import expected data file and compare to the data view currently, if not equal, export to another file
         /// </summary>
@@ -352,6 +385,11 @@ namespace Mento.ScriptCommon.Library.Functions
         public bool CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(string expectedFileName, string failedFileName)
         {
             return CompareDictionaryDataMultipleHierarchyOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
+        }
+
+        public bool CompareDataTableForMultipleHierarchyOfEnergyAnalysis(string expectedFileName, string failedFileName)
+        {
+            return CompareDataTableMultipleHierarchyOfEnergyAnalysis(expectedFileName, failedFileName, EAPiePath);
         }
         #endregion
 

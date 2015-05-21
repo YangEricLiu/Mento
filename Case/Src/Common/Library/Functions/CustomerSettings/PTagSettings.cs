@@ -62,7 +62,8 @@ namespace Mento.ScriptCommon.Library.Functions
         public void PTagSettingCaseSetUp()
         {
             NavigatorToPtagSetting();
-            TimeManager.MediumPause();
+            WaitPtagListDisplay(10);
+            TimeManager.ShortPause();
         }
 
         public void PTagSettingCaseTearDown()
@@ -505,7 +506,18 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion       
 
-        #region Verification
+        #region Verification       
+
+        public void WaitPtagListDisplay(int maxtime)
+        {
+            PTagList.WaitControlDisplayed(maxtime);
+        }
+
+
+        public void WaitPtagPropertyInfoDisplay(int maxtime)
+        {
+            NameTextField.WaitControlDisplayed(maxtime);
+        }
 
         /// <summary>
         /// Judge whether the textfield and its label are hidden

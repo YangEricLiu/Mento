@@ -71,7 +71,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input Nothing and save
             CostSettings.ClickCostSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Verify the cost is displayed correctly
             Assert.AreEqual(input.InputData.EffectiveDate, OtherCostSettings.GetWaterDateValue(2));
@@ -118,7 +118,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input Nothing and save
             CostSettings.ClickCostSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Verify the cost is displayed correctly
             Assert.AreEqual(input.InputData.EffectiveDate, OtherCostSettings.GetWaterDateValue(2));
@@ -183,7 +183,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Save
             CostSettings.ClickCostSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Verify the cost is deleted and the left displayed correctly
             Assert.AreEqual(input.ExpectedData.EffectiveDate, OtherCostSettings.GetWaterDateValue(2));
@@ -199,7 +199,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Save
             CostSettings.ClickCostSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //"+成本属性" button displayed
             Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());

@@ -127,13 +127,13 @@ namespace Mento.Script.Customer.TagManagement
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
 
-            //verify add not successful
-            Assert.IsTrue(PTagSettings.IsSaveButtonDisplayed());
-            Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
-
             //Verify that the error message popup and the input field is invalid
             Assert.IsTrue(PTagSettings.IscodeInvalid());
             Assert.IsTrue(PTagSettings.IscodeInvalidMsgCorrect(input.ExpectedData));
+
+            //verify add not successful
+            Assert.IsTrue(PTagSettings.IsSaveButtonDisplayed());
+            Assert.IsTrue(PTagSettings.IsCancelButtonDisplayed());
         }
 
         [Test]

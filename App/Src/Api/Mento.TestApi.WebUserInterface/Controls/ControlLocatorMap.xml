@@ -35,6 +35,10 @@
   <add key = "TreeNode" value = "tbody/tr[contains(@class,'x-grid-row') and td/div[text()='$#nodeText']]" type = "XPath"/>
   <add key = "TreeNodeImage" value = "td/div/img" type = "XPath"/>
   <add key = "TreeNodeCheckbox" value = "td/div/input" type = "XPath"/>
+  
+  <!--Pop_TreeView-->
+  <add key = "PopTreeNode" value = "div[contains(@class,'pop-node')]/div[span[text()='$#nodeText']]" type = "XPath"/>
+  <add key = "PopTreeNodeImage" value = "td/div/img" type = "XPath"/>
 
   <!--TextField-->
   <add key = "FormulaTextBox" value="//textarea[contains(@id,'st-formula-text') and @name='Formula']" type = "XPath"/>

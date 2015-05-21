@@ -63,6 +63,8 @@ namespace Mento.Script.Customer.TagManagement
 
             //Verify the ptag not changed
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
+            PTagSettings.WaitPtagPropertyInfoDisplay(10);
+            TimeManager.MediumPause();
             Assert.AreEqual(input.ExpectedData.CommonName, PTagSettings.GetNameValue());
             Assert.AreEqual(input.ExpectedData.Code, PTagSettings.GetCodeValue());
             Assert.AreEqual(input.ExpectedData.Meter, PTagSettings.GetMetercodeValue());

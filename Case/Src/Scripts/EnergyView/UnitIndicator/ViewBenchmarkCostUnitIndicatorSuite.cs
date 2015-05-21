@@ -46,7 +46,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static Widget Widget = JazzFunction.Widget;
         private static WidgetMaxChartDialog WidgetMaxChartDlg = JazzFunction.WidgetMaxChartDialog;
 
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkCostUnitIndicatorSuite), "TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-1")]
         public void ViewBenchmarkCostUnitIndicator01(UnitIndicatorData input)
@@ -222,7 +224,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkCostUnitIndicatorSuite), "TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-3")]
-        public void ViewBenchmarkCostUnitIndicator03(UnitIndicatorData input)
+        public void NoCompareData_ViewBenchmarkCostUnitIndicator03(UnitIndicatorData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingPrecision from Hierarchy Tree. Click Function Type button, select Cost.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -279,6 +281,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SelectRatioIndustryConvertTarget(input.InputData.Industries[0]);
             TimeManager.ShortPause();
 
+            #region Not use code for predefined time
+
+            /*
             //之前7天
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Last7Days);
             TimeManager.ShortPause();
@@ -308,6 +313,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzWindow.WindowMessageInfos.Quit();
             TimeManager.ShortPause();
             Assert.IsTrue(UnitKPIPanel.EntirelyNoChartDrawn());
+            */
+            #endregion
         }
 
         [Test]
@@ -360,6 +367,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[1]);
             TimeManager.ShortPause();
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*
             //Select time range 上周
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
             EnergyViewToolbar.ClickViewButton();
@@ -413,8 +423,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //Check ·  There is 1 Benchmark line in trend chart.
             HomePagePanel.ClickOnWidget(dashboard.WigetName);
-            //Assert.AreEqual(5, WidgetMaxChartDlg.GetLegendItemTexts().Length);//5 legends include:Calculated,Target,Baseline,Original and Benchmark(Cold region Clothing retail)
-            //Assert.AreEqual(2, EnergyAnalysis.GetTrendChartLines());
+            */
+            #endregion
         }
     }
 }

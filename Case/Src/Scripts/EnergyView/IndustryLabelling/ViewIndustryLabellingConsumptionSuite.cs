@@ -186,12 +186,6 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
             IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-
-            //Click "Save to dashboard"（保存到仪表盘）to save the  chart to dashboard. 
-            var dashboard = input.InputData.DashboardInfo;
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
-            TimeManager.LongPause();
-
             IndustryLabellingPanel.SetYearAndMonth(input.InputData.YearAndMonth[1].year, input.InputData.YearAndMonth[1].month);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -207,6 +201,8 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             //· Display blank chart.
             Assert.IsTrue(IndustryLabellingPanel.EntirelyNoLabellingChartDrawn());
+
+            #region no value
 
             /*no value
             //Select 1 tag V(12) from hierarchy node BuildingBAD, Unit=单位供冷面积 to display Labelling chart view.
@@ -266,6 +262,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
             Widget.ClickCloseMaxDialogButton();    
             */
+            #endregion
         }
 
         [Test]

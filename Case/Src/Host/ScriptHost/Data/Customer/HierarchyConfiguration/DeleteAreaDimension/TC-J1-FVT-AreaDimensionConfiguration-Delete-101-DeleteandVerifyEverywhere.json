@@ -4,12 +4,12 @@
 		{
 			"HierarchyNodePath":["自动化测试","测试楼宇园区","楼宇配置测试"],
 			"AreaNodePath":["楼宇配置测试","CheckAll"],
-			
+			"TagName":"VtagForAreaDimensionNode",
 		},
 		"ExpectedData":
 		{
 			"AreaNodePath":["楼宇配置测试","CheckAll"],
-			"Messages":["$@Common.Label.ConfirmDelete|(CheckAll),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip"],
+			"Messages":["$@Common.Label.ConfirmDelete|(CheckAll),($@Common.Glossary.AreaDimensionNode),()", "$@Common.Glossary.AreaDimensionNodeDeleteTip", "无法删除该区域维度节点。请先删除该节点下的所有数据点关联关系。"],
 		}
 	}
 ]

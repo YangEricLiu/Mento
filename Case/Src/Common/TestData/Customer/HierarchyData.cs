@@ -20,6 +20,9 @@ namespace Mento.ScriptCommon.TestData.Customer
         public string Industry { get; set; }
         public string Zone { get; set; }
         public string Comments { get; set; }
+        public string[] TagNames { get; set; }
+        public string[] AreaNodePath { get; set; }
+        public string[] SystemDimensionItemPath { get; set; }
     }
 
     public class HierarchyExpectedData : VtagOuputData

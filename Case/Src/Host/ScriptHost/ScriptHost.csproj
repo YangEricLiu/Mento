@@ -134,7 +134,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\Data\Customer\HierarchyConfiguration\BasicIndustryAndZoneVerify\BasicIndustryAndZoneSettingSuite\" />
-    <Folder Include="Data\Administration\BasicIndustryAndZoneSettingSuite\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\Resource\cn\data.js" />
@@ -181,6 +180,7 @@
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingModifyValid\TC-J1-FVT-CustomerConsumptionSetting-Modify-101-1.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingView\TC-J1-FVT-CustomerConsumptionSettingView-View-101-2.json" />
     <None Include="Data\Administration\CustomerConsumptionSetting\CustomerConsumptionSettingView\TC-J1-FVT-CustomerConsumptionSettingView-View-101-1.json" />
+    <None Include="Data\Administration\CustomerManagementSetting\CustomerDeleteSuite\TC-J1-FVT-CustomerManagement-Delete-004.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerDeleteSuite\TC-J1-FVT-CustomerManagement-Delete-001.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerDeleteSuite\TC-J1-FVT-CustomerManagement-Delete-002.json" />
     <None Include="Data\Administration\CustomerManagementSetting\CustomerDeleteSuite\TC-J1-FVT-CustomerManagement-Delete-003.json" />
@@ -409,7 +409,6 @@
     <Content Include="Data\Customer\HierarchyConfiguration\DeleteAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-Delete-001-DeleteAreaNodeThenCancel.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\DeleteAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteNonLeafAreaNode.json" />
     <Content Include="Data\Customer\HierarchyConfiguration\DeleteAreaDimension\TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteandVerifyEverywhere.json" />
-    <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-4.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-3.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-2.json" />
     <None Include="Data\Customer\HierarchyConfiguration\DeleteHierarchyNodeSuite\TC-J1-FVT-Hierarchy-Delete-101-1.json" />
@@ -534,14 +533,6 @@
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-4.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-2.json" />
     <None Include="Data\Customer\TagManagement\AddValidVtagSuite\TC-J1-FVT-VtagConfiguration-Add-101-1.json" />
-    <None Include="Data\Customer\TagManagement\BatchRevertAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-001.json" />
-    <None Include="Data\Customer\TagManagement\BatchRevertAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-002.json" />
-    <None Include="Data\Customer\TagManagement\BatchRevertAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-101.json" />
-    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-001.json" />
-    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-002.json" />
-    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-102.json" />
-    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-103.json" />
-    <None Include="Data\Customer\TagManagement\BatchIgnoreAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchIgnore-104.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-4012.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-3913.json" />
     <None Include="Data\Customer\TagManagement\CalculateReviseTargetBaselineSuite\TC-J1-FVT-TargetCalculateRevise-101-8.json" />
@@ -555,29 +546,7 @@
     <None Include="Data\Customer\TagManagement\DiffValueCalcPtagRawDataSuite\TC-J1-FVT-DifferenceValueCalculation-101.json" />
     <None Include="Data\Customer\TagManagement\DiffValueCalcPtagRawDataSuite\TC-J1-FVT-DifferenceValueCalculation-102.json" />
     <None Include="Data\Customer\TagManagement\DiffValueCalcPtagRawDataSuite\TC-J1-FVT-DifferenceValueCalculation-103.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-001.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-002.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-101.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-102.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-103.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-104.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-105.json" />
-    <None Include="Data\Customer\TagManagement\BatchModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-BatchModify-106.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-001.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-002.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-003.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-101.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-102.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-103.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-104.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-105.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-106.json" />
-    <None Include="Data\Customer\TagManagement\ModifyAbnormalDataSuite\TC-J1-FVT-AbnormalData-Modify-109.json" />
     <None Include="Data\Customer\TagManagement\ModifyValidVEERuleSuite\TC-J1-FVT-ModifyVEECases-101-2.json" />
-    <None Include="Data\Customer\TagManagement\ViewAbnormalDataSuite\TC-J1-FVT-AbnormalRecord-View-107.json" />
-    <None Include="Data\Customer\TagManagement\ViewAbnormalDataSuite\TC-J1-FVT-AbnormalRecord-View-106.json" />
-    <None Include="Data\Customer\TagManagement\ViewAbnormalDataSuite\TC-J1-FVT-AbnormalRecord-View-104.json" />
-    <None Include="Data\Customer\TagManagement\ViewAbnormalDataSuite\TC-J1-FVT-AbnormalRecord-View-103.json" />
     <None Include="Data\Customer\TagManagement\ViewPtagRawDataSuite\TC-J1-FVT-PtagRawData-View-103.json" />
     <None Include="Data\Customer\TagManagement\ViewPtagRawDataSuite\TC-J1-FVT-PtagRawData-View-104.json" />
     <None Include="Data\Customer\TagManagement\ViewPtagRawDataSuite\TC-J1-FVT-PtagRawData-View-105.json" />

@@ -13,6 +13,7 @@ using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.TestApi.TestData;
 using Mento.TestApi.TestData.Attribute;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -58,7 +59,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input nothing and save it
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //verify that "+成本属性" button displayed
             Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());
@@ -128,7 +129,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //click "Save" with nothing input
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify that error message display on effective date 
             Assert.IsTrue(CostSettings.IsEffectiveDateInvalid(1));
@@ -137,7 +138,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Input valid effective date and click save with price mode empty
             CostSettings.SelectElectricEffectiveDate(input.InputData.EffectiveDate, 1);
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //verify that invalid check triggered
             Assert.IsTrue(CostSettings.IsPriceModeInvalid(1));
@@ -146,7 +147,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Select "固定电价" and leave price empty then click "Save" button
             CostSettings.SelectElectricPriceMode(input.InputData.PriceMode, 1);
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
@@ -180,7 +181,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //click "Save" with nothing input
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Input valid effective date and Select "固定电价" 
             CostSettings.SelectElectricEffectiveDate("2012-09", 1);
@@ -189,7 +190,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Input valid price and click "Save" button
             CostSettings.FillElectricPrice(input.InputData.DoubleNonNagtiveValue, 1);
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
@@ -240,7 +241,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
@@ -283,7 +284,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
@@ -319,7 +320,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button and make sure save faled
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
@@ -378,7 +379,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button and make sure save faled
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostUpdateButtonDisplayed());
@@ -440,7 +441,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
@@ -503,7 +504,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button and make sure save successful
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());

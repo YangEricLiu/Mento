@@ -74,7 +74,7 @@ namespace Mento.ScriptCommon.Library.Functions
         public void ClickSaveButton()
         {
             PeopleAreaSave.Click();
-            JazzMessageBox.LoadingMask.WaitLoading(maxtime: 2);
+            JazzMessageBox.LoadingMask.WaitLoading();
         }
 
         public bool IsSaveButtonDisplayed()

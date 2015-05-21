@@ -213,6 +213,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
+            #region Save dashboard ignore on 2.0
+            /*下面的代码检测的仪表盘保存，以后的逻辑不同，2.0主要是看数据，仪表盘由手动方式验证
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
 
@@ -227,6 +229,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
             //Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5], dashboard.WigetName));
+            
+             */ 
+            #endregion
         }
 
         [Test]
@@ -285,7 +290,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
 
+        //自动化用的是28版本的chrome，当有4个点获取7天的分钟数据，会由于网页脚本占用内存过多而停止，先忽略这个脚本
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3")]
         public void RawValueDisplay(EnergyViewOptionData input)
@@ -331,6 +338,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             //Select other hierarchy node of 组织A->园区A->楼宇D.
             EnergyAnalysis.SelectHierarchy(input.InputData.MultiSelectedHiearchyPath);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -361,6 +370,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //check The Data view Save to dashboard successfully.
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            */
+            #endregion
         }
     }
 }

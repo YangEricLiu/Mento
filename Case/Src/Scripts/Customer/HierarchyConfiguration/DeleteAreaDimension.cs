@@ -25,6 +25,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
     {
         private static HierarchySettings HierarchySettings = JazzFunction.HierarchySettings;
         private static AreaDimensionSettings AreaSettings = JazzFunction.AreaDimensionSettings;
+        private AssociateSettings AssociateSettings = JazzFunction.AssociateSettings;
 
         [SetUp]
         public void ScriptSetUp()
@@ -36,7 +37,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         [TearDown]
         public void ScriptTearDown()
         {
-            AreaSettings.NavigateToNonAreaDimensionSetting();
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();
         }
 
         /// <summary>
@@ -123,7 +125,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         {
             string[] AreaNode2 = new string[] {"楼宇配置测试","L1","L2" };
             string[] AreaNode1 = new string[] {"楼宇配置测试","L1"};
-            string[] Message = new string[] {"删除区域维度节点 “L1” 吗？", "您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。"};
 
             //Select a Building node.	
             HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
@@ -141,18 +142,42 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             Assert.IsTrue(msgText3.Contains(input.ExpectedData.Messages[1]));
 
             AreaSettings.ConfirmErrorMsgBox();
+            TimeManager.MediumPause();
+
+            string msgText2 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText2.Contains(input.ExpectedData.Messages[3]));
+            AreaSettings.OKErrorMsgBox();
+            TimeManager.ShortPause();
+
+            //Delete all child nodes  L4 
+            AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath);
+            TimeManager.MediumPause();
+
+            AreaSettings.ClickDeleteButton();
+            AreaSettings.ConfirmErrorMsgBox();
             JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.ShortPause();
-            //AreaSettings
-            //Verify the area node has been deleted under the correct hierarchy path
 
+            //Delete L3 again
+            AreaSettings.NavigateToAreaDimensionSetting();
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
+            TimeManager.MediumPause();
+
+            //Click "删除" button and "确认"
+            AreaSettings.ClickDeleteButton();
+            //Verify that message box popup for confirm delete
+            Assert.IsTrue(msgText3.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText3.Contains(input.ExpectedData.Messages[1]));
+
+            AreaSettings.ConfirmErrorMsgBox();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
+
+            //Verify the area node has been deleted under the correct hierarchy path
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //AreaSettings.ShowHierarchyTree();
-            //TimeManager.MediumPause();
-            //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
             //  Could select the node path
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath));
@@ -164,13 +189,9 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.ShortPause();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //AreaSettings.ShowHierarchyTree();
-            //TimeManager.MediumPause();
-            //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
             //  Could select the node path
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
-            //Assert.AreEqual(input.InputData.CommonName, AreaSettings.GetAreaDimensionName());
         
             // check  Level  1 deleted
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
@@ -178,37 +199,26 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.MediumPause();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //AreaSettings.ShowHierarchyTree();
-            //TimeManager.MediumPause();
-            //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             AreaSettings.SelectAreaDimensionNodePath(AreaNode1);
             TimeManager.LongPause();
+
             //Click "删除" button and "确认"
             AreaSettings.ClickDeleteButton();
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[2]));
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
-            /*
-            TimeManager.MediumPause();
-            JazzMessageBox.MessageBox.GetMessage().Equals(Message);
-            TimeManager.MediumPause();
-            */
+
             AreaSettings.ConfirmErrorMsgBox();
             JazzMessageBox.LoadingMask.WaitLoading();
-            //Verify the area node has been deleted under the correct hierarchy path
 
+            //Verify the area node has been deleted under the correct hierarchy path
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsSystemDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.ShortPause();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            /*
-            AreaSettings.ShowHierarchyTree();
-            TimeManager.MediumPause();
-            AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            TimeManager.MediumPause();
-            */
+
             //  Could select the node path
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(AreaNode1));
 
@@ -218,10 +228,8 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.MediumPause();
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.HierarchySettingsAreaDimension);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            //AreaSettings.ShowHierarchyTree();
-            //TimeManager.MediumPause();
-            //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
             TimeManager.MediumPause();
+
             //  Could select the node path
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(AreaNode2));
         }
@@ -243,21 +251,51 @@ namespace Mento.Script.Customer.HierarchyConfiguration
             TimeManager.MediumPause();
 
             AreaSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
             //Verify that message box popup for confirm delete
             string msgText = JazzMessageBox.MessageBox.GetMessage();
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
             Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             AreaSettings.ConfirmErrorMsgBox();
-            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.ShortPause();
 
-            //check every where
+            //can't delete when area have associated tags 
+            string msgText2 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText2.Contains(input.ExpectedData.Messages[2]));
+            AreaSettings.OKErrorMsgBox();
+            TimeManager.ShortPause();
+
+            //Disassociated tag and delete area node again
+            AssociateSettings.NavigateToAreaDimensionAssociate();
+            TimeManager.ShortPause();
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
+            TimeManager.ShortPause();
+
+            AssociateSettings.FocusOnTag(input.InputData.TagName);
+            TimeManager.ShortPause();
+            AssociateSettings.ClickDisassociateButton(input.InputData.TagName);
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.MediumPause();
+
+            //Delete again
+            HierarchySettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
+            TimeManager.MediumPause();
+
+            AreaSettings.NavigateToAreaDimensionSetting();
+            AreaSettings.SelectAreaDimensionNodePath(input.InputData.AreaNodePath);
+            TimeManager.MediumPause();
+
+            AreaSettings.ClickDeleteButton();
+            TimeManager.ShortPause();
+            //Verify that message box popup for confirm delete
+            string msgText3 = JazzMessageBox.MessageBox.GetMessage();
+            Assert.IsTrue(msgText3.Contains(input.ExpectedData.Messages[0]));
+            Assert.IsTrue(msgText3.Contains(input.ExpectedData.Messages[1]));
+            AreaSettings.ConfirmErrorMsgBox();
+            TimeManager.ShortPause();
+
             //1. Check  on AssociationAreaDimension
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AssociationAreaDimension);
-            //AreaSettings.ShowHierarchyTree();
-            //TimeManager.MediumPause();
-            //AreaSettings.SelectHierarchyNodePath(input.InputData.HierarchyNodePath);
-            //TimeManager.MediumPause();
             Assert.IsFalse(AreaSettings.SelectAreaDimensionNodePath(input.ExpectedData.AreaNodePath));
             TimeManager.MediumPause();
 

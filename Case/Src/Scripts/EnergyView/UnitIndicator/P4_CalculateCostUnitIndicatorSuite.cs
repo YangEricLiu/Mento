@@ -321,7 +321,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-4")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-4")]
-        public void CalculateCostUnitIndicator04(UnitIndicatorData input)
+        public void NoCompareData_CalculateCostUnitIndicator04(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A, then go to 介质单项.
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -382,7 +382,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-5")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-5")]
-        public void CalculateCostUnitIndicator05(UnitIndicatorData input)
+        public void NoCompareData_CalculateCostUnitIndicator05(UnitIndicatorData input)
         {
             //Change Hierarchy list to Customer is NancyCostCustomer2, then go to 介质单项.
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -860,7 +860,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             EnergyViewToolbar.View(EnergyViewType.Line);
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
@@ -877,7 +877,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             //Check value
@@ -905,7 +905,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             //Check value
@@ -925,7 +925,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             //Check value
@@ -956,7 +956,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             //Check value
@@ -969,7 +969,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.MediumPause();
 
             //Check value
@@ -997,12 +997,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(30);
             TimeManager.LongPause();
-
-            //EnergyAnalysis.ClickDisplayStep(DisplayStep.Min);
-            //JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            //TimeManager.LongPause();
 
             //Check value
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);

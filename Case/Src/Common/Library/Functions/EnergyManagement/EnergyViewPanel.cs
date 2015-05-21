@@ -265,6 +265,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 SelectHierarchyButton.Click();
                 TimeManager.ShortPause();
+                HierarchyTree.WaitControlDisplayed(15);
                 HierarchyTree.SelectNode(hierarchyNames);
 
                 JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -737,6 +738,26 @@ namespace Mento.ScriptCommon.Library.Functions
             return actualPieDict;
         }
 
+        public DataTable GetActualPieDataTableData()
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Key");
+            dt.Columns.Add("Value");
+
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+
+            dt.Rows.Add("Hierarchy", GetActualHierarchyPath());
+            //dt.Rows.Add("TimeRange", GetActualTimeRange());
+
+            foreach (var pieValue in pieValues)
+            {
+                dt.Rows.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return dt;
+        }
+
         public Dictionary<string, string> GetExpecedPieData(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
         {
             Dictionary<string, string> actualPieDict = new Dictionary<string, string>();
@@ -753,6 +774,26 @@ namespace Mento.ScriptCommon.Library.Functions
             return actualPieDict;
         }
 
+        public DataTable GetExpecedPieDataToDataTable(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Key");
+            dt.Columns.Add("Value");
+
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+
+            dt.Rows.Add("Hierarchy", GetActualHierarchyPath());
+            //dt.Rows.Add("TimeRange", GetActualTimeRange());
+
+            foreach (var pieValue in pieValues)
+            {
+                dt.Rows.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return dt;
+        }
+         
         public Dictionary<string, string> GetMulTimePieData(string[] hierarchyTag, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
         {
             Dictionary<string, string> actualPieDict = new Dictionary<string, string>();
@@ -767,6 +808,26 @@ namespace Mento.ScriptCommon.Library.Functions
             }
 
             return actualPieDict;
+        }
+
+        public DataTable GetMulTimePieDataToDataTable(string[] hierarchyTag, ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.Add("Key");
+            dt.Columns.Add("Value");
+
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+
+            dt.Rows.Add("Hierarchy", GetExpectedHierarchyPath(hierarchyTag, dimensionPaths));
+            //dt.Rows.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
+
+            foreach (var pieValue in pieValues)
+            {
+                dt.Rows.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return dt;
         }
 
         /// <summary>
@@ -785,6 +846,19 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        public void ExportExpectedPieDataTableToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                DataTable expectedactualPieDict = GetExpecedPieDataToDataTable(hierarchyPaths, manualTimeRange, dimensionPaths);
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.ChartViewOperation.MoveDataTableExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        #region 多时间用字典，会有键值重复的情况，改用datatable数据表存储饼图的数据
         /// <summary>
         /// Export expected data to excel file
         /// </summary>
@@ -798,6 +872,21 @@ namespace Mento.ScriptCommon.Library.Functions
                 //Export to excel
                 string actualFileName = Path.Combine(path, fileName);
                 JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        #endregion
+        
+
+        public void ExportMulTimePieDataTableToExcel(string[] hierarchyPaths, ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                DataTable expectedactualPieDict = GetMulTimePieDataToDataTable(hierarchyPaths, manualTimeRange, dimensionPaths);
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.ChartViewOperation.MoveDataTableExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
             }
         }
 
@@ -817,6 +906,42 @@ namespace Mento.ScriptCommon.Library.Functions
                 Dictionary<string, string> expectedDict = JazzFunction.ChartViewOperation.ImportExpectedFileToDictionary(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
 
                 return JazzFunction.ChartViewOperation.CompareDictionarys(expectedDict, actualDict, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool CompareMultiTimeDataTableOfEnergyAnalysis(string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+
+                DataTable actualDt = GetActualPieDataTableData();
+
+                DataTable expectedDt = JazzFunction.ChartViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
+
+                return JazzFunction.ChartViewOperation.CompareMultiTimeDataTables(expectedDt, actualDt, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool ComparePieDataTableOfEnergyAnalysis(string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+
+                DataTable actualDt = GetActualPieDataTableData();
+
+                DataTable expectedDt = JazzFunction.ChartViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
+
+                return JazzFunction.ChartViewOperation.ComparePieDataTables(expectedDt, actualDt, failedFileName);
             }
             else
             {
@@ -929,6 +1054,30 @@ namespace Mento.ScriptCommon.Library.Functions
             return actualPieDict;
         }
 
+        public DataTable GetActualMultipleHierarchyPieDataTable()
+        {
+            DataTable dt = new DataTable();
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+            HierarchysAndTags[] HierarchysAndTagsLists = GetActualHierarchysAndTags();
+
+            dt.Columns.Add("Key");
+            dt.Columns.Add("Value");
+
+            dt.Rows.Add("TimeRange", GetActualTimeRange());
+
+            for (int i = 0; i < HierarchysAndTagsLists.Length; i++)
+            {
+                string taglist = ConvertTagsArrayToString(HierarchysAndTagsLists[i].tags);
+                dt.Rows.Add(HierarchysAndTagsLists[i].Hieararchy, taglist);
+            }
+
+            foreach (var pieValue in pieValues)
+            {
+                dt.Rows.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+            return dt;
+        }
+
         public Dictionary<string, string> GetExpecedMultipleHierarchyPieData(ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
         {
             Dictionary<string, string> expectedPieDict = new Dictionary<string, string>();
@@ -936,6 +1085,7 @@ namespace Mento.ScriptCommon.Library.Functions
             HierarchysAndTags[] HierarchysAndTagsLists = GetActualHierarchysAndTags();
 
             expectedPieDict.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
+            
             for (int i = 0; i < HierarchysAndTagsLists.Length; i++)
             {
                 string taglist = ConvertTagsArrayToString(HierarchysAndTagsLists[i].tags);
@@ -949,7 +1099,7 @@ namespace Mento.ScriptCommon.Library.Functions
                     expectedPieDict.Add(HierarchysAndTagsLists[i].Hieararchy, taglist);
                 }
             }   
-
+            
             foreach (var pieValue in pieValues)
             {
                 expectedPieDict.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
@@ -957,7 +1107,32 @@ namespace Mento.ScriptCommon.Library.Functions
 
             return expectedPieDict;
         }
+        
+        public DataTable GetExpecedMultipleHierarchyPieDataTable(ManualTimeRange manualTimeRange, string[] dimensionPaths = null)
+        {
+            DataTable dt = new DataTable(); 
+            var pieValues = Chart.GetPieDataLegendAndTexts();
+            HierarchysAndTags[] HierarchysAndTagsLists = GetActualHierarchysAndTags();
 
+            dt.Columns.Add("Key");
+            dt.Columns.Add("Value");
+
+            dt.Rows.Add("TimeRange", GetExpectedTimeRange(manualTimeRange));
+
+            for (int i = 0; i < HierarchysAndTagsLists.Length; i++)
+            {
+                string taglist = ConvertTagsArrayToString(HierarchysAndTagsLists[i].tags);
+                dt.Rows.Add(HierarchysAndTagsLists[i].Hieararchy, taglist);
+            }
+
+            foreach (var pieValue in pieValues)
+            {
+                dt.Rows.Add(pieValue.tagOrCommodity, pieValue.valueAndUOM);
+            }
+
+            return dt;
+        }
+        
 
         /// <summary>
         /// Export expected data of multiple hierarchy nodes data to excel file
@@ -972,6 +1147,18 @@ namespace Mento.ScriptCommon.Library.Functions
                 //Export to excel
                 string actualFileName = Path.Combine(path, fileName);
                 JazzFunction.ChartViewOperation.MoveExpectedDataToExcel(expectedactualPieDict, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
+            }
+        }
+
+        public void ExportExpectedDataTableToExcelMultiHiearachy(ManualTimeRange manualTimeRange, string fileName, string path, string[] dimensionPaths = null)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                DataTable expectedactualPieDataTable = GetExpecedMultipleHierarchyPieDataTable(manualTimeRange);
+
+                //Export to excel
+                string actualFileName = Path.Combine(path, fileName);
+                JazzFunction.ChartViewOperation.MoveDataTableExpectedDataToExcel(expectedactualPieDataTable, actualFileName, JazzFunction.DataViewOperation.sheetNameExpected);
             }
         }
 
@@ -991,6 +1178,24 @@ namespace Mento.ScriptCommon.Library.Functions
                 Dictionary<string, string> expectedDict = JazzFunction.ChartViewOperation.ImportExpectedFileToDictionary(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
 
                 return JazzFunction.ChartViewOperation.CompareDictionarys(expectedDict, actualDict, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool CompareDataTableMultipleHierarchyOfEnergyAnalysis(string expectedFileName, string failedFileName, string path)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(path, expectedFileName);
+
+                DataTable actualDt = GetActualMultipleHierarchyPieDataTable();
+
+                DataTable expectedDt = JazzFunction.ChartViewOperation.ImportExpectedFileToDataTable(filePath, JazzFunction.ChartViewOperation.sheetNameExpected);
+
+                return JazzFunction.ChartViewOperation.ComparePieDataTables(expectedDt, actualDt, failedFileName);
             }
             else
             {
@@ -1096,4 +1301,6 @@ namespace Mento.ScriptCommon.Library.Functions
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }
     public enum DisplayStep { Min, Hour, Day, Week, Month, Year, Default,Raw}
+
+    
 }

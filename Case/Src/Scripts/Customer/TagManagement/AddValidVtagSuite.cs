@@ -113,10 +113,14 @@ namespace Mento.Script.Customer.TagManagement
              TimeManager.MediumPause();
             //verify the trend chart is drawn 
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            TimeManager.MediumPause();
-            JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName);
-            JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.InputData.CommonName);
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
+            TimeManager.LongPause();
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.InputData.CommonName));
+            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.InputData.CommonName));
             TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
             TimeManager.MediumPause();

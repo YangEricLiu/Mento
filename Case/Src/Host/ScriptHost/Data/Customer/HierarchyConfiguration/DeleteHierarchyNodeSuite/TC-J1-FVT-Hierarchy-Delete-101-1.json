@@ -2,23 +2,12 @@
 	{
 		"InputData":
 		{	
-			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001","DeleteBuilding001"],
-		},
-		"ExpectedData":
-		{
-			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001","DeleteBuilding001"],
-			"Messages":["$@Common.Label.ConfirmDelete|(DeleteBuilding001),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
-		}
-	},
-	{
-		"InputData":
-		{	
-			"HierarchyNodePath":["自动化测试", "DeleteOrg001"],
-		},
-		"ExpectedData":
-		{
 			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001"],
-			"Messages":["$@Common.Label.ConfirmDelete|(DeleteOrg001),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
+		},
+		"ExpectedData":
+		{
+			"HierarchyNodePath":["自动化测试", "DeleteOrg001","DeleteSite001","DeleteBuilding001"],
+			"Messages":["$@Setting.Hierarchy.DeleteError.JazzError|(DeleteSite001),($@Setting.Hierarchy.DeleteError.Children),($@Setting.Hierarchy.DeleteError.TagRelation)","$@Setting.Hierarchy.DeleteMessage|(DeleteBuilding001)", "$@Setting.Hierarchy.DeleteMessage|(DeleteSite001)"],
 		}
 	}
 ]

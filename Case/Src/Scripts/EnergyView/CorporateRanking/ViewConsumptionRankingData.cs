@@ -24,6 +24,16 @@ namespace Mento.Script.EnergyView.CorporateRanking
     [ManualCaseID("TC-J1-FVT-ConsumptionRanking-View-101"), CreateTime("2013-10-25"), Owner("Greenie")]
     public class ViewConsumptionRankingData : TestSuiteBase
     {
+
+        [TestFixtureTearDown]
+        public void CaseSuiteTearDown()
+        {
+            JazzFunction.HomePage.ExitJazz();
+            TimeManager.LongPause();
+            JazzFunction.LoginPage.LoginWithOption("ShareUserK", "123456Qq", "NancyCustomer1");
+            TimeManager.LongPause();
+        }
+
         [SetUp]
         public void CaseSetUp()
         {

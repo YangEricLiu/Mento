@@ -25,6 +25,13 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         private static AdministratorInfoSetting AdministratorInfoSetting = JazzFunction.AdministratorInfoSetting;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
+       [TestFixtureTearDown]
+        public void SuiteTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("自动化测试");
+            TimeManager.LongPause();    
+        }
+
         [SetUp]
         public void CaseSetUp()
         {
@@ -40,6 +47,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         public void CaseTearDown()
         {
             HierarchySetting.NavigatorToNonHierarchy();
+            TimeManager.LongPause();
         }
 
         [Test]
@@ -165,10 +173,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.AreEqual(input.ExpectedData.Position, AdministratorInfoSetting.GetPositionInvalidMsg_N(1));
 
             Assert.IsTrue(AdministratorInfoSetting.IsMobileInvalid_N(1));
-            Assert.AreEqual(input.ExpectedData.Mobile, AdministratorInfoSetting.GetMobileInvalidMsg_N(1));
+            Assert.AreEqual(input.ExpectedData.Telephone, AdministratorInfoSetting.GetTelephoneInvalidMsg_N(1));
 
             Assert.IsTrue(AdministratorInfoSetting.IsTelephoneInvalid_N(1));
-            Assert.AreEqual(input.ExpectedData.Telephone, AdministratorInfoSetting.GetTelephoneInvalidMsg_N(1));
+            Assert.AreEqual(input.ExpectedData.Mobile, AdministratorInfoSetting.GetMobileInvalidMsg_N(1));
 
             Assert.IsTrue(AdministratorInfoSetting.IsEmailInvalid_N(1));
             Assert.AreEqual(input.ExpectedData.Email, AdministratorInfoSetting.GetEmailInvalidMsg_N(1));
@@ -282,7 +290,11 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             AdministratorInfoSetting.FillInEmail_N(input.InputData.Email + input.InputData.InvalidChar, 1);
 
             AdministratorInfoSetting.ClickAdministratorInfoSaveButton();
-            TimeManager.LongPause();
+            TimeManager.MediumPause();
+            AdministratorInfoSetting.ClickAdministratorInfoSaveButton();
+            TimeManager.MediumPause();
+            AdministratorInfoSetting.ClickAdministratorInfoSaveButton();
+            TimeManager.MediumPause();
 
             Assert.IsTrue(AdministratorInfoSetting.IsRealNameInvalid_N(1));
             Assert.IsTrue(AdministratorInfoSetting.IsPositionInvalid_N(1));
@@ -361,6 +373,10 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             AdministratorInfoSetting.FillInTelephone_N(input.InputData.Telephone + input.InputData.InvalidChar, 1);
             AdministratorInfoSetting.FillInEmail_N(input.InputData.Email + input.InputData.InvalidChar, 1);
 
+            AdministratorInfoSetting.ClickAdministratorInfoSaveButton();
+            TimeManager.MediumPause();
+            AdministratorInfoSetting.ClickAdministratorInfoSaveButton();
+            TimeManager.MediumPause();
             AdministratorInfoSetting.ClickAdministratorInfoSaveButton();
             TimeManager.LongPause();
 

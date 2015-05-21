@@ -52,7 +52,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTagPickerSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1")]
-        public void MultiCheckOneTagAndVerify(EnergyViewOptionData input)
+        public void NoDataCompare_MultiCheckOneTagAndVerify(EnergyViewOptionData input)
         {
             //Before switch to "多层级数据点", pick one tag on "单层数据点"
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -116,7 +116,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTagPickerSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2")]
-        public void MultiCheckMultipleTagsAndVerify(EnergyViewOptionData input)
+        public void NoDataCompare_MultiCheckMultipleTagsAndVerify(EnergyViewOptionData input)
         {
             //Switch to "多层级数据点" and pick up 10 tags then verify its on the correct position
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);

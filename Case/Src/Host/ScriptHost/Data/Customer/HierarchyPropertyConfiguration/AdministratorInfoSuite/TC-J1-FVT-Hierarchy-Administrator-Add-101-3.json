@@ -5,14 +5,14 @@
 			"HierarchyNodePath":["NancyCostCustomer2", "组织A" ,"园区B"],
 			"RealName":"<>=@$^*:?/!",
 			"Position":"<>=@$^*:?/!",
-			"Telephone":"ee",
-			"Mobile":"3w",
+			"Telephone":"1234ee",
+			"Mobile":"1234ee",
 			"Email":"12345qcom",
 		},
 		"ExpectedData":
 		{
-			"RealName":"允许汉字，英文字母，数字，下划线和空格",
-			"Position":"允许汉字，英文字母，数字，下划线和空格",
+			"RealName":"$@Common.Label.NameRegexError",
+			"Position":"$@Common.Label.NameRegexError",
 			"Telephone":"$@Common.Label.TelephoneRegexError",
 			"Mobile":"$@Common.Label.TelephoneRegexError",
 			"Email":"$@Common.Label.EmailRegexError",

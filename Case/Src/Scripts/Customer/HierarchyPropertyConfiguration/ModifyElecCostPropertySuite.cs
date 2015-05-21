@@ -13,6 +13,7 @@ using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.TestApi.TestData;
 using Mento.TestApi.TestData.Attribute;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -64,7 +65,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Can't Save
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsTrue(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostCancelButtonDisplayed());
 
@@ -73,7 +74,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Save successful
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
@@ -116,7 +117,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             //Modify value and "Save"
             CostSettings.FillElectricPrice(input.InputData.ElectricPrice, 1);
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             Assert.IsFalse(CostSettings.IsCostSaveButtonDisplayed());
             Assert.IsFalse(CostSettings.IsCostCancelButtonDisplayed());
             Assert.IsTrue(CostSettings.IsCostUpdateButtonDisplayed());
@@ -156,7 +157,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify added successful and padding cost not displayed
             Assert.AreEqual(input.ExpectedData.PriceMode, CostSettings.GetElectricPriceMode(2));
@@ -193,7 +194,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify modify successful
             Assert.AreEqual(input.ExpectedData.TransformerCapacity, CostSettings.GetElectricTransformerCapacityValue(1));
@@ -215,7 +216,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify 
             Assert.AreEqual(input.ExpectedData.PriceMode, CostSettings.GetElectricPriceMode(2));
@@ -284,7 +285,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Click "Save" button
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify all items are deleted
             Assert.IsTrue(CostSettings.IsCostCreateButtonDisplayed());

@@ -47,7 +47,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-1")]
-        public void ViewCostUnitIndicator01(UnitIndicatorData input)
+        public void NoCompareData_ViewCostUnitIndicator01(UnitIndicatorData input)
         {
             //Go to NancyCostCustomer2. Go to Function Unit indicator. 
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -72,8 +72,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(12, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Select Unit=单位面积 and view data.
             EnergyViewToolbar.SelectUnitTypeConvertTarget(UnitTypeConvertTarget.UnitArea);
@@ -84,8 +82,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(13, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Select 单项 Commodity=电 to display trend chart view.
             UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
@@ -97,8 +93,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(13, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Select 楼宇D 单项 Commodity=电 , Unit= 单位人口 to display trend chart view. Select time range="去年"
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -212,8 +206,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Hour));
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(24, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //b. 2012/07/01 3:30-2012/07/03 23:30 day
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
@@ -226,16 +218,12 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Hour));
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(136, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(4, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //c. 2012/07/10-2012/08/05 week
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
@@ -247,16 +235,12 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Day));
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(52, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //d. 2012/01/01-2012/12/31=lastyear month
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
@@ -267,8 +251,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(8, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //e. 2011/01/01-2013/05/30 year
             EnergyViewToolbar.SetDateRange(ManualTimeRange[4].StartDate, ManualTimeRange[4].EndDate);
@@ -280,14 +262,12 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(14, UnitKPIPanel.GetTrendChartLinesMarkers());
         }
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-2")]
-        public void ViewCostUnitIndicator02(UnitIndicatorData input)
+        public void NoCompareData_ViewCostUnitIndicator02(UnitIndicatorData input)
         {
             //Select multiple Commodities 电+水+煤 from 楼宇 node to display column chart view.
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -317,7 +297,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsColumnChartDrawn());
-            //Assert.AreEqual(3, UnitKPIPanel.GetColumnChartColumns());
 
             //·2 legand pereach commodity include  成本/单位面积 and 成本(Gray out).
             Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.ExpectedData.UnitIndicatorLegend[0].CaculationValue));
@@ -346,7 +325,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsColumnChartDrawn());
-            //Assert.AreEqual(3, UnitKPIPanel.GetColumnChartColumns());
 
             //·2 legand pereach commodity include  成本/单位面积 and 成本(Gray out).
             Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.ExpectedData.UnitIndicatorLegend[0].CaculationValue));
@@ -359,8 +337,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-3")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-3")]    
-        public void ViewCostUnitIndicator03(UnitIndicatorData input)
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-3")]
+        public void NoCompareData_ViewCostUnitIndicator03(UnitIndicatorData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingCostYearToDay from Hierarchy Tree. Click Function Type button, select Cost.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -388,8 +366,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //·Basic chart view display as expected.
             //Emma's notes 2013-11-26, on Jazz 1.4, when there is data before/after the time range will display line, but not only point
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //Select the BuildingMissingData from Hierarchy Tree. 
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[2]);
@@ -403,7 +379,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //·Basic chart view display as expected.
             Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
-        
+
+            #region Not use code, for predefined time and save to dashboard which will test on manual for 2.0
+
+            /*下面的代码检测的没有什么意义，新框架里面会考虑删除
+            
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -414,6 +394,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[0]);
             TimeManager.MediumPause();
 
+            
             //Change different time range
             //a. Today/Yesterday
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Today);
@@ -526,6 +507,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
+             */
+            #endregion
         }
 
         [Test]
@@ -611,13 +594,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             //·2011 year can't display chart since that 单位人口 start from 2011/11=100
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -637,7 +620,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -659,14 +642,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
+            /*
             Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[2]));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
             Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
@@ -677,9 +657,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.LongPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
-            Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
-            Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -695,8 +672,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.LongPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(6, UnitKPIPanel.GetTrendChartLinesMarkers());
+            */
         }
 
         [Test]
@@ -742,6 +718,10 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Check · The excel value is equal to the data before export.
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
+            #region Not use code, for predefined time and save to dashboard which will test on manual for 2.0
+
+            /*下面的代码检测的没有什么意义，新框架里面会考虑删除
+
             //Select totally 3 Commodities 天然气+软水+汽油  to Data view
             UnitKPIPanel.SelectCommodityUnitCost(input.InputData.Commodity);
             TimeManager.ShortPause();
@@ -750,10 +730,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.LastWeek);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
             TimeManager.LongPause();
 
             //change chart type to the data view.Optional step=Hour
@@ -796,8 +772,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //Check ·  There is 1 Benchmark line in trend chart.
             HomePagePanel.ClickOnWidget(dashboard.WigetName);
-            //Assert.AreEqual(6, WidgetMaxChartDlg.GetLegendItemTexts().Length);
-            //Assert.AreEqual(3, EnergyAnalysis.GetTrendChartLines());//no line for no data
+            */
+            #endregion
         }
     }
 }

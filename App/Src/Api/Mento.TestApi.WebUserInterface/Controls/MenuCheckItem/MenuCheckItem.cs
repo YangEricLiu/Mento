@@ -68,6 +68,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             IWebElement MenuCheckItemTrigger = ElementHandler.FindElement(MenuCheckItemTriggerLocator, container: MenuCheckItemItem);
 
             MenuCheckItemTrigger.Click();
+            TimeManager.MediumPause();
         }
 
         public void ClickMenuAssociateTrigger()
@@ -94,6 +95,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             IWebElement MenuAssociateStatus = GetMenuAssociateStatusElement();
 
             ElementHandler.Float(MenuAssociateStatus);
+            TimeManager.MediumPause();
         }
 
         public void CheckMenuCheckSearching()

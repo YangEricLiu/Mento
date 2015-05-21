@@ -1010,6 +1010,10 @@
       
       <add key="HierarchyTreeCoperateRanking" value="//div[@id='em-rank-hier-tree-body']/div/table" type="XPath"/>
   </TreeView>
+  
+  <pop-TreeView>
+    <add key="PopHierarchyTree" value="//div[@class='pop-tree']/div[@class='pop-scroll-panel']/div/div" type="XPath"/>
+    </pop-TreeView>
   <!--TreeView End-->
 
   <!--Grid Begin-->

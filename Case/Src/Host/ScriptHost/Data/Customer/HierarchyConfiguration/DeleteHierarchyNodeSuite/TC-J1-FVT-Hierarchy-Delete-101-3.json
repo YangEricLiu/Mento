@@ -3,12 +3,14 @@
 	{
 		"InputData":
 		{	
-			"HierarchyNodePath":["自动化测试", "DeleteOrg002", "DeleteSite002"],
+			"HierarchyNodePath":["自动化测试", "DeleteOrg004", "DeleteSite004", "DeleteBuilding004"],
+			"AreaNodePath":["DeleteBuilding004", "deletelater"],
+			"SystemDimensionItemPath":["$@SystemDimensionTemplateItem_HVAC"],
 		},
 		"ExpectedData":
 		{
-			"HierarchyNodePath":["自动化测试", "DeleteOrg002", "DeleteSite002", "DeleteBuild002"],
-			"Messages":["$@Common.Label.ConfirmDelete|(DeleteSite002),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
+			"HierarchyNodePath":["自动化测试", "DeleteOrg004", "DeleteSite004"],
+			"Messages":["$@Setting.Hierarchy.DeleteError.JazzError|(DeleteBuilding004),($@Common.Glossary.HierarchyNode),($@Setting.Hierarchy.DeleteError.TagRelation)", "$@Setting.Hierarchy.DeleteMessage|(DeleteBuilding004)", "$@Setting.Hierarchy.DeleteError.JazzError|(DeleteSite004),($@Common.Glossary.HierarchyNode),($@Setting.Hierarchy.DeleteError.TagRelation)", "$@Setting.Hierarchy.DeleteMessage|(DeleteSite004)"],
 		}
 	}
 ]

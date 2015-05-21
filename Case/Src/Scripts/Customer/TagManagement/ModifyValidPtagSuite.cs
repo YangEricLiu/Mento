@@ -180,9 +180,12 @@ namespace Mento.Script.Customer.TagManagement
             
             //3. Verify that ptag is updated on energy view tag list and  its legend name
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName);
             JazzFunction.EnergyAnalysisPanel.CheckTag(input.ExpectedData.CommonName);
             JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
@@ -214,8 +217,12 @@ namespace Mento.Script.Customer.TagManagement
 
             //3. Verify that ptag Commodity is updated on energy view tag list and  UOm updated on its chart view y-axis
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            //JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
+            TimeManager.LongPause();
 
             //Commodity updated
             JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.ExpectedData.CommonName);

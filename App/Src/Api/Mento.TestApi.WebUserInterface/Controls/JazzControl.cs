@@ -109,9 +109,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// 
         /// </summary>
         /// <param></param>
-        public bool WaitControlDisplayed()
+        public bool WaitControlDisplayed(int maxtime = TimeManager.WAITELEMENTTIMEOUT)
         {
-            return ElementHandler.Wait(_RootLocator, WaitType.ToAppear, _ParentContainer);        
+            return ElementHandler.Wait(_RootLocator, WaitType.ToAppear, _ParentContainer, maxtime);        
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param></param>
+        public bool WaitControlDisappear(int maxtime = TimeManager.WAITELEMENTTIMEOUT)
+        {
+            return ElementHandler.Wait(_RootLocator, WaitType.ToDisappear, _ParentContainer, maxtime);
         }
     }
 }

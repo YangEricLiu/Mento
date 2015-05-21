@@ -107,10 +107,6 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
-            var dashboard = input.InputData.DashboardInfo;
-            EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
-            TimeManager.LongPause();
-
             //2013/01/01-2013/curmonth/curday=thisyear month
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
             TimeManager.ShortPause();
@@ -128,9 +124,6 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
-            TimeManager.LongPause();
-
             //2011/01/01-2013/12/31 year
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
             TimeManager.ShortPause();
@@ -147,9 +140,6 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-
-            EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            TimeManager.LongPause();
         }
 
         [Test]
@@ -280,33 +270,6 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
-
-            //Go to NancyCustomer1, select GreenieBuilding which is not define calendar. Select V(11) to display 公休比.
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.ShortPause();
-
-            RadioPanel.NavigateToRatio();
-            TimeManager.MediumPause();
-
-            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
-            TimeManager.ShortPause();
-
-            RadioPanel.CheckTag(input.InputData.tagNames[3]);
-            TimeManager.ShortPause();
-
-            //Select time range 2013/01/01 to 2013/04/28; Optional step=Week.
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
-
-            EnergyViewToolbar.ClickViewButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.ShortPause();
-
-            //· Warning message show config calendar first.
-            //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
         }
     }
 }

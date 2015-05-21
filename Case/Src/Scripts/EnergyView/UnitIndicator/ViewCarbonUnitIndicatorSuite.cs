@@ -43,7 +43,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
         private static Widget Widget = JazzFunction.Widget;
 
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-View-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-View-101-1")]
         public void ViewCarbonUnitIndicator01(UnitIndicatorData input)
@@ -307,6 +309,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[9], input.InputData.failedFileName[9]);
         }
 
+
         [Test]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-View-101-2")]
@@ -360,6 +363,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -370,7 +376,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
             TimeManager.MediumPause();
             //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[1]));
-
+                   
             //Change different time range
             //a. Today/Yesterday
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.Today);
@@ -518,9 +524,14 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Widget.ClickCloseMaxDialogButton();
             TimeManager.ShortPause();
+             */
+            #endregion
         }
 
+
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-View-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-View-101-3")]
         public void ViewCarbonUnitIndicator03(UnitIndicatorData input)
@@ -727,10 +738,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         }
 
+
         [Test]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-View-101-3923")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-View-101-3923")]
-        public void ViewCarbonUnitIndicator3923(UnitIndicatorData input)
+        public void NoCompareData_ViewCarbonUnitIndicator3923(UnitIndicatorData input)
         {
             //1. Go Unit Carbon, go to NancyOtherCustomer3=> BuildingLabeling1->Commodity=天然气.
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -765,9 +777,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //The chart start from 2013/01 correctly, only display target value
             //so 1 line and 12 markers
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
-            Assert.AreEqual(12, UnitKPIPanel.GetTrendChartLinesMarkers());
         }
+
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-View-101-4")]
@@ -811,6 +822,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Check · The excel value is equal to the data before export.
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*下面的代码检测的没有什么意义，新框架里面会考虑删除
             //Select totally 3 Commodities 低压蒸汽+柴油+热量
             UnitKPIPanel.SelectCommodityUnitCarbon(input.InputData.Commodity);
             TimeManager.ShortPause();
@@ -865,7 +879,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             HomePagePanel.ClickOnWidget(dashboard.WigetName);
             //Assert.AreEqual(6, WidgetMaxChartDlg.GetLegendItemTexts().Length);
             //Assert.AreEqual(3, EnergyAnalysis.GetTrendChartLines());
+            */
 
+            #endregion
         }
     }
 }

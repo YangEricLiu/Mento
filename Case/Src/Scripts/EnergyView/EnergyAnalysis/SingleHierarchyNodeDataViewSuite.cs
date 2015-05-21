@@ -145,6 +145,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]));
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -161,7 +163,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
            
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-            //Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0], dashboard.WigetName));
+            */
+            #endregion
         }
 
         [Test]
@@ -190,6 +193,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]));
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -206,7 +212,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-            //Assert.IsTrue(HomePagePanel.CompareMinWidgetDataView(EnergyAnalysis.EAPath, input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0], dashboard.WigetName));
+            */
+
+            #endregion
         }
 
         [Test]
@@ -309,6 +317,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             //Click "Save to dashboard"（保存到仪表盘）to save the Data view to Hierarchy node dashboard.
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -326,10 +336,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //check The Data view Save to dashboard successfully.
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
-
+            */
+            #endregion
         }
 
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-5")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5")]
         public void SingleHie30Tagslimit(EnergyViewOptionData input)

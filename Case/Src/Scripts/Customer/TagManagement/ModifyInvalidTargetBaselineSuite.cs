@@ -204,7 +204,6 @@ namespace Mento.Script.Customer.TagManagement
                 Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayStartTimeInvalid(2));
                 Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndDateInvalid(2));
                 Assert.IsTrue(PVtagTargetBaselineSettings.IsSpecialdayEndTimeInvalid(2));
-                //Assert.IsFalse(PVtagTargetBaselineSettings.IsSpecialdayValueInvalid(2));
                 Assert.IsTrue(PVtagTargetBaselineSettings.GetSpecialdayStartDateInvalidMsg(2).Contains(input.ExpectedData.SpecialdayRuleStartDate[0]));
             }
 

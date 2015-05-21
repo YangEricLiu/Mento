@@ -43,7 +43,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-1")]
         public void ViewConsumptionUnitIndicator01(UnitIndicatorData input)
@@ -220,7 +222,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-2")]
-        public void ViewConsumptionUnitIndicator02(UnitIndicatorData input)
+        public void NoCompareData_ViewConsumptionUnitIndicator02(UnitIndicatorData input)
         {
             //Select multiple tags V(1) and V(2) from BuildingBC node and Dimension node to display column chart view.
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
@@ -372,6 +374,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
 
@@ -385,9 +389,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+             */
+            #endregion
         }
 
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-3")]
         public void ViewConsumptionUnitIndicator03(UnitIndicatorData input)
@@ -584,7 +592,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-4")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-4")]
-        public void ViewConsumptionUnitIndicator04(UnitIndicatorData input)
+        public void NoCompareData_ViewConsumptionUnitIndicator04(UnitIndicatorData input)
         {
             //Go to NancyCustomer1. Go to Function Unit indicator. Select the BuildingBC from Hierarchy Tree. Click Function Type button, select Energy Consumption.
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
@@ -615,8 +623,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //·display the chart as expected.
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(3, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             //change optional steps. From 月->天->周 to view different charts.
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
@@ -625,8 +631,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //we should see chart with data under these 3 steps.
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(63, UnitKPIPanel.GetTrendChartLinesMarkers());
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -634,9 +638,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //we should see chart with data under these 3 steps.
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
-            //Assert.AreEqual(9, UnitKPIPanel.GetTrendChartLinesMarkers());
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             //change optional step to "月"，click “更多”->”至仪表盘”, select “层级节点” =” NancyCustomer1”
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -646,9 +650,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
             TimeManager.MediumPause();
             //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
+            */
+            #endregion
         }
 
+        //忽略的原因是有predefine的时间段，值不确定；虽然没有验证值，但是单位采暖面积也是没有值的
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-5")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-5")]
         public void ViewConsumptionUnitIndicator05(UnitIndicatorData input)
@@ -678,7 +686,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467")]
-        public void ViewConsumptionUnitIndicator_5467(UnitIndicatorData input)
+        public void NoCompareData_ViewConsumptionUnitIndicator_5467(UnitIndicatorData input)
         {
             //Go to Unit indicator, select Energy->BuildingA_KT_P1_Electricity_ 之前七天 to view chart.
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

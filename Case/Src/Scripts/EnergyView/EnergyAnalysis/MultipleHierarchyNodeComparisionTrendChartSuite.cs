@@ -53,7 +53,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTrendChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1")]
-        public void MultipleHierarchyNodeComparisionTrendChart(EnergyViewOptionData input)
+        public void NoDataCompare_MultipleHierarchyNodeComparisionTrendChart(EnergyViewOptionData input)
         {
             //Switch to "多层级数据点"
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
@@ -208,6 +208,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsScrollbarExist());
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
 
@@ -221,6 +224,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            */
+            #endregion
         }
     }
 }

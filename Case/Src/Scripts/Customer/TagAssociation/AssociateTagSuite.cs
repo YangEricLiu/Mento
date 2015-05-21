@@ -230,9 +230,13 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));
             Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.InputData.RemovedTagNames[0]));
             Assert.IsFalse(Association.IsTagOnAssociatedGridView(input.InputData.RemovedTagNames[1]));
-            
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+
+            Association.NavigateToEnergyAnalysis();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.InputData.HierarchyNodePath);
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.TagName);
         }
 
@@ -356,20 +360,16 @@ namespace Mento.Script.Customer.TagAssociation
             Assert.IsTrue(Association.IsCheckedAssociated(input.InputData.HeaderName[0]));
             Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.InputData.TagName));
 
-            //Check 不可关联 checkbox.
-            Association.UncheckAssociatedCheckbox(input.InputData.HeaderName[0]);
+            //Check 不可关联 checkbox.         
+            Association.OnlyCheckDisassociatedCheckbox();
             TimeManager.LongPause();
-            Association.CheckAssociatedCheckbox(input.InputData.HeaderName[1]);
 
             //• Loading icon appear and check box is gray and cannot be select.
-            TimeManager.LongPause();
-            Association.IsAllTagsDisabled();
+            Assert.IsTrue(Association.IsAllTagsDisabled());
             Assert.IsTrue(Association.IsTagOnAssociatedGridView(input.ExpectedData.TagName));//The tag in grid when check 可关联,why it in grid when check 不可关联?
 
             //Check 可关联 checkbox again.
-            Association.CheckAssociatedCheckbox(input.InputData.HeaderName[0]);
-            TimeManager.LongPause();
-            Association.UncheckAssociatedCheckbox(input.InputData.HeaderName[1]);       
+            Association.OnlyCheckAssociatedCheckbox();
             TimeManager.LongPause();
 
             //• Checkboxes of the tags selected in step3 are still checked.

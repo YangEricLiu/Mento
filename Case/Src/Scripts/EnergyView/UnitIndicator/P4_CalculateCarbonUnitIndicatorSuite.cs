@@ -325,7 +325,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-4")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-4")]
-        public void CalculateCarbonUnitIndicator04(UnitIndicatorData input)
+        public void NoDataCompare_CalculateCarbonUnitIndicator04(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A, then go to 介质单项.
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -386,7 +386,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-CarbontUnitIndicator-Calculate-101-5")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-5")]
-        public void CalculateCarbonUnitIndicator05(UnitIndicatorData input)
+        public void NoDataCompare_CalculateCarbonUnitIndicator05(UnitIndicatorData input)
         {
             //Change Hierarchy list to Customer is NancyCostCustomer2, then go to 介质单项.
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -558,19 +558,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            /* not need it on 1.7
-            Assert.IsTrue(JazzWindow.WindowMessageInfos.GetContentValue().Contains(input.ExpectedData.messages[0]));
-            //Assert.AreEqual(input.ExpectedData.messages[0], JazzWindow.WindowMessageInfos.GetContentValue());
-            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Month));
-            Assert.IsTrue(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Year));
-            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Hour));
-            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Day));
-            Assert.IsFalse(EnergyAnalysis.IsStepButtonOnWindow(DisplayStep.Week));
-            EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Month);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-            Assert.IsTrue(EnergyAnalysis.IsDisplayStepPressed(DisplayStep.Month));
-            */
             UnitKPIPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);

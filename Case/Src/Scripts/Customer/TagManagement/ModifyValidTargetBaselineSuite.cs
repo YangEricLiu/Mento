@@ -48,6 +48,7 @@ namespace Mento.Script.Customer.TagManagement
             if (String.Equals(input.InputData.TagType, "Ptag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsP);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.LongPause();
                 PVtagTargetBaselineSettings.FocusOnPTagByName(input.InputData.TagName);
                 TimeManager.MediumPause();
@@ -56,6 +57,7 @@ namespace Mento.Script.Customer.TagManagement
             if (String.Equals(input.InputData.TagType, "Vtag"))
             {
                 JazzFunction.Navigator.NavigateToTarget(NavigationTarget.TagSettingsV);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
                 TimeManager.LongPause();
                 PVtagTargetBaselineSettings.FocusOnVTagByName(input.InputData.TagName);
                 TimeManager.MediumPause();
@@ -232,7 +234,7 @@ namespace Mento.Script.Customer.TagManagement
 
             PVtagTargetBaselineSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             for (int i = 0; i < (input.InputData.NonworkdayRuleRecordNumber - 1); i++)
             {
@@ -246,7 +248,7 @@ namespace Mento.Script.Customer.TagManagement
             PVtagTargetBaselineSettings.ClickModifyCalculationRuleButton();
             TimeManager.ShortPause();
             PVtagTargetBaselineSettings.ClickAddSpecialDatesButton();
-            TimeManager.ShortPause();
+            TimeManager.MediumPause();
 
             PVtagTargetBaselineSettings.SelectSpecialdayRuleStartDate(input.InputData.SpecialdayRuleStartDate[0], 1);
             PVtagTargetBaselineSettings.SelectSpecialdayRuleStartTime(input.InputData.SpecialdayRuleStartTime[0], 1);
@@ -256,7 +258,7 @@ namespace Mento.Script.Customer.TagManagement
 
             PVtagTargetBaselineSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[0], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
 
@@ -269,20 +271,21 @@ namespace Mento.Script.Customer.TagManagement
             PVtagTargetBaselineSettings.SelectSpecialdayRuleEndDate(input.InputData.SpecialdayRuleEndDate[1], 1);
             PVtagTargetBaselineSettings.SelectSpecialdayRuleEndTime(input.InputData.SpecialdayRuleEndTime[1], 1);
             PVtagTargetBaselineSettings.FillInSpecialdayRuleValue(input.InputData.SpecialdayRuleValue[1], 1);
+            TimeManager.MediumPause();
 
             PVtagTargetBaselineSettings.ClickSaveButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[1], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
             
             //Delete one special day rule then cancel, not delete 
             PVtagTargetBaselineSettings.ClickModifyCalculationRuleButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             PVtagTargetBaselineSettings.ClickDeletepecialdayRuleButton(1);
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
             PVtagTargetBaselineSettings.ClickCancelButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
             Assert.AreEqual(input.ExpectedData.SpecialdayRuleValue[1], PVtagTargetBaselineSettings.GetSpecialdayRuleValue(1));
 
             //Delete one special day rule then save, delete successful 
@@ -361,7 +364,12 @@ namespace Mento.Script.Customer.TagManagement
 
             //Input an valid name to input box again. and the name can be display correct.
             PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            TimeManager.ShortPause();
+            PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
+            JazzMessageBox.LoadingMask.WaitLoading();
+            TimeManager.LongPause();
             Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetBaselineNameValue());
+
 
             //Navigate to 能源管理->单位指标->能耗，select the tag in step3,select time and click 查看数据 and 图表导出.
             UnitKPIPanel.NavigateToUnitIndicator();
@@ -431,16 +439,19 @@ namespace Mento.Script.Customer.TagManagement
             //Select an exist Ptag.
             PickupPtagOrVtag(input);
 
-            //Click 基准值.
+            //Click 目标值.
             PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //."显示名称" display with an input box with default value is "基准值".
+            //."显示名称" display with an input box with default value is "目标值".
             Assert.AreEqual(input.ExpectedData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
 
             //Input an valid name to input box again. and the name can be display correct.
             PVtagTargetBaselineSettings.FillBaselineName(input.InputData.TargetBaselineName);
+            TimeManager.ShortPause();
+            PVtagTargetBaselineSettings.SwitchToTargetPropertyTab();
+            JazzMessageBox.LoadingMask.WaitLoading();
             TimeManager.LongPause();
             Assert.AreEqual(input.InputData.TargetBaselineName, PVtagTargetBaselineSettings.GetTargetNameValue());
 
@@ -548,8 +559,8 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click 基准值
             PVtagTargetBaselineSettings.SwitchToBaselinePropertyTab();
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
+            TimeManager.LongPause();
 
             //Select 2013, click 计算基准值.
             PVtagTargetBaselineSettings.SelectYear(input.InputData.Year);
@@ -632,7 +643,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Click '修正计算值'(and saved), 
             PVtagTargetBaselineSettings.ClickReviseButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             PVtagTargetBaselineSettings.FillInAnnualRevisedValue(input.InputData.AnnualRevisedValue);
             PVtagTargetBaselineSettings.FillInFebruaryRevisedValue(input.InputData.FebruaryRevisedValue);

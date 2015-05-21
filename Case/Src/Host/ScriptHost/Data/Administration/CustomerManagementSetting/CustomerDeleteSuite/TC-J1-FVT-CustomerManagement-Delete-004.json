@@ -1,0 +1,12 @@
+﻿[
+	{
+		"InputData":
+		{
+		    "CommonName":"VEECustomerDeleteLater",	
+		},
+		"ExpectedData":
+		{
+			"Message":"$@Common.Label.ConfirmDelete|(VEECustomerDeleteLater),(),()@$ $@Common.Button.Delete@$ $@Common.Button.Cancel@$",
+		}
+	}
+]

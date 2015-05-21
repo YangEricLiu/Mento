@@ -46,11 +46,35 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        protected IWebElement[] gItems
+        {
+            get
+            {
+                return ElementHandler.FindElements(gLocator, container: LengendElement);
+            }
+        }
+
         protected IWebElement PieDataLabel
         {
             get
             {
                 return FindChild(PieDataLabelLocator);
+            }
+        }
+
+        protected IWebElement LengendElement
+        {
+            get
+            {
+                return FindChild(LegendLocator);
+            }
+        }
+
+        protected IWebElement[] LegendArrows
+        {
+            get
+            {
+                return ElementHandler.FindElements(PathLocator, container: gItems[32]);
             }
         }
 
@@ -445,10 +469,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             for (int i = 0; i < legendItemsNum; i++)
             {
-                pieValue.tagOrCommodity = LegendItems[i].Text;
+                if (i / 12 == 1 || i / 12 == 2)
+                    LegendArrows[1].Click();
+
+                IWebElement legendNameElement = ElementHandler.FindElement(TextLocator, container: LegendItems[i]);
+                pieValue.tagOrCommodity = legendNameElement.Text;              
                 pieValue.valueAndUOM = PieDataLabelTexts[i].Text;
 
-                list.Add(pieValue);
+                list.Add(pieValue);             
             }
 
             return list.ToArray();

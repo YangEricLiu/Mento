@@ -84,9 +84,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
+            EnergyAnalysis.ExportExpectedDataTableForMultipleHierarchyToExcel(ManualTimeRange[0], input.ExpectedData.expectedFileName[0]);
             TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
+            EnergyAnalysis.CompareDataTableForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             //Time range = B. 2013/01/01 23:00 to 2013/01/05 2:00.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
@@ -98,14 +98,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[1], input.ExpectedData.expectedFileName[1]);
+            EnergyAnalysis.ExportExpectedDataTableForMultipleHierarchyToExcel(ManualTimeRange[1], input.ExpectedData.expectedFileName[1]);
             TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
-
-            var dashboard = input.InputData.DashboardInfos;
-            EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            EnergyAnalysis.CompareDataTableForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
             //Time range = C. 2013/01/01 23:00 to 2013/02/01 3:00.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
@@ -117,9 +112,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[2], input.ExpectedData.expectedFileName[2]);
+            EnergyAnalysis.ExportExpectedDataTableForMultipleHierarchyToExcel(ManualTimeRange[2], input.ExpectedData.expectedFileName[2]);
             TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+            EnergyAnalysis.CompareDataTableForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
             //Time range = D. 2013/01/01 23:00 to 2014/01/01 1:00.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
@@ -131,13 +126,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading(60);
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[3], input.ExpectedData.expectedFileName[3]);
+            EnergyAnalysis.ExportExpectedDataTableForMultipleHierarchyToExcel(ManualTimeRange[3], input.ExpectedData.expectedFileName[3]);
             TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
-
-            EnergyViewToolbar.SaveToDashboard(dashboard[1].WigetName, dashboard[1].HierarchyName, dashboard[1].IsCreateDashboard, dashboard[1].DashboardName);
-            TimeManager.LongPause();
-            TimeManager.LongPause();
+            EnergyAnalysis.CompareDataTableForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
             //Time range = E. 2012/12/13 23:00 to 2014/03/01 4:00.
             EnergyViewToolbar.SetDateRange(ManualTimeRange[4].StartDate, ManualTimeRange[4].EndDate);
@@ -149,21 +140,19 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading(60);
             TimeManager.MediumPause();
 
-            EnergyAnalysis.ExportExpectedDictionaryForMultipleHierarchyToExcel(ManualTimeRange[4], input.ExpectedData.expectedFileName[4]);
+            EnergyAnalysis.ExportExpectedDataTableForMultipleHierarchyToExcel(ManualTimeRange[4], input.ExpectedData.expectedFileName[4]);
             TimeManager.MediumPause();
-            EnergyAnalysis.CompareDictionaryDataForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
-
-            EnergyViewToolbar.SaveToDashboard(dashboard[2].WigetName, dashboard[2].HierarchyName, dashboard[2].IsCreateDashboard, dashboard[2].DashboardName);
-            TimeManager.LongPause();
+            EnergyAnalysis.CompareDataTableForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
         }
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-2")]
-        public void MultipleHierarchyNodeComparisionPieChart02(EnergyViewOptionData input)
+        public void NoDataCompare_MultipleHierarchyNodeComparisionPieChart02(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
+            TimeManager.LongPause();
             TimeManager.LongPause();
 
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
@@ -220,7 +209,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         {
             //Go to UT tool. Go to Energy Analysis. Select NancyCustomer1, select 10 tags under the same hierarchy node BuildingPieVerify to pie chart.
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
+            TimeManager.LongPause();
             TimeManager.LongPause();
 
             EnergyAnalysis.CheckTags(input.InputData.TagNames);

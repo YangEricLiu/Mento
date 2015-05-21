@@ -104,6 +104,13 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzMessageBox.MessageBox.Delete();
             JazzMessageBox.LoadingMask.WaitLoading();
         }
+
+        public void OKErrorMsgBox()
+        {
+            JazzMessageBox.MessageBox.OK();
+            JazzMessageBox.LoadingMask.WaitLoading();
+        }
+
         /// <summary>
         /// Cancel the popup error message box
         /// </summary>

@@ -71,38 +71,39 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
 
+            /*
             //Click legand to hiden Benchmark.Benchmark can be hiden.
             UnitKPIPanel.ClickLegendItem(input.InputData.UnitIndicatorLegend[0].BenchmarkValue);
             TimeManager.ShortPause();
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+            
 
             //Show again 
             UnitKPIPanel.ClickLegendItem(input.InputData.UnitIndicatorLegend[0].BenchmarkValue);
             TimeManager.ShortPause();
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            
 
             //Click "X" from legand to remove Benchmark.Benchmark can be remove.
             UnitKPIPanel.CloseLegendItem(input.InputData.UnitIndicatorLegend[0].BenchmarkValue);
             TimeManager.ShortPause();
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+            
 
             //Select 行业基准值=空 to view chart.Benchmark change from display to disappear.
             Assert.AreEqual(input.ExpectedData.IndustryValue, EnergyViewToolbar.GetIndustryButtonText());
+            */
             EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[0]);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            //Assert.AreEqual(2, UnitKPIPanel.GetTrendChartLines());
+            
 
             EnergyViewToolbar.SelectIndustryConvertTarget(input.InputData.Industries[1]);
             TimeManager.ShortPause();
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
+            
 
             //Select BuildingBAD and check V(11), Unit=单位人口to display trend chart view.
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
@@ -120,7 +121,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             //·Warining message show not defined 单位人口."缺少人口属性的部分无法绘制，请设置后再试".
             //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
-            Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
+            //Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
 
             //Select the BuildingBC from Hierarchy Tree.time range="去年", 行业基准值=寒冷地区服装零售. Select multiple tag V（1）+V(2) +V(3) with the same commodity to display trend chart view
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
@@ -142,8 +143,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-
-            //Assert.AreEqual(4, UnitKPIPanel.GetTrendChartLines());
 
             EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -242,7 +241,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         [Test]
         [CaseID("TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkConsumptionUnitIndicatorSuite), "TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-2")]
-        public void ViewBenchmarkConsumptionUnitIndicator02(UnitIndicatorData input)
+        public void NoCompareData_ViewBenchmarkConsumptionUnitIndicator02(UnitIndicatorData input)
         {
             //Select multiple tags V(1) and V(2) from BuildingBC node and Dimension node to display column chart view.
             UnitKPIPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
@@ -273,8 +272,6 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
 
             Assert.IsTrue(UnitKPIPanel.IsColumnChartDrawn());
-            //Assert.AreEqual(2, UnitKPIPanel.GetColumnChartColumns());
-            //Assert.AreEqual(1, UnitKPIPanel.GetTrendChartLines());
             
             //·2 legend pereach tag include 能耗/单位面积; and 能耗（Gray out）.
             Assert.IsTrue(UnitKPIPanel.IsColumnLegendItemShown(input.ExpectedData.UnitIndicatorLegend[0].CaculationValue));
@@ -400,6 +397,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*
             var dashboard = input.InputData.DashboardInfo;
             EnergyViewToolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
 
@@ -413,9 +413,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard[0].DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard[0].WigetName));
+            */
+            #endregion
         }
 
+        //忽略的原因是有predefine的时间段，值不确定
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkConsumptionUnitIndicatorSuite), "TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-3")]
         public void ViewBenchmarkConsumptionUnitIndicator03(UnitIndicatorData input)
@@ -640,6 +644,5 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
-
     }
 }

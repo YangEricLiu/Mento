@@ -49,7 +49,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
-        public void ViewLineChartOfTagThenClear(EnergyViewOptionData input)
+        public void NoDataCompare_ViewLineChartOfTagThenClear(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -109,7 +109,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2")]
-        public void LineChartSaveToDashBoard(EnergyViewOptionData input)
+        public void NoDataCompare_LineChartSaveToDashBoard(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
@@ -141,6 +141,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
             Assert.AreEqual(1, EnergyAnalysis.GetTrendChartLines());
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -156,12 +158,14 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            */
+            #endregion
         }
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3")]
-        public void TrendChartWithOtherCalcualtionType(EnergyViewOptionData input)
+        public void NoDataCompare_TrendChartWithOtherCalcualtionType(EnergyViewOptionData input)
         {
             //On hierarchy node,NancyCustomer1/园区测试多层级/BuildingMulCalculationType
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -182,8 +186,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(4, EnergyAnalysis.GetTrendChartLines());
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+
+            /*
             //Save to dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -199,7 +205,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
-            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));        }
+            Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));       
+            */
+            #endregion
+        }
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-4")]
@@ -235,7 +244,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
-
         }
     }
 }

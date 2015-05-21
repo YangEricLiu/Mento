@@ -16,7 +16,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"$@EM.Ratio.TargetValue",
+			"TargetBaselineName":"目标值",
 			"expectedFileName":["TargetConfiguration-Modify-101-7-0.xls"],
 		}
 	},
@@ -58,7 +58,7 @@
 		},
 		"ExpectedData":
 		{
-			"TargetBaselineName":"$@EM.Ratio.TargetValue",
+			"TargetBaselineName":"目标值",
 			"expectedFileName":["TargetConfiguration-Modify-101-7-2.xls"],
 		}
 	},

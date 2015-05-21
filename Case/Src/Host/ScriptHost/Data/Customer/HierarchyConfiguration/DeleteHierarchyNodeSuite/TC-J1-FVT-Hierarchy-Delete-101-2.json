@@ -3,11 +3,12 @@
 		"InputData":
 		{	
 			"HierarchyNodePath":["自动化测试", "OrgWithTags001"],
+			"TagNames":["Ptag_OrgWithTags_Delete001", "Vtag_OrgWithTags_Delete001"],
 		},
 		"ExpectedData":
 		{
 			"HierarchyNodePath":["自动化测试"],
-			"Messages":["$@Common.Label.ConfirmDelete|(OrgWithTags001),($@Common.Glossary.HierarchyNode),()","$@Setting.Hierarchy.Message.DeleteTip"],
+			"Messages":["$@Setting.Hierarchy.DeleteMessage|(OrgWithTags001)", "$@Setting.Hierarchy.DeleteMessage|(OrgWithTags001)"],
 		}
 	}
 ]

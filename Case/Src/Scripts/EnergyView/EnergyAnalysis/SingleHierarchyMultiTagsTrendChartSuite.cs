@@ -50,7 +50,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-TrendChart-001-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyMultiTagsTrendChartSuite), "TC-J1-FVT-MultipleTagsComparision-TrendChart-001-1")]
-        public void MultipleTagsSingleHieTrendChart(EnergyViewOptionData input)
+        public void NoDataCompare_MultipleTagsSingleHieTrendChart(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             EnergyAnalysis.SwitchTagTab(TagTabs.AreaDimensionTab);
@@ -94,7 +94,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(3, EnergyAnalysis.GetTrendChartLines());
 
             //checked one more ptag P(1) checkbox.
             EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
@@ -103,12 +102,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-            Assert.AreEqual(4, EnergyAnalysis.GetTrendChartLines());
-
-            //Click "Save to dashboard"to save the Data view to Hierarchy node dashboard
-            var dashboard = input.InputData.DashboardInfo;
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
-            TimeManager.LongPause();
 
             //Click  "删除所有" option then cancel
             EnergyViewToolbar.SelectMoreOption(EnergyViewMoreOption.DeleteAll);
@@ -125,6 +118,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             Assert.IsTrue(EnergyAnalysis.EntirelyNoChartDrawn());
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
+            //Click "Save to dashboard"to save the Data view to Hierarchy node dashboard
+            var dashboard = input.InputData.DashboardInfo;
+            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
+            TimeManager.LongPause();
+
             //On homepage, check the dashboard
             EnergyAnalysis.NavigateToAllDashBoards();
             HomePagePanel.SelectHierarchyNode(dashboard.HierarchyName);
@@ -135,6 +135,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            */
+            #endregion
         }
     }
 }

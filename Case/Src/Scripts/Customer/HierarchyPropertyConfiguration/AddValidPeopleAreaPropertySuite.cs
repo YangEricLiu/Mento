@@ -12,6 +12,7 @@ using Mento.Framework.Script;
 using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.TestApi.TestData;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -76,7 +77,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Fill nothing and save
             PeopleAreaSetting.ClickSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify "+人口面积" button displayed 
             Assert.IsTrue(PeopleAreaSetting.IsPeopleAreaCreateButtonDisplayed());
@@ -150,7 +151,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Fill nothing to area and save
             PeopleAreaSetting.ClickSaveButton();
-            TimeManager.ShortPause();  
+            TimeManager.LongPause();
 
             //verify that area property not display
             Assert.IsFalse(PeopleAreaSetting.IsAreaPropertyTitleDisplay(input.InputData.areaTitle));

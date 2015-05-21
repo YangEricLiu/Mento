@@ -791,7 +791,7 @@ namespace Mento.Utility
         /// </summary> 
         /// <remarks>To the start of worksheet</remarks> 
         /// <param name="workSheetName"></param> 
-        public DataTable GetDataTableFromDictionary(Dictionary<string, string> dicts)
+        public static DataTable GetDataTableFromDictionary(Dictionary<string, string> dicts)
         {
             DataTable dt = new DataTable();
 
@@ -1178,28 +1178,14 @@ namespace Mento.Utility
 
         public static void ImportDictionaryToExcel(Dictionary<string, string> dict, string fileName, string sheetName, string[] headers = null)
         {
-            FileInfo excelFile = new FileInfo(fileName);
-            if (!excelFile.Directory.Exists)
-                excelFile.Directory.Create();
-
-            //Open excel file which restore scripts data
-            ExcelHelper handler = new ExcelHelper(fileName, true);
-
             DataTable dt = new DataTable();
-            dt = handler.GetDataTableFromDictionary(dict);
-
-            handler.OpenOrCreate();
-
-            //Get Worksheet object 
-            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
+            dt = GetDataTableFromDictionary(dict);
 
             //Import data from the start
-            handler.ImportDataTable(sheet, headers, dt);
-
-            handler.Save();
-            handler.Dispose();
+            ExportToExcel(dt, fileName, sheetName);
         }
 
+        /* Not use
         public static void ImportDictionaryToExcelwithHeaderSheet(Dictionary<string, string> dict, string fileName, string sheetName, string[] headers = null)
         {
             FileInfo excelFile = new FileInfo(fileName);
@@ -1210,7 +1196,7 @@ namespace Mento.Utility
             ExcelHelper handler = new ExcelHelper(fileName, true);
 
             DataTable dt = new DataTable();
-            dt = handler.GetDataTableFromDictionary(dict);
+            dt = GetDataTableFromDictionary(dict);
 
             handler.OpenOrCreate();
 
@@ -1223,6 +1209,7 @@ namespace Mento.Utility
             handler.Save();
             handler.Dispose();
         }
+        */
 
         #endregion
 

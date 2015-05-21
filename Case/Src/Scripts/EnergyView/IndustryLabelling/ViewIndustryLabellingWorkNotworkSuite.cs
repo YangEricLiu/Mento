@@ -95,44 +95,12 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.MediumPause();
             IndustryLabellingPanel.CompareStringsOfEnergyAnalysis(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            //Click "Save to dashboard"（保存到仪表盘）to save the  chart to dashboard. 
-            var dashboard = input.InputData.DashboardInfo;
-            EnergyAnalysis.Toolbar.SaveToDashboard(dashboard[0].WigetName, dashboard[0].HierarchyName, dashboard[0].IsCreateDashboard, dashboard[0].DashboardName);
-            TimeManager.LongPause();
-
             IndustryLabellingPanel.SetYearAndMonth(input.InputData.YearAndMonth[2].year, input.InputData.YearAndMonth[2].month);
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
             labellingInfo1 = IndustryLabellingPanel.GetSingleLabellingInfo(input.InputData.Hierarchies[0], input.InputData.YearAndMonth[1], input.InputData.Industries[0][1], input.InputData.UnitTypeValue);
             IndustryLabellingPanel.ExportExpectedStringToExcel(input.ExpectedData.expectedFileName[3], labellingInfo1);
-
-            //Go to widget maximize view. Change time range to 2012 全年.
-            EnergyAnalysis.NavigateToAllDashBoards();
-            HomePagePanel.SelectHierarchyNode(dashboard[0].HierarchyName);
-
-            //仪表盘这里出现层级树很慢
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-
-            HomePagePanel.ClickDashboardButton(dashboard[0].DashboardName);
-            JazzMessageBox.LoadingMask.WaitDashboardHeaderLoading();
-            TimeManager.MediumPause();
-
-            //Click the 'Maximize' button
-            HomePagePanel.MaximizeWidget(dashboard[0].WigetName);
-            TimeManager.LongPause();
-
-            Widget.SetYearAndMonth(input.InputData.YearAndMonth[2].year, input.InputData.YearAndMonth[2].month);
-            Widget.ClickViewLabellingDataButton();
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.LongPause();
-
-            Assert.AreEqual(8, Widget.GetLabellingNumber());
-            Widget.CompareMaxWidgetStringData(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3], IndustryLabellingPanel.IndustryLabellingPath);
-            Widget.ClickCloseMaxDialogButton();
         }
 
         [Test]

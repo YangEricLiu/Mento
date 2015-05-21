@@ -40,7 +40,7 @@ namespace Mento.Script.Administration.CustomerManagementSetting
         [TearDown]
         public void CaseTearDown()
         {
-            CustomerManageSetting.NavigatorToTimeSettings();
+            CustomerManageSetting.NavigateToTimeSetting();
             TimeManager.MediumPause();
         }
 
@@ -164,6 +164,31 @@ namespace Mento.Script.Administration.CustomerManagementSetting
             TimeManager.LongPause();
             TimeManager.LongPause();
         }
+        
+        #endregion
+
+        #region test case 4 Ensure that the customer deletion can be success when customer contain Vee Special Rule.
+
+        [Test]
+        [ManualCaseID("TC-J1-FVT-CustomerManagement-Delete-004")]
+        [CaseID("TC-J1-FVT-CustomerManagement-Delete-004")]
+        [MultipleTestDataSource(typeof(CustomerManagementData[]), typeof(CustomerDeleteSuite), "TC-J1-FVT-CustomerManagement-Delete-004")]
+        public void VEECustomerDeleteLater(CustomerManagementData input)
+        {
+            CustomerManageSetting.FocusOnCustomer(input.InputData.CommonName);
+            TimeManager.LongPause();
+
+            CustomerManageSetting.ClickDeleteButton();
+            TimeManager.LongPause();
+
+            Assert.AreEqual(JazzMessageBox.MessageBox.GetMessage(), input.ExpectedData.Message);
+
+            CustomerManageSetting.ClickMsgBoxDeleteButton();
+            TimeManager.LongPause();
+
+            Assert.IsFalse(CustomerManageSetting.IsCustomerOnList(input.InputData.CommonName));
+        }
+
         #endregion
     }
 }

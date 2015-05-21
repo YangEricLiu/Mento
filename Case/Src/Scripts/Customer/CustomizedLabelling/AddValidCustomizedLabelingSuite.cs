@@ -247,6 +247,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
              //change to "正序"
              CustomizedLabellingSettings.ClickAscendingCustomizedLabellingButton();
              TimeManager.LongPause();
+             TimeManager.LongPause();
 
              //check the values is "正序"
              for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValues[1]); num++)
@@ -256,7 +257,8 @@ namespace Mento.Script.Customer.CustomizedLabelling
 
              //change to "倒序"
              CustomizedLabellingSettings.ClickDescendingCustomizedLabellingButton();
-             TimeManager.ShortPause();
+             TimeManager.LongPause();
+             TimeManager.LongPause();
 
              //Save
              CustomizedLabellingSettings.ClickSaveButton();
@@ -268,16 +270,16 @@ namespace Mento.Script.Customer.CustomizedLabelling
              TimeManager.LongPause();
 
              //Check lalelling level's left value after saved.
-             //for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
-             //{
-             //    Assert.AreEqual(input.ExpectedData.LabellingValue[3][num].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num + 1));
-             //}
+             for (int num = 0; num < Convert.ToInt32(input.InputData.LabellingLevelValue); num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[3][num].LabellingLeftValue, CustomizedLabellingSettings.GetLabellingGradeLeftValue(num + 1));
+             }
 
-             ////Check lalelling level's right value 
-             //for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue) - 1; num++)
-             //{
-             //    Assert.AreEqual(input.ExpectedData.LabellingValue[0][num].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
-             //}
+             //Check lalelling level's right value 
+             for (int num = 1; num < Convert.ToInt32(input.InputData.LabellingLevelValue) - 1; num++)
+             {
+                 Assert.AreEqual(input.ExpectedData.LabellingValue[0][num].LabellingRightValue, CustomizedLabellingSettings.GetLabellingGradeRightValue(num + 1));
+             }
          }
 
          [Test]
@@ -380,7 +382,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
              }
              //Save
              CustomizedLabellingSettings.ClickSaveButton();
-             JazzMessageBox.LoadingMask.WaitLoading();
+             JazzMessageBox.LoadingMask.WaitLoading(15);
              TimeManager.LongPause();
 
              Assert.AreEqual(input.ExpectedData.CommonName, CustomizedLabellingSettings.GetNameTextFieldValue());

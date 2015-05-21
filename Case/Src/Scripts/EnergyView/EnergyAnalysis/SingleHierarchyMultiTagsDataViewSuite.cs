@@ -47,6 +47,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
+        //30个点，7天小时的数据，分页查看的时候chrome28会崩溃
         [Test]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
@@ -72,12 +73,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             //Select V(6) under Area dimension node to draw Data view.
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
             TimeManager.LongPause();
-            TimeManager.LongPause();
-            TimeManager.LongPause();
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Hour);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading(10);
             TimeManager.LongPause();
             
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
@@ -130,6 +129,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyViewToolbar.ClickViewButton();
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.LongPause();
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.LongPause();
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
@@ -164,6 +166,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
             EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
 
+            #region Not use code, for save to dashboard which will test on manual for 2.0
+            /*
             //Click "Save to dashboard"to save the Data view to Hierarchy node dashboard
             var dashboard = input.InputData.DashboardInfo;
             EnergyAnalysis.Toolbar.SaveToDashboard(dashboard.WigetName, dashboard.HierarchyName, dashboard.IsCreateDashboard, dashboard.DashboardName);
@@ -179,6 +183,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
             Assert.IsTrue(HomePagePanel.GetDashboardHeaderName().Contains(dashboard.DashboardName));
             Assert.IsTrue(HomePagePanel.IsWidgetExistedOnDashboard(dashboard.WigetName));
+            */
+            #endregion
         }
 
         [Test]

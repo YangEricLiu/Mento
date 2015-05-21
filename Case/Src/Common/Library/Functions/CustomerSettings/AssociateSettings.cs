@@ -32,6 +32,13 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region common
 
+        public void NavigateToEnergyAnalysis()
+        {
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
+        }
+
+
         public void ExpandHierarchyNodePath(string[] hierarchyNodePath)
         {
             HierarchyTree.ExpandNodePath(hierarchyNodePath);
@@ -185,6 +192,39 @@ namespace Mento.ScriptCommon.Library.Functions
         public void CheckAssociatedCheckbox(string item)
         {
             AssociatedStatus.CheckMenuAssociateItem(item);
+        }
+
+        public void OnlyCheckAssociatedCheckbox()
+        {
+            AssociatedStatus.FloatOnAssociateStatusButton();
+            AssociatedStatus.ClickMenuAssociateTrigger();
+            AssociatedStatus.FloatOnMenuCheckSearching();
+            TimeManager.MediumPause();
+            AssociatedStatus.CheckMenuCheckExtraComp("可关联");
+            TimeManager.ShortPause();
+            AssociatedStatus.UncheckMenuCheckExtraComp("不可关联");
+        }
+
+        public void OnlyCheckDisassociatedCheckbox()
+        {
+            AssociatedStatus.FloatOnAssociateStatusButton();
+            AssociatedStatus.ClickMenuAssociateTrigger();
+            AssociatedStatus.FloatOnMenuCheckSearching();
+            TimeManager.MediumPause();
+            AssociatedStatus.CheckMenuCheckExtraComp("不可关联");
+            TimeManager.ShortPause();
+            AssociatedStatus.UncheckMenuCheckExtraComp("可关联");
+        }
+
+        public void BothCheckAssociatedCheckbox(string item)
+        {
+            AssociatedStatus.FloatOnAssociateStatusButton();
+            AssociatedStatus.ClickMenuAssociateTrigger();
+            AssociatedStatus.FloatOnMenuCheckSearching();
+            TimeManager.MediumPause();
+            AssociatedStatus.CheckMenuCheckExtraComp("不可关联");
+            TimeManager.ShortPause();
+            AssociatedStatus.CheckMenuCheckExtraComp("可关联");
         }
 
         /// <summary>

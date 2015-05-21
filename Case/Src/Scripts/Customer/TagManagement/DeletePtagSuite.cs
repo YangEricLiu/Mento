@@ -119,8 +119,11 @@ namespace Mento.Script.Customer.TagManagement
             
             //4. Verify ptag is deleted from energy analysis tag list
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
+            TimeManager.LongPause();
             JazzFunction.EnergyAnalysisPanel.SelectHierarchy(input.ExpectedData.HierarchyNodePath);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzFunction.EnergyAnalysisPanel.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.ShortPause();
+            JazzFunction.EnergyAnalysisPanel.WaitTagListAppear(10);
             TimeManager.LongPause();
             Assert.IsFalse(JazzFunction.EnergyAnalysisPanel.IsTagOnListByName(input.ExpectedData.CommonName));
         }

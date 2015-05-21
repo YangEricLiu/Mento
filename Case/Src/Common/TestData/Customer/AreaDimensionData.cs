@@ -15,6 +15,7 @@ namespace Mento.ScriptCommon.TestData.Customer
     {
         public string[] HierarchyNodePath { get; set; }
         public string[] AreaNodePath { get; set; }
+        public string TagName { get; set; }
         public string CommonName { get; set; }
         public string Comments { get; set; }
 

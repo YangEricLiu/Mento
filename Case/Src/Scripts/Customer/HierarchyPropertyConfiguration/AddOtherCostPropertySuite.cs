@@ -13,6 +13,7 @@ using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.TestData.Customer;
 using Mento.TestApi.TestData;
 using Mento.TestApi.TestData.Attribute;
+using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 {
@@ -63,7 +64,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input Nothing and save
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify the error message displayed
             Assert.IsTrue(OtherCostSettings.IsWaterEffectiveYearInvalid_N(2));
@@ -98,7 +99,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input Nothing and save
             CostSettings.ClickCostSaveButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //Verify the error message displayed
             Assert.IsTrue(OtherCostSettings.IsWaterPriceInvalid_N(2));
@@ -161,7 +162,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input Nothing and save
             CostSettings.ClickCostSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Verify the error message displayed
             Assert.IsTrue(OtherCostSettings.IsWaterEffectiveYearInvalid_N(2));
@@ -193,7 +194,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input Nothing and save
             CostSettings.ClickCostSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Verify the cost is displayed correctly
             Assert.AreEqual(input.ExpectedData.EffectiveDate, OtherCostSettings.GetWaterDateValue(2));
@@ -234,7 +235,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
 
             //Input Nothing and save
             CostSettings.ClickCostSaveButton();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             //Verify the cost is displayed correctly
             Assert.AreEqual(input.InputData.EffectiveDate, OtherCostSettings.GetWaterDateValue(2));

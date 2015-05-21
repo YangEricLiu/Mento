@@ -398,7 +398,7 @@ namespace Mento.Script.Customer.TagManagement
             TimeManager.ShortPause();
 
             PVtagTargetBaselineSettings.ClickCreateCalculationRuleButton();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             PVtagTargetBaselineSettings.FillInWorkdayRuleValue("1", 1);
             PVtagTargetBaselineSettings.FillInNonworkdayRuleValue("1", 1);

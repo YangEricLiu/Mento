@@ -8,6 +8,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzTreeView : JazzControlCollection
     {
+        #region Pop
+
+
+        public static PopHierarchyTree PopHierarchyTree { get { return GetControl<PopHierarchyTree>(JazzControlLocatorKey.PopHierarchyTree); } }
+
+
+        #endregion
+
         #region EnergyView
         public static SystemDimensionTree EnergyViewSystemDimensionTree { get { return GetControl<SystemDimensionTree>(JazzControlLocatorKey.SystemDimensionTreeEnergyView);}}
 

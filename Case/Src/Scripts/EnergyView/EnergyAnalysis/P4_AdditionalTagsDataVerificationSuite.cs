@@ -214,7 +214,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(60);
             TimeManager.LongPause();
             TimeManager.LongPause();
 

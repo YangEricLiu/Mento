@@ -50,7 +50,7 @@ namespace Mento.Script.System.Example
         [Test]
         [CaseID("TC-J1-FVT-SmokeTestEnergyView-101-1")]
         [MultipleTestDataSource(typeof(SmokeTestEnergyViewData[]), typeof(PopTestSuite), "TC-J1-Example-002")]
-        public void SmokeTestEnergyAnalysis(SmokeTestEnergyViewData input)
+        public void PopTreeOperation(SmokeTestEnergyViewData input)
         {
             //open pop and login
             JazzBrowseManager.OpenJazz();
@@ -64,14 +64,14 @@ namespace Mento.Script.System.Example
             TimeManager.Pause(5000);
 
             //Select customer and confirm
-            JazzButton.PopMenuButtonCustomer.Click();
+            JazzButton.PopMenuButtonCustomer.SelectItem("NancyCustomer12");
             TimeManager.LongPause();
 
-            JazzButton.PopMenuItemCustomer.Click();
-            TimeManager.ShortPause();
-
             JazzButton.PopbButtonConfirm.Click();
-            TimeManager.Pause(5000);
+            TimeManager.Pause(10000);
+
+            string[] nodePath = { "NancyCustomer12", "园区测试多层级", "楼宇BC" };
+            JazzTreeView.PopHierarchyTree.SelectNode(nodePath);
         }
 
         

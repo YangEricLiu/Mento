@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;   
 using System.Reflection;
 using System.Data;
 using System.Text.RegularExpressions;
@@ -119,6 +119,7 @@ namespace Mento.Utility
         /// </summary> 
         public void OpenOrCreate()
         {
+            //this.app = new Excel.Application();
             this.app = new Excel.Application();
             this.allWorkbooks = this.app.Workbooks;
 
@@ -887,6 +888,23 @@ namespace Mento.Utility
             System.GC.WaitForPendingFinalizers();
         }
 
+        [DllImport("User32.dll", CharSet = CharSet.Auto)]
+        public static extern int GetWindowThreadProcessId(IntPtr hwnd, out int ID);  
+        public void KillExcelProcess()
+        {
+            Marshal.FinalReleaseComObject(this.currentWorkbook);
+            this.currentWorkbook = null;
+            this.app.Quit();
+
+            IntPtr t = new IntPtr(this.app.Hwnd);
+            int k = 0;
+            GetWindowThreadProcessId(t, out k);
+            Console.Out.Write(k.ToString() + "\n");
+            System.Diagnostics.Process p = System.Diagnostics.Process.GetProcessById(k);
+            p.Kill();
+            p.Dispose();
+        }
+
         #endregion 
 
         #region Export data table to excel file
@@ -925,7 +943,8 @@ namespace Mento.Utility
             handler.ImportDataTable(sheet, headers, data);
 
             handler.Save();
-            handler.Dispose();
+            //handler.Dispose();
+            handler.KillExcelProcess();
         }
 
         /// <summary>
@@ -969,7 +988,8 @@ namespace Mento.Utility
             handler.ExportHeaderToExcelSheet(sheet2, headersSheet2);
 
             handler.Save();
-            handler.Dispose();
+            //handler.Dispose();
+            handler.KillExcelProcess();
         }
         #endregion
 
@@ -1002,7 +1022,8 @@ namespace Mento.Utility
             }
             finally
             {
-                handler.Dispose();
+                //handler.Dispose();
+                handler.KillExcelProcess();
             }     
         }
 
@@ -1034,6 +1055,8 @@ namespace Mento.Utility
         {
             //Open excel file which restore data view expected data
             ExcelHelper handler = new ExcelHelper(filePath);
+            var hdt = new List<CellsValue>();
+            var hdtArray = hdt.ToArray();
 
             handler.OpenOrCreate();
 
@@ -1041,9 +1064,11 @@ namespace Mento.Utility
             Excel.Worksheet sheet = handler.GetWorksheet(sheetName);
 
             //Import data from the start
-            return handler.GetHeaderDataFromExcel(sheetName, actualHeaderDatas);
+            hdtArray = handler.GetHeaderDataFromExcel(sheetName, actualHeaderDatas);
 
             //handler.Dispose();
+            handler.KillExcelProcess();
+            return hdtArray;
         }
 
         /// <summary>
@@ -1100,7 +1125,8 @@ namespace Mento.Utility
             dataOut = handler.GetDataTableFromExcel(sheetName);
             dict = handler.GetDictionaryFromDataTable(dataOut);
 
-            handler.Dispose();
+            //handler.Dispose();
+            handler.KillExcelProcess();
         }
 
         /// <summary>
@@ -1148,7 +1174,8 @@ namespace Mento.Utility
             dataOut = handler.GetDataTableFromExcel(sheetName);
             datas = handler.GetStringFromDataTable(dataOut);
 
-            handler.Dispose();
+            //handler.Dispose();
+            handler.KillExcelProcess();
         }
 
         /// <summary>
@@ -1236,7 +1263,8 @@ namespace Mento.Utility
             handler.ImportDataTable(sheet, headers, dt);
 
             handler.Save();
-            handler.Dispose();
+            //handler.Dispose();
+            handler.KillExcelProcess();
         }
 
         #endregion
@@ -1350,7 +1378,8 @@ namespace Mento.Utility
             }
 
             handler.Save();
-            handler.Dispose();
+            //handler.Dispose();
+            handler.KillExcelProcess();
         }
 
         public static void ImportOpenAPICaseToExcel(OpenAPICases data, Excel.Worksheet sheet, int rowIndex)

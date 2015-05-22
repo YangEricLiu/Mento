@@ -37,8 +37,7 @@
   <add key = "TreeNodeCheckbox" value = "td/div/input" type = "XPath"/>
   
   <!--Pop_TreeView-->
-  <add key = "PopTreeNode" value = "div[contains(@class,'pop-node')]/div[span[text()='$#nodeText']]" type = "XPath"/>
-  <add key = "PopTreeNodeImage" value = "td/div/img" type = "XPath"/>
+  <add key = "PopTreeNode" value = "div[contains(@class,'pop-node') and div/span[text()='$#nodeText']]" type = "XPath"/>
 
   <!--TextField-->
   <add key = "FormulaTextBox" value="//textarea[contains(@id,'st-formula-text') and @name='Formula']" type = "XPath"/>
@@ -49,6 +48,12 @@
   <add key = "ButtonInput" value = "em/button" type = "XPath"/>
   
   <!--ComboBox-->
+  
+  <Pop>
+    <add key="PopComboBoxTrigger" value = "select[@class= 'edit']" type ="Xpath"/>
+    <add key="PopComboBoxItem" value = "select[@class='edit']/option[text()='$#itemKey']" type ="XPath"/>
+    </Pop>
+  
   <add key="ComboBoxTrigger" value = "td.x-trigger-cell" type ="CssSelector"/>
   <add key="ComboBoxInput" value = "input" type ="TagName"/>
   <!--Amy's note: for below item, I add the '[last()]' attribute so that it works for most cases of addition/modification, but still needs to be enhanced later-->

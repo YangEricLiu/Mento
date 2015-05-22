@@ -43,6 +43,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string TreeNodeCheckbox = "TreeNodeCheckbox";
         #endregion
 
+        #region Pop TreeView locators
+        public static string PopTreeNode = "PopTreeNode";
+
+        #endregion
+
         #region TextField locators
         public static string FormulaTextBox = "FormulaTextBox";
         public static string FormulaTextArea = "FormulaTextArea";
@@ -64,6 +69,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #endregion
 
         #region ComboBox locators
+
+        #region Pop ComboBox
+
+        public static string PopComboBoxTrigger = "PopComboBoxTrigger";
+        public static string PopComboBoxItem = "PopComboBoxItem";
+
+        #endregion
+
         public static string ComboBoxTrigger = "ComboBoxTrigger";
         public static string ComboBoxInput = "ComboBoxInput";
         public static string ComboBoxItem = "ComboBoxItem";

@@ -12,6 +12,40 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private const string COMBOBOXITEMVARIABLENAME = "itemKey";
         private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]",ByType.XPath);
 
+        #region Pop
+
+        protected IWebElement Pop_SelectTrigger
+        {
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.PopComboBoxTrigger));
+            }
+        }
+
+        public void Pop_SelectItem(string itemKey)
+        {
+
+            TimeManager.MediumPause();
+            if (!String.IsNullOrEmpty(itemKey))
+            {
+                var locator = Pop_GetComboBoxItemLocator(itemKey);
+
+                if (!ElementHandler.Displayed(locator))
+                    DisplayItems();
+
+                FindChild(locator).Click();
+            }
+        }
+
+        protected virtual Locator Pop_GetComboBoxItemLocator(string itemKey)
+        {
+            string itemRealValue = ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
+
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.PopComboBoxItem), COMBOBOXITEMVARIABLENAME, itemRealValue);
+        }
+
+        #endregion
+
         protected IWebElement SelectTrigger 
         {
             get 
@@ -20,6 +54,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+       
         protected IWebElement SelectInput
         {
             get
@@ -100,23 +135,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return items;
         }
 
-        ///// <summary>
-        ///// Get the items of current dropdown list
-        ///// </summary>
-        ///// <returns></returns>
-        //public string [] GetCurrentDropdownStrings()
-        //{
-        //    string[] items = { };
-        //    DisplayItems();
-        //    int i = 0;
-        //    foreach (IWebElement item in CurrentComboBoxDropdownListItems)
-        //    {
-        //        items[i] = item.Text;
-        //        if (i < CurrentComboBoxDropdownListItems.Length)
-        //            i++;
-        //    }
-        //    return items;
-        //}
 
         /// <summary>
         /// Get the value of combo box

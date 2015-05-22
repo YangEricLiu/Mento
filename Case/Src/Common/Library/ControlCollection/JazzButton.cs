@@ -48,9 +48,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return GetControl<Button>(JazzControlLocatorKey.PopButtonLoginSubmit); }
         }
 
-        public static Button PopMenuButtonCustomer
+        public static MenuButton PopMenuButtonCustomer
         {
-            get { return GetControl<Button>(JazzControlLocatorKey.PopMenuButtonCustomer); }
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.PopMenuButtonCustomer); }
         }
 
         public static Button PopMenuItemCustomer

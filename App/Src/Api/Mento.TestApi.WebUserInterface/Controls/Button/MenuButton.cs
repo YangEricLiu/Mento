@@ -17,7 +17,29 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem')]/a/span[contains(@class, 'x-menu-item-text') and text()='{0}']";
         private static string MoreMenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and text()='{0}']]";
 
+        private static string Pop_MenuItemLocatorFormat = "//div[contains(@id, 'mui-drop-down-menu mui-open')]/div/div[contains(@class, 'mui-paper-container')]/div[contains(@class, 'mui-menu-item')]/span[text()='{0}']";
+
         public MenuButton(Locator locator) : base(locator) { }
+
+        #region Pop operation
+
+        public void SelectItem(string item)
+        {
+            this.Click();
+            TimeManager.LongPause();
+
+            Locator itemLocator = Pop_GetMenuItemLocator(item);
+            ElementHandler.Click(FindChild(itemLocator));
+        }
+
+        private Locator Pop_GetMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(Pop_MenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
+        }
+
+        #endregion
+
+        #region Not pop operation
 
         public void SelectItem(string[] itemPath)
         {
@@ -196,5 +218,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MoreMenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
         }
+
+        #endregion
     }
 }

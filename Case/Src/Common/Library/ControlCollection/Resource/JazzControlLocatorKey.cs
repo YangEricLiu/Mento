@@ -1065,6 +1065,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region TreeView
+
+        #region Pop
+        
+        public static string PopHierarchyTree = "PopHierarchyTree";
+
+        #endregion
+
         public static string HierarchyTreeEnergyView = "HierarchyTreeEnergyView";
         public static string HierarchyTreeHierarchySettings = "HierarchyTreeHierarchySettings";
         public static string HierarchyTreeHierarchySettingsDimension = "HierarchyTreeHierarchySettingsDimension";

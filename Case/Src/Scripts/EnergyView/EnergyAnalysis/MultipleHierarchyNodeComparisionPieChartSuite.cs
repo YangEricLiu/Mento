@@ -28,14 +28,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         public void CaseSetUp()
         {
             EnergyAnalysis.NavigateToEnergyAnalysis();
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
             JazzFunction.Navigator.NavigateHome();
-            //JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
         }
 
@@ -209,7 +208,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         {
             //Go to UT tool. Go to Energy Analysis. Select NancyCustomer1, select 10 tags under the same hierarchy node BuildingPieVerify to pie chart.
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading(10);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading(15);
             TimeManager.LongPause();
             TimeManager.LongPause();
 

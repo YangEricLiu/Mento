@@ -12,14 +12,106 @@ namespace Mento.TestApi.WebUserInterface.Controls
         protected const string TREENODEVARIABLENAME = "nodeText";
         protected const string TREENODEEXPANDCLASS = "x-grid-tree-node-expanded";
         protected const string TREENODECHECKEDCLASS = "x-tree-checkbox-checked";
+        protected const string POPTREENODEEXPANDCLASS = "fa-minus-square-o";
+        protected const string POPTREENODECALLAPSECLASS = "fa-plus-square-o";
 
+        #region pop tree locator
+
+        private Locator Pop_ExpandTreeArrowLocator = new Locator("../div[@class='pop-arrow']/div[@class='pop-has-child']/div", ByType.XPath);
+
+        #endregion
+
+        #region Pop tree operation
+
+        public void Pop_SelectNode(string[] nodePath)
+        {
+
+            List<string> parentNodes = nodePath.ToList();
+
+            Pop_ExpandNodePath(parentNodes.ToArray());
+            Pop_ClickNode(nodePath.Last());
+        }
+
+        public void Pop_ExpandNode(string nodeText)
+        {
+            //if the node is not expanded, click expand icon
+            if (!Pop_IsNodeExpanded(nodeText))
+            {
+                Pop_ClickNodeExpander(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
+            }
+        }
+
+        public Boolean Pop_ClickNode(string nodeText)
+        {
+            // Greenie modified
+            TimeManager.LongPause();
+            if (this.Pop_GetTreeNodeElement(nodeText).Enabled)
+            {
+                TimeManager.LongPause();
+                this.Pop_GetTreeNodeElement(nodeText).Click();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            //TimeManager.PauseShort();
+
+            //GetControl<LoadingMask>().WaitLoading();
+        }
+
+        public void Pop_ExpandNodePath(string[] nodesText)
+        {
+            for (int i = 0; i < nodesText.Length; i++)
+            {
+                Locator nextNodeLocator = (i < nodesText.Length - 1) ? Pop_GetTreeNodeLocator(nodesText[i + 1]) : null;
+
+                //wait the next item appear
+                if (nextNodeLocator != null)
+                {
+                    Pop_ExpandNode(nodesText[i]);
+                    ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
+                    TimeManager.Pause(500);
+                }
+                TimeManager.Pause(500);
+            }
+        }
+
+        public bool Pop_IsNodeExpanded(string nodeText)
+        {
+            IWebElement nodeElement = Pop_GetTreeNodeElement(nodeText);
+            IWebElement nodeExpandArrow = ElementHandler.FindElement(Pop_ExpandTreeArrowLocator, container: nodeElement);
+
+            return nodeExpandArrow.GetAttribute("class").Split(' ').Contains(POPTREENODEEXPANDCLASS);
+        }
+
+        protected virtual Locator Pop_GetTreeNodeLocator(string nodeText)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.PopTreeNode), TREENODEVARIABLENAME, nodeText);
+        }
+
+        protected virtual IWebElement Pop_GetTreeNodeElement(string nodeText)
+        {
+            return base.FindChild(Pop_GetTreeNodeLocator(nodeText));
+        }
+
+        private void Pop_ClickNodeExpander(string nodeText)
+        {
+            IWebElement nodeElement = Pop_GetTreeNodeElement(nodeText);
+            IWebElement nodeExpandArrow = ElementHandler.FindElement(Pop_ExpandTreeArrowLocator, container: nodeElement);
+
+            nodeExpandArrow.Click();
+        }
+
+        #endregion
+
+        #region Not Pop
+        
         public TreeView(Locator rootLocator, ISearchContext parentContainer = null) : base(rootLocator, parentContainer: parentContainer) { }
 
-        /// <summary>
-        /// 1. expand to the disired node
-        /// 2. click the node
-        /// </summary>
-        /// <param name="nodesText"></param>
         public void SelectNode(string[] nodePath)
         {
 
@@ -30,10 +122,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             ClickNode(nodePath.Last());
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
         public Boolean ClickNode(string nodeText)
         {
             // Greenie modified
@@ -53,10 +141,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             //GetControl<LoadingMask>().WaitLoading();
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
         public void ExpandNode(string nodeText)
         {
             //if the node is not expanded, click expand icon
@@ -67,21 +151,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 //pause to wait animate finish
                 TimeManager.MediumPause();
             }
-
-            //For a bug, it should click twice when the node is expanded
-            //ClickNodeExpander(nodeText);
-            //TimeManager.MediumPause();
-            //if (!IsNodeExpanded(nodeText))
-            //{
-            //    ClickNodeExpander(nodeText);
-            //    TimeManager.MediumPause();
-            //}
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
         public void CheckNode(string nodeText)
         {
             //if the node is not expanded, click expand icon
@@ -94,10 +165,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodesText"></param>
         public void ExpandNodePath(string[] nodesText)
         {
             for (int i = 0; i < nodesText.Length; i++)
@@ -118,10 +185,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
         public void CollapseNode(string nodeText)
         {
             //if the node is expanded, click expand icon
@@ -134,10 +197,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
         public void UncheckNode(string nodeText)
         {
             //if the node is expanded, click expand icon
@@ -149,11 +208,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 TimeManager.MediumPause();
             }
         }
-        
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
+
         public void FocusOnNode(string nodeText)
         {
             Locator nodeLocator = GetTreeNodeLocator(nodeText);
@@ -161,11 +216,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             ElementHandler.Focus(nodeLocator, container: RootElement);
         }
         
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
-        /// <returns></returns>
         public bool IsNodeExpanded(string nodeText)
         {
             IWebElement node = GetTreeNodeElement(nodeText);
@@ -173,35 +223,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return node.GetAttribute("class").Split(' ').Contains(TREENODEEXPANDCLASS);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
-        /// <returns></returns>
         public bool IsNodeChecked(string nodeText)
         {
             IWebElement node = GetTreeNodeElement(nodeText);
 
             return GetCheckboxElement(node).GetAttribute("class").Contains(TREENODECHECKEDCLASS);
         }
-        /*
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
-        /// <returns></returns>
-        public bool IsNodeCheckerExisted(string nodeText)
-        {
-            IWebElement node = GetTreeNodeElement(nodeText);
 
-            return GetCheckboxElement(node).GetAttribute("class").Contains(TREENODECHECKEDCLASS);
-        }
-        */
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
-        /// <returns></returns>
         public bool IsNodeDisplayed(string nodeText)
         {
             Locator nodeLocator = GetTreeNodeLocator(nodeText);
@@ -216,12 +244,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return nodeElement.GetAttribute("class").Contains("x-grid-tree-node-disabled");
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="parentNodeText"></param>
-        /// <param name="childNodeText"></param>
-        /// <returns></returns>
         public bool IsChildNodeOfParent(string parentNodeText, string childNodeText)
         {
             var parentElement = GetTreeNodeElement(parentNodeText);
@@ -243,11 +265,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return false;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nodeText"></param>
-        /// <returns></returns>
         public int GetNodeIndentation(string nodeText)
         {
             IWebElement node = GetTreeNodeElement(nodeText);
@@ -256,6 +273,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return ElementHandler.FindElements(indentationIconLocator, container: node).Length;//.FindElements(indentationIconLocator.ToBy()).Count - 1;
         }
+
+        #endregion
 
         #region private methods
         protected virtual Locator GetTreeNodeLocator(string nodeText)
@@ -266,15 +285,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
         protected virtual IWebElement GetTreeNodeElement(string nodeText)
         {
             return base.FindChild(GetTreeNodeLocator(nodeText));
-        }
-
+        }       
+        
         private void ClickNodeExpander(string nodeText)
         {
             IWebElement node = GetTreeNodeElement(nodeText);
-
             GetExpanderElement(node).Click();
         }
-
+      
         private IWebElement GetExpanderElement(IWebElement nodeElement)
         {
             Locator imageButtonsLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.TreeNodeImage);
@@ -299,7 +317,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return checkboxInput;
         }
-
 
         #endregion
     }

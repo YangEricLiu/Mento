@@ -33,7 +33,7 @@ namespace Mento.Script.System.Example
         [TearDown]
         public void CaseTearDown()
         {
-            
+            TestAssemblyInitializer.Desctuct();  
         }
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
@@ -50,7 +50,7 @@ namespace Mento.Script.System.Example
         [Test]
         [CaseID("TC-J1-FVT-SmokeTestEnergyView-101-1")]
         [MultipleTestDataSource(typeof(SmokeTestEnergyViewData[]), typeof(PopTestSuite), "TC-J1-Example-002")]
-        public void PopTreeOperation(SmokeTestEnergyViewData input)
+        public void PopTreeOperation01(SmokeTestEnergyViewData input)
         {
             //open pop and login
             JazzBrowseManager.OpenJazz();
@@ -60,7 +60,7 @@ namespace Mento.Script.System.Example
             JazzTextField.PopLoginPasswordTextField.Fill("P@ssw0rdChina");
 
             JazzButton.PopLoginSubmitButton.Click();
-
+            JazzButton.PopMenuButtonCustomer.WaitControlDisplayed(60);
             TimeManager.Pause(5000);
 
             //Select customer and confirm
@@ -71,10 +71,37 @@ namespace Mento.Script.System.Example
             TimeManager.Pause(10000);
 
             string[] nodePath = { "NancyCustomer12", "园区测试多层级", "楼宇BC" };
-            JazzTreeView.PopHierarchyTree.SelectNode(nodePath);
+            JazzTreeView.PopHierarchyTree.Pop_SelectNode(nodePath);
         }
 
-        
+        [Test]
+        [CaseID("TC-J1-FVT-SmokeTestEnergyView-101-1")]
+        [MultipleTestDataSource(typeof(SmokeTestEnergyViewData[]), typeof(PopTestSuite), "TC-J1-Example-002")]
+        public void PopTreeOperation02(SmokeTestEnergyViewData input)
+        {
+            //open pop and login
+            JazzBrowseManager.OpenJazz();
+            TimeManager.Pause(5000);
+
+            JazzTextField.PopLoginUserNameTextField.Fill("SchneiderElectricChina");
+            JazzTextField.PopLoginPasswordTextField.Fill("P@ssw0rdChina");
+
+            JazzButton.PopLoginSubmitButton.Click();
+            JazzButton.PopMenuButtonCustomer.WaitControlDisplayed(60);
+            TimeManager.Pause(5000);
+
+            JazzButton.PopbButtonConfirm.Click();
+            TimeManager.Pause(10000);
+
+            JazzButton.PopButtonUserManagement.Click();
+            TimeManager.LongPause();
+
+            JazzButton.PopButtonAddUser.Click();
+            TimeManager.LongPause();
+
+            JazzComboBox.PopComboBoxPosition.Pop_SelectItem("部门经理");
+            TimeManager.LongPause();
+        }
 
     }
 }

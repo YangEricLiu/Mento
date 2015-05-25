@@ -219,7 +219,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(EnergyAnalysis.IsDisplayStepDisplayed(DisplayStep.Year));
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-2")]
         public void NoCompareData_ViewConsumptionUnitIndicator02(UnitIndicatorData input)
@@ -589,7 +591,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Assert.AreEqual(14, UnitKPIPanel.GetTrendChartLinesMarkers());
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-4")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-4")]
         public void NoCompareData_ViewConsumptionUnitIndicator04(UnitIndicatorData input)
@@ -683,7 +687,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Assert.IsTrue(HomePagePanel.GetPopNotesValue().Contains(input.ExpectedData.popupNotes[0]));
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-View-101-5467")]
         public void NoCompareData_ViewConsumptionUnitIndicator_5467(UnitIndicatorData input)

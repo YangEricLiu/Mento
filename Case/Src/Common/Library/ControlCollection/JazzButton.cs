@@ -53,14 +53,20 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return GetControl<MenuButton>(JazzControlLocatorKey.PopMenuButtonCustomer); }
         }
 
-        public static Button PopMenuItemCustomer
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.PopMenuItemCustomer); }
-        }
 
         public static Button PopbButtonConfirm
         {
             get { return GetControl<Button>(JazzControlLocatorKey.PopbButtonConfirm); }
+        }
+
+        public static Button PopButtonUserManagement
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonUserManagement); }
+        }
+
+        public static Button PopButtonAddUser
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonAddUser); }
         }
 
         #endregion

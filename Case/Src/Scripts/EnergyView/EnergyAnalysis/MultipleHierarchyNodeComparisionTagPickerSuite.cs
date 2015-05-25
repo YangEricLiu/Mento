@@ -49,7 +49,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static HomePage HomePagePanel = JazzFunction.HomePage;
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTagPickerSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-1")]
         public void NoDataCompare_MultiCheckOneTagAndVerify(EnergyViewOptionData input)
@@ -113,7 +115,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             TimeManager.MediumPause();
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTagPickerSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TagPicker-2")]
         public void NoDataCompare_MultiCheckMultipleTagsAndVerify(EnergyViewOptionData input)

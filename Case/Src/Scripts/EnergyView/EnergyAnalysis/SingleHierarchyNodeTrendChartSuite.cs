@@ -46,7 +46,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1")]
         public void NoDataCompare_ViewLineChartOfTagThenClear(EnergyViewOptionData input)
@@ -106,7 +108,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsAllGridTagsUnchecked());
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2")]
         public void NoDataCompare_LineChartSaveToDashBoard(EnergyViewOptionData input)
@@ -162,7 +166,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             #endregion
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3")]
         public void NoDataCompare_TrendChartWithOtherCalcualtionType(EnergyViewOptionData input)

@@ -47,7 +47,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-TrendChart-001-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyMultiTagsTrendChartSuite), "TC-J1-FVT-MultipleTagsComparision-TrendChart-001-1")]
         public void NoDataCompare_MultipleTagsSingleHieTrendChart(EnergyViewOptionData input)

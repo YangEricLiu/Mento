@@ -16,8 +16,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string PopTextFieldLoginPassword = "PopTextFieldLoginPassword";
 
         public static string PopMenuButtonCustomer = "PopMenuButtonCustomer";
-        public static string PopMenuItemCustomer = "PopMenuItemCustomer";
         public static string PopbButtonConfirm = "PopbButtonConfirm";
+
+        public static string PopButtonUserManagement = "PopButtonUserManagement";
+        public static string PopButtonAddUser = "PopButtonAddUser";
 
         #endregion
 
@@ -39,7 +41,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonContactUsClose = "ButtonContactUsClose";
         #endregion
 
-        #region navigatorBu
+        #region navigator
         public static string ButtonNavigatorHomePage = "ButtonNavigatorHomePage";
         public static string ButtonNavigatorEnergyView = "ButtonNavigatorEnergyView";
         public static string ButtonNavigatorSettings = "ButtonNavigatorSettings";
@@ -876,10 +878,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region ComboBox
+
+        #region Pop
+
+        public static string PopComboBoxPosition = "PopComboBoxPosition";
+
+        #endregion
+
         #region login
         public static string ComboBoxLoginCustomerOption = "ComboBoxLoginCustomerOption";
         #endregion
-
 
         #region User
         public static string ComboBoxUserType = "ComboBoxUserType";

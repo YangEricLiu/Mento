@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101"), CreateTime("2013-08-08"), Owner("Emma")]
-    public class MultipleHierarchyNodeComparisionDataViewSuite : TestSuiteBase
+    public class P1_MultipleHierarchyNodeComparisionDataViewSuite : TestSuiteBase
     {
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
@@ -50,7 +50,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
         public void MultipleHierarchyNodeComparisionDataView01(EnergyViewOptionData input)
         {
             //Switch to "多层级数据点"
@@ -236,7 +236,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-2")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-2")]
         public void MultipleHierarchyNodeComparisionDataView02(EnergyViewOptionData input)
         {
             //Go to NancyCustomer1->园区测试多层级-〉BuildingCalculationType
@@ -294,7 +294,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [Ignore("ignore")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-3")]
         public void RawValueDisplay(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

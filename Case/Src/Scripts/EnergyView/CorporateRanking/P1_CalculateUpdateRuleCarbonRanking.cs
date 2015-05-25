@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CarbonRanking-Calculate-UpdateRule-101"), CreateTime("2014-06-23"), Owner("Emma")]
-    public class CalculateUpdateRuleCarbonRanking : TestSuiteBase
+    public class P1_CalculateUpdateRuleCarbonRanking : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -42,7 +42,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonRanking-Calculate-UpdateRule-101-1")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleCarbonRanking), "TC-J1-FVT-CarbonRanking-Calculate-UpdateRule-101-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleCarbonRanking), "TC-J1-FVT-CarbonRanking-Calculate-UpdateRule-101-1")]
         public void CalculateUpdateRuleCarbonRanking01(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -81,7 +81,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonRanking-Calculate-UpdateRule-101-2")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleCarbonRanking), "TC-J1-FVT-CarbonRanking-Calculate-UpdateRule-101-2")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleCarbonRanking), "TC-J1-FVT-CarbonRanking-Calculate-UpdateRule-101-2")]
         public void CalculateUpdateRuleCarbonRanking02(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");

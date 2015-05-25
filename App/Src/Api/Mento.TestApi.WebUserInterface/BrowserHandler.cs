@@ -123,10 +123,10 @@ namespace Mento.TestApi.WebUserInterface
                     //driver = new InternetExplorerDriver();
                     break;
                 case Browser.Chrome:
-                    //ChromeOptions options = new ChromeOptions();
-                    //options.AddArgument("--start-maximized");
-                    //driver = new ChromeDriver(options);
-                    driver = new ChromeDriver(new ChromeOptions() { });
+                    ChromeOptions options = new ChromeOptions();
+                    //options.AddExtension("Extension");
+                    driver = new ChromeDriver(options);
+                    //driver = new ChromeDriver(new ChromeOptions() { });                
                     break;
                 case Browser.Firefox:
                     try

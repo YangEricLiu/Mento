@@ -50,7 +50,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
         //private static 
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionTrendChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-TrendChart-101-1")]
         public void NoDataCompare_MultipleHierarchyNodeComparisionTrendChart(EnergyViewOptionData input)

@@ -44,7 +44,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
         private static Widget Widget = JazzFunction.Widget;
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-1")]
         public void NoCompareData_ViewCostUnitIndicator01(UnitIndicatorData input)
@@ -264,7 +266,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsTrue(UnitKPIPanel.IsTrendChartDrawn());
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-2")]
         public void NoCompareData_ViewCostUnitIndicator02(UnitIndicatorData input)
@@ -335,7 +339,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             Assert.IsFalse(UnitKPIPanel.IsColumnLegendItemShown(input.ExpectedData.UnitIndicatorLegend[2].OriginalValue));
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-View-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-View-101-3")]
         public void NoCompareData_ViewCostUnitIndicator03(UnitIndicatorData input)

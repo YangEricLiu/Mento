@@ -15,6 +15,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         }
         #endregion
 
+        #region Pop
+
+        public static ComboBox PopComboBoxPosition { get { return GetControl<ComboBox>(JazzControlLocatorKey.PopComboBoxPosition); } }
+
+        #endregion
+
         #region Login
         public static ComboBox LoginCustomerOptionComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxLoginCustomerOption);}}
         #endregion
@@ -35,6 +41,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Customer settings
+
         #region Hierarchy property settings
         public static ComboBox HierarchySettingsHierarchyTypeComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchySettingsHierarchyType);}}
         public static ComboBox HierarchyIndustryIdComboBox{ get { return GetControl<ComboBox>(JazzControlLocatorKey.ComboBoxHierarchyIndustryId);}}

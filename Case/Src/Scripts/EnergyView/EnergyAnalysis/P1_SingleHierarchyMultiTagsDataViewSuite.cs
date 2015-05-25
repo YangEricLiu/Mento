@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-MultipleTagsComparision-001"), CreateTime("2013-08-21"), Owner("Emma")]
-    public class SingleHierarchyMultiTagsDataViewSuite : TestSuiteBase
+    public class P1_SingleHierarchyMultiTagsDataViewSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -50,7 +50,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         //30个点，7天小时的数据，分页查看的时候chrome28会崩溃
         [Test]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
         public void MultipleTagsSingleHieDataView(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -189,7 +189,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
         public void ChangeTagListBetweenHierarchy(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");

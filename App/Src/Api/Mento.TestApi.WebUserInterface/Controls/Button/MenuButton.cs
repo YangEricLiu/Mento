@@ -17,7 +17,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem')]/a/span[contains(@class, 'x-menu-item-text') and text()='{0}']";
         private static string MoreMenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and text()='{0}']]";
 
-        private static string Pop_MenuItemLocatorFormat = "//div[contains(@id, 'mui-drop-down-menu mui-open')]/div/div[contains(@class, 'mui-paper-container')]/div[contains(@class, 'mui-menu-item')]/span[text()='{0}']";
+        private static string Pop_MenuItemLocatorFormat = "//div[contains(@class,'mui-menu-item')]/span[text()='{0}']";
 
         public MenuButton(Locator locator) : base(locator) { }
 

@@ -21,8 +21,8 @@ namespace Mento.Script.EnergyView.Ratio
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-ConsumptionDayNightRatio-Calculate-101"), CreateTime("2013-12-17"), Owner("Emma")]
-    public class P4_CalculateConsumptionDayNightRatioSuite : TestSuiteBase
+    [ManualCaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101"), CreateTime("2013-12-18"), Owner("Emma")]
+    public class P1_CalculateConsumptionWorkNotworkRatioSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -43,9 +43,9 @@ namespace Mento.Script.EnergyView.Ratio
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionDayNightRatio-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(RatioData[]), typeof(P4_CalculateConsumptionDayNightRatioSuite), "TC-J1-FVT-ConsumptionDayNightRatio-Calculate-101-1")]
-        public void CalculateConsumptionDayNightRatio01(RatioData input)
+        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(RatioData[]), typeof(P1_CalculateConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-1")]
+        public void CalculateConsumptionWorkNotworkRatio01(RatioData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Go to Energy Ratio Indicator. 
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -54,7 +54,7 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.NavigateToRatio();
             TimeManager.MediumPause();
 
-            //Select the BuildingDayNight from Hierarchy Tree, select 昼夜比 option. Select DayNightP to view data
+            //Select the BuildingWorkNonwork from Hierarchy Tree, select 昼夜比 option. Select WorkNotworkP to view data
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
@@ -62,7 +62,11 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();
 
-            //Time range 2012-1-1 to 2013-12-5
+            //Verify that WorkNotworkP 公休比目标值 chart display.
+            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
+            TimeManager.ShortPause();
+
+            //Time range 2012-10-27 to 2013-2-10
             var ManualTimeRange = input.InputData.ManualTimeRange;
             EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
 
@@ -79,23 +83,50 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Step is "Day"
+            //Step is "Week"
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
 
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
+            //Select the BuildingMultipleSteps from Hierarchy Tree, select 公休比目标值 option. Select PH_SiteS1 to view chart.
+            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
+            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.MediumPause();
+
+            RadioPanel.CheckTag(input.InputData.tagNames[1]);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[1].StartDate, ManualTimeRange[1].EndDate);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
 
-            //Step is "Year"
+            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
+            //EnergyAnalysis.ClickStepButtonOnWindow(DisplayStep.Week);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
+
+            //Step is "Week"
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[2], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
+
+            //2013-2-10 to 2013-6-21
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[2].StartDate, ManualTimeRange[2].EndDate);
+            TimeManager.ShortPause();
+
+            EnergyViewToolbar.View(EnergyViewType.List);
+            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
+            TimeManager.MediumPause();
 
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
@@ -106,15 +137,8 @@ namespace Mento.Script.EnergyView.Ratio
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
 
-            //Select the BuildingMultipleSteps from Hierarchy Tree, select 昼夜比 option. Select PH_SiteS1 to view chart.
-            RadioPanel.SelectHierarchy(input.InputData.Hierarchies[1]);
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            TimeManager.MediumPause();
-
-            RadioPanel.CheckTag(input.InputData.tagNames[1]);
-            TimeManager.ShortPause();
-
-            EnergyViewToolbar.SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            //2012-9-21 to 2013-2-10
+            EnergyViewToolbar.SetDateRange(ManualTimeRange[3].StartDate, ManualTimeRange[3].EndDate);
             TimeManager.ShortPause();
 
             EnergyViewToolbar.View(EnergyViewType.List);
@@ -129,39 +153,12 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[4], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
-
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Day);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //Step is "Day"
-            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[5], DisplayStep.Default);
-            TimeManager.MediumPause();
-            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
-
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //Step is "Year"
-            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[6], DisplayStep.Default);
-            TimeManager.MediumPause();
-            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[6], input.InputData.failedFileName[6]);
-
-            EnergyAnalysis.ClickDisplayStep(DisplayStep.Week);
-            JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
-            TimeManager.MediumPause();
-
-            //Step is "Week"
-            RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[7], DisplayStep.Default);
-            TimeManager.MediumPause();
-            RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[7], input.InputData.failedFileName[7]);
         }
 
         [Test]
-        [CaseID("TC-J1-FVT-ConsumptionDayNightRatio-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(RatioData[]), typeof(P4_CalculateConsumptionDayNightRatioSuite), "TC-J1-FVT-ConsumptionDayNightRatio-Calculate-101-2")]
-        public void CalculateConsumptionDayNightRatio02(RatioData input)
+        [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(RatioData[]), typeof(P1_CalculateConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101-2")]
+        public void CalculateConsumptionWorkNotworkRatio02(RatioData input)
         {
             //Go to 时段能耗比-〉昼夜比. 
             //SP1->NancyOtherCustomer3->园区能耗标识-〉BuildingLabelling1. 
@@ -174,6 +171,10 @@ namespace Mento.Script.EnergyView.Ratio
             RadioPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
+
+            //公休比
+            EnergyViewToolbar.SelectRadioTypeConvertTarget(RadioTypeConvertTarget.WorkNonRadio);
+            TimeManager.ShortPause();
 
             //Labellingtag1
             RadioPanel.CheckTag(input.InputData.tagNames[0]);
@@ -197,7 +198,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Month);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-          
+
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
@@ -206,7 +207,7 @@ namespace Mento.Script.EnergyView.Ratio
             EnergyAnalysis.ClickDisplayStep(DisplayStep.Year);
             JazzMessageBox.LoadingMask.WaitChartMaskerLoading();
             TimeManager.MediumPause();
-         
+
             RadioPanel.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[1], DisplayStep.Default);
             TimeManager.MediumPause();
             RadioPanel.CompareDataViewRatio(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);

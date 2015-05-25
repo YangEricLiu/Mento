@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101"), CreateTime("2013-08-06"), Owner("Emma")]
-    public class SingleHierarchyNodeDataViewSuite : TestSuiteBase
+    public class P1_SingleHierarchyNodeDataViewSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -50,7 +50,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
         public void ViewDataViewOfTagThenClear(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -114,7 +114,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
         public void DataViewSaveToDashBoard(EnergyViewOptionData input)
         {
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
@@ -169,7 +169,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-3")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-3")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-3")]
         public void DataViewWithOtherCalcualtionType(EnergyViewOptionData input)
         {
             //On hierarchy node,NancyCustomer1/园区测试多层级/BuildingMulCalculationType
@@ -219,7 +219,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
         public void EnergyAnalysisRawDataDisplay_5359(EnergyViewOptionData input)
         {
             //Go to CathyRawData -〉Select 原始数据楼A.
@@ -257,7 +257,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         [Test]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
         public void RawValueDisplay(EnergyViewOptionData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -344,7 +344,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [Test]
         [Ignore("ignore")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-5")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5")]
+        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5")]
         public void SingleHie30Tagslimit(EnergyViewOptionData input)
         {
             //Go to NancyCustomer1->园区测试多层级-> BuildingPieVerify. 

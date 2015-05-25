@@ -739,7 +739,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-View-101-3923")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-View-101-3923")]
         public void NoCompareData_ViewCarbonUnitIndicator3923(UnitIndicatorData input)

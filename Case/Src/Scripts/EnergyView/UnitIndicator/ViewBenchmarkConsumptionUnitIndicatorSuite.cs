@@ -238,7 +238,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkConsumptionUnitIndicatorSuite), "TC-J1-FVT-BenchmarkConsumptionUnitIndicator-View-101-2")]
         public void NoCompareData_ViewBenchmarkConsumptionUnitIndicator02(UnitIndicatorData input)

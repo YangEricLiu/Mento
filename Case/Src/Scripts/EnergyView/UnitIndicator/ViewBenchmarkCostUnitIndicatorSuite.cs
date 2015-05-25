@@ -221,7 +221,9 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
         */
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(ViewBenchmarkCostUnitIndicatorSuite), "TC-J1-FVT-BenchmarkCostUnitIndicator-View-101-3")]
         public void NoCompareData_ViewBenchmarkCostUnitIndicator03(UnitIndicatorData input)

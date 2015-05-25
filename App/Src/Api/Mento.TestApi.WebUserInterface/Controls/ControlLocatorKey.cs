@@ -152,6 +152,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #endregion
 
         #region CheckBoxField locators
+
+        #region pop
+
+        public static string PopCheckBoxInput = "PopCheckBoxInput";
+
+        #endregion
+
         public static string PermissionCheckBoxTable = "PermissionCheckBoxTable";
         public static string CheckBoxTable = "CheckBoxTable";
         public static string CheckBoxInput = "CheckBoxInput";

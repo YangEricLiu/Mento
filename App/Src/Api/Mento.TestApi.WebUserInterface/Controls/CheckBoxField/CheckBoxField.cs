@@ -28,6 +28,54 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <param name="locator"></param>
         public CheckBoxField(Locator locator) : base(locator) { }
 
+        #region Pop
+
+        public void Pop_CommonCheck(string itemName)
+        {
+            IWebElement checkbox = GetCheckBoxInputElement(itemName);
+
+            if (!IsCommonChecked(itemName))
+                checkbox.Click();
+        }
+
+        public void Pop_CommonUnCheck(string itemName)
+        {
+            IWebElement checkbox = Pop_GetCheckBoxInputElement(itemName);
+            
+            try
+            {
+                if (Pop_IsCommonChecked(itemName))
+                {
+                    checkbox.Click();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+
+        }
+
+        private IWebElement Pop_GetCheckBoxInputElement(string itemName)
+        {
+            return FindChild(Pop_GetCheckBoxInputLocator(itemName));
+        }
+
+        private Locator Pop_GetCheckBoxInputLocator(string itemName)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.PopCheckBoxInput), ITEMNAME, itemName);
+        }
+
+        public Boolean Pop_IsCommonChecked(string itemName)
+        {
+            IWebElement checkbox = Pop_GetCheckBoxInputElement(itemName);
+            Console.Out.Write(checkbox.GetAttribute("checked").ToString());
+
+            return checkbox.GetAttribute("checked").Contains("");//other method
+        }
+
+        #endregion
+
         public Boolean IsChecked(string permissionName)
         {
             IWebElement checkbox = GetPermissonFieldElement(permissionName);
@@ -41,14 +89,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
-        ////Verify checkbox in widget template is checked.
-        //public Boolean IsWidgetTemplateChecked(string itemName)
-        //{
-        //    IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
 
-        //    return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
-        //}
-        //Verify checkbox in widget template is checked.
 
         public Boolean IsWidgetTemplateChecked(string itemName1, string itemName2)
         {
@@ -66,18 +107,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
         }
-        ///// <summary>
-        ///// verfiy whether the item unchecked in widget template.
-        ///// </summary>
-        ///// <param name="locator"></param>
-        //public Boolean IsWidgetTemplateUnChecked(string itemName)
-        //{
-        //    IWebElement checkbox = GetCheckBoxFieldElementInWidgetTemplate(itemName);
 
-        //    return !(checkbox.GetAttribute("class").Contains(CHECKEDCLASS));
-        //}
-
-        //uncheck item in widget template
 
         public Boolean IsWidgetTemplateUnChecked(string itemName1, string itemName2)
         {

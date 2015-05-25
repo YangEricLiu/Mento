@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CostRanking-Calculate-UpdateRule-101"), CreateTime("2014-06-23"), Owner("Emma")]
-    public class CalculateUpdateRuleCostRanking : TestSuiteBase
+    public class P1_CalculateUpdateRuleCostRanking : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -42,7 +42,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-1")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleCostRanking), "TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleCostRanking), "TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-1")]
         public void CalculateUpdateRuleCostRanking01(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -105,7 +105,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-2")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleCostRanking), "TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-2")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleCostRanking), "TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-2")]
         public void CalculateUpdateRuleCostRanking02(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -148,7 +148,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-3")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleCostRanking), "TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-3")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleCostRanking), "TC-J1-FVT-CostRanking-Calculate-UpdateRule-101-3")]
         public void CalculateUpdateRuleCostRanking03(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");

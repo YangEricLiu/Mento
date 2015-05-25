@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101"), CreateTime("2014-06-23"), Owner("Emma"), System.Runtime.InteropServices.GuidAttribute("0A50232D-E9C0-4B01-921E-46061CDCF55A")]
-    public class CalculateUpdateRuleConsumptionRanking : TestSuiteBase
+    public class P1_CalculateUpdateRuleConsumptionRanking : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -43,7 +43,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-1")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-1")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-1")]
         public void CalculateUpdateRuleConsumptionRanking01(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -88,7 +88,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-2")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-2")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-2")]
         public void CalculateUpdateRuleConsumptionRanking02(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -142,7 +142,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-3")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-3")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-3")]
         public void CalculateUpdateRuleConsumptionRanking03(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyCostCustomer2");
@@ -191,7 +191,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-4")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-4")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-4")]
         public void CalculateUpdateRuleConsumptionRanking04(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");
@@ -231,7 +231,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-5")]
-        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-5")]
+        [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(P1_CalculateUpdateRuleConsumptionRanking), "TC-J1-FVT-ConsumptionRanking-Calculate-UpdateRule-101-5")]
         public void CalculateUpdateRuleConsumptionRanking05(CorporateRankingData input)
         {
             HomePagePanel.SelectCustomer("NancyOtherCustomer3");

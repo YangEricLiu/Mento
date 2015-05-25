@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CustomizedLabelling-View-101"), CreateTime("2014-09-29"), Owner("Nancy")]
-    public class ViewCustomizedLabellingSuite : TestSuiteBase
+    public class P1_ViewCustomizedLabellingSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -49,7 +49,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabelling-View-101")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-101")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P1_ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-101")]
         public void ViewUnitIndicatorCustomizedLabelling(IndustryLabellingData input)
         {
 
@@ -102,7 +102,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingView-102")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-102")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P1_ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-102")]
         public void ViewWorkNonworkCustomizedLabelling(IndustryLabellingData input)
         {
             //Switch to "多层级数据点"
@@ -184,7 +184,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingView-103")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-103")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P1_ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-103")]
         public void ViewDayNightCustomizedLabelling(IndustryLabellingData input)
         {
             //Switch to "多层级数据点"
@@ -261,7 +261,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
 
         [Test]
         [CaseID("TC-J1-FVT-CustomizedLabellingView-104")]
-        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-104")]
+        [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(P1_ViewCustomizedLabellingSuite), "TC-J1-FVT-CustomizedLabellingView-104")]
         public void ViewOriginalValueCustomizedLabelling(IndustryLabellingData input)
         {
             //Switch to "多层级数据点"

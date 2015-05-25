@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101"), CreateTime("2013-11-15"), Owner("Emma")]
-    public class P4_CalculateCarbonUnitIndicatorSuite : TestSuiteBase
+    public class P1_CalculateCarbonUnitIndicatorSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -46,7 +46,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-1")]
         public void CalculateCarbonUnitIndicator01(UnitIndicatorData input)
         {
             //Go to NancyCostCustomer2. Go to Function Unit indicator. Select the 楼宇A from Hierarchy Tree. Click Function Type button, select Carbon, 
@@ -137,7 +137,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-2")]
         public void CalculateCarbonUnitIndicator02(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A->园区A->楼宇B, then go to 介质单项.
@@ -230,7 +230,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-3")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-3")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-3")]
         public void CalculateCarbonUnitIndicator03(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A->园区A, then go to 介质单项.
@@ -322,9 +322,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[3], input.InputData.failedFileName[3]);
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-4")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-4")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-4")]
         public void NoDataCompare_CalculateCarbonUnitIndicator04(UnitIndicatorData input)
         {
             //Change Hierarchy list to 组织A, then go to 介质单项.
@@ -383,9 +385,11 @@ namespace Mento.Script.EnergyView.UnitIndicator
             //Assert.IsFalse(UnitKPIPanel.IsTrendChartDrawn());
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-CarbontUnitIndicator-Calculate-101-5")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-5")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-5")]
         public void NoDataCompare_CalculateCarbonUnitIndicator05(UnitIndicatorData input)
         {
             //Change Hierarchy list to Customer is NancyCostCustomer2, then go to 介质单项.
@@ -433,7 +437,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CarbontUnitIndicator-Calculate-101-6")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-6")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-6")]
         public void CalculateCarbonUnitIndicator06(UnitIndicatorData input)
         {
             //Go to NancyOtherCustomer3. Go to Function Unit indicator. Select the BuildingCostYearToDay from Hierarchy Tree. Click Function Type button, select Carbon, then go to 介质单项.
@@ -565,7 +569,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-CarbontUnitIndicator-Calculate-101-7")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-7")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-7")]
         public void CalculateCarbonUnitIndicatorRawValue(UnitIndicatorData input)
         {
             //Go to NancyCostCustomer2. Go to Function Unit indicator. Select the 楼宇A from Hierarchy Tree. Click Function Type button, select Carbon, then go to 介质单项.

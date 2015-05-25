@@ -22,7 +22,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// </summary>
     [TestFixture]
     [ManualCaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101"), CreateTime("2013-11-14"), Owner("Emma")]
-    public class P4_CalculateConsumptionUnitIndicatorSuite : TestSuiteBase
+    public class P1_CalculateConsumptionUnitIndicatorSuite : TestSuiteBase
     {
         [SetUp]
         public void CaseSetUp()
@@ -45,7 +45,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1")]
         public void CalculateConsumptionUnitIndicator01(UnitIndicatorData input)
         {
             
@@ -305,7 +305,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
         public void CalculateConsumptionUnitIndicator_3871(UnitIndicatorData input)
         {
             //Goto "NancyOtherCustomer3/NancyOtherSite/BuildingRanking2"
@@ -353,7 +353,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405")]
         public void CalculateConsumptionUnitIndicator_5405(UnitIndicatorData input)
         {
             //1. Go to Unit indicator. Select NancyOtherCustomer3.->BuildingLabeliing1->Labellingtag1
@@ -407,7 +407,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
 
         [Test]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
-        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P4_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
+        [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
         public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)
         {
             //Go to NancyCostCustomer2. Go to Function Unit indicator. Select the 楼宇A from Hierarchy Tree. Click Function Type button, select Energy Analysis..

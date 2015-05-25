@@ -37,7 +37,7 @@
   <add key = "TreeNodeCheckbox" value = "td/div/input" type = "XPath"/>
   
   <!--Pop_TreeView-->
-  <add key = "PopTreeNode" value = "div[contains(@class,'pop-node') and div/span[text()='$#nodeText']]" type = "XPath"/>
+  <add key = "PopTreeNode" value = "//div[contains(@class,'pop-node') and span[text()='$#nodeText']]" type = "XPath"/>
 
   <!--TextField-->
   <add key = "FormulaTextBox" value="//textarea[contains(@id,'st-formula-text') and @name='Formula']" type = "XPath"/>
@@ -50,7 +50,7 @@
   <!--ComboBox-->
   
   <Pop>
-    <add key="PopComboBoxTrigger" value = "select[@class= 'edit']" type ="Xpath"/>
+    <add key="PopComboBoxTrigger" value = "select[@class= 'edit']" type ="XPath"/>
     <add key="PopComboBoxItem" value = "select[@class='edit']/option[text()='$#itemKey']" type ="XPath"/>
     </Pop>
   
@@ -127,6 +127,13 @@
   <add key="WindowQuitButton" value="div[contains(@class,'x-toolbar')]/div/div/div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Cancel']]" type="XPath"/>
 
   <!--CheckBoxField-->
+  
+  <Pop>
+  <add key="PopCheckBoxInput" value = "span[text()='$#itemName']/../input" type ="XPath"/>
+
+    </Pop>
+  
+  
   <add key="PermissionCheckBoxTable" value = "//table[contains(@id,'displayfield') and tbody/tr/td/label[text()='$#permissionName']]/../table[contains(@id,'checkboxfield')]" type ="XPath"/>
   <add key="CheckBoxTable" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]" type ="XPath"/>
   <add key="CheckBoxInput" value = "//table[contains(@id,'checkboxfield') and tbody/tr/td/label[text()='$#itemName']]/tbody/tr/td/input" type ="XPath"/>

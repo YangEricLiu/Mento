@@ -144,7 +144,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.CompareDataTableForMultipleHierarchyOfEnergyAnalysis(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
         }
 
+        //2.0测试的时候忽略，这版主要是验证数据的正确性
         [Test]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-2")]
         public void NoDataCompare_MultipleHierarchyNodeComparisionPieChart02(EnergyViewOptionData input)

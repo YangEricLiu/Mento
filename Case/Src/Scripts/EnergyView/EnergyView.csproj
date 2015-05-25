@@ -56,9 +56,9 @@
     <Compile Include="CarbonUsage\CarbonCalculationAggregationHierarchyOnlineSuite.cs" />
     <Compile Include="CarbonUsage\CarbonUsagePieChartSuite.cs" />
     <Compile Include="CorporateRanking\AdditionalCorporateRankingVerificationSuite.cs" />
-    <Compile Include="CorporateRanking\CalculateUpdateRuleConsumptionRanking.cs" />
-    <Compile Include="CorporateRanking\CalculateUpdateRuleCarbonRanking.cs" />
-    <Compile Include="CorporateRanking\CalculateUpdateRuleCostRanking.cs">
+    <Compile Include="CorporateRanking\P1_CalculateUpdateRuleConsumptionRanking.cs" />
+    <Compile Include="CorporateRanking\P1_CalculateUpdateRuleCarbonRanking.cs" />
+    <Compile Include="CorporateRanking\P1_CalculateUpdateRuleCostRanking.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CorporateRanking\SelectCommodityForRanking.cs" />
@@ -86,15 +86,15 @@
     <Compile Include="EnergyAnalysis\P4_MultiTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodePieChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsTrendChartSuite.cs" />
-    <Compile Include="EnergyAnalysis\SingleHierarchyMultiTagsDataViewSuite.cs" />
+    <Compile Include="EnergyAnalysis\P1_SingleHierarchyMultiTagsDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleIntervalsComparasionTrendChartSuite.cs" />
     <Compile Include="EnergyAnalysis\SetComparedIntervalInvalidSuite.cs" />
     <Compile Include="EnergyAnalysis\P1_SetComparedIntervalValidSuite.cs" />
     <Compile Include="EnergyAnalysis\P1_MultipleIntervalsComparasionDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionTagPickerSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionTrendChartSuite.cs" />
-    <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionDataViewSuite.cs" />
-    <Compile Include="EnergyAnalysis\SingleHierarchyNodeDataViewSuite.cs" />
+    <Compile Include="EnergyAnalysis\P1_MultipleHierarchyNodeComparisionDataViewSuite.cs" />
+    <Compile Include="EnergyAnalysis\P1_SingleHierarchyNodeDataViewSuite.cs" />
     <Compile Include="EnergyAnalysis\SingleHierarchyNodeTrendChartSuite.cs" />
     <Compile Include="EnergyManagement\SmokeTestEnergyViewSuite.cs" />
     <Compile Include="EnergyManagement\P4_PredefinedTimeDataVerificationSuite.cs" />
@@ -106,23 +106,23 @@
     <Compile Include="IndustryLabelling\P4_CalculateIndustryLabellingDayNightSuite.cs" />
     <Compile Include="IndustryLabelling\P4_CalculateIndustryLabellingWorkNotworkSuite.cs" />
     <Compile Include="IndustryLabelling\SelectIndustryLabellingSuite.cs" />
-    <Compile Include="IndustryLabelling\ViewCustomizedLabellingSuite.cs" />
+    <Compile Include="IndustryLabelling\P1_ViewCustomizedLabellingSuite.cs" />
     <Compile Include="IndustryLabelling\SelectCustomerLabellingSuite.cs" />
     <Compile Include="IndustryLabelling\ViewIndustryLabellingDayNightSuite.cs" />
     <Compile Include="IndustryLabelling\ViewIndustryLabellingWorkNotworkSuite.cs" />
     <Compile Include="IndustryLabelling\ViewIndustryLabellingConsumptionSuite.cs" />
     <Compile Include="Properties\AssemblyInitialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ratio\P4_CalculateConsumptionDayNightRatioSuite.cs" />
-    <Compile Include="Ratio\P4_CalculateConsumptionWorkNotworkRatioSuite.cs" />
+    <Compile Include="Ratio\P1_CalculateConsumptionDayNightRatioSuite.cs" />
+    <Compile Include="Ratio\P1_CalculateConsumptionWorkNotworkRatioSuite.cs" />
     <Compile Include="Ratio\P4_BenchmarkCalculateConsumptionDayNightRatioSuite.cs" />
     <Compile Include="Ratio\P4_BenchmarkCalculateConsumptionWorkNotworkRatioSuite.cs" />
     <Compile Include="Ratio\ViewConsumptionWorkNotworkRatioSuite.cs" />
     <Compile Include="Ratio\ViewConsumptionDayNightRatioSuite.cs" />
     <Compile Include="Ratio\ViewConsumptionWorkNotworkRatioIndustryBenchmarkSuite.cs" />
     <Compile Include="Ratio\ViewConsumptionDayNightRatioIndustryBenchmarkSuite.cs" />
-    <Compile Include="UnitIndicator\P4_CalculateCostUnitIndicatorSuite.cs" />
-    <Compile Include="UnitIndicator\P4_CalculateCarbonUnitIndicatorSuite.cs" />
+    <Compile Include="UnitIndicator\P1_CalculateCostUnitIndicatorSuite.cs" />
+    <Compile Include="UnitIndicator\P1_CalculateCarbonUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\P4_BenchmarkCalculateConsumptionUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\P4_BenchmarkCalculateCostUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\P4_BenchmarkCalculateCarbonUnitIndicatorSuite.cs" />
@@ -137,7 +137,7 @@
     <Compile Include="UnitIndicator\ViewConsumptionUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\ViewCarbonUnitIndicatorSuite.cs" />
     <Compile Include="UnitIndicator\ViewCostUnitIndicatorSuite.cs" />
-    <Compile Include="UnitIndicator\P4_CalculateConsumptionUnitIndicatorSuite.cs" />
+    <Compile Include="UnitIndicator\P1_CalculateConsumptionUnitIndicatorSuite.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\App\Src\Api\Mento.TestApi.TestData\Mento.TestApi.TestData.csproj">

@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <WebElement>
   <!--Button Begin-->
+    <Pop-Button>
+    <add key="PopButtonLoginSubmit" value = "//span[@class='mui-raised-button-label']" type="XPath"/>
+    <add key="PopMenuButtonCustomer" value = "//div[@class='mui-menu-label']" type="XPath"/>
+    <add key="PopbButtonConfirm" value = "//span[text()='确定']" type="XPath"/>
+    <add key="PopButtonUserManagement" value = "//div[@class='pop-mainmenu']/div[@class='pop-menu']/a[text()='用户管理']" type="XPath"/>
+    <add key="PopButtonAddUser" value = "//div[@class='pop-manage-header-add-action']/a[text()='+ 用户']" type="XPath"/>
+  </Pop-Button>
+  
     <Button>
       <login>     
-            <Pop>
-              <add key="PopButtonLoginSubmit" value = "//span[@class='mui-raised-button-label']" type="XPath"/>
-              <add key="PopMenuButtonCustomer" value = "//div[@data-reactid='.0.0.0.0.0:1.0.0.0']" type="XPath"/>
-              <add key="PopMenuItemCustomer" value = "//span[text()='NancyCostCustomer2']" type="XPath"/>
-              <add key="PopbButtonConfirm" value = "//span[text()='确定']" type="XPath"/>
-
-            </Pop>
             <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
             <add key="ButtonLoginCustomerOptionConfirm" value = "//div[contains(@class,'x-window-default')]/div[contains(@class,'x-toolbar')]//div[contains(@class,'x-btn') and em/button/span[text()='$@Common.Button.Confirm']]" type="XPath"/>
         </login>
@@ -814,12 +815,16 @@
   <!--TextField End-->
 
   <!--ComboBox Begin-->
+  <Pop-ComboBox>
+    <add key="PopComboBoxPosition" value="//div[@class='pop-manage-wrapper']/div[@class='pop-manage-content']//div[@class='pop-user-detail-title']" type="XPath"/>
+
+  </Pop-ComboBox>
+  
   <ComboBox>
       <login>
           <add key="ComboBoxLoginCustomerOption" value="//div[contains(@class,'x-window-default')]/div[contains(@class,'x-window-body-default')]//table[contains(@class, 'x-form-trigger-wrap') and tbody/tr/td/input[contains(@name,'combobox')]]" type="XPath"/>
       </login>
-    
-    
+        
     <HomePage>
       </HomePage>
     <User>
@@ -982,6 +987,10 @@
   <!--ComboBox End-->
 
   <!--TreeView Begin-->
+  <pop-TreeView>
+    <add key="PopHierarchyTree" value="//div[@class='pop-tree']/div[@class='pop-scroll-panel']/div/div" type="XPath"/>
+  </pop-TreeView>
+  
   <TreeView>
       <add key="HierarchyTreeEnergyView" value="//div[@id='em-hier-tree-body']/div/table" type="XPath"/>
       <add key="HierarchyTreeHierarchySettings" value="//div[@id='st-hier-tree-body']/div/table" type="XPath"/>
@@ -1010,10 +1019,6 @@
       
       <add key="HierarchyTreeCoperateRanking" value="//div[@id='em-rank-hier-tree-body']/div/table" type="XPath"/>
   </TreeView>
-  
-  <pop-TreeView>
-    <add key="PopHierarchyTree" value="//div[@class='pop-tree']/div[@class='pop-scroll-panel']/div/div" type="XPath"/>
-    </pop-TreeView>
   <!--TreeView End-->
 
   <!--Grid Begin-->
@@ -1107,8 +1112,7 @@
   
   <!--Grade Begin-->
     <customersettings>
-      <add key="GradeCustomizedLabelling" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@id,'container') and contains(@class,'x-container')]" type="XPath"/>
-    
+      <add key="GradeCustomizedLabelling" value="//div[@id='st-customized-labeling-properties-form-body']/div[contains(@id,'container') and contains(@class,'x-container')]" type="XPath"/>   
     </customersettings>
   <!--Grade End-->
 

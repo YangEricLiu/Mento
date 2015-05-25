@@ -73,10 +73,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 if (nextNodeLocator != null)
                 {
                     Pop_ExpandNode(nodesText[i]);
-                    ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
-                    TimeManager.Pause(500);
+                    TimeManager.LongPause();
                 }
-                TimeManager.Pause(500);
             }
         }
 

@@ -899,7 +899,7 @@ namespace Mento.Utility
             IntPtr t = new IntPtr(this.app.Hwnd);
             int k = 0;
             GetWindowThreadProcessId(t, out k);
-            Console.Out.Write(k.ToString() + "\n");
+            //Console.Out.Write(k.ToString() + "\n");
             System.Diagnostics.Process p = System.Diagnostics.Process.GetProcessById(k);
             p.Kill();
             p.Dispose();

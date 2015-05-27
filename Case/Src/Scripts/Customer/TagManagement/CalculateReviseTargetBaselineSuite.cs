@@ -56,6 +56,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-1")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-1")]
         public void CalculateTargetWorkday(KPITargetBaselineData input)
@@ -88,6 +89,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-2")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-2")]
         public void CalculateTargetNonWorkday(KPITargetBaselineData input)
@@ -120,6 +122,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-3")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-3")]
         public void CalculateTargetNegative(KPITargetBaselineData input)
@@ -152,6 +155,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-4")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-4")]
         public void CalculateTargetWithOtherFormat(KPITargetBaselineData input)
@@ -184,6 +188,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-5")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-5")]
         public void RevisionCancel(KPITargetBaselineData input)
@@ -248,6 +253,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-6")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-6")]
         public void RevisionSaveAndCheck(KPITargetBaselineData input)
@@ -290,6 +296,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-7")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-7")]
         public void CalculationFailed(KPITargetBaselineData input)
@@ -311,6 +318,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-8")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-8")]
         public void CalculationNoValue(KPITargetBaselineData input)
@@ -345,6 +353,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-3913")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-3913")]
         public void CheckRevisionWord3913(KPITargetBaselineData input)
@@ -377,6 +386,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetCalculateRevise-101-4012")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(CalculateReviseTargetBaselineSuite), "TC-J1-FVT-TargetCalculateRevise-101-4012")]
         public void CheckRevisionWord4012(KPITargetBaselineData input)

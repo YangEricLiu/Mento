@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// 
     /// </summary>
     [TestFixture]
-    //[Ignore("ignore")]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-UnitIndicatorCarbonVerification-101"), CreateTime("2013-12-26"), Owner("Emma")]
     public class P4_UnitIndicatorCarbonVerificationSuite : TestSuiteBase
     {

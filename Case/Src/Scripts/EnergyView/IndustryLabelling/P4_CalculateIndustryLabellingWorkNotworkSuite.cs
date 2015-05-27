@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-Calculate-101"), CreateTime("2014-03-05"), Owner("Emma")]
     public class P4_CalculateIndustryLabellingWorkNotworkSuite : TestSuiteBase
     {

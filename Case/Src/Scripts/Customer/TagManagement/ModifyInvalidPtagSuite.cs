@@ -38,6 +38,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-PtagConfiguration-Modify-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyInvalidPtagSuite), "TC-J1-FVT-PtagConfiguration-Modify-001-1")]
@@ -76,6 +77,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-PtagConfiguration-Modify-001-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyInvalidPtagSuite), "TC-J1-FVT-PtagConfiguration-Modify-001-2")]
@@ -100,6 +102,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-PtagConfiguration-Modify-001-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ModifyInvalidPtagSuite), "TC-J1-FVT-PtagConfiguration-Modify-001-3")]

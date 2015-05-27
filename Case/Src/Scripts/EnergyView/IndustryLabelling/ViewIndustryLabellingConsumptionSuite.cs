@@ -44,6 +44,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         private static Widget Widget = JazzFunction.Widget;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-1")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingConsumptionSuite), "TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-1")]
         public void ViewConsumptIndustryLabelling01(IndustryLabellingData input)
@@ -104,6 +105,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-2")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingConsumptionSuite), "TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-2")]
         public void ViewConsumptIndustryLabelling02(IndustryLabellingData input)
@@ -266,6 +268,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-3")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingConsumptionSuite), "TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-3")]
         public void ViewConsumptIndustryLabelling03(IndustryLabellingData input)
@@ -375,6 +378,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-4")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingConsumptionSuite), "TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-4")]
         public void ViewConsumptIndustryLabelling04(IndustryLabellingData input)

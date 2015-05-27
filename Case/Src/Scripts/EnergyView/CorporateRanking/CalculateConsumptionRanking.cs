@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P3_Emma")]
     [ManualCaseID("TC-J1-FVT-ConsumptionRanking-Calculate-101"), CreateTime("2013-12-16"), Owner("Greenie"), System.Runtime.InteropServices.GuidAttribute("0A50232D-E9C0-4B01-921E-46061CDCF55A")]
     public class CalculateConsumptionRanking : TestSuiteBase
     {

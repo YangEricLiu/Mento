@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// 
     /// </summary>
     [TestFixture]
-    //[Ignore("ignore")]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101"), CreateTime("2013-11-14"), Owner("Emma")]
     public class P4_UnitIndicatorConsumptionVerificationSuite : TestSuiteBase
     {

@@ -43,6 +43,7 @@ namespace Mento.Script.Customer.TagManagement
         ///                          2. VtagForFormula001 VtagForFormula002 VtagForFormula003 
         /// </summary> 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyInvalidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-001-1")]

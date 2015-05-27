@@ -469,17 +469,24 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             for (int i = 0; i < legendItemsNum; i++)
             {
-                if (i / 12 == 1 || i / 12 == 2)
+                if (i == 12 || i == 24)
                     LegendArrows[1].Click();
 
-                IWebElement legendNameElement = ElementHandler.FindElement(TextLocator, container: LegendItems[i]);
-                pieValue.tagOrCommodity = legendNameElement.Text;              
+                pieValue.tagOrCommodity = LegendItems[i].Text;              
                 pieValue.valueAndUOM = PieDataLabelTexts[i].Text;
 
                 list.Add(pieValue);             
             }
 
-            return list.ToArray();
+            if (legendItemsNum > 11)
+            {
+                for (int j = 0; j < (int)(legendItemsNum / 12); j++)
+                {
+                    LegendArrows[0].Click();
+                }                  
+            }
+
+                return list.ToArray();
         }
 
         public Dictionary<string, string> GetPieDataLegendAndTextsToDictionary()

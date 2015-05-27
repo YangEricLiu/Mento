@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P2_Emma")]
     [ManualCaseID("TC-J1-FVT-MultipleTagsComparision-001"), CreateTime("2013-08-21"), Owner("Emma")]
     public class P1_SingleHierarchyMultiTagsDataViewSuite : TestSuiteBase
     {
@@ -49,6 +50,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
 
         //30个点，7天小时的数据，分页查看的时候chrome28会崩溃
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
         public void MultipleTagsSingleHieDataView(EnergyViewOptionData input)
@@ -188,6 +190,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
         public void ChangeTagListBetweenHierarchy(EnergyViewOptionData input)

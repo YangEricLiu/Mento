@@ -47,6 +47,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         ///                       2. an Vtag "VtagForAreaDimensionNode" has been assosiated under   [  "楼宇配置测试","CheckAll"]
         /// </summary>  
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-Delete-001-DeleteAreaNodeThenCancels")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-001-DeleteAreaNodeThenCancel")]
@@ -80,6 +81,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteLeafAreaNode")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteLeafAreaNode")]
@@ -118,6 +120,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteNonLeafAreaNode")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteNonLeafAreaNode")]
@@ -237,6 +240,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteandVerifyEverywhere")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(DeleteAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-Delete-101-DeleteandVerifyEverywhere")]

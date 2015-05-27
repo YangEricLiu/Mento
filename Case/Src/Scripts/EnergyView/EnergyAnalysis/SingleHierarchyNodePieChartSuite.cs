@@ -42,6 +42,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-PieChart-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodePieChartSuite), "TC-J1-FVT-SingleHierarchyNode-PieChart-101-2")]
         public void SingleHierarchyNodePieChart30tags(EnergyViewOptionData input)
@@ -74,6 +75,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-PieChart-101-3")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodePieChartSuite), "TC-J1-FVT-SingleHierarchyNode-PieChart-101-3")]
         public void SingleHierarchyNodePieChart_5640(EnergyViewOptionData input)

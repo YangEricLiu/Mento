@@ -861,10 +861,10 @@
     <None Include="Data\EnergyView\IndustryLabelling\SelectIndustryLabellingSuite\TC-J1-FVT-SelectIndustryLabellingSuite-001-1.json" />
     <None Include="Data\EnergyView\IndustryLabelling\SelectIndustryLabellingSuite\TC-J1-FVT-SelectIndustryLabellingSuite-101-2.json" />
     <None Include="Data\EnergyView\IndustryLabelling\SelectIndustryLabellingSuite\TC-J1-FVT-SelectIndustryLabellingSuite-101-1.json" />
-    <None Include="Data\EnergyView\IndustryLabelling\P1_ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-104.json" />
-    <None Include="Data\EnergyView\IndustryLabelling\P1_ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-103.json" />
-    <None Include="Data\EnergyView\IndustryLabelling\P1_ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-101.json" />
-    <None Include="Data\EnergyView\IndustryLabelling\P1_ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-102.json" />
+    <None Include="Data\EnergyView\IndustryLabelling\ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-104.json" />
+    <None Include="Data\EnergyView\IndustryLabelling\ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-103.json" />
+    <None Include="Data\EnergyView\IndustryLabelling\ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-101.json" />
+    <None Include="Data\EnergyView\IndustryLabelling\ViewCustomizedLabellingSuite\TC-J1-FVT-CustomizedLabellingView-102.json" />
     <None Include="Data\EnergyView\IndustryLabelling\SelectCustomerLabellingSuite\TC-J1-FVT-SelectCustomerLabellingSuite-101-1.json" />
     <None Include="Data\EnergyView\IndustryLabelling\ViewIndustryLabellingConsumptionSuite\TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-1.json" />
     <None Include="Data\EnergyView\IndustryLabelling\ViewIndustryLabellingConsumptionSuite\TC-J1-FVT-ConsumptionUnitIndicatorIndustryLabelling-View-101-2.json" />

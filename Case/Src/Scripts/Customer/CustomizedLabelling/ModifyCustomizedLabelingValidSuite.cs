@@ -17,6 +17,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
+    [TestFixture]
     public class ModifyCustomizedLabelingValidSuite
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
@@ -35,6 +36,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-101")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingValidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-101")]

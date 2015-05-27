@@ -23,7 +23,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         #region Pop operation
 
-        public void SelectItem(string item)
+        public void Pop_SelectItem(string item)
         {
             this.Click();
             TimeManager.LongPause();

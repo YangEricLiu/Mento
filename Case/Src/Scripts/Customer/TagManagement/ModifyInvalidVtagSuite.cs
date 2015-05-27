@@ -41,6 +41,7 @@ namespace Mento.Script.Customer.TagManagement
         /// Prepare Data:  1. make sure the vtags have been added "VtagForModifyInvalid"
         /// </summary> 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Modify-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyInvalidVtagSuite), "TC-J1-FVT-VtagConfiguration-Modify-001-1")]

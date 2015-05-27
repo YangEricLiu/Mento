@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-BenckmarkCostUnitIndicator-Calculate-101"), CreateTime("2013-12-17"), Owner("Emma")]
     public class P4_BenchmarkCalculateCostUnitIndicatorSuite : TestSuiteBase
     {

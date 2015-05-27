@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-RankingBug-Calculate-107"), CreateTime("2013-12-16"), Owner("Greenie")]
     public class RankingDataviewAddForBug : TestSuiteBase
     {

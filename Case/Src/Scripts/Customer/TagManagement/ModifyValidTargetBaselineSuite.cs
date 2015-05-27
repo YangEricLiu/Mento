@@ -65,6 +65,7 @@ namespace Mento.Script.Customer.TagManagement
         }
       
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-1")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-1")]
         public void CheckViewPageAndSave(KPITargetBaselineData input)
@@ -102,6 +103,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-2")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-2")]
         public void SettingCalculationRuleForWorkday(KPITargetBaselineData input)
@@ -137,6 +139,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-3")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-3")]
         public void ModifyCalculationRuleForWorkday(KPITargetBaselineData input)
@@ -205,6 +208,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-4")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-4")]
         public void SettingCalculationRuleForNonWorkday(KPITargetBaselineData input)
@@ -300,6 +304,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-5")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-5")]
         public void SettingCalculationRuleForInteger(KPITargetBaselineData input)
@@ -347,6 +352,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-6")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-6")]
         public void ViewTargetBaselineNameForPtagOrVtagAndCheckInEnergy01(KPITargetBaselineData input)
@@ -432,6 +438,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-7")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-7")]
         public void ViewTargetBaselineNameForPtagOrVtagAndCheckInEnergy02(KPITargetBaselineData input)
@@ -514,6 +521,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-8")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-8")]
         public void ViewTargetBaselineNameAfterPaging(KPITargetBaselineData input)
@@ -550,6 +558,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-9")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-9")]
         public void CalculateAndReviseAfterTargetNameModified(KPITargetBaselineData input)
@@ -590,6 +599,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-10")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-10")]
         public void ModifyTargetBaselineNameForTagWithoutRule(KPITargetBaselineData input)
@@ -617,6 +627,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-101-11")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyValidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-101-11")]
         public void ModifyTargetBaselineNameAfterCalculatedOrRevised(KPITargetBaselineData input)

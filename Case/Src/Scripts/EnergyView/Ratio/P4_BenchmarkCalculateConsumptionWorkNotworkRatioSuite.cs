@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.Ratio
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-BenchmarkConsumptionWorkNotworkRatio-Calculate-101"), CreateTime("2013-12-18"), Owner("Emma")]
     public class P4_BenchmarkCalculateConsumptionWorkNotworkRatioSuite : TestSuiteBase
     {

@@ -41,6 +41,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-001-1")]
@@ -74,6 +75,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-001-2")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(OtherCostData[]))]
@@ -107,6 +109,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-001-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-001-3")]
@@ -138,6 +141,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-001-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-001-4")]
@@ -170,6 +174,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-101-1")]
@@ -202,6 +207,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Other-Add-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(OtherCostData[]), typeof(AddOtherCostPropertySuite), "TC-J1-FVT-CostConfiguration-Other-Add-101-2")]

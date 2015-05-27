@@ -44,6 +44,7 @@ namespace Mento.Script.Customer.TagManagement
         ///                       3. add vtag VtagForDel003 used by "VtagFormula" also being used by cost property  and "VtagPw"
         /// </summary> 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Delete-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(DeleteVtagSuite), "TC-J1-FVT-VtagConfiguration-Delete-001-1")]
@@ -88,8 +89,8 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(VTagSettings.FocusOnVTagByName(input.InputData.CommonName));
         }
 
-
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Delete-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(DeleteVtagSuite), "TC-J1-FVT-VtagConfiguration-Delete-101-1")]
@@ -159,6 +160,7 @@ namespace Mento.Script.Customer.TagManagement
          }
 
          [Test]
+         [Category("P3_Emma")]
          [CaseID("TC-J1-FVT-VtagConfiguration-Delete-001-2")]
          [Type("BFT")]
          [MultipleTestDataSource(typeof(VtagData[]), typeof(DeleteVtagSuite), "TC-J1-FVT-VtagConfiguration-Delete-001-2")]

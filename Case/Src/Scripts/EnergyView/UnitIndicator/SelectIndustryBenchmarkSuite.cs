@@ -22,6 +22,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-SelectIndustryBenchmark-101"), CreateTime("2014-10-15"), Owner("Pearl")]
     public class SelectIndustryBenchmarkSuite : TestSuiteBase
     {

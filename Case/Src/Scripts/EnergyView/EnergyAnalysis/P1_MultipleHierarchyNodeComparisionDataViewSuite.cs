@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P2_Emma")]
     [ManualCaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101"), CreateTime("2013-08-08"), Owner("Emma")]
     public class P1_MultipleHierarchyNodeComparisionDataViewSuite : TestSuiteBase
     {
@@ -49,6 +50,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-1")]
         public void MultipleHierarchyNodeComparisionDataView01(EnergyViewOptionData input)
@@ -235,6 +237,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_MultipleHierarchyNodeComparisionDataViewSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101-2")]
         public void MultipleHierarchyNodeComparisionDataView02(EnergyViewOptionData input)

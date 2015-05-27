@@ -52,6 +52,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-1")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-1")]
         public void ViewRankingData(CorporateRankingData input)
@@ -211,6 +212,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-3")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-3")]
         public void ViewFiftyBuildingData(CorporateRankingData input)
@@ -344,6 +346,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-4")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-4")]
         public void ViewZxhUserAConsumption(CorporateRankingData input)
@@ -391,6 +394,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-5")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-5")]
         public void ViewLastYearConsumption(CorporateRankingData input)
@@ -581,6 +585,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-6")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-6")]
         public void ViewNullTestBuildingData(CorporateRankingData input)
@@ -615,6 +620,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-7")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-7")]
         public void ViewNullTestBuildingDataUnitArea(CorporateRankingData input)
@@ -650,6 +656,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionRanking-View-101-8")]
         [MultipleTestDataSource(typeof(CorporateRankingData[]), typeof(ViewConsumptionRankingData), "TC-J1-FVT-ConsumptionRanking-View-101-8")]
         public void ClickTenRanking(CorporateRankingData input)

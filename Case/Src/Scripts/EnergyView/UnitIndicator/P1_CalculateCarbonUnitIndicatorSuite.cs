@@ -45,6 +45,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static Widget Widget = JazzFunction.Widget;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-1")]
         public void CalculateCarbonUnitIndicator01(UnitIndicatorData input)
@@ -136,6 +137,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-2")]
         public void CalculateCarbonUnitIndicator02(UnitIndicatorData input)
@@ -229,6 +231,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CarbonUnitIndicator-Calculate-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-3")]
         public void CalculateCarbonUnitIndicator03(UnitIndicatorData input)
@@ -436,6 +439,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CarbontUnitIndicator-Calculate-101-6")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-6")]
         public void CalculateCarbonUnitIndicator06(UnitIndicatorData input)
@@ -568,6 +572,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CarbontUnitIndicator-Calculate-101-7")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-7")]
         public void CalculateCarbonUnitIndicatorRawValue(UnitIndicatorData input)

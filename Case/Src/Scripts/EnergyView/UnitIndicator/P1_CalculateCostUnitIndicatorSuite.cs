@@ -45,6 +45,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static Widget Widget = JazzFunction.Widget;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-1")]
         public void CalculateCostUnitIndicator01(UnitIndicatorData input)
@@ -136,6 +137,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-2")]
         public void CalculateCostUnitIndicator02(UnitIndicatorData input)
@@ -229,6 +231,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-3")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-3")]
         public void CalculateCostUnitIndicator03(UnitIndicatorData input)
@@ -432,6 +435,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-6")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-6")]
         public void CalculateCostUnitIndicator06(UnitIndicatorData input)
@@ -544,6 +548,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-7")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-7")]
         public void CalculateCostUnitIndicator07(UnitIndicatorData input)
@@ -656,6 +661,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-8")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-8")]
         public void CalculateCostUnitIndicator08(UnitIndicatorData input)
@@ -712,6 +718,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-9")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-9")]
         public void CalculateCostUnitIndicator09(UnitIndicatorData input)
@@ -831,6 +838,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
         public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)

@@ -17,6 +17,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
+    [TestFixture]
     public class ModifyCustomizedLabelingInvalidSuite
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
@@ -35,6 +36,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-001")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-001")]
@@ -134,6 +136,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-002")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-002")]
@@ -186,6 +189,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
        
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-003")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-003")]
@@ -212,6 +216,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Modify-004")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(ModifyCustomizedLabelingInvalidSuite), "TC-J1-FVT-CustomizedLabellingSetting-Modify-004")]

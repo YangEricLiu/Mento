@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
-    //[Ignore("ignore")]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-AdditionalTagsDataVerification-DataView-101"), CreateTime("2013-12-25"), Owner("Cathy")]
     public class P4_AdditionalTagsDataVerificationSuite : TestSuiteBase
     {

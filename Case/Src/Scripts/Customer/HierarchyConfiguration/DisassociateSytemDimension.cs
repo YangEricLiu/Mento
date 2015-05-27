@@ -40,6 +40,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-SystemDimensionConfiguration-Disassociate-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(DisassociateSytemDimension), "TC-J1-FVT-SystemDimensionConfiguration-Disassociate-001-1")]
@@ -77,6 +78,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-SystemDimensionConfiguration-Disassociate-001-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(DisassociateSytemDimension), "TC-J1-FVT-SystemDimensionConfiguration-Disassociate-001-2")]
@@ -123,6 +125,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(DisassociateSytemDimension), "TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-1")]
@@ -168,6 +171,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(SystemDimensionData[]), typeof(DisassociateSytemDimension), "TC-J1-FVT-SystemDimensionConfiguration-Disassociate-101-2")]

@@ -17,6 +17,8 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
+    [TestFixture]
+    [Category("P4_Emma")]
     public class DeleteCustomizedLabelingValidSuite
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
@@ -72,7 +74,5 @@ namespace Mento.Script.Customer.CustomizedLabelling
             Assert.IsFalse(CustomizedLabellingSettings.IslabelingNameExist(input.InputData.CommonName));
 
         }
-
-
     }
 }

@@ -42,6 +42,7 @@ namespace Mento.Script.Customer.TagManagement
         /// Prepare Data:  1. make sure the vtags have been added "VtagForInvalidSameCode","VtagForInvalidFormula" had formula "PtagByFormula";
         /// </summary> 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-001-1")]
@@ -62,9 +63,9 @@ namespace Mento.Script.Customer.TagManagement
             //verify vtag not add successful
             Assert.IsFalse(VTagSettings.FocusOnVTagByName(input.InputData.CommonName));
         }
-
-      
+    
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-001-2")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(VtagData[]))]
@@ -91,6 +92,7 @@ namespace Mento.Script.Customer.TagManagement
         }
        
       [Test]
+      [Category("P4_Emma")]
       [CaseID("TC-J1-FVT-VtagConfiguration-Add-001-3")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-001-3")]
@@ -124,6 +126,7 @@ namespace Mento.Script.Customer.TagManagement
       }
 
       [Test]
+      [Category("P4_Emma")]
       [CaseID("TC-J1-FVT-VtagConfiguration-Add-001-4")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-001-4")]
@@ -147,6 +150,7 @@ namespace Mento.Script.Customer.TagManagement
       }
 
       [Test]
+      [Category("P4_Emma")]
       [CaseID("TC-J1-FVT-VtagConfiguration-Add-001-5")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(AddInvalidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-001-5")]
@@ -169,8 +173,6 @@ namespace Mento.Script.Customer.TagManagement
           TimeManager.ShortPause();
           Assert.IsTrue(VTagSettings.IsFormulaInvalidMsgCorrect(input.ExpectedData.FormulaMessage));
 
-      }
-       
-       
+      }    
     }
 }

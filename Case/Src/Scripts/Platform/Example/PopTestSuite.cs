@@ -64,7 +64,7 @@ namespace Mento.Script.System.Example
             TimeManager.Pause(5000);
 
             //Select customer and confirm
-            JazzButton.PopMenuButtonCustomer.SelectItem("NancyCustomer12");
+            JazzButton.PopMenuButtonCustomer.Pop_SelectItem("NancyCustomer12");
             TimeManager.LongPause();
 
             JazzButton.PopbButtonConfirm.Click();
@@ -81,7 +81,7 @@ namespace Mento.Script.System.Example
         {
             //open pop and login
             JazzBrowseManager.OpenJazz();
-            TimeManager.Pause(5000);
+            TimeManager.Pause(15000);
 
             JazzTextField.PopLoginUserNameTextField.Fill("SchneiderElectricChina");
             JazzTextField.PopLoginPasswordTextField.Fill("P@ssw0rdChina");

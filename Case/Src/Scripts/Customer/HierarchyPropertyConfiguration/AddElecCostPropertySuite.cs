@@ -41,6 +41,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-1")]
@@ -80,6 +81,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-2")]
@@ -107,6 +109,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-3")]
@@ -158,6 +161,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-4")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(ElectricfixedCostData[]))]
@@ -201,6 +205,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-1")]
@@ -253,6 +258,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricfixedCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-2")]
@@ -296,6 +302,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-5")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-5")]
@@ -331,6 +338,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-6")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-001-6")]
@@ -344,6 +352,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-001-7")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(ElectricityComprehensiveCostData[]))]
@@ -397,6 +406,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-3")]
@@ -459,6 +469,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-CostConfiguration-Elec-Add-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(ElectricityComprehensiveCostData[]), typeof(AddElecCostPropertySuite), "TC-J1-FVT-CostConfiguration-Elec-Add-101-4")]

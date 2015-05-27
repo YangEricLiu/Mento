@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-AdditionalCorporateRanking-DataView-101"), CreateTime("2013-12-31"), Owner("Greenie")]
     public class AdditionalCorporateRankingVerificationSuite : TestSuiteBase
     {

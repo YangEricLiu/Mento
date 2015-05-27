@@ -43,6 +43,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-PtagRawData-View-103")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ViewPtagRawDataSuite), "TC-J1-FVT-PtagRawData-View-103")]
@@ -91,6 +92,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-PtagRawData-View-104")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ViewPtagRawDataSuite), "TC-J1-FVT-PtagRawData-View-104")]
@@ -140,6 +142,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-PtagRawData-View-105")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ViewPtagRawDataSuite), "TC-J1-FVT-PtagRawData-View-105")]
@@ -160,6 +163,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-PtagRawData-View-106")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ViewPtagRawDataSuite), "TC-J1-FVT-PtagRawData-View-106")]
@@ -202,6 +206,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-PtagRawData-View-107")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(ViewPtagRawDataSuite), "TC-J1-FVT-PtagRawData-View-107")]

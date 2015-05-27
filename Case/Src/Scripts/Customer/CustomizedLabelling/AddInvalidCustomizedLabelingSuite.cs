@@ -19,6 +19,8 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
+    [TestFixture]
+    [Category("P4_Emma")]
     public class AddInvalidCustomizedLabelingSuite
     {
         private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;

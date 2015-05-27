@@ -42,6 +42,7 @@ namespace Mento.Script.Customer.TagManagement
         /// Prepare Data:  1. make sure the vtags have been added "PtagForFormula"
         /// </summary> 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-0")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-0")]
@@ -60,6 +61,7 @@ namespace Mento.Script.Customer.TagManagement
 
       
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-1")]
@@ -115,6 +117,7 @@ namespace Mento.Script.Customer.TagManagement
 
 
       [Test]
+      [Category("P2_Emma")]
       [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-2")]
@@ -147,6 +150,7 @@ namespace Mento.Script.Customer.TagManagement
       }
 
       [Test]
+      [Category("P3_Emma")]
       [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-3")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-3")]
@@ -183,6 +187,7 @@ namespace Mento.Script.Customer.TagManagement
       }
 
       [Test]
+      [Category("P4_Emma")]
       [CaseID("TC-J1-FVT-VtagFormulaConfiguration-Modify-101-4")]
       [Type("BFT")]
       [MultipleTestDataSource(typeof(VtagData[]), typeof(ModifyValidFormula), "TC-J1-FVT-VtagFormulaConfiguration-Modify-101-4")]
@@ -228,6 +233,5 @@ namespace Mento.Script.Customer.TagManagement
 
           Assert.IsTrue(VTagSettings.IsModifyFormulaButtonDisplayed());
       }
-
     }
 }

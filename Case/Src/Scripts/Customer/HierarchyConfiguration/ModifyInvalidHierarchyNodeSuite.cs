@@ -40,6 +40,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Modify-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(ModifyInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Modify-001-1")]
@@ -69,6 +70,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Modify-001-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(ModifyInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Modify-001-2")]
@@ -99,6 +101,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Modify-001-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(HierarchyData[]), typeof(ModifyInvalidHierarchyNodeSuite), "TC-J1-FVT-Hierarchy-Modify-001-3")]

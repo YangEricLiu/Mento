@@ -49,6 +49,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-1")]
         public void ViewDataViewOfTagThenClear(EnergyViewOptionData input)
@@ -113,6 +114,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-2")]
         public void DataViewSaveToDashBoard(EnergyViewOptionData input)
@@ -168,6 +170,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-3")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-3")]
         public void DataViewWithOtherCalcualtionType(EnergyViewOptionData input)
@@ -218,6 +221,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
         public void EnergyAnalysisRawDataDisplay_5359(EnergyViewOptionData input)
@@ -256,6 +260,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
         public void RawValueDisplay(EnergyViewOptionData input)

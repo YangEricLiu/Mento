@@ -44,6 +44,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         /// Prepare Data: 1."AreaNodeForCheckSame "  added
         /// </summary> 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddInvalidAreaCancel")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(AreaDimensionData[]))]
@@ -88,6 +89,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddInvalidAreaNode")]
         [Type("BFT")]
         [IllegalInputValidation(typeof(AreaDimensionData[]))]
@@ -141,6 +143,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-SameAreaNodes")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddInvalidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-SameAreaNodes")]

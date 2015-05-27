@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.Ratio
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P2_Emma")]
     [ManualCaseID("TC-J1-FVT-ConsumptionDayNightRatio-Calculate-101"), CreateTime("2013-12-17"), Owner("Emma")]
     public class P1_CalculateConsumptionDayNightRatioSuite : TestSuiteBase
     {

@@ -44,6 +44,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         /// Prepare Data: 1. add area dimension "ModifyArea1" ,"ModifyArea2" ,"ModifyArea3","ModifyArea4" ,"AreaNodeVerify" For the test
         /// </summary> 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyAreaCancel")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyAreaCancel")]
@@ -79,6 +80,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAreaNode")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAreaNode")]
@@ -118,6 +120,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyThenBack")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyThenBack")]
@@ -165,6 +168,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAndVerify")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(ModifyValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-ModifyValidAndVerify")]

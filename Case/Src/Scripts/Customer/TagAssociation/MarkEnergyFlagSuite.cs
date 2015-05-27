@@ -40,6 +40,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(MarkEnergyFlagSuite), "TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-1")]
@@ -63,6 +64,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(MarkEnergyFlagSuite), "TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-2")]
@@ -103,6 +105,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(MarkEnergyFlagSuite), "TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-3")]
@@ -124,6 +127,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(MarkEnergyFlagSuite), "TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-4")]
@@ -165,6 +169,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-5")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(MarkEnergyFlagSuite), "TC-J1-FVT-TagAssociation-MarkEnergyFlag-101-5")]

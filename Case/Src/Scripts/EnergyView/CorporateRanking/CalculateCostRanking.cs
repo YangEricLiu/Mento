@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P3_Emma")]
     [ManualCaseID("TC-J1-FVT-CostRanking-Calculate-101"), CreateTime("2013-12-16"), Owner("Greenie")]
     public class CalculateCostRanking : TestSuiteBase
     {

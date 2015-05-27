@@ -41,6 +41,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-DifferenceValueCalculation-101")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(DiffValueCalcPtagRawDataSuite), "TC-J1-FVT-DifferenceValueCalculation-101")]
@@ -76,6 +77,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-DifferenceValueCalculation-102")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(DiffValueCalcPtagRawDataSuite), "TC-J1-FVT-DifferenceValueCalculation-102")]
@@ -110,6 +112,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-DifferenceValueCalculation-103")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PtagData[]), typeof(DiffValueCalcPtagRawDataSuite), "TC-J1-FVT-DifferenceValueCalculation-103")]
@@ -143,6 +146,5 @@ namespace Mento.Script.Customer.TagManagement
             //..............?
 
         }
-
     }
 }

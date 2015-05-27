@@ -43,6 +43,7 @@ namespace Mento.Script.EnergyView.Ratio
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-View-101-1")]
         [MultipleTestDataSource(typeof(RatioData[]), typeof(ViewConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-View-101-1")]
         public void ViewConsumptionWorkNotworkRatio01(RatioData input)
@@ -150,6 +151,7 @@ namespace Mento.Script.EnergyView.Ratio
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatio-View-101-2")]
         [MultipleTestDataSource(typeof(RatioData[]), typeof(ViewConsumptionWorkNotworkRatioSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatio-View-101-2")]
         public void ViewConsumptionWorkNotworkRatio02(RatioData input)

@@ -44,6 +44,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         /// </summary>  
         /// 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-1")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-1")]
@@ -58,6 +59,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-2")]
         [Type("BVT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-2")]
@@ -95,6 +97,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-3")]
@@ -132,6 +135,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-4")]
@@ -160,6 +164,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(PeopleAreaPropertyData[]), typeof(AddValidPeopleAreaPropertySuite), "TC-J1-FVT-PopulationAreaConfiguration-Add-101-5")]

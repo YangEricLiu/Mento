@@ -51,6 +51,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Administrator-Add-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AdministratorInfoData[]), typeof(AdministratorInfoSuite), "TC-J1-FVT-Hierarchy-Administrator-Add-101-1")]
@@ -84,6 +85,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Administrator-Add-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AdministratorInfoData[]), typeof(AdministratorInfoSuite), "TC-J1-FVT-Hierarchy-Administrator-Add-101-2")]
@@ -142,6 +144,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Administrator-Add-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AdministratorInfoData[]), typeof(AdministratorInfoSuite), "TC-J1-FVT-Hierarchy-Administrator-Add-101-3")]
@@ -183,6 +186,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Administrator-Add-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AdministratorInfoData[]), typeof(AdministratorInfoSuite), "TC-J1-FVT-Hierarchy-Administrator-Add-101-4")]
@@ -230,6 +234,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
             Assert.AreEqual(input.InputData.Email, AdministratorInfoSetting.GetEmailValue_N(1));
         }
 
+        [Category("P2_Emma")]
         [Test]
         [CaseID("TC-J1-FVT-Hierarchy-Administrator-Modify-101-1")]
         [Type("BFT")]
@@ -334,6 +339,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-Hierarchy-Administrator-Modify-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AdministratorInfoData[]), typeof(AdministratorInfoSuite), "TC-J1-FVT-Hierarchy-Administrator-Modify-101-2")]

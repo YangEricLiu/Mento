@@ -217,6 +217,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-4")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-4")]
         public void TrendChart30TagsLimit(EnergyViewOptionData input)

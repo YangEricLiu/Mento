@@ -44,6 +44,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-1")]
         public void MultipleHierarchyNodeComparisionPieChart01(EnergyViewOptionData input)
@@ -204,6 +205,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-3")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-3")]
         public void MultipleHierarchyNodeComparisionPieChart03(EnergyViewOptionData input)
@@ -232,6 +234,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-4")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-4")]
         public void MultipleHierarchyNodeComparisionPieChart04(EnergyViewOptionData input)
@@ -269,6 +272,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-5")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(MultipleHierarchyNodeComparisionPieChartSuite), "TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101-5")]
         public void MultipleHierarchyNodeComparisionPieChart05(EnergyViewOptionData input)

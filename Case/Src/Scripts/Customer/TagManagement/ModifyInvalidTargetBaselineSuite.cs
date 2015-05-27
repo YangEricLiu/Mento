@@ -57,6 +57,7 @@ namespace Mento.Script.Customer.TagManagement
         }
       
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-001-1")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyInvalidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-001-1")]
         public void InvalidValueDateForCalculationRule(KPITargetBaselineData input)
@@ -128,6 +129,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-001-2")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyInvalidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-001-2")]
         public void ModifyEndRange(KPITargetBaselineData input)
@@ -169,6 +171,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-001-3")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyInvalidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-001-3")]
         public void DupDateReviseCancel(KPITargetBaselineData input)
@@ -240,6 +243,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-Modify-001-4")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ModifyInvalidTargetBaselineSuite), "TC-J1-FVT-TargetConfiguration-Modify-001-4")]
         public void ModifynamewithInvalidInfo(KPITargetBaselineData input)

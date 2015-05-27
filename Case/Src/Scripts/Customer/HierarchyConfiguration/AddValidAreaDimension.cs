@@ -43,6 +43,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         /// Precondition: make sure the hiearchy node has been added  "自动化测试", "测试楼宇园区", "楼宇配置测试"
         /// </summary>  
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-001-AddAreaCancel")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-001-AddAreaCancel")]
@@ -77,6 +78,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAreaNode")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAreaNode")]
@@ -120,6 +122,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-FiveLevelsAreaNodes")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-FiveLevelsAreaNodes")]
@@ -170,6 +173,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-AddLongestArea")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddLongestArea")]
@@ -212,6 +216,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-OrgandSiteNodeAddArea")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-OrgandSiteNodeAddArea")]
@@ -230,6 +235,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAndVerify")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-AddValidAndVerify")]
@@ -278,6 +284,7 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-AreaDimensionConfiguration-101-EmptyItemNotDisplay")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AreaDimensionData[]), typeof(AddValidAreaDimension), "TC-J1-FVT-AreaDimensionConfiguration-101-EmptyItemNotDisplay")]

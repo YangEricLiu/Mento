@@ -21,6 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P2_Emma")]
     [ManualCaseID("TC-J1-FVT-CostRanking-Calculate-UpdateRule-101"), CreateTime("2014-06-23"), Owner("Emma")]
     public class P1_CalculateUpdateRuleCostRanking : TestSuiteBase
     {

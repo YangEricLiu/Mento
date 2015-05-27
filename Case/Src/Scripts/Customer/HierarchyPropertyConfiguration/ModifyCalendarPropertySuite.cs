@@ -38,6 +38,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-101-1")]
@@ -87,6 +88,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-101-2")]
@@ -132,6 +134,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-101-3")]
@@ -169,6 +172,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-101-4")]
@@ -197,6 +201,7 @@ namespace Mento.Script.Customer.HierarchyPropertyConfiguration
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-CalendarConfiguration-Modify-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CalendarPropertyData[]), typeof(ModifyCalendarPropertySuite), "TC-J1-FVT-CalendarConfiguration-Modify-001-1")]

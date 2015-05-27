@@ -44,6 +44,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         private static Widget Widget = JazzFunction.Widget;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-1")]
         public void ViewWorkNotworkIndustryLabelling01(IndustryLabellingData input)
@@ -104,6 +105,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-2")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-2")]
         public void ViewWorkNotworkIndustryLabelling02(IndustryLabellingData input)
@@ -186,6 +188,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3")]
         [MultipleTestDataSource(typeof(IndustryLabellingData[]), typeof(ViewIndustryLabellingWorkNotworkSuite), "TC-J1-FVT-ConsumptionWorkNotworkRatioIndustryLabelling-View-101-3")]
         public void ViewWorkNotworkIndustryLabelling03(IndustryLabellingData input)
@@ -200,6 +203,9 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             //Select BuildingLabelling1, select Labellingtag1, 
             IndustryLabellingPanel.SelectHierarchy(input.InputData.Hierarchies[0]);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+            TimeManager.LongPause();
+
+            IndustryLabellingPanel.SwitchTagTab(TagTabs.HierarchyTag);
             TimeManager.MediumPause();
 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);

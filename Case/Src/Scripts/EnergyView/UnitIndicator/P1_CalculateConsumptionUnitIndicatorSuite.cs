@@ -44,6 +44,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         private static MutipleHierarchyCompareWindow MultiHieCompareWindow = JazzFunction.MutipleHierarchyCompareWindow;
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-1")]
         public void CalculateConsumptionUnitIndicator01(UnitIndicatorData input)
@@ -304,6 +305,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-3871")]
         public void CalculateConsumptionUnitIndicator_3871(UnitIndicatorData input)
@@ -352,6 +354,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-5405")]
         public void CalculateConsumptionUnitIndicator_5405(UnitIndicatorData input)
@@ -406,6 +409,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
         public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)

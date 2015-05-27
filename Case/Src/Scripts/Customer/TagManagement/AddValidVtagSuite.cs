@@ -44,6 +44,7 @@ namespace Mento.Script.Customer.TagManagement
         ///                        2. make sure the vtags have been added "PtagUseredByVtagFormula"
         /// </summary> 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-1")]
@@ -72,6 +73,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-2")]
@@ -123,15 +125,12 @@ namespace Mento.Script.Customer.TagManagement
             Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.FocusOnRowByName(input.InputData.CommonName));
             TimeManager.MediumPause();
             JazzFunction.EnergyViewToolbarViewSplitButton.ClickView();
-            TimeManager.MediumPause();
-            // Verify is there  any trend chart display (temp method)
-            
-            JazzMessageBox.LoadingMask.WaitSubMaskLoading();
-            Assert.IsTrue(JazzFunction.EnergyAnalysisPanel.IsLegendItemExists(input.InputData.CommonName));
+            TimeManager.MediumPause();            
         }
 
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-3")]
@@ -222,6 +221,7 @@ namespace Mento.Script.Customer.TagManagement
 
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-VtagConfiguration-Add-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(VtagData[]), typeof(AddValidVtagSuite), "TC-J1-FVT-VtagConfiguration-Add-101-4")]

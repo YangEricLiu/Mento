@@ -84,6 +84,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-001-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-001-1")]
@@ -116,6 +117,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-001-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-001-2")]
@@ -129,6 +131,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-001-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-001-3")]
@@ -153,6 +156,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-001-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-001-4")]
@@ -190,6 +194,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-101-1")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-1")]
@@ -241,6 +246,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P2_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-101-2")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-2")]
@@ -299,6 +305,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-101-3")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-3")]
@@ -334,6 +341,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-101-4")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-4")]
@@ -383,6 +391,7 @@ namespace Mento.Script.Customer.TagAssociation
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TagAssociation-Associate-101-5")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(AssociateTagData[]), typeof(AssociateTagSuite), "TC-J1-FVT-TagAssociation-Associate-101-5")]

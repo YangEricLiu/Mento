@@ -621,8 +621,8 @@
   <TextField>
       <login>
         <Pop>
-          <add key="PopTextFieldLoginUserName" value = "//input[@data-reactid='.0.0.1.0.0.0.0.0']" type = "XPath"/>
-          <add key="PopTextFieldLoginPassword" value="//input[@data-reactid='.0.0.1.0.0.1.0.0']" type = "XPath"/>
+          <add key="PopTextFieldLoginUserName" value = "//div[@class='pop-login']//input[@placeholder='用户名']" type = "XPath"/>
+          <add key="PopTextFieldLoginPassword" value="//div[@class='pop-login']//input[@placeholder='密码']" type = "XPath"/>
         </Pop>
           <add key="TextFieldLoginUserName" value = "username" type = "ID"/>
           <add key="TextFieldLoginPassword" value="password" type="ID"/>

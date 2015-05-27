@@ -22,6 +22,7 @@ namespace Mento.Script.EnergyView.Ratio
     /// 
     /// </summary>
     [TestFixture]
+    [Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-ConsumptionWorkNotworkRatioIndustryBenchmark-View-101"), CreateTime("2014-2-10"), Owner("Emma")]
     public class ViewConsumptionWorkNotworkRatioIndustryBenchmarkSuite : TestSuiteBase
     {

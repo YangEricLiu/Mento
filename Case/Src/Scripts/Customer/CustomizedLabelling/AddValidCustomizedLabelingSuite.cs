@@ -17,6 +17,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 
 namespace Mento.Script.Customer.CustomizedLabelling
 {
+   [TestFixture]
    public class AddValidCustomizedLabelingSuite
     {
        private CustomizedLabellingSettings CustomizedLabellingSettings = JazzFunction.CustomizedLabellingSettings;
@@ -35,6 +36,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
 
         [Test]
+        [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-101")]
         [Type("BFT")]
         [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabelingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-101")]
@@ -125,6 +127,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
         }
          
          [Test]
+         [Category("P2_Emma")]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-102")]
          [Type("BFT")]
          [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabelingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-102")]
@@ -187,6 +190,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
          }
         
          [Test]
+         [Category("P2_Emma")]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-103")]
          [Type("BFT")]
          [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabelingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-103")]
@@ -283,6 +287,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
          }
 
          [Test]
+         [Category("P4_Emma")]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-104")]
          [Type("BFT")]
          [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabelingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-104")]
@@ -356,6 +361,7 @@ namespace Mento.Script.Customer.CustomizedLabelling
          }
 
          [Test]
+         [Category("P3_Emma")]
          [CaseID("TC-J1-FVT-CustomizedLabellingSetting-Add-105")]
          [Type("BFT")]
          [MultipleTestDataSource(typeof(CustomizedLabellingSettingData[]), typeof(AddValidCustomizedLabelingSuite), "TC-J1-FVT-CustomizedLabellingSetting-Add-105")]

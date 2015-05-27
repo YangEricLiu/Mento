@@ -58,6 +58,7 @@ namespace Mento.Script.Customer.TagManagement
         }
       
         [Test]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-View-101-1")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-1")]
         public void NonAssocTagNoCalendar(KPITargetBaselineData input)
@@ -76,6 +77,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-View-101-2")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-2")]
         public void AssocTagNoCalendar(KPITargetBaselineData input)
@@ -94,6 +96,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-View-101-3")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-3")]
         public void AssocTagWithCalendar(KPITargetBaselineData input)
@@ -139,6 +142,7 @@ namespace Mento.Script.Customer.TagManagement
         }
 
         [Test]
+        [Category("P3_Emma")]
         [CaseID("TC-J1-FVT-TargetConfiguration-View-101-4")]
         [MultipleTestDataSource(typeof(KPITargetBaselineData[]), typeof(ViewTargetBaselineCalendarSuite), "TC-J1-FVT-TargetConfiguration-View-101-4")]
         public void AssocTagWithOtherCalendar(KPITargetBaselineData input)

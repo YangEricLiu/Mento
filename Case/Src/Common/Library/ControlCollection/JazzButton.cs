@@ -59,9 +59,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return GetControl<Button>(JazzControlLocatorKey.PopbButtonConfirm); }
         }
 
-        public static Button PopButtonUserManagement
+        public static SplitButton PopButtonUserManagement
         {
-            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonUserManagement); }
+            get { return GetControl<SplitButton>(JazzControlLocatorKey.PopButtonUserManagement); }
         }
 
         public static Button PopButtonAddUser

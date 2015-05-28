@@ -5,8 +5,8 @@
     <add key="PopButtonLoginSubmit" value = "//span[@class='mui-raised-button-label']" type="XPath"/>
     <add key="PopMenuButtonCustomer" value = "//div[@class='mui-menu-label']" type="XPath"/>
     <add key="PopbButtonConfirm" value = "//span[text()='确定']" type="XPath"/>
-    <add key="PopButtonUserManagement" value = "//div[@class='pop-mainmenu']/div[@class='pop-menu']/a[text()='用户管理']" type="XPath"/>
-    <add key="PopButtonAddUser" value = "//div[@class='pop-manage-header-add-action']/a[text()='+ 用户']" type="XPath"/>
+    <add key="PopButtonUserManagement" value = "//div[@class='pop-mainmenu-level-main']/a[@class='pop-mainmenu-main']/div[@class='pop-mainmenu-main-title' and text()='用户管理']" type="XPath"/>
+    <add key="PopButtonAddUser" value = "//span[@class='pop-manage-header-add-action']/a[text()='+ 用户']" type="XPath"/>
   </Pop-Button>
   
     <Button>

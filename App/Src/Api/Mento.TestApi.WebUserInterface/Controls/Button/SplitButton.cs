@@ -10,10 +10,31 @@ namespace Mento.TestApi.WebUserInterface.Controls
     {
         private static string MenuItemLocatorFormat = "//div[contains(@class,'x-menu-item') and a/span[text()='{0}']]";
         private static Locator TriggerLocator = new Locator("em", ByType.TagName);
+        private static string Pop_MenuItemLocatorFormat = "//div[@class='pop-mainmenu-level-main']/div[contains(@class,'pop-mainmenu-level-sub')]/a[text()='{0}']";
 
         public SplitButton(Locator locator)
             : base(locator)
         { }
+
+        #region Pop
+
+        public void Pop_SelectItem(string item)
+        {
+            this.Click();
+            TimeManager.LongPause();
+
+            Locator itemLocator = Pop_GetMenuItemLocator(item);
+            ElementHandler.Click(FindChild(itemLocator));
+        }
+
+        private Locator Pop_GetMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(Pop_MenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
+        }
+
+        #endregion
+
+        #region Not pop      
 
         public void Trigger()
         {
@@ -53,5 +74,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
         }
+
+        #endregion
     }
 }

@@ -93,10 +93,12 @@ namespace Mento.Script.System.Example
             JazzButton.PopbButtonConfirm.Click();
             TimeManager.Pause(10000);
 
-            JazzButton.PopButtonUserManagement.Click();
+            JazzButton.PopButtonUserManagement.Pop_SelectItem("用户管理");
+            TimeManager.LongPause();
             TimeManager.LongPause();
 
             JazzButton.PopButtonAddUser.Click();
+            TimeManager.LongPause();
             TimeManager.LongPause();
 
             JazzComboBox.PopComboBoxPosition.Pop_SelectItem("部门经理");

@@ -29,9 +29,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             if (!String.IsNullOrEmpty(itemKey))
             {
                 var locator = Pop_GetComboBoxItemLocator(itemKey);
-
-                if (!ElementHandler.Displayed(locator))
-                    DisplayItems();
+                this.Click();
 
                 FindChild(locator).Click();
             }

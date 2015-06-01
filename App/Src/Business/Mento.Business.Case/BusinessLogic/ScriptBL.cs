@@ -163,10 +163,15 @@ namespace Mento.Business.Script.BusinessLogic
                     string CreateTimeString = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(CreateTimeAttribute));
                     string Owner = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(OwnerAttribute));
                     string Priority = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(PriorityAttribute));
-                    string Type = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(PriorityAttribute));
+                    string Type = this.GetScriptePropertyValue(suiteProperties, scriptProperties, typeof(TypeAttribute));
 
                     DateTime CreateTime;
                     int priority;
+                    if (!int.TryParse(Priority, out priority))
+                        priority = 0;
+
+                    if (String.IsNullOrEmpty(Type))
+                        Type = "BFT";
 
                     if (String.IsNullOrEmpty(CaseID) || !Regex.IsMatch(CaseID, ValidationRegexPatterns.IDENTITYPATTERN))
                         faults.Add(typeof(CaseIDAttribute));
@@ -176,8 +181,8 @@ namespace Mento.Business.Script.BusinessLogic
                         faults.Add(typeof(CreateTimeAttribute));
                     if (String.IsNullOrEmpty(Owner))
                         faults.Add(typeof(OwnerAttribute));
-                    if (!int.TryParse(Priority, out priority))
-                        faults.Add(typeof(PriorityAttribute));
+                    //if (!int.TryParse(Priority, out priority))
+                        //faults.Add(typeof(PriorityAttribute));
 
                     if (faults.Count > 0)
                         validationFaults.Add(testScript, faults);
@@ -243,18 +248,19 @@ namespace Mento.Business.Script.BusinessLogic
 
         private void GetTheLatestScript()
         {
-            FileSystemHelper.ConnectServer(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword);
+            //FileSystemHelper.ConnectServer(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword);
 
             if (Directory.Exists(ExecutionConfig.ScriptDirectory))
                 Directory.Delete(ExecutionConfig.ScriptDirectory, true);
 
             DirectoryInfo localLocation = new DirectoryInfo(ExecutionConfig.LocalNetworkDrive + Path.DirectorySeparatorChar.ToString());
+            //DirectoryInfo localLocation = new DirectoryInfo(ExecutionConfig.LocalNetworkDrive + Path.DirectorySeparatorChar.ToString());
 
             DirectoryInfo theLatestVersion = localLocation.GetDirectories("Mento_TSIR*").OrderByDescending(d => d.CreationTime).FirstOrDefault();
 
             FileSystemHelper.CopyDirectory(theLatestVersion.FullName, ExecutionConfig.ScriptDirectory);
 
-            FileSystemHelper.DisconnectServer(ExecutionConfig.LocalNetworkDrive);
+            //FileSystemHelper.DisconnectServer(ExecutionConfig.LocalNetworkDrive);
         }
         #endregion
     }

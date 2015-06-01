@@ -84,8 +84,8 @@ namespace Mento.Business.Plan.BusinessLogic
             if (!Directory.Exists(ExecutionConfig.ScriptDirectory) || Directory.GetFiles(ExecutionConfig.ScriptDirectory).Length <= 0 || ExecutionConfig.IsRefreshScriptsOnExecution)
                 FileSystemHelper.DownloadSharedFiles(ExecutionConfig.PublishDirectory, ExecutionConfig.LocalNetworkDrive, ExecutionConfig.PublishServerUserName, ExecutionConfig.PublishServerPassword, ExecutionConfig.ScriptDirectory);
 
-            //execute initialize sql script
-            JazzDatabaseOperator.Initialize();
+            //execute initialize sql script, for the prepared data is done by backup and restore database
+            //JazzDatabaseOperator.Initialize();
 
             //call nunit to execute the script list
             ExecuteScripts(plan, workFolder);
@@ -93,7 +93,7 @@ namespace Mento.Business.Plan.BusinessLogic
             //when execution finished, update endtime, destruct execution context, destruct database
             ExecutionDA.UpdateEndTime(executionID, DateTime.Now);
             ExecutionContext.Destruct();
-            JazzDatabaseOperator.Destruct();
+            //JazzDatabaseOperator.Destruct();
 
             //archive error image
             ArchiveExecutionResult(workFolder);
@@ -104,7 +104,7 @@ namespace Mento.Business.Plan.BusinessLogic
             //save result
             foreach (var result in results)
             {
-                ResultBL.Create(result);
+                //ResultBL.Create(result);
             }
 
             return results;

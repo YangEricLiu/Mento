@@ -7,7 +7,7 @@ using OpenQA.Selenium;
 namespace Mento.TestApi.WebUserInterface.Controls
 {
     /// <summary>
-    /// TextField is an Input or TextArea
+    /// TextField is an Input or TextArea ok
     /// </summary>
     public class TextField : JazzControl
     {

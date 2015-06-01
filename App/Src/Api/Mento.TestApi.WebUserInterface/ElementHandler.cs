@@ -160,6 +160,7 @@ namespace Mento.TestApi.WebUserInterface
         #endregion
     }
 
+    //type
     public enum WaitType
     {
         ToAppear = 1,

@@ -34,7 +34,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         public void Pop_ExpandNode(string nodeText)
         {
-            //if the node is not expanded, click expand icon
             if (!Pop_IsNodeExpanded(nodeText))
             {
                 Pop_ClickNodeExpander(nodeText);

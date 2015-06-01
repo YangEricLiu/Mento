@@ -108,7 +108,7 @@ namespace Mento.TestApi.WebUserInterface
         }
 
         /// <summary>
-        /// Construct the driver 
+        /// Construct the driver, OK
         /// </summary>
         /// <param name="browser"></param>
         /// <returns>The driver instance</returns>

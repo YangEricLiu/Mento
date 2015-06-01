@@ -44,6 +44,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         #endregion
 
+        #region not pop
+       
         protected IWebElement SelectTrigger 
         {
             get 
@@ -222,5 +224,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return items;
         }
+
+        #endregion
     }
+        
 }

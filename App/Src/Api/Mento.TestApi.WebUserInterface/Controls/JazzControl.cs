@@ -70,7 +70,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             else
             {
                 if (locator == null)
-                    throw new ApiException("Can not get control when locator is null.");
+                    throw new ApiException("Can not get control when locator is null, so....");
 
                 return (T)Activator.CreateInstance(typeof(T), locator);
             }

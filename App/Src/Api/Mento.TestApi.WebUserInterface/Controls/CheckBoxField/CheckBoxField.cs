@@ -11,7 +11,7 @@ using Mento.Utility;
 namespace Mento.TestApi.WebUserInterface.Controls
 {
     /// <summary>
-    /// CheckBoxField display whether the checkbox is checked
+    /// CheckBoxField display whether the checkbox is checked ok
     /// </summary>
     public class CheckBoxField : JazzControl
     {

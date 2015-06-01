@@ -10,7 +10,7 @@ namespace Mento.TestApi.WebUserInterface
     public static class JazzBrowseManager
     {
         /// <summary>
-        /// Open Jazz with special browser and maximize the window
+        /// Open Jazz with special browser and maximize the window,OK
         /// </summary>
         /// <returns></returns>
         public static void OpenJazz()

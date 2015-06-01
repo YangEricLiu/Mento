@@ -15,7 +15,7 @@ namespace Mento.TestApi.WebUserInterface
         private static int PauseLong = 2000; //mili seconds
 
         /// <summary>
-        /// Pause for 0.05 seconds
+        /// Pause for 0.05 seconds, ok
         /// </summary>
         public static void FlashPause()
         {

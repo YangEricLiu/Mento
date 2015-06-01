@@ -11,7 +11,7 @@ using Mento.Framework.Log;
 namespace Mento.Framework.Script
 {
     /// <summary>
-    /// Test suite base abstract class
+    /// Test suite base abstract class ok
     /// </summary>
     public abstract class TestSuiteBase
     {

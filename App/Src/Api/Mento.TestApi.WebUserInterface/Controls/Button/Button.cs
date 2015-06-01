@@ -17,7 +17,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
 
         /// <summary>
-        /// 
+        /// ok
         /// </summary>
         /// <param name="locator">All ext button is wrappered with a div, the locator must be the div's locator</param>
         public Button(Locator locator)

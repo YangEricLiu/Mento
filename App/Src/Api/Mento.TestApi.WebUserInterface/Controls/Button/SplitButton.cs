@@ -16,7 +16,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             : base(locator)
         { }
 
-        #region Pop
+        #region Pop operation
 
         public void Pop_SelectItem(string item)
         {

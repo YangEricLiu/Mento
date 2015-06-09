@@ -48,9 +48,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
-        //30个点，7天小时的数据，分页查看的时候chrome28会崩溃
+        //30个点，7天小时的数据，分页查看的时候chrome28会崩溃,42也会崩溃，暂时ignore
         [Test]
-        [Category("P3_Emma")]
+        [Ignore("ignore")]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-1")]
         public void MultipleTagsSingleHieDataView(EnergyViewOptionData input)
@@ -190,7 +191,8 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         }
 
         [Test]
-        [Category("P3_Emma")]
+        [Ignore("ignore")]
+        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyMultiTagsDataViewSuite), "TC-J1-FVT-MultipleTagsComparision-DataView-001-2")]
         public void ChangeTagListBetweenHierarchy(EnergyViewOptionData input)

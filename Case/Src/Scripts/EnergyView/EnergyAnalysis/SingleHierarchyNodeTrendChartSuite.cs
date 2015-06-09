@@ -216,8 +216,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             #endregion
         }
 
+        //2.0测试的时候忽略,会导致chrome崩溃
         [Test]
-        [Category("P4_Emma")]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-TrendChart-101-4")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(SingleHierarchyNodeTrendChartSuite), "TC-J1-FVT-SingleHierarchyNode-TrendChart-101-4")]
         public void TrendChart30TagsLimit(EnergyViewOptionData input)

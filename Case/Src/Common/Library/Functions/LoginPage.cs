@@ -176,6 +176,14 @@ namespace Mento.ScriptCommon.Library.Functions
                     }
                 }
 
+                if (JazzMessageBox.MessageBox.Exists())
+                {
+                    if (JazzMessageBox.MessageBox.GetMessage().Contains("服务器错误") || JazzMessageBox.MessageBox.GetMessage().Contains("Server error"))
+                    {
+                        JazzMessageBox.MessageBox.OK();
+                    }
+                }
+
                 ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 5);
             }
             else
@@ -191,6 +199,14 @@ namespace Mento.ScriptCommon.Library.Functions
                     if (JazzMessageBox.MessageBox.Exists())
                     {
                         if (JazzMessageBox.MessageBox.GetMessage().Contains("地图不可用") || JazzMessageBox.MessageBox.GetMessage().Contains("Google map is unavailable"))
+                        {
+                            JazzMessageBox.MessageBox.OK();
+                        }
+                    }
+
+                    if (JazzMessageBox.MessageBox.Exists())
+                    {
+                        if (JazzMessageBox.MessageBox.GetMessage().Contains("服务器错误") || JazzMessageBox.MessageBox.GetMessage().Contains("Server error"))
                         {
                             JazzMessageBox.MessageBox.OK();
                         }
@@ -242,6 +258,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
                 TimeManager.ShortPause();
 
+                if (JazzMessageBox.MessageBox.Exists())
+                {
+                    if (JazzMessageBox.MessageBox.GetMessage().Contains("服务器错误") || JazzMessageBox.MessageBox.GetMessage().Contains("Server error"))
+                    {
+                        JazzMessageBox.MessageBox.OK();
+                    }
+                }
+
                 ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
                 TimeManager.MediumPause();
             }
@@ -266,6 +290,14 @@ namespace Mento.ScriptCommon.Library.Functions
                     }
 
                     TimeManager.ShortPause();
+
+                    if (JazzMessageBox.MessageBox.Exists())
+                    {
+                        if (JazzMessageBox.MessageBox.GetMessage().Contains("服务器错误") || JazzMessageBox.MessageBox.GetMessage().Contains("Server error"))
+                        {
+                            JazzMessageBox.MessageBox.OK();
+                        }
+                    }
 
                     ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 300);
                     TimeManager.MediumPause();

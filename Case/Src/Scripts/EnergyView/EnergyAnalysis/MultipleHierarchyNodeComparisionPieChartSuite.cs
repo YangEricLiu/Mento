@@ -24,6 +24,13 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     [ManualCaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-PieChart-101"), CreateTime("2014-05-30"), Owner("Emma")]
     public class MultipleHierarchyNodeComparisionPieChartSuite : TestSuiteBase
     {
+        [TestFixtureTearDown]
+        public void FixtureTearDown()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
+
         [SetUp]
         public void CaseSetUp()
         {

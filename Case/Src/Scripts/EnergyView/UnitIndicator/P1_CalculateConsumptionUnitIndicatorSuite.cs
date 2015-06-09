@@ -408,8 +408,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[1], input.InputData.failedFileName[1]);
         }
 
+        //2.0测试的时候忽略，不放在任何优先级里面
         [Test]
-        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateConsumptionUnitIndicatorSuite), "TC-J1-FVT-ConsumptionUnitIndicator-Calculate-101-2")]
         public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)

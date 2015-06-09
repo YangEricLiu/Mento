@@ -153,6 +153,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <returns></returns>
         public void FocusOnRow(int cellIndex,string cellText, bool Paging = true)
         {
+            if (IsPageToolBarExisted() && (CurrentPage > 1))
+            {
+                GotoPage(1);
+                TimeManager.LongPause();
+            }
+
             this.GetRow(cellIndex, cellText, Paging).Click();
         }
 

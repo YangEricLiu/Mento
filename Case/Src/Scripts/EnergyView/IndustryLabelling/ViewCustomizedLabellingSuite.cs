@@ -25,6 +25,13 @@ namespace Mento.Script.EnergyView.IndustryLabelling
     [ManualCaseID("TC-J1-FVT-CustomizedLabelling-View-101"), CreateTime("2014-09-29"), Owner("Nancy")]
     public class ViewCustomizedLabellingSuite : TestSuiteBase
     {
+        [TestFixtureSetUp]
+        public void FixtureSetUp()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
+
         [SetUp]
         public void CaseSetUp()
         {

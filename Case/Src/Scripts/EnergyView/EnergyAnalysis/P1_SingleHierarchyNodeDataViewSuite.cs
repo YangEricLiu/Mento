@@ -259,8 +259,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
         }
 
+        //忽略的原因是值太多，会导致chrome崩溃
         [Test]
-        [Category("P4_Emma")]
+        [Ignore("ignore")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-4")]
         public void RawValueDisplay(EnergyViewOptionData input)

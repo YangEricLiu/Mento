@@ -227,7 +227,7 @@ namespace Mento.Script.EnergyView.IndustryLabelling
             TimeManager.LongPause();
 
             IndustryLabellingPanel.SwitchTagTab(TagTabs.HierarchyTag);
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
 
             IndustryLabellingPanel.CheckTag(input.InputData.tagNames[0]);
             TimeManager.ShortPause();

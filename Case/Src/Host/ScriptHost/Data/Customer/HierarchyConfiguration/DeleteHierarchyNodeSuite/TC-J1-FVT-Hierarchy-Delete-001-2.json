@@ -6,7 +6,7 @@
 		},
 		"ExpectedData":
 		{
-			"Messages":["$@Common.Label.ConfirmDelete|(AutoBuilding002),($@Common.Glossary.HierarchyNode),()", "$@Setting.Hierarchy.Message.DeleteTip"],
+			"Messages":["$@Setting.Hierarchy.DeleteMessage|(AutoBuilding002)"],
 		} 
 	}
 ]

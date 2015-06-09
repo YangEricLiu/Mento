@@ -75,7 +75,6 @@ namespace Mento.Script.Customer.HierarchyConfiguration
 
             //因为双引号的写法不一样，因此在判断字符比较的时候，会认为不相等，中文输入法和英文输入法下的双引号不一致问题，是框架解析的问题，需要日后解决
             //Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[0]));
-            Assert.IsTrue(msgText.Contains(input.ExpectedData.Messages[1]));
             TimeManager.ShortPause();
 
             //confirm message box

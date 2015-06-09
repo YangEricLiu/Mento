@@ -56,6 +56,14 @@ namespace Mento.ScriptCommon.Library.Functions
                 }
             }
 
+            if (JazzMessageBox.MessageBox.Exists())
+            {
+                if (JazzMessageBox.MessageBox.GetMessage().Contains("服务器错误") || JazzMessageBox.MessageBox.GetMessage().Contains("Server error"))
+                {
+                    JazzMessageBox.MessageBox.OK();
+                }
+            }
+
             TimeManager.MediumPause();
         }
 

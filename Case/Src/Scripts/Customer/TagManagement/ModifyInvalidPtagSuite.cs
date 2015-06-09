@@ -52,7 +52,7 @@ namespace Mento.Script.Customer.TagManagement
             //Click "Cancel" button
             PTagSettings.ClickCancelButton();
             JazzMessageBox.LoadingMask.WaitLoading();
-            TimeManager.ShortPause();
+            TimeManager.LongPause();
 
             //verify modify successful
             Assert.IsFalse(PTagSettings.IsSaveButtonDisplayed());
@@ -64,8 +64,7 @@ namespace Mento.Script.Customer.TagManagement
 
             //Verify the ptag not changed
             PTagSettings.FocusOnPTagByName(input.InputData.OriginalName);
-            PTagSettings.WaitPtagPropertyInfoDisplay(10);
-            TimeManager.MediumPause();
+            TimeManager.LongPause();
             Assert.AreEqual(input.ExpectedData.CommonName, PTagSettings.GetNameValue());
             Assert.AreEqual(input.ExpectedData.Code, PTagSettings.GetCodeValue());
             Assert.AreEqual(input.ExpectedData.Meter, PTagSettings.GetMetercodeValue());

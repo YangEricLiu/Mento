@@ -571,8 +571,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[5], input.InputData.failedFileName[5]);
         }
 
+        //2.0测试的时候忽略，不放在任何优先级里面
         [Test]
-        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CarbontUnitIndicator-Calculate-101-7")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCarbonUnitIndicatorSuite), "TC-J1-FVT-CarbonUnitIndicator-Calculate-101-7")]
         public void CalculateCarbonUnitIndicatorRawValue(UnitIndicatorData input)

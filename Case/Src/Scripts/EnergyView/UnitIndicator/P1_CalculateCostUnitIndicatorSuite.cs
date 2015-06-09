@@ -24,6 +24,13 @@ namespace Mento.Script.EnergyView.UnitIndicator
     [ManualCaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101"), CreateTime("2013-11-14"), Owner("Emma")]
     public class P1_CalculateCostUnitIndicatorSuite : TestSuiteBase
     {
+        [TestFixtureSetUp]
+        public void FixtureSetUp()
+        {
+            JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
+            TimeManager.LongPause();
+        }
+        
         [SetUp]
         public void CaseSetUp()
         {
@@ -837,8 +844,8 @@ namespace Mento.Script.EnergyView.UnitIndicator
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[4], input.InputData.failedFileName[4]);
         }
 
+        //2.0测试的时候忽略，不放在任何优先级里面
         [Test]
-        [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
         [MultipleTestDataSource(typeof(UnitIndicatorData[]), typeof(P1_CalculateCostUnitIndicatorSuite), "TC-J1-FVT-CostUnitIndicator-Calculate-101-10")]
         public void CalculateCostUnitIndicatorRawValue(UnitIndicatorData input)

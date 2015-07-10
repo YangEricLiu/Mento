@@ -1068,4 +1068,7 @@
   <data name="DataImpExp_MSG_TagHasExistsAssoiation" xml:space="preserve">
     <value>Tag association is failed because tag [code {0}] has been associated at row [{1}]</value>
   </data>
+  <data name="TagImport_ExcelHeader_CollectionCycle" xml:space="preserve">
+    <value>CollectionCycle</value>
+  </data>
 </root>

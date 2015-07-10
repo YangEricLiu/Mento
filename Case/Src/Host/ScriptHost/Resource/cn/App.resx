@@ -1069,4 +1069,7 @@
   <data name="DataImpExp_MSG_TagHasExistsAssoiation" xml:space="preserve">
     <value>编号为[{0}]的Tag已经存在关联[所在行{1}],Tag关联失败！</value>
   </data>
+  <data name="TagImport_ExcelHeader_CollectionCycle" xml:space="preserve">
+    <value>采集周期</value>
+  </data>
 </root>

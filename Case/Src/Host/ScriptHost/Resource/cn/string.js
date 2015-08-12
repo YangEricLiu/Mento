@@ -443,7 +443,7 @@ I18N.Setting.VEEMonitorRule.Monitor = '报警接受人';
 I18N.Setting.VEEMonitorRule.MonitorMail = '报警邮件';
 I18N.Setting.VEEMonitorRule.NotificationRule = '邮件通知规则';
 I18N.Setting.VEEMonitorRule.NotificationRuleSetter = '通知规则设置';
-I18N.Setting.VEEMonitorRule.NotificationRuleTip = '当空值的时长或个数超过通知规则所设置参数时，报警接受人将收到报警邮件。';
+I18N.Setting.VEEMonitorRule.NotificationRuleTip = '当空值的时长或个数大于等于通知规则所设置参数时，报警接受人将收到报警邮件。';
 I18N.Setting.VEEMonitorRule.ContinuousTime = '按空值连续时时长设置';
 I18N.Setting.VEEMonitorRule.NullNumber = '按空值个数设置';
 I18N.Setting.VEEMonitorRule.Percent = '按空值所占百分比设置';
@@ -1501,10 +1501,25 @@ I18N.Setting.DynamicProperty.AreaUnitValue = '平方米';
 
 I18N.Setting.DynamicProperty.Population = '人口属性';
 I18N.Setting.DynamicProperty.PopulationCode = '人口编码';
-I18N.Setting.DynamicProperty.PopulationStartDate = '生效日期';
 I18N.Setting.DynamicProperty.PopulationNumber = '人口数量';
 I18N.Setting.DynamicProperty.PopulationUnitValue = '人';
 I18N.Setting.DynamicProperty.PopulationStartDateDuplicated = '人口属性生效日期重复';
+
+I18N.Setting.DynamicProperty.Other = '其他属性';
+I18N.Setting.DynamicProperty.ARoom = '总客房';
+I18N.Setting.DynamicProperty.ARoomNumber = '总客房数量';
+I18N.Setting.DynamicProperty.UsedRoom = '已用客房';
+I18N.Setting.DynamicProperty.UsedRoomNumber = '已用客房数量';
+I18N.Setting.DynamicProperty.RoomUnitValue = '间';
+I18N.Setting.DynamicProperty.RoomStartDateDuplicated = '已用客房属性生效日期重复';
+I18N.Setting.DynamicProperty.ABed = '总床位';
+I18N.Setting.DynamicProperty.ABedNumber = '总床位数量';
+I18N.Setting.DynamicProperty.UsedBed = '已用床位';
+I18N.Setting.DynamicProperty.UsedBedNumber = '已用床位数量';
+I18N.Setting.DynamicProperty.BedStartDateDuplicated = '已用床位属性生效日期重复';
+I18N.Setting.DynamicProperty.BedUnitValue = '床';
+
+I18N.Setting.DynamicProperty.StartDate = '生效日期';
 
 //TOU
 I18N.Setting.TOUTariff = {};

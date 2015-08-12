@@ -253,8 +253,8 @@
   <data name="ENERGYCONST_VALUEHEADERSTRING" xml:space="preserve">
     <value>值</value>
   </data>
-  <data name="ENERGYRANK_APDX" xml:space="preserve">
-    <value>/人</value>
+  <data name="ENERGY_RANKING_PERSON_APDX" xml:space="preserve">
+    <value>人</value>
   </data>
   <data name="Energy_CommodityName" xml:space="preserve">
     <value>总览</value>
@@ -1071,5 +1071,32 @@
   </data>
   <data name="TagImport_ExcelHeader_CollectionCycle" xml:space="preserve">
     <value>采集周期</value>
+  </data>
+  <data name="Administration_CONSTUOM_BED_UNIT_CODE" xml:space="preserve">
+    <value>床</value>
+  </data>
+  <data name="Administration_CONSTUOM_ROOM_UNIT_CODE" xml:space="preserve">
+    <value>房间</value>
+  </data>
+  <data name="ENERGY_RANKING_BED_UNIT_APDX" xml:space="preserve">
+    <value>床/天</value>
+  </data>
+  <data name="ENERGY_RANKING_ROOM_UNIT_APDX" xml:space="preserve">
+    <value>房间/天</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour12" xml:space="preserve">
+    <value>12小时</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour2" xml:space="preserve">
+    <value>2小时</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour4" xml:space="preserve">
+    <value>4小时</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour6" xml:space="preserve">
+    <value>6小时</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour8" xml:space="preserve">
+    <value>8小时</value>
   </data>
 </root>

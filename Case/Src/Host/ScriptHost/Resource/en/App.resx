@@ -252,7 +252,7 @@
   <data name="ENERGYCONST_VALUEHEADERSTRING" xml:space="preserve">
     <value>Value</value>
   </data>
-  <data name="ENERGYRANK_APDX" xml:space="preserve">
+  <data name="ENERGY_RANKING_PERSON_APDX" xml:space="preserve">
     <value>/person</value>
   </data>
   <data name="Energy_CommodityName" xml:space="preserve">
@@ -1070,5 +1070,20 @@
   </data>
   <data name="TagImport_ExcelHeader_CollectionCycle" xml:space="preserve">
     <value>CollectionCycle</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour12" xml:space="preserve">
+    <value>12 hours</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour2" xml:space="preserve">
+    <value>2 hours</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour4" xml:space="preserve">
+    <value>4 hours</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour6" xml:space="preserve">
+    <value>6 hours</value>
+  </data>
+  <data name="TagImport_CaclationSetp_Hour8" xml:space="preserve">
+    <value>8 hours</value>
   </data>
 </root>

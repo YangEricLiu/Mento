@@ -2115,3 +2115,5 @@ I18N.Setting.DynamicProperty.BedStartDateDuplicated = '已用床位属性生效�
 I18N.Setting.DynamicProperty.BedUnitValue = '床';
 I18N.Setting.DynamicProperty.StartDate = '生效日期';
 I18N.Message.M21802 = '所选数据点包含计量数据V类型的数据点，不支持原始数据功能，请重新选择。';
+I18N.DateTimeFormat.IntervalFormat.MonthDayHour = 'm月d日H点';
+I18N.DateTimeFormat.IntervalFormat.DayHour = 'd日H点';

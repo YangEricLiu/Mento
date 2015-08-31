@@ -136,6 +136,9 @@ I18N.DateTimeFormat.IntervalFormat.MonthDate = 'm月d日';
 I18N.DateTimeFormat.IntervalFormat.Year = 'Y年';
 I18N.DateTimeFormat.IntervalFormat.FullDateTime = 'Y年m月d日 H点i分s秒';
 I18N.DateTimeFormat.IntervalFormat.FullDate = 'Y年m月d日';
+I18N.DateTimeFormat.IntervalFormat.MonthDayHour = 'm月d日H点';
+I18N.DateTimeFormat.IntervalFormat.DayHour = 'd日H点';
+
 I18N.DateTimeFormat.ConsecutiveTime.DayHourMinute = '{0}天{1}小时{2}分';
 
 I18N.HomePage.Label.Myshare = '我的共享';

@@ -194,7 +194,7 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             Assert.IsTrue(EnergyAnalysis.IsDataViewDrawn());
             EnergyAnalysis.ExportExpectedDataTableToExcel(input.ExpectedData.expectedFileName[0], DisplayStep.Default);
             TimeManager.MediumPause();
-            Assert.IsTrue(EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]));
+            EnergyAnalysis.CompareDataViewOfEnergyAnalysis(input.ExpectedData.expectedFileName[0], input.InputData.failedFileName[0]);
 
             #region Not use code, for save to dashboard which will test on manual for 2.0
 
@@ -220,7 +220,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             #endregion
         }
 
+        //没有查看数据的部分
         [Test]
+        [Ignore("ignore")]
         [Category("P4_Emma")]
         [CaseID("TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(P1_SingleHierarchyNodeDataViewSuite), "TC-J1-FVT-SingleHierarchyNode-DataView-101-5359")]

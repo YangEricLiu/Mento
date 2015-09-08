@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
     /// 
     /// </summary>
     [TestFixture]
-    [Category("P4_Emma")]
+    [Category("P4_Emma_Benchmark")]
     [ManualCaseID("TC-J1-FVT-BenchmarkCarbonUnitIndicator-View-101"), CreateTime("2014-2-14"), Owner("Emma")]
     public class ViewBenchmarkCarbonUnitIndicatorSuite : TestSuiteBase
     {

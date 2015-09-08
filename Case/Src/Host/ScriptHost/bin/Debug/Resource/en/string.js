@@ -304,6 +304,15 @@ I18N.Setting.Hierarchy.MeterCount = 'Tag No.';
 I18N.Setting.Hierarchy.PTagCount = 'Physical Tag No.';
 I18N.Setting.Hierarchy.VTagCount = 'Virtual Tag No.';
 
+I18N.Setting.Hierarchy.DeleteMessage = 'Delete hierarchy node "{0}"? All information and dashboards under this hierarchy node will be removed.';
+I18N.Setting.Hierarchy.DeleteError = {};
+I18N.Setting.Hierarchy.DeleteError.M850 = 'Hierarchy node "{0}" is used in FacilityMost, so it can not be deleted.';
+I18N.Setting.Hierarchy.DeleteError.JazzError = 'Can not delete hierarchy node "{0}". Please delete all nodes {1} under this node first.';
+I18N.Setting.Hierarchy.DeleteError.Children = 'Child node';
+I18N.Setting.Hierarchy.DeleteError.TagRelation = 'Tag Association';
+I18N.Setting.Hierarchy.DeleteError.Errors2 = '{0} and {1}';
+I18N.Setting.Hierarchy.DeleteError.Errors3 = '{0},{1} and {2}';
+
 I18N.Setting.Label.BasicProperties = 'Properties';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
 I18N.Setting.Label.HierarchyNodeCalendarProperties = 'Calendar';
@@ -693,6 +702,12 @@ I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious30Day = '30 days';
 I18N.EM.EnergyAnalyse.AddIntervalWindow.CompareTimePrevious12Month = '12 months';
 I18N.EM.EnergyAnalyse.TagSelectTooltip = 'Chosen data {0}/{1}';
 I18N.EM.EnergyAnalyse.TagSelectOverMaxTooltip = 'Chosen data {0}/{1}, new added data number exceeds the maximum number. Please select the data one by one.';
+I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
+I18N.EM.EnergyAnalyse.SumData = 'Data Sum';
+I18N.EM.EnergyAnalyse.SumDataMoreThan1000Error = 'Can not sum these data because they are exceed the limitiation. Please try another step or time duration.';
+I18N.EM.EnergyAnalyse.Sum = 'Total';
+I18N.EM.EnergyAnalyse.DataPoint = 'Tag';
+I18N.EM.EnergyAnalyse.SumWithSymbol = 'Total:';
 I18N.EM.YAxisSetting = 'Y Axis Setting';
 I18N.EM.YAxisSettingTags = 'Relative Data';
 I18N.EM.YAxisTitle = 'Y Axis';
@@ -728,7 +743,7 @@ I18N.EM.SystemDimension.TreeButton = 'Please select system dimension';
 I18N.EM.AreaDimension.TreeButton = 'Please select region dimension';
 I18N.EM.CannotShowCalendarByTimeRange = 'No calendar background is seen? Change to another time and try.';
 I18N.EM.CannotShowCalendarByStep = 'The current interval does not support display of {0} background color.';
-I18N.EM.SystemDimension.UncheckNodeQuestion = 'Delete system dimension node "{0}"? <br/> You will delete all the data point association relations under system dimension node.';
+I18N.EM.SystemDimension.UncheckNodeQuestion = 'Delete system dimension node "{0}"? ';
 I18N.EM.CompareTagsAreFull = 'All data points for comparison have been selected.';
 I18N.EM.MultiTimeCompare = 'Multi-periods are being compared. Please delete this data point and re-select.';
 I18N.EM.TouCompare = 'Peak/Valley display';
@@ -996,7 +1011,7 @@ I18N.Common.UOM.MM = 'Cent';
 
 I18N.Common.Per = {};
 I18N.Common.Per.Person = '/person';
-I18N.Common.Per.m2 = '/m2';
+I18N.Common.Per.m2 = '/M²';
 
 I18N.Common.Button.Share = 'Share';
 I18N.Common.Button.PieChart = 'Pie chart';
@@ -1175,7 +1190,7 @@ I18N.Common.Glossary.Dimension = 'Dimension';
 I18N.Common.Glossary.SystemDimension = 'System';
 I18N.Common.Glossary.AreaDimension = 'Region';
 I18N.Common.Glossary.AreaDimensionNode = 'Region dimension node';
-I18N.Common.Glossary.AreaDimensionNodeDeleteTip = '<br/>You will delete all the child nodes under the region dimension node, data point association relations, and indirectly associated information simulatneously.';
+I18N.Common.Glossary.AreaDimensionNodeDeleteTip = '<br/>You will delete all information under this region dimension node simultaneously.';
 I18N.Common.Glossary.DimensionNode = 'Dimension node';
 I18N.Common.Glossary.DimensionTree = 'Dimension structure';
 I18N.Common.Glossary.System = 'System';
@@ -1875,7 +1890,7 @@ I18N.Message.M04052 = 'Before checking the current ##Common.Glossary.DimensionNo
 I18N.Message.M04053 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Glossary.DimensionNode);
 I18N.Message.M04054 = 'Before un-checking the current ##Common.Glossary.DimensionNode##, please ensure that all of its child nodes have been un-checked.';
 I18N.Message.M04055 = 'The current system dimension node has no child nodes.';   //for energy view single tag to pie chart
-
+I18N.Message.M04056 = 'Can not delete this system dimension node. Please remove all association with tags under this node.';
 /******
 Dashboard Error Code, NOTE that for error of 
 05002
@@ -1956,12 +1971,12 @@ I18N.Message.M08208 = '##Common.Glossary.Name## is repeated.';
 I18N.Message.M08209 = 'The hierarchy of the current ##Common.Glossary.DimensionNode## exceeds the maximum length and thus cannot be saved.';
 I18N.Message.M08210 = 'The father node of the current ##Common.Glossary.DimensionNode## has been deleted. Page will be refreshed.';
 I18N.Message.M08211 = 'The current ##Common.Glossary.DimensionNode## has been deleted by others. Page will be refreshed.';
-I18N.Message.M08212 = 'The current ##Common.Glossary.DimensionNode## has child nodes and thus cannot be deleted.';
+I18N.Message.M08212 = 'Can not delete this region dimension node.Please remove all child nodes under this node.';
 I18N.Message.M08213 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Glossary.DimensionNode);
 I18N.Message.M08214 = 'The current region dimension node does not have child nodes.';   //for energy view single tag to pie chart
+I18N.Message.M08215 = 'Can not delete this region dimension node.Please remove all association with tags under this node.';
 
-
-I18N.Message.M09001 = 'Will refresh for the data has been deleted.';
+I18N.Message.M09001 = 'Data is deleted and the screen will be refreshed.';
 I18N.Message.M09002 = 'Will refresh for the data has been changed.';
 I18N.Message.M09107 = 'Data has been changed, please click "Confirm" to reload data.';
 I18N.Message.M09112 = 'The corresponding ##Common.Glossary.Tag## has been deleted. Refreshing will be done at once.';
@@ -2068,8 +2083,4 @@ I18N.Message.M20014 = 'Some tags are deleted or not under the permission scope�
 I18N.Message.M21707 = 'Report {0} is deleted. Will refresh report list soon.';
 I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
-I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
-I18N.EM.EnergyAnalyse.SumData = '数据求和';
-I18N.EM.EnergyAnalyse.Sum = '总计';
-I18N.EM.EnergyAnalyse.DataPoint = '数据点';
-I18N.EM.EnergyAnalyse.SumWithSymbol = '总计：';
+I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';

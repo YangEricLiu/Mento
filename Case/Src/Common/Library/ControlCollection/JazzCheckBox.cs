@@ -28,7 +28,10 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static CheckBoxField CheckBoxBenchMark{ get { return GetControl<CheckBoxField>(JazzControlLocatorKey.CheckBoxBenchMark);}}
         #endregion
 
-        #region CheckBox of Labeling
+        #region Alarm ReactJS Checkbox
+
+        public static CheckBoxField AlarmCheckBoxTaglist { get { return GetControl<CheckBoxField>(JazzControlLocatorKey.AlarmCheckBoxTaglist); } }
+
         #endregion
 
         #region CheckBox of Ptag

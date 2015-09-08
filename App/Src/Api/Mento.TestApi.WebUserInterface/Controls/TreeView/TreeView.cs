@@ -14,13 +14,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         protected const string TREENODECHECKEDCLASS = "x-tree-checkbox-checked";
         protected const string POPTREENODEEXPANDCLASS = "fa-minus-square-o";
         protected const string POPTREENODECALLAPSECLASS = "fa-plus-square-o";
+        protected const string ALARMTREENODEEXPANDCLASS = "icon-hierarchy-unfold";
 
         #region pop tree locator
 
         private Locator Pop_ExpandTreeArrowLocator = new Locator("../div[@class='pop-arrow']/div[@class='pop-has-child']/div", ByType.XPath);
+        private Locator Alarm_ExpandTreeArrowLocator = new Locator("../../../div[@class='arrow']/div[@class='hasChild']/div", ByType.XPath);
 
         #endregion
 
+        
         #region Pop tree operation
 
         public void Pop_SelectNode(string[] nodePath)
@@ -99,6 +102,91 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             IWebElement nodeElement = Pop_GetTreeNodeElement(nodeText);
             IWebElement nodeExpandArrow = ElementHandler.FindElement(Pop_ExpandTreeArrowLocator, container: nodeElement);
+
+            nodeExpandArrow.Click();
+        }
+
+        #endregion
+       
+
+        #region ReactJS Alarm tree operation
+
+        public void Alarm_SelectNode(string[] nodePath)
+        {
+
+            List<string> parentNodes = nodePath.ToList();
+
+            Alarm_ExpandNodePath(parentNodes.ToArray());
+            Alarm_ClickNode(nodePath.Last());
+        }
+
+        public void Alarm_ExpandNode(string nodeText)
+        {
+            if (!Alarm_IsNodeExpanded(nodeText))
+            {
+                Alarm_ClickNodeExpander(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
+            }
+        }
+
+        public Boolean Alarm_ClickNode(string nodeText)
+        {
+            // Greenie modified
+            TimeManager.LongPause();
+            if (this.Alarm_GetTreeNodeElement(nodeText).Enabled)
+            {
+                TimeManager.LongPause();
+                this.Alarm_GetTreeNodeElement(nodeText).Click();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            //TimeManager.PauseShort();
+
+            //GetControl<LoadingMask>().WaitLoading();
+        }
+
+        public void Alarm_ExpandNodePath(string[] nodesText)
+        {
+            for (int i = 0; i < nodesText.Length; i++)
+            {
+                Locator nextNodeLocator = (i < nodesText.Length - 1) ? Alarm_GetTreeNodeLocator(nodesText[i + 1]) : null;
+
+                //wait the next item appear
+                if (nextNodeLocator != null)
+                {
+                    Alarm_ExpandNode(nodesText[i]);
+                    TimeManager.LongPause();
+                }
+            }
+        }
+
+        public bool Alarm_IsNodeExpanded(string nodeText)
+        {
+            IWebElement nodeElement = Alarm_GetTreeNodeElement(nodeText);
+            IWebElement nodeExpandArrow = ElementHandler.FindElement(Alarm_ExpandTreeArrowLocator, container: nodeElement);
+
+            return nodeExpandArrow.GetAttribute("class").Contains(ALARMTREENODEEXPANDCLASS);
+        }
+
+        protected virtual Locator Alarm_GetTreeNodeLocator(string nodeText)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.AlarmTreeNode), TREENODEVARIABLENAME, nodeText);
+        }
+
+        protected virtual IWebElement Alarm_GetTreeNodeElement(string nodeText)
+        {
+            return base.FindChild(Alarm_GetTreeNodeLocator(nodeText));
+        }
+
+        private void Alarm_ClickNodeExpander(string nodeText)
+        {
+            IWebElement nodeElement = Alarm_GetTreeNodeElement(nodeText);
+            IWebElement nodeExpandArrow = ElementHandler.FindElement(Alarm_ExpandTreeArrowLocator, container: nodeElement);
 
             nodeExpandArrow.Click();
         }

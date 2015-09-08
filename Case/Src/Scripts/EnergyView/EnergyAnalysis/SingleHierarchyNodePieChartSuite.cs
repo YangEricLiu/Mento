@@ -85,6 +85,9 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.LongPause();
 
+            EnergyAnalysis.SwitchTagTab(TagTabs.HierarchyTag);
+            TimeManager.MediumPause();
+
             EnergyAnalysis.CheckTag(input.InputData.TagNames[0]);
             TimeManager.LongPause();
 

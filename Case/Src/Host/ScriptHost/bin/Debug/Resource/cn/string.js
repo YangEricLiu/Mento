@@ -19,7 +19,7 @@ I18N.EM.Report = {};
 I18N.EM.EnergyAnalyse = {};
 I18N.EM.CenterBar = {};
 I18N.EM.CenterBar.Button = {};
-I18N.EM.Hierarchy = {};
+I18N.EM.Hierarchy = {};JazzEro
 I18N.EM.Hierarchy.Label = {};
 I18N.EM.Switcher = {};
 I18N.EM.Switcher.Label = {};
@@ -293,7 +293,7 @@ I18N.Setting.Label.HierarchyImportLog = '配置导入日志';
 I18N.Setting.Label.HierarchyTagsSetting = '层级数据';
 I18N.Setting.Label.SystemDimensionTagsSetting = '##Common.Glossary.SystemDimension##数据';
 I18N.Setting.Label.AreaDimensionTagsSetting = '##Common.Glossary.AreaDimension##数据';
-I18N.Setting.Hierarchy.Message.DeleteTip = '<br/>您将同时删除层级节点下所有的信息和仪表盘';
+I18N.Setting.Hierarchy.Message.DeleteTip = '<br/>您将同时删除层级节点下所有的子节点，维度结构，数据点关联关系，以及间接关联的所有信息';
 I18N.Setting.Label.MapSetting = '地图信息';
 I18N.Setting.Hierarchy.LocatePosition = '标记位置';
 I18N.Setting.Hierarchy.RelocatePosition = '重新标记';
@@ -303,6 +303,15 @@ I18N.Setting.Hierarchy.ChildArea = '子区域';
 I18N.Setting.Hierarchy.MeterCount = '表计数量';
 I18N.Setting.Hierarchy.PTagCount = '计量数据P数量';
 I18N.Setting.Hierarchy.VTagCount = '计量数据V数量';
+
+I18N.Setting.Hierarchy.DeleteMessage = '删除层级节点“{0}”吗？您将同时删除层级节点下所有的信息和仪表盘。';
+I18N.Setting.Hierarchy.DeleteError = {};
+I18N.Setting.Hierarchy.DeleteError.M850 = '层级节点“{0}”关联了Facilitymost,无法被删除。';
+I18N.Setting.Hierarchy.DeleteError.JazzError = '无法删除层级节点“{0}”。请先删除该节点下的所有{1}和{2}';
+I18N.Setting.Hierarchy.DeleteError.Children = '子节点';
+I18N.Setting.Hierarchy.DeleteError.TagRelation = '数据点关联关系';
+I18N.Setting.Hierarchy.DeleteError.Errors2 = '{0}和{1}';
+I18N.Setting.Hierarchy.DeleteError.Errors3 = '{0},{1}和{2}';
 
 I18N.Setting.Label.BasicProperties = '基础属性';
 I18N.Setting.Label.HierarchyNodeBasicProperties = '##Setting.Label.BasicProperties##';
@@ -463,7 +472,7 @@ I18N.Setting.VEEMonitorRule.TagType = '数据点类型';
 I18N.Setting.VEEMonitorRule.TagCollectPeriod = '数据采集/计算周期';
 I18N.Setting.VEEMonitorRule.AssociateTag = '关联监测数据点';
 I18N.Setting.VEEMonitorRule.SelectAllTags = '全选并关联';
-I18N.Setting.VEEMonitorRule.UnassociateOtherRuleTagTip = '解除与异常数据监测规则集"{0}"的关联关系  ';
+I18N.Setting.VEEMonitorRule.UnassociateOtherRuleTagTip = '解除与异常数据监测规则集“{0}”的关联关系  ';
 I18N.Setting.VEEMonitorRule.FirstScanTime = '每日首次监测扫描时间为0: 00。';
 I18N.Setting.VEEMonitorRule.ExplainN = 'N为峰值前缺失数据的数量';
 I18N.Setting.VEEMonitorRule.AndGT = '并 >= ';
@@ -487,7 +496,7 @@ I18N.Setting.TagConfiguration.InvalidFormula = '##Common.Glossary.Formula##的�
 I18N.Setting.TagConfiguration.AccumulatedValue = '能耗累积值/';
 I18N.Setting.TagConfiguration.DifferenceValue = '能耗差值/';
 I18N.Setting.TagConfiguration.Status = '修改状态';
-I18N.Setting.TagConfiguration.Modified = '已修改';
+I18N.Setting.TagConfiguration.Modified = '手动修改';
 I18N.Setting.TagConfiguration.Unmodified = '未修改';
 I18N.Setting.TagConfiguration.RawData = '原始数据';
 I18N.Setting.TagConfiguration.Preview = '预览';
@@ -619,7 +628,7 @@ I18N.Setting.Benchmark.Label.IndustryEnegyBenchmark = '行业能效对标配置'
 I18N.Setting.Benchmark.Label.ClimateZone = '气候分区';
 I18N.Setting.Benchmark.Label.IndustryBenchmark = '行业对标';
 I18N.Setting.Benchmark.Label.SelectTip = '请选择需要平台计算的能效对标针对的行业及区域。';
-I18N.Setting.Benchmark.Label.AtleastOneZone = '请至少选择1项。';
+I18N.Setting.Benchmark.Label.AtleastOneZone = '请至少选择一项。';
 I18N.Setting.Benchmark.Label.Industry = '行业';
 I18N.Setting.Benchmark.Label.IndustryBaseLineValue = '行业基准值';
 
@@ -695,6 +704,7 @@ I18N.EM.EnergyAnalyse.TagSelectTooltip = '已选数据点 {0}/{1}';
 I18N.EM.EnergyAnalyse.TagSelectOverMaxTooltip = '已选数据点 {0}/{1}，新增全选的数据点数量超出了可选范围，无法全选。请逐一选择目标数据点。';
 I18N.EM.EnergyAnalyse.SumSymbol = 'Σ';
 I18N.EM.EnergyAnalyse.SumData = '数据求和';
+I18N.EM.EnergyAnalyse.SumDataMoreThan1000Error = '当前数据超出计算范围，无法求和，请换个步长或时间段试试。';
 I18N.EM.EnergyAnalyse.Sum = '总计';
 I18N.EM.EnergyAnalyse.DataPoint = '数据点';
 I18N.EM.EnergyAnalyse.SumWithSymbol = '总计：';
@@ -733,7 +743,7 @@ I18N.EM.SystemDimension.TreeButton = '请选择系统维度';
 I18N.EM.AreaDimension.TreeButton = '请选择区域维度';
 I18N.EM.CannotShowCalendarByTimeRange = '看不到日历背景？换个时间段试试';
 I18N.EM.CannotShowCalendarByStep = '当前步长不支持显示{0}背景色';
-I18N.EM.SystemDimension.UncheckNodeQuestion = '删除系统维度节点”{0}”吗？<br/> 您将同时删除系统维度节点下所有的数据点关联关系。';
+I18N.EM.SystemDimension.UncheckNodeQuestion = '删除系统维度节点”{0}”吗？';
 I18N.EM.CompareTagsAreFull = '对比数据点已选满。';
 I18N.EM.MultiTimeCompare = '正在进行多时间段对比，请删除该数据点后重新选取';
 I18N.EM.TouCompare = '峰谷展示';
@@ -1116,7 +1126,7 @@ I18N.Common.Label.TimeZoneConflict = '时间区间重叠';
 I18N.Common.Label.TimeOverlap = '时间区间重叠，请检查。';
 I18N.Common.Label.CommoEmptyText = '请选择';
 I18N.Common.Label.MandatoryEmptyError = '必填项。';
-I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999.999999';
+I18N.Common.Label.OverValueError = '该输入项的最大值是 999999999。';
 I18N.Common.Label.UnspecifyCommodity = '不指定##Common.Glossary.Commodity##';
 
 I18N.Common.DateRange.Last7Day = '最近7天';
@@ -1180,7 +1190,7 @@ I18N.Common.Glossary.Dimension = '维度';
 I18N.Common.Glossary.SystemDimension = '系统维度';
 I18N.Common.Glossary.AreaDimension = '区域维度';
 I18N.Common.Glossary.AreaDimensionNode = '区域维度节点';
-I18N.Common.Glossary.AreaDimensionNodeDeleteTip = '<br/>您将同时删除区域维度节点下所有的子节点，数据点关联关系，以及间接关联的所有信息。';
+I18N.Common.Glossary.AreaDimensionNodeDeleteTip = '<br/>您将同时删除区域维度节点下的所有信息。';
 I18N.Common.Glossary.DimensionNode = '维度节点';
 I18N.Common.Glossary.DimensionTree = '维度结构';
 I18N.Common.Glossary.System = '系统';
@@ -1880,7 +1890,7 @@ I18N.Message.M04052 = '勾选当前##Common.Glossary.DimensionNode##前，必须
 I18N.Message.M04053 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Glossary.DimensionNode);
 I18N.Message.M04054 = '反勾选当前##Common.Glossary.DimensionNode##前，必须确保它的所有子节点未被勾选。';
 I18N.Message.M04055 = '当前系统维度节点无子节点';   //for energy view single tag to pie chart
-
+I18N.Message.M04056 = '无法删除该系统维度节点。请先删除该节点下的所有数据点关联关系。';
 /******
 Dashboard Error Code, NOTE that for error of 
 05002
@@ -1961,10 +1971,10 @@ I18N.Message.M08208 = '##Common.Glossary.Name##重复';
 I18N.Message.M08209 = '当前的##Common.Glossary.DimensionNode##的级次超出最大长度，无法保存。';
 I18N.Message.M08210 = '当前的##Common.Glossary.DimensionNode##的父节点已被删除，界面将被刷新。';
 I18N.Message.M08211 = '当前的##Common.Glossary.DimensionNode##已被他人删除，界面将被刷新。';
-I18N.Message.M08212 = '当前的##Common.Glossary.DimensionNode##存在子节点，无法删除。';
+I18N.Message.M08212 = '无法删除该区域维度节点。请先删除该节点下的所有子节点。';
 I18N.Message.M08213 = I18N.format(I18N.Message.UpdateConcurrency, I18N.Common.Glossary.DimensionNode);
 I18N.Message.M08214 = '当前区域维度节点无子节点';   //for energy view single tag to pie chart
-
+I18N.Message.M08215 = '无法删除该区域维度节点。请先删除该节点下的所有数据点关联关系。';
 
 I18N.Message.M09001 = '数据已被删除，界面将被刷新。';
 I18N.Message.M09002 = '数据已被他人修改，界面将被刷新。';

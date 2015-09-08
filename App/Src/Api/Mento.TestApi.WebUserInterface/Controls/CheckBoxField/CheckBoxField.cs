@@ -28,6 +28,27 @@ namespace Mento.TestApi.WebUserInterface.Controls
         /// <param name="locator"></param>
         public CheckBoxField(Locator locator) : base(locator) { }
 
+        #region Jazz 2.x
+
+        public void Alarm_Checked(string itemName)
+        {
+            IWebElement checkbox = Alarm_GetCheckBoxFieldElement(itemName);
+
+            checkbox.Click();
+        }
+
+        private IWebElement Alarm_GetCheckBoxFieldElement(string itemName)
+        {
+            return FindChild(Alarm_GetCheckBoxFieldLocator(itemName));
+        }
+
+        private Locator Alarm_GetCheckBoxFieldLocator(string itemName)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.Alarm_CheckBoxInput), ITEMNAME, itemName);
+        }
+
+        #endregion
+
         #region Pop
 
         public void Pop_CommonCheck(string itemName)
@@ -76,6 +97,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         #endregion
 
+        #region Jazz 1.x
+        
         public Boolean IsChecked(string permissionName)
         {
             IWebElement checkbox = GetPermissonFieldElement(permissionName);
@@ -97,10 +120,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return checkbox.GetAttribute("class").Contains(CHECKEDCLASS);
         }
-        /// <summary>
-        /// verfiy whether the item unchecked.
-        /// </summary>
-        /// <param name="locator"></param>
+ 
         public Boolean IsCommonUnChecked(string itemName)
         {
             IWebElement checkbox = GetCheckBoxFieldElement(itemName);
@@ -342,6 +362,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return FindChild(GetCheckBoxInputLocator(itemName));
         }
+
+        #endregion
 
         #endregion
 

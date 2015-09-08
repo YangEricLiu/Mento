@@ -616,6 +616,7 @@ namespace Mento.Script.EnergyView.UnitIndicator
             TimeManager.MediumPause();
             UnitKPIPanel.CompareDataViewUnitIndicator(input.ExpectedData.expectedFileName[2], input.InputData.failedFileName[2]);
 
+            
             //Select Commodity=水 to display trend chart; Optional step=hour; Unit=单位人口.
             UnitKPIPanel.UnselectSingleCommodityUnitCost(input.InputData.Commodity[0]);
             UnitKPIPanel.SelectSingleCommodityUnitCost(input.InputData.Commodity[1]);

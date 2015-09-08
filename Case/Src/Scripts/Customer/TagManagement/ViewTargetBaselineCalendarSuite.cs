@@ -18,6 +18,7 @@ using Mento.TestApi.WebUserInterface.ControlCollection;
 namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
+    [Ignore("ignore")]
     [Owner("Emma")]
     [CreateTime("2013-07-22")]
     [ManualCaseID("TC-J1-FVT-TargetConfiguration-View-101")]

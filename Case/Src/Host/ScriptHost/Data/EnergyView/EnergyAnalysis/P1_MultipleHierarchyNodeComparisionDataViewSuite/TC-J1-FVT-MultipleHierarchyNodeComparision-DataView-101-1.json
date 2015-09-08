@@ -18,7 +18,7 @@
 		"ExpectedData":
 		{
 			"ClearAllMessage":"$@EM.RUClearAll",
-			"expectedFileName":["SingleHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-10VBuildingBC.xls"],
+			"expectedFileName":["MultiHierarchyNodeDataView101-1-D-V2_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-V11V2V1_BuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-9VBuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-10NullVBuildingBC.xls", "MultiHierarchyNodeDataView101-1-D-10VBuildingBC.xls"],
 		}
 	}
 ]

@@ -36,6 +36,14 @@ namespace Mento.ScriptCommon.Library.Functions
                 TimeManager.MediumPause();
             }
 
+            if (JazzMessageBox.MessageBox.Exists())
+            {
+                if (JazzMessageBox.MessageBox.GetMessage().Contains("服务器错误") || JazzMessageBox.MessageBox.GetMessage().Contains("Server error"))
+                {
+                    JazzMessageBox.MessageBox.OK();
+                }
+            }
+
             TimeManager.MediumPause();
         }
 
@@ -102,6 +110,7 @@ namespace Mento.ScriptCommon.Library.Functions
             {NavigationTarget.EnergyView, new NavigatorItem(NavigationTarget.EnergyView, null,JazzButton.NavigatorEnergyViewButton)},
             {NavigationTarget.Settings, new NavigatorItem(NavigationTarget.Settings,null,JazzButton.NavigatorSettingsButton)},
             {NavigationTarget.PlatformSettings, new NavigatorItem(NavigationTarget.PlatformSettings,null,JazzButton.NavigatorPlatformSettingsButton)},
+            {NavigationTarget.AlarmSettings, new NavigatorItem(NavigationTarget.AlarmSettings,null,JazzButton.AlarmSettings)},
 
             //level 2
             {NavigationTarget.EnergyAnalysis, new NavigatorItem(NavigationTarget.EnergyAnalysis,NavigationTarget.EnergyView,JazzButton.NavigatorEnergyAnalysisButton)},
@@ -198,6 +207,7 @@ namespace Mento.ScriptCommon.Library.Functions
         EnergyView = 2,
         Settings = 3,
         PlatformSettings = 4,
+        AlarmSettings = 112,
 
         //level 2
         //used different number to avoid conflict

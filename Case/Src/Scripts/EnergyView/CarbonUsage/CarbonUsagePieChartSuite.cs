@@ -29,6 +29,7 @@ namespace Mento.Script.EnergyView.CarbonUsage
         {
             CarbonUsage.NavigateToCarbonUsage();
             TimeManager.MediumPause();
+
         }
 
         [TearDown]

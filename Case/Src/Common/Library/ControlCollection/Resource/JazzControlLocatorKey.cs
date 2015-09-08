@@ -23,6 +23,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region ReactJS
+
+        public static string AlarmConfigration = "AlarmConfigration";
+        public static string AlarmHierarchyTreeButton = "AlarmHierarchyTreeButton";
+        public static string AlarmViewButton = "AlarmViewButton";
+
+        #endregion
+
         #region login
         public static string ButtonLoginSubmit = "ButtonLoginSubmit";
         public static string ButtonLoginCustomerOptionConfirm = "ButtonLoginCustomerOptionConfirm";
@@ -46,6 +54,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string ButtonNavigatorEnergyView = "ButtonNavigatorEnergyView";
         public static string ButtonNavigatorSettings = "ButtonNavigatorSettings";
         public static string ButtonNavigatorPlatformSettings = "ButtonNavigatorPlatformSettings";
+        public static string AlarmSettings = "AlarmSettings";
 
         public static string ButtonNavigatorEnergyAnalysis = "ButtonNavigatorEnergyAnalysis";
         public static string ButtonNavigatorCarbonUsage = "ButtonNavigatorCarbonUsage";
@@ -1077,6 +1086,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region Pop
         
         public static string PopHierarchyTree = "PopHierarchyTree";
+        public static string AlarmHierarchyTree = "AlarmHierarchyTree";
 
         #endregion
 
@@ -1326,7 +1336,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string CheckBoxBatchModifyAbnormalType = "CheckBoxBatchModifyAbnormalType";
 
         public static string CheckBoxWidgetTemplateTable = "CheckBoxWidgetTemplateTable";
-        
+
+        #region  Alarm ReactJS
+        public static string AlarmCheckBoxTaglist = "AlarmCheckBoxTaglist";
+
+        #endregion
+
         #endregion
 
         #region Label

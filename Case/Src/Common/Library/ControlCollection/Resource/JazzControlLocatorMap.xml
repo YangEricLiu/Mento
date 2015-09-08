@@ -9,6 +9,13 @@
     <add key="PopButtonAddUser" value = "//span[@class='pop-manage-header-add-action']/a[text()='+ 用户']" type="XPath"/>
   </Pop-Button>
   
+  <ReactJS-Button>
+    <add key="AlarmConfigration" value = "//a[text()='能源']" type="XPath"/>
+    <add key="AlarmHierarchyTreeButton" value = "//div[@class='jazz-dataselectmainpanel']/div[@class='header']/div[@class='jazz-hierarchybutton']/div[@class='hiername']" type="XPath"/>
+    <add key="AlarmViewButton" value = "//div[@class='jazz-alarm-chart-toolbar-container']/div[@class='jazz-flat-button']//span[text()='查看']" type="XPath"/>
+
+  </ReactJS-Button>
+  
     <Button>
       <login>     
             <add key="ButtonLoginSubmit" value = "btnSubmit" type="ID"/>
@@ -33,6 +40,7 @@
             <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
             <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
             <add key="ButtonNavigatorPlatformSettings" value="header-btn-spsetting" type="ID"/>
+            <add key="AlarmSettings" value="header-btn-alarm" type="ID"/>
 
             <add key="ButtonNavigatorEnergyAnalysis" value="em-functionPanel-eAnalysis" type="ID"/>
             <add key="ButtonNavigatorCarbonUsage" value="em-functionPanel-eCarbon" type="ID"/>
@@ -991,6 +999,10 @@
     <add key="PopHierarchyTree" value="//div[@class='pop-tree']/div[@class='pop-scroll-panel']/div/div" type="XPath"/>
   </pop-TreeView>
   
+  <alarm-TreeView>
+    <add key="AlarmHierarchyTree" value="//div[@class='tree-field']/div[@class='pop-tree-view']/div/div" type="XPath"/>
+  </alarm-TreeView>
+  
   <TreeView>
       <add key="HierarchyTreeEnergyView" value="//div[@id='em-hier-tree-body']/div/table" type="XPath"/>
       <add key="HierarchyTreeHierarchySettings" value="//div[@id='st-hier-tree-body']/div/table" type="XPath"/>
@@ -1205,6 +1217,11 @@
     <add key="CheckBoxWidgetTemplateTable" value="//div[@id='db-wt-item-targetaction-innerCt']/table[contains(@id,'checkboxfield')]" type="XPath"/>
    </CheckBox>
   <!--CheckBoxField End-->
+  
+  <AlarmCheckbox>
+    <add key="AlarmCheckBoxTaglist" value="//div[@class='jazz-dataselectmainpanel']//div[@class='taglist']" type="XPath"/>
+
+  </AlarmCheckbox>
   
   <!--Label Begin-->
   <Label>

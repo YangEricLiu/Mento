@@ -36,6 +36,12 @@ namespace Mento.TestApi.WebUserInterface
         {
             BrowserHandler.Refresh();
         }
+
+        public static void SwitchToWidnow(string windowTitle)
+        {
+            BrowserHandler.switchToWindow(windowTitle);
+        }
+        
         
         private static void ClickHttpsSecurityWarning()
         {

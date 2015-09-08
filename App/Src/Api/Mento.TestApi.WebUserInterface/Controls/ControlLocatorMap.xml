@@ -39,6 +39,9 @@
   <!--Pop_TreeView-->
   <add key = "PopTreeNode" value = "//div[contains(@class,'pop-node') and span[text()='$#nodeText']]" type = "XPath"/>
 
+  <!--ReactJS alarm-->
+  <add key = "AlarmTreeNode" value = "//div[contains(@class,'node-content-text') and text()='$#nodeText']" type = "XPath"/>
+
   <!--TextField-->
   <add key = "FormulaTextBox" value="//textarea[contains(@id,'st-formula-text') and @name='Formula']" type = "XPath"/>
   <add key = "TextFieldHiddenTable" value="ancestor::*[contains(@style, 'display: none')]" type = "XPath"/>
@@ -133,6 +136,11 @@
   <add key="PopCheckBoxInput" value = "span[text()='$#itemName']/../input" type ="XPath"/>
 
     </Pop>
+  
+   <Alarm>
+  <add key="Alarm_CheckBoxInput" value = "//div[@class='jazz-dataselectmainpanel']//div[@class='taglist' and @title='$#itemName']/div/input" type ="XPath"/>
+
+    </Alarm>
   
   
   <add key="PermissionCheckBoxTable" value = "//table[contains(@id,'displayfield') and tbody/tr/td/label[text()='$#permissionName']]/../table[contains(@id,'checkboxfield')]" type ="XPath"/>

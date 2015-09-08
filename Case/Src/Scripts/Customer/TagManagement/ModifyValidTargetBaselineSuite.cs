@@ -19,6 +19,7 @@ using Mento.ScriptCommon.TestData.EnergyView;
 namespace Mento.Script.Customer.TagManagement
 {
     [TestFixture]
+    [Ignore("ignore")]
     [Owner("Emma")]
     [CreateTime("2013-07-26")]
     [ManualCaseID("TC-J1-FVT-TargetConfiguration-Modify-101")]

@@ -71,6 +71,25 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #region ReactJS
+
+        public static Button AlarmConfigrationButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.AlarmConfigration); }
+        }
+
+        public static Button AlarmHierarchyTreeButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.AlarmHierarchyTreeButton); }
+        }
+
+        public static Button AlarmViewButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.AlarmViewButton); }
+        }
+
+        #endregion
+
         #region Login buttons
         public static Button LoginSubmitButton
         {
@@ -435,19 +454,27 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button NavigatorHomePageButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorHomePage);}
-        }//{NavigationTarget.HomePage,new NavigatorItem( NavigationTarget.HomePage, null, "header-btn-homepage-btnEl",ByType.ID)},
+        }
+
         public static Button NavigatorEnergyViewButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorEnergyView);}
-        }//{NavigationTarget.EnergyView, new NavigatorItem(NavigationTarget.EnergyView, null,"header-btn-energyservice-btnEl",ByType.ID)},
+        }
+
         public static Button NavigatorSettingsButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorSettings);}
-        }//{NavigationTarget.Settings, new NavigatorItem(NavigationTarget.Settings,null,"header-btn-setting-btnEl",ByType.ID)},
+        }
+
         public static Button NavigatorPlatformSettingsButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonNavigatorPlatformSettings);}
-        }//{NavigationTarget.PlatformSettings, new NavigatorItem(NavigationTarget.PlatformSettings,NavigationTarget.Settings,"setting-tab-platformsetting-btn-btnEl",ByType.ID)},
+        }
+        
+        public static Button AlarmSettings
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.AlarmSettings); }
+        }
 
         //level 2
         public static Button NavigatorEnergyAnalysisButton 

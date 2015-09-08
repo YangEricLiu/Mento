@@ -1,0 +1,325 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "银河SOHO"],
+			"TagNames":["银河SOHO总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-银河SOHO总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-银河SOHO总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-银河SOHO总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-银河SOHO总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-银河SOHO总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-银河SOHO总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-银河SOHO总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-银河SOHO总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "银河SOHO"],
+			"TagNames":["办公区总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-办公区总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-办公区总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-办公区总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-办公区总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-办公区总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-办公区总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-办公区总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-办公区总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "银河SOHO"],
+			"TagNames":["基础总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-基础总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-基础总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-基础总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-基础总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-基础总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-基础总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-基础总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-基础总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "银河SOHO"],
+			"TagNames":["空调总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-空调总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-空调总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-空调总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-空调总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-空调总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-空调总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-空调总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-空调总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "银河SOHO"],
+			"TagNames":["商业区总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-商业区总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-商业区总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-商业区总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-商业区总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-商业区总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-商业区总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-商业区总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-商业区总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "银河SOHO"],
+			"TagNames":["总公共区域用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-总公共区域用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-总公共区域用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-总公共区域用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-总公共区域用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-总公共区域用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-总公共区域用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-总公共区域用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-总公共区域用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "银河SOHO"],
+			"TagNames":["总用电加合"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-总用电加合.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-总用电加合.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-总用电加合.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-总用电加合.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-总用电加合.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-总用电加合.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-总用电加合.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-总用电加合.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["商铺 总用电量"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-商铺总用电量.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-商铺总用电量.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-商铺总用电量.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-商铺总用电量.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-商铺总用电量.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-商铺总用电量.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-商铺总用电量.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-商铺总用电量.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO架构1_公共电耗_总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构1_公共电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构1_公共电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构1_公共电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构1_公共电耗_总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构1_公共电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构1_公共电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构1_公共电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构1_公共电耗_总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO架构1_总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构1_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构1_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构1_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构1_总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构1_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构1_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构1_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构1_总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO架构2_总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO架构2_办公电耗_总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_办公电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_办公电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_办公电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_办公电耗_总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_办公电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_办公电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_办公电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_办公电耗_总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO架构2_基础电耗_总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_基础电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_基础电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_基础电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_基础电耗_总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_基础电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_基础电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_基础电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_基础电耗_总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO架构2_商业电耗_总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_商业电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_商业电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_商业电耗_总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_商业电耗_总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO架构2_商业电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO架构2_商业电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO架构2_商业电耗_总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO架构2_商业电耗_总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO_建筑总供热指标"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO_建筑总供热指标.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO_建筑总供热指标.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO_建筑总供热指标.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO_建筑总供热指标.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO_建筑总供热指标.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO_建筑总供热指标.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO_建筑总供热指标.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO_建筑总供热指标.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO_T1总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO_T1总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO_T1总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO_T1总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO_T1总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO_T1总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO_T1总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO_T1总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO_T1总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["望京SOHO_T2总用电"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO_T2总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO_T2总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO_T2总用电.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO_T2总用电.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-望京SOHO_T2总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-望京SOHO_T2总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-望京SOHO_T2总用电.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-望京SOHO_T2总用电.xls"],
+		}
+	},
+	{
+		"InputData":
+		{
+			"Customer":"SOHO China",
+			"Hierarchies":["SOHO China", "望京SOHO"],
+			"TagNames":["总冷热量"],
+			"failedFileName":["F-EnergyConsumption-SOHO-ProdComp-101-1-Y-总冷热量.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-M-总冷热量.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-W-总冷热量.xls", "F-EnergyConsumption-SOHO-ProdComp-101-1-D-总冷热量.xls"],
+			"ManualTimeRange":[{
+				"StartDate":"2014-01-01",
+				"EndDate":"2015-07-20",						
+			}],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["EnergyConsumption-SOHO-ProdComp-101-1-Y-总冷热量.xls", "EnergyConsumption-SOHO-ProdComp-101-1-M-总冷热量.xls", "EnergyConsumption-SOHO-ProdComp-101-1-W-总冷热量.xls", "EnergyConsumption-SOHO-ProdComp-101-1-D-总冷热量.xls"],
+		}
+	}
+]

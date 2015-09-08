@@ -23,7 +23,7 @@ namespace Mento.Script.EnergyView
         public void RunAfterAnyTests()
         {
             //delete the dashboards which add when running 
-            JazzFunction.HomePage.DeleteDashboardsAfterExecution();
+            //JazzFunction.HomePage.DeleteDashboardsAfterExecution();
 
             TestAssemblyInitializer.Desctuct();       
         }

@@ -82,6 +82,11 @@ namespace Mento.TestApi.WebUserInterface
         {
             DriverFactory.Instance.Navigate().Refresh();
         }
+
+        public static void switchToWindow(string windowTitle)
+        {
+            DriverFactory.switchToWindow(DriverFactory.Instance, windowTitle);
+        }
     }
 
 
@@ -148,6 +153,39 @@ namespace Mento.TestApi.WebUserInterface
 
 
             return driver;
+        }
+
+        public static Boolean switchToWindow(IWebDriver driver, string windowTitle)
+        { 
+            Boolean flag = false;
+
+            try
+            {
+                String currentHandle = driver.CurrentWindowHandle;
+                List<string> handles = driver.WindowHandles.ToList();
+
+                foreach (string s in handles) 
+                {  
+                    if (s.Equals(currentHandle))  
+                    continue; 
+
+                    else {  
+                    driver.SwitchTo().Window(s);  
+                    if (driver.Title.Contains(windowTitle)) 
+                    {  
+                        flag = true;  
+                        break;  
+                    } else  
+                        continue;  
+                    }  
+                }
+            }
+            catch (NoSuchWindowException e) 
+            {  
+                flag = false;  
+            } 
+
+            return flag;
         }
     }
 }

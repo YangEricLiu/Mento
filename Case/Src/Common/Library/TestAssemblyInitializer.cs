@@ -17,7 +17,7 @@ namespace Mento.ScriptCommon.Library
 {
     public static class TestAssemblyInitializer
     {
-        private static int WAITLONGTIME = 15000;
+        private static int WAITLONGTIME = 30000;
         public static List<DashboardInformation> CaseDownDashboardInfos = new List<DashboardInformation>();
 
 

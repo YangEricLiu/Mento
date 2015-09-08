@@ -21,7 +21,6 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
     /// 
     /// </summary>
     [TestFixture]
-    [Category("P2_Emma")]
     [ManualCaseID("TC-J1-FVT-MultipleHierarchyNodeComparision-DataView-101"), CreateTime("2013-08-08"), Owner("Emma")]
     public class P1_MultipleHierarchyNodeComparisionDataViewSuite : TestSuiteBase
     {

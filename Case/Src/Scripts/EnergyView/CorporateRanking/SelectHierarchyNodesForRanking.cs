@@ -21,7 +21,7 @@ namespace Mento.Script.EnergyView.CorporateRanking
     /// 
     /// </summary>
     [TestFixture]
-    [Category("P4_Emma")]
+    //[Category("P4_Emma")]
     [ManualCaseID("TC-J1-FVT-SelectHierarchyNodesForRanking-101"), CreateTime("2013-10-17"), Owner("Greenie")]
     public class SelectHierarchyNodesForRanking : TestSuiteBase
     {

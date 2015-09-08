@@ -12,6 +12,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
 
         public static PopHierarchyTree PopHierarchyTree { get { return GetControl<PopHierarchyTree>(JazzControlLocatorKey.PopHierarchyTree); } }
+        public static AlarmHierarchyTree AlarmHierarchyTree { get { return GetControl<AlarmHierarchyTree>(JazzControlLocatorKey.AlarmHierarchyTree); } }
 
 
         #endregion

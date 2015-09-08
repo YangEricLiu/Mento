@@ -48,6 +48,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         #endregion
 
+        #region Alarm ReactJS TreeView locators
+
+        public static string AlarmTreeNode = "AlarmTreeNode";
+
+        #endregion
+
         #region TextField locators
         public static string FormulaTextBox = "FormulaTextBox";
         public static string FormulaTextArea = "FormulaTextArea";
@@ -116,7 +122,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string GridCellIndex5 = "GridCellIndex5";
         #endregion
 
-
         #region MonthPicker locators
         public static string MonthPickerTrigger = "MonthPickerTrigger";
         public static string MonthPickerInput = "MonthPickerInput";
@@ -156,6 +161,12 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region pop
 
         public static string PopCheckBoxInput = "PopCheckBoxInput";
+
+        #endregion
+
+        #region Alarm ReactJS Checkbox locators
+
+        public static string Alarm_CheckBoxInput = "Alarm_CheckBoxInput";
 
         #endregion
 

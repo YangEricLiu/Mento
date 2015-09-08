@@ -27,14 +27,14 @@ namespace Mento.Script.EnergyView.EnergyManagement
         [SetUp]
         public void CaseSetUp()
         {
-            HomePagePanel.SelectCustomer("NancyCostCustomer2");
+            HomePagePanel.SelectCustomer("NancyOtherCustomer3");
             TimeManager.LongPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            JazzFunction.Navigator.NavigateHome();
+            //JazzFunction.Navigator.NavigateHome();
         }
 
         private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
@@ -61,7 +61,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();
             TimeManager.MediumPause();
 
-            //Tags = BAV1Root
+            //Tags
             EnergyAnalysis.CheckTags(input.InputData.TagNames);
             TimeManager.ShortPause();
 
@@ -72,7 +72,7 @@ namespace Mento.Script.EnergyView.EnergyManagement
 
             //Chart display correctly
             Assert.IsTrue(EnergyAnalysis.IsTrendChartDrawn());
-
+          
             EnergyViewToolbar.SelectTagModeConvertTarget(TagModeConvertTarget.MultipleHierarchyTag);
             TimeManager.LongPause();
 
@@ -480,5 +480,37 @@ namespace Mento.Script.EnergyView.EnergyManagement
             TimeManager.MediumPause();
         }
 
+        [Test]
+        [CaseID("TC-J1-FVT-Alarm_101")]
+        [MultipleTestDataSource(typeof(SmokeTestEnergyViewData[]), typeof(SmokeTestEnergyViewSuite), "TC-J1-FVT-SmokeTestEnergyView-101-11")]
+        public void Alarm(SmokeTestEnergyViewData input)
+        {
+            Dictionary<string, Object> testD = new Dictionary<string, Object>();
+
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.AlarmSettings);
+            TimeManager.Pause(10000);
+
+            JazzBrowseManager.SwitchToWidnow("Jazz_Alarm");
+            TimeManager.Pause(10000);
+
+            JazzButton.AlarmConfigrationButton.Click();
+            TimeManager.Pause(10000);
+
+            JazzButton.AlarmHierarchyTreeButton.Click();
+            TimeManager.Pause(5000);
+
+            string[] nodePath = { "NancyOtherCustomer3", "NancyOtherSite", "BuildingRanking1" };
+            JazzTreeView.AlarmHierarchyTree.Alarm_SelectNode(nodePath);
+            TimeManager.Pause(30000);
+
+            JazzCheckBox.AlarmCheckBoxTaglist.Alarm_Checked("Rankingtag1");
+            TimeManager.MediumPause();
+
+            JazzButton.AlarmViewButton.Click();
+            TimeManager.Pause(30000);
+            var tests = BrowserHandler.ExecuteJavaScript("return window.testObj._energyRawData");
+
+            Console.Out.WriteLine(tests);
+        }
     }
 }

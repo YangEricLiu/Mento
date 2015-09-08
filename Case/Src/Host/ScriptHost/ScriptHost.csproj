@@ -94,8 +94,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -127,8 +129,12 @@
       <Project>{1615FA2F-812E-4374-AC19-CCB00119895C}</Project>
       <Name>Information</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Scripts\OpenAPI\OpenAPI.csproj">
+      <Project>{cfd9da6d-7dff-4709-9c08-b73fe61c4ac2}</Project>
+      <Name>OpenAPI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Scripts\Platform\Platform.csproj">
-      <Project>{74673397-F815-44D8-876A-D6CCF87A2382}</Project>
+      <Project>{74673397-f815-44d8-876a-d6ccf87a2382}</Project>
       <Name>Platform</Name>
     </ProjectReference>
   </ItemGroup>
@@ -796,6 +802,8 @@
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-2.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\SingleHierarchyNodeTrendChartSuite\TC-J1-FVT-SingleHierarchyNode-TrendChart-101-3.json" />
+    <None Include="Data\EnergyView\EnergyManagement\ProdCompEnergyViewSuite\TC-J1-FVT-SOHO-ProdCompEnergyView-101-1.json" />
+    <None Include="Data\EnergyView\EnergyManagement\ProdCompEnergyViewSuite\TC-J1-FVT-HM-ProdCompEnergyView-101-1.json" />
     <None Include="Data\EnergyView\EnergyManagement\SmokeTestEnergyViewSuite\TC-J1-FVT-SmokeTestEnergyView-101-11.json" />
     <None Include="Data\EnergyView\EnergyManagement\SmokeTestEnergyViewSuite\TC-J1-FVT-SmokeTestEnergyView-101-10.json" />
     <None Include="Data\EnergyView\EnergyManagement\SmokeTestEnergyViewSuite\TC-J1-FVT-SmokeTestEnergyView-101-9.json" />
@@ -1162,17 +1170,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>del /F /S /Q $(TargetDir)Data
-del /F /S /Q $(TargetDir)SqlScript
-xcopy $(ProjectDir)Data $(TargetDir)Data /E /Y /R /I
-xcopy $(ProjectDir)SqlScript $(TargetDir)SqlScript /E /Y /R /I
-xcopy $(ProjectDir)Resource $(TargetDir)Resource /E /Y /R /I
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Administration.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.ClientAccess.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Customer.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.EnergyView.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Information.dll.config
-copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.System.dll.config</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

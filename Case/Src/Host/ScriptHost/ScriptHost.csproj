@@ -1170,8 +1170,18 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>del /F /S /Q $(TargetDir)Data
+del /F /S /Q $(TargetDir)SqlScript
+xcopy $(ProjectDir)Data $(TargetDir)Data /E /Y /R /I
+xcopy $(ProjectDir)SqlScript $(TargetDir)SqlScript /E /Y /R /I
+xcopy $(ProjectDir)Resource $(TargetDir)Resource /E /Y /R /I
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Administration.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.ClientAccess.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Customer.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.EnergyView.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.Information.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.System.dll.config
+copy $(TargetDir)Mento.ScriptHost.dll.config $(TargetDir)Mento.Script.OpenAPI.dll.config</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -558,4 +558,7 @@
   <data name="Uom_RH%" xml:space="preserve">
     <value>RH%</value>
   </data>
+  <data name="Uom_RH" xml:space="preserve">
+    <value>RH</value>
+  </data>
 </root>

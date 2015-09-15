@@ -1099,4 +1099,10 @@
   <data name="TagImport_CaclationSetp_Hour8" xml:space="preserve">
     <value>8小时</value>
   </data>
+  <data name="Folder_CopyName" xml:space="preserve">
+    <value>副本</value>
+  </data>
+  <data name="Folder_RootName" xml:space="preserve">
+    <value>仪表盘</value>
+  </data>
 </root>

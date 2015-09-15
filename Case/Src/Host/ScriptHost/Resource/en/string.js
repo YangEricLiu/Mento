@@ -2083,7 +2083,9 @@ I18N.Message.M20014 = 'Some tags are deleted or not under the permission scope�
 I18N.Message.M21707 = 'Report {0} is deleted. Will refresh report list soon.';
 I18N.Message.M21705 = 'Duplicated report name.';
 I18N.Message.M21702 = 'The report is modified. Will refresh it soon.';
-I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.Setting.VEEMonitorRule.AutoRepair = '自动修复规则';
+I18N.Message.M21706 = 'Duplicate tags in one group in report configuration.';I18N.DateTimeFormat.IntervalFormat.MonthDayHour = 'm月d日H点';
+I18N.DateTimeFormat.IntervalFormat.DayHour = 'd日H点';
+I18N.Setting.VEEMonitorRule.AutoRepair = '自动修复规则';
 I18N.Setting.VEEMonitorRule.LinearEastimation = '线性回填';
 I18N.Setting.VEEMonitorRule.EastimationValue = '回填阈值';
 I18N.Setting.VEEMonitorRule.EastimationValueTip = '当连续异常时长小于回填阈值时，启动线形回填';
@@ -2094,7 +2096,6 @@ I18N.EM.Report.AllTime = '全部';
 I18N.EM.Report.Hourly = '整点值';
 I18N.EM.Report.Daily = '零点值';
 I18N.EM.Report.Original = '原始数据';
-I18N.EM.Report.NotSupportVtag = '所选数据点包含计量数据V类型的数据点，不支持原始数据功能，请重新选择';
 I18N.Common.AggregationStep.Hour2 = "2小时";
 I18N.Common.AggregationStep.Hour4 = "4小时";
 I18N.Common.AggregationStep.Hour6 = "6小时";
@@ -2115,5 +2116,3 @@ I18N.Setting.DynamicProperty.BedStartDateDuplicated = '已用床位属性生效�
 I18N.Setting.DynamicProperty.BedUnitValue = '床';
 I18N.Setting.DynamicProperty.StartDate = '生效日期';
 I18N.Message.M21802 = '所选数据点包含计量数据V类型的数据点，不支持原始数据功能，请重新选择。';
-I18N.DateTimeFormat.IntervalFormat.MonthDayHour = 'm月d日H点';
-I18N.DateTimeFormat.IntervalFormat.DayHour = 'd日H点';

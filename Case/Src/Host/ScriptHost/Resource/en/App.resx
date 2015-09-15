@@ -1086,4 +1086,10 @@
   <data name="TagImport_CaclationSetp_Hour8" xml:space="preserve">
     <value>8 hours</value>
   </data>
+  <data name="Folder_CopyName" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="Folder_RootName" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
 </root>

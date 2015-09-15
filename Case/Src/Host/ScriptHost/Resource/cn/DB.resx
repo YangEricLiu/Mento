@@ -558,4 +558,7 @@
   <data name="Uom_RH%" xml:space="preserve">
     <value>相对湿度百分比</value>
   </data>
+  <data name="Uom_RH" xml:space="preserve">
+    <value>湿度</value>
+  </data>
 </root>

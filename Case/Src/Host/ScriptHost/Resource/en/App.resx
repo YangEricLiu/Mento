@@ -253,7 +253,7 @@
     <value>Value</value>
   </data>
   <data name="ENERGY_RANKING_PERSON_APDX" xml:space="preserve">
-    <value>/person</value>
+    <value>Person</value>
   </data>
   <data name="Energy_CommodityName" xml:space="preserve">
     <value>Overview</value>
@@ -1069,7 +1069,19 @@
     <value>Tag association is failed because tag [code {0}] has been associated at row [{1}]</value>
   </data>
   <data name="TagImport_ExcelHeader_CollectionCycle" xml:space="preserve">
-    <value>CollectionCycle</value>
+    <value>Data acquisition cycle</value>
+  </data>
+  <data name="Administration_CONSTUOM_BED_UNIT_CODE" xml:space="preserve">
+    <value>Bed(s)</value>
+  </data>
+  <data name="Administration_CONSTUOM_ROOM_UNIT_CODE" xml:space="preserve">
+    <value>Room(s)</value>
+  </data>
+  <data name="ENERGY_RANKING_BED_UNIT_APDX" xml:space="preserve">
+    <value>Bed(s)/day</value>
+  </data>
+  <data name="ENERGY_RANKING_ROOM_UNIT_APDX" xml:space="preserve">
+    <value>Room(s)/day</value>
   </data>
   <data name="TagImport_CaclationSetp_Hour12" xml:space="preserve">
     <value>12 hours</value>

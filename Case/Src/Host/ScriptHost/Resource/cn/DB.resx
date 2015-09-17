@@ -166,7 +166,7 @@
     <value>秒</value>
   </data>
   <data name="Uom_°C" xml:space="preserve">
-    <value>摄氏度</value>
+    <value>°C</value>
   </data>
   <data name="Uom_kgce" xml:space="preserve">
     <value>千克标煤</value>
@@ -559,12 +559,12 @@
     <value>相对湿度百分比</value>
   </data>
   <data name="Uom_RH" xml:space="preserve">
-    <value>湿度</value>
+    <value>RH</value>
   </data>
   <data name="Uom_Bed" xml:space="preserve">
     <value>床</value>
   </data>
   <data name="Uom_ROOM" xml:space="preserve">
-    <value>房间</value>
+    <value>间</value>
   </data>
 </root>

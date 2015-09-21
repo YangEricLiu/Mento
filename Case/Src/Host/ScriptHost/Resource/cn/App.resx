@@ -1105,4 +1105,10 @@
   <data name="Folder_RootName" xml:space="preserve">
     <value>仪表盘</value>
   </data>
+  <data name="Energy_Humidity" xml:space="preserve">
+    <value>湿度</value>
+  </data>
+  <data name="Energy_Temperature" xml:space="preserve">
+    <value>温度</value>
+  </data>
 </root>

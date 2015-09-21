@@ -558,4 +558,10 @@
   <data name="Uom_RH%" xml:space="preserve">
     <value>RH%</value>
   </data>
+  <data name="Uom_Bed" xml:space="preserve">
+    <value>Bed</value>
+  </data>
+  <data name="Uom_ROOM" xml:space="preserve">
+    <value>Room</value>
+  </data>
 </root>

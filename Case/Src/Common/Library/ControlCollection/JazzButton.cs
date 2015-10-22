@@ -88,6 +88,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             get { return GetControl<Button>(JazzControlLocatorKey.AlarmViewButton); }
         }
 
+        public static Button FolderOrWidgetDropDownButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.FolderOrWidgetDropDownButton); }
+        }
+
+        public static Button ExportFromDropDownButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ExportFromDropDownButton); }
+        }
+
         #endregion
 
         #region Login buttons

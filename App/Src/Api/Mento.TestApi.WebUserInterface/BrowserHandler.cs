@@ -10,6 +10,7 @@ using Mento.Framework;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
+using Mento.Framework.Configuration;
 
 namespace Mento.TestApi.WebUserInterface
 {
@@ -125,13 +126,18 @@ namespace Mento.TestApi.WebUserInterface
             {
                 case Browser.IE:
                     driver = new InternetExplorerDriver(new InternetExplorerOptions() { });
-                    //driver = new InternetExplorerDriver();
                     break;
                 case Browser.Chrome:
+                    //这里需要改变chrome的下载目录
                     ChromeOptions options = new ChromeOptions();
-                    //options.AddExtension("Extension");
-                    driver = new ChromeDriver(options);
-                    //driver = new ChromeDriver(new ChromeOptions() { });                
+
+                    if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+                        options.AddUserProfilePreference("download.default_directory", ExecutionConfig.expectedDataViewExcelFileDirectory);
+
+                    else if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+                        options.AddUserProfilePreference("download.default_directory", ExecutionConfig.actualDataViewExcelFileDirectory);
+
+                    driver = new ChromeDriver(options);              
                     break;
                 case Browser.Firefox:
                     try

@@ -1,4 +1,4 @@
-using System;
+      using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +28,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string AlarmConfigration = "AlarmConfigration";
         public static string AlarmHierarchyTreeButton = "AlarmHierarchyTreeButton";
         public static string AlarmViewButton = "AlarmViewButton";
+        public static string DashboardFolderWidgetNameButton = "DashboardFolderWidgetNameButton";
+        public static string FolderOrWidgetDropDownButton = "FolderOrWidgetDropDownButton";
+        public static string ExportFromDropDownButton = "ExportFromDropDownButton";
 
         #endregion
 
@@ -1602,6 +1605,17 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region MenuCheckItem
         public static string AssociateStatusMenuCheckItem = "AssociateStatusMenuCheckItem";   
+        #endregion
+
+        #region New Jazz
+
+        #region New Jazz Date Picker
+
+        public static string NewReactJSJazzDatePickerStartDate = "NewReactJSJazzDatePickerStartDate";
+        public static string NewReactJSJazzDatePickerEndDate = "NewReactJSJazzDatePickerEndDate";
+
+        #endregion
+
         #endregion
 
     }

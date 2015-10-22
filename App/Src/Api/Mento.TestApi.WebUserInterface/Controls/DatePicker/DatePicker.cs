@@ -10,6 +10,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class DatePicker : JazzControl
     {
+        #region Old Jazz
+
         private const string DATEPICKERITEMVARIABLENAME = "itemKey";
         private const string YEARWORD = "年";
         private const string MONTHWORD = "月";
@@ -30,6 +32,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {"November", "11" },
             {"December", "12" },
         };
+
+        #region Operation
 
         protected IWebElement SelectTrigger 
         {
@@ -153,6 +157,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return new DateTime(year, month, day);
         }
+
 
         private void  DisplayMonthPicker()
         {
@@ -319,8 +324,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        #endregion
+
         #region Protect Method
-        
+
         protected virtual void ClickDatePickerPreviousMonthButton()
         {
             var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.DatePickerPreviousMonth);
@@ -383,6 +390,185 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.InnerMonthPickerMonthItem), DATEPICKERITEMVARIABLENAME, itemRealValue);
         }
+
+        #endregion
+
+        #endregion
+
+        #region New Jazz
+
+        private static Dictionary<string, string> NewJazzMonthItem = new Dictionary<string, string>()
+        {
+            {"一月", "1" },
+            {"二月", "2" },
+            {"三月", "3" },
+            {"四月", "4" },
+            {"五月", "5" },
+            {"六月", "6" },
+            {"七月", "7" },
+            {"八月", "8" },
+            {"九月", "9" },
+            {"十月", "10" },
+            {"十一月", "11" },
+            {"十二月", "12" },
+        };
+
+        protected IWebElement NewJazz_SelectTrigger
+        {
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzDatePickerTrigger));
+            }
+        }
+
+        public void NewJazz_DisplayDatePickerItems()
+        {
+            this.NewJazz_SelectTrigger.Click();
+        }
+
+        private string NewJazz_GetDate()
+        {
+            var monthLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzInnerMonthPickerMonth);
+            var yearLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzInnerMonthPickerYear);
+
+            string monthTemp = FindChild(monthLocator).Text;
+            string monthValue = NewJazzMonthItem[monthTemp];
+            string yearValue = FindChild(yearLocator).Text;
+
+            return yearValue + "-" + monthValue;
+        }
+
+        private DateTime NewJazz_GetCurrentDate()
+        {
+            if (ExecutionConfig.Language == "CN")
+            {
+                string currentDate = NewJazz_GetDate();
+
+                string[] date = currentDate.Split(new char[1] { '-' });
+                int year = Convert.ToInt32(date[0]);
+                int month = Convert.ToInt32(date[1]);
+
+                return new DateTime(year, month, 1);
+            }
+            else
+            {
+                string currentDate = NewJazz_GetDate();
+                string[] date = currentDate.Split(new char[1] { ' ' });
+                int month = Convert.ToInt32(MonthItem[date[0]]);
+                int year = Convert.ToInt32(date[1]);
+
+                return new DateTime(year, month, 1);
+            }
+        }
+
+        private void NewJazz_NavigateToMonth(DateTime date)
+        {
+            DateTime currentDate = NewJazz_GetCurrentDate();
+
+            int currentYear = Convert.ToInt32(currentDate.Year.ToString());
+            int currentMonth = Convert.ToInt32(currentDate.Month.ToString());
+
+            int numberYear = Convert.ToInt32(date.Year.ToString());
+            int numberMonth = Convert.ToInt32(date.Month.ToString());
+            int clickPrevTime = 0;
+            int clickNextTime = 0;
+
+            if (currentYear > numberYear)
+            {
+                clickPrevTime = (currentYear - numberYear) * 12;
+                NewJazz_ClickNTimesDatePickerPreviousMonthButton(clickPrevTime);
+            }
+            else if (currentYear < numberYear)
+            {
+                clickNextTime = (numberYear - currentYear) * 12;
+                NewJazz_ClickNTimesDatePickerNextMonthButton(clickNextTime);
+            }
+
+            if (currentMonth > numberMonth)
+            {
+                clickPrevTime = currentMonth - numberMonth;
+                NewJazz_ClickNTimesDatePickerPreviousMonthButton(clickPrevTime);
+            }
+            else if (currentMonth < numberMonth)
+            {
+                clickNextTime = numberMonth - currentMonth;
+                NewJazz_ClickNTimesDatePickerNextMonthButton(clickNextTime);
+            }
+        }
+
+        private void NewJazz_ClickNTimesDatePickerPreviousMonthButton(int clickTime)
+        {
+            for (int i = 0; i < clickTime; i++)
+            {
+                NewJazz_ClickDatePickerPreviousMonthButton();
+            }
+        }
+
+        private void NewJazz_ClickNTimesDatePickerNextMonthButton(int clickTime)
+        {
+            for (int i = 0; i < clickTime; i++)
+            {
+                NewJazz_ClickDatePickerNextMonthButton();
+            }
+        }
+
+        public void NewJazz_SelectDateItem(DateTime date)
+        {
+            if (!String.IsNullOrEmpty(date.ToString()))
+            {
+                NewJazz_DisplayDatePickerItems();
+                TimeManager.ShortPause();
+
+                NewJazz_NavigateToMonth(date);
+                TimeManager.LongPause();
+
+                var locator = NewJazz_GetDatePickerDayLocator(date.Day.ToString());
+                FindChild(locator).Click();
+            }
+        }
+
+        public void NewJazz_SelectDateItem(string date)
+        {
+            if (!String.IsNullOrEmpty(date))
+            {
+                DateTime dateTime = ConvertStringToDateTime(date);
+
+                NewJazz_DisplayDatePickerItems();
+                TimeManager.ShortPause();
+
+                NewJazz_NavigateToMonth(dateTime);
+                TimeManager.LongPause();
+
+                var locator = NewJazz_GetDatePickerDayLocator(dateTime.Day.ToString());
+                FindChild(locator).Click();
+            }
+        }
+
+
+        #region New Jazz Protect Method
+
+        protected virtual void NewJazz_ClickDatePickerPreviousMonthButton()
+        {
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzDatePickerPreviousMonth);
+
+            FindChild(locator).Click();
+        }
+
+        protected virtual void NewJazz_ClickDatePickerNextMonthButton()
+        {
+            var locator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzDatePickerNextMonth);
+
+            FindChild(locator).Click();
+        }
+
+        protected virtual Locator NewJazz_GetDatePickerDayLocator(string itemKey)
+        {
+            string itemRealValue = ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
+
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzDatePickerDayItem), DATEPICKERITEMVARIABLENAME, itemRealValue);
+        }
+
+        #endregion
 
         #endregion
     }

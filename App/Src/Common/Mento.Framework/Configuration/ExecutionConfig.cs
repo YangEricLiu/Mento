@@ -27,6 +27,7 @@ namespace Mento.Framework.Configuration
         private const string ENVIRONMENTTEARDOWNSQLSCRIPT = "environmentTearDownSqlScript";
         private const string ISCREATEEXPECTEDDATAVIEWEXCELFILE = "isCreateExpectedDataViewExcelFile";
         private const string EXPECTEDDATAVIEWEXCELFILEDIRECTORY = "expectedDataViewExcelFileDirectory";
+        private const string ACTUALDATAVIEWEXCELFILEDIRECTORY = "actualDataViewExcelFileDirectory";
         private const string FAILEDDATAVIEWEXCELFILEDIRECTORY = "failedDataViewExcelFileDirectory";
         private const string ISCOMPAREEXPECTEDDATAVIEWEXCELFILE = "isCompareExpectedDataViewExcelFile";
         private const string ISCREATEREPONSEBODYTEXTFILE = "isCreateResponseBodyTextFile";
@@ -117,6 +118,14 @@ namespace Mento.Framework.Configuration
             get
             {
                 return GetExecutionConfig(EXPECTEDDATAVIEWEXCELFILEDIRECTORY);
+            }
+        }
+
+        public static string actualDataViewExcelFileDirectory
+        {
+            get
+            {
+                return GetExecutionConfig(ACTUALDATAVIEWEXCELFILEDIRECTORY);
             }
         }
 

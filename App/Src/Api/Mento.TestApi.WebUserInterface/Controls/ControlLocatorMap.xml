@@ -122,7 +122,7 @@
   <add key="InnerMonthPickerYearItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-years']/div[contains(@class, 'x-monthpicker-year')]/a[text()='$#itemKey']" type ="XPath"/>
   <add key="InnerMonthPickerMonthItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]//div[contains(@class,'x-monthpicker-default')]/div[@class = 'x-monthpicker-body']/div[@class='x-monthpicker-months']/div[contains(@class, 'x-monthpicker-month')]/a[text()='$#itemKey']" type ="XPath"/>
   <add key="DatePickerDayItem" value = "//div[contains(@class,'x-datepicker-default') and not(contains(@style,'display: none'))]/div/table[@class='x-datepicker-inner']/tbody/tr/td[contains(@class,'x-datepicker-active')]/a/em/span[text()='$#itemKey']" type ="XPath"/>
-
+  
   <!--Window-->
   <add key="WindowTitle" value="div[contains(@class,'x-window-header-default')]/div/div/div/div[contains(@class,'x-window-header-text-container')]" type="XPath"/>
   <add key="WindowCloseButton" value="div[contains(@class,'x-window-header')]/div/div/div/div[img[@class='x-tool-close']]" type="XPath"/>
@@ -160,5 +160,15 @@
   <add key="MenuCheckSearching"  value="//div[contains(@id,'menu') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'menucheckitem') and a/span[text()='$@Common.Label.Filters']]" type="XPath"/>
   <add key="MenuCheckExtraComp"  value="//div[contains(@id,'ext-comp') and not(contains(@style,'visibility: hidden;'))]//div[contains(@id,'menucheckitem') and a/span[text()='$#itemName']]" type="XPath"/>
   <add key="MenuAssociateStatusItem"  value="div[contains(@id,'headercontainer')]/div/div/div[contains(@class,'x-column-header')]/div[contains(@class,'x-column-header-inner') and span[text()= '$@Setting.TagAssociation.AssociatedStatus']]" type="XPath"/>
+
+
+
+    <!--New Jazz DatePicker-->
+  <add key="NewReactJSjazzDatePickerTrigger" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div/input" type ="XPath"/>
+  <add key="NewReactJSjazzInnerMonthPickerMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div/div/div/span[1]" type ="XPath"/>
+  <add key="NewReactJSjazzInnerMonthPickerYear" value = "//div[@class='mui-date-picker-calendar-toolbar']/div/div/div/span[3]" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerPreviousMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[2]/button[2]" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerNextMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[3]/button[1]" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerDayItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div/div[2]/div/div//button/span[text()='$#itemKey']" type ="XPath"/>
 
 </WebElement>

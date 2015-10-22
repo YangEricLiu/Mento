@@ -14,6 +14,8 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class EnergyViewToolbar
     {
+        #region Old Jazz
+     
         #region Controls
         //StartDatePicker
         private static DatePicker StartDatePicker = JazzDatePicker.EnergyUsageStartDateDatePicker;
@@ -374,6 +376,48 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             return DashboardDialog.GetNewDashboardMsg();
         }
+
+        #endregion
+
+        #endregion
+
+        #region New Jazz
+
+        #region New Jazz Controls
+        //StartDatePicker
+        private static DatePicker NewJazz_StartDatePicker = JazzDatePicker.NewReactJSJazzDatePickerStartDate;
+
+        //EndDatePicker
+        private static DatePicker NewJazz_EndDatePicker = JazzDatePicker.NewReactJSJazzDatePickerEndDate;
+
+        public string NewJazz_GetStartDate()
+        {
+            return NewJazz_StartDatePicker.GetValue();
+        }
+
+        public string NewJazz_GetEndDate()
+        {
+            return NewJazz_EndDatePicker.GetValue();
+        }
+
+        public void NewJazz_SetDateRange(DateTime startTime, DateTime endTime)
+        {
+            int startHour = startTime.Hour, startMinute = startTime.Minute, endHour = endTime.Hour, endMinute = endTime.Minute;
+
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime);
+
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime);
+        }
+
+        public void NewJazz_SetDateRange(string startTime, string endTime)
+        {
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime);
+
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime);
+        }
+
+        #endregion
+
         #endregion
     }
 }

@@ -175,6 +175,16 @@ namespace Mento.Utility
         }
 
         /// <summary> 
+        /// Get the reference of excel worksheet according to sheet name
+        /// </summary> 
+        /// <param name="sheetName"></param> 
+        /// <returns></returns> 
+        public Excel.Worksheet NewJazzGetWorksheet(string sheetName)
+        {
+            return this.currentWorkbook.Sheets[sheetName] as Excel.Worksheet;
+        }
+
+        /// <summary> 
         /// Get the reference of excel worksheet according to worksheet index
         /// </summary> 
         /// <param name="index"></param> 
@@ -1398,6 +1408,67 @@ namespace Mento.Utility
             sheet.Cells[rowIndex, columnIndex + 6] = data.formatActualResponseBody;
             sheet.Cells[rowIndex, columnIndex + 7] = data.result;
             sheet.Cells[rowIndex, columnIndex + 8] = data.resultReport;
+        }
+
+        #endregion
+
+        #region New Jazz -- Compare Excel Files
+
+        static public void CompareFiles(string expectedFilePath, string actualFilePath, string failedFilePath, string sheetName)
+        {
+            ExcelHelper expHandler = new ExcelHelper(expectedFilePath);
+            ExcelHelper actHandler = new ExcelHelper(actualFilePath);
+            ExcelHelper failHandler = new ExcelHelper(failedFilePath);
+
+            expHandler.OpenOrCreate();
+            actHandler.OpenOrCreate();
+            failHandler.OpenOrCreate();
+
+            Excel.Worksheet expSheet = expHandler.NewJazzGetWorksheet(sheetName);
+            Excel.Worksheet actSheet = actHandler.NewJazzGetWorksheet(sheetName);
+            Excel.Worksheet failSheet = failHandler.NewJazzGetWorksheet(sheetName);
+
+
+            Excel.Range currentCell = (Excel.Range)expSheet.Cells[1, 1];
+            bool temp = (bool)currentCell.MergeCells;
+            int mergeRows = 0;
+
+            if (temp)
+            {
+                Excel.Range MergeArea = currentCell.MergeArea;
+                mergeRows = MergeArea.Cells.Count;
+            }
+
+            int expRowsCount = expSheet.Cells.CurrentRegion.Rows.Count;
+            int expColumnsCount = expSheet.Cells.CurrentRegion.Columns.Count;
+
+            int actRowsCount = actSheet.Cells.CurrentRegion.Rows.Count;
+            int actColumnsCount = actSheet.Cells.CurrentRegion.Columns.Count;
+
+            //在两个文件的行列数相等的情况的逐个单元格比较
+            if (expRowsCount == actRowsCount && expColumnsCount == actColumnsCount)
+            {
+                for (int i = 1; i < (expRowsCount + 1); i++)
+                {
+                    for (int j = 1; j < (expColumnsCount + 1); j++)
+                    {
+                        if (i <= mergeRows && j == 1)
+                            continue;
+
+                        Excel.Range extCell = (Excel.Range)expSheet.Cells[i, j];
+                        string extValue = extCell.Text.ToString();
+
+                        Excel.Range actCell = (Excel.Range)actSheet.Cells[i, j];
+                        string actValue = actCell.Text.ToString();
+
+                        if (extValue == actValue)
+                        {
+                            Console.Out.WriteLine("The " + i.ToString() + " Row and " + j.ToString() + " Columns value is equal, which is " + extValue + " : " + actValue);
+                            Console.Out.WriteLine("\n");
+                        }
+                    }
+                }
+            }
         }
 
         #endregion

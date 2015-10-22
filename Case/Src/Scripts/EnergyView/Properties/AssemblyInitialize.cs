@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Mento.Script.EnergyView
         public void RunBeforeAnyTests()
         {
             //TestAssemblyInitializer.InitializeWithOption("SP2", "P@ssw0rd", "NancyOtherCustomer3");
-            TestAssemblyInitializer.InitializeWithOption("ShareUserK", "123456Qq", "NancyCustomer1");
+            TestAssemblyInitializer.InitializeWithOption("EmmaDataVerify", "123456Qq", "NancyCustomer1");
         }
 
         [TearDown]

@@ -88,4 +88,32 @@
   <add key = "LastYear" value = "$@Common.DateRange.LastYear"/>
   <add key = "ManualDefine" value = "$@Common.DateRange.Customerize"/>
   
+  <!--New Jazz Month Name 暂时不用-->
+  <!--<add key = "$@Common.Glossary.MonthName.January" value = "1"/>
+  <add key = "$@Common.Glossary.MonthName.February" value = "2"/>
+  <add key = "$@Common.Glossary.MonthName.March" value = "3"/>
+  <add key = "$@Common.Glossary.MonthName.April" value = "4"/>
+  <add key = "$@Common.Glossary.MonthName.May" value = "5"/>
+  <add key = "$@Common.Glossary.MonthName.June" value = "6"/>
+  <add key = "$@Common.Glossary.MonthName.July" value = "7"/>
+  <add key = "$@Common.Glossary.MonthName.August" value = "8"/>
+  <add key = "$@Common.Glossary.MonthName.September" value = "9"/>
+  <add key = "$@Common.Glossary.MonthName.October" value = "10"/>
+  <add key = "$@Common.Glossary.MonthName.November" value = "11"/>
+  <add key = "$@Common.Glossary.MonthName.December" value = "12"/>-->
+  
+  <!--New Jazz Month Name ch 暂时不用-->
+  <!--<add key = "一月" value = "1"/>
+  <add key = "二月" value = "2"/>
+  <add key = "三月" value = "3"/>
+  <add key = "四月" value = "4"/>
+  <add key = "五月" value = "5"/>
+  <add key = "六月" value = "6"/>
+  <add key = "七月" value = "7"/>
+  <add key = "八月" value = "8"/>
+  <add key = "九月" value = "9"/>
+  <add key = "十月" value = "10"/>
+  <add key = "十一月" value = "11"/>
+  <add key = "十二月" value = "12"/>-->
+  
 </ItemList>

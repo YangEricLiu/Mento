@@ -194,5 +194,16 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string MenuAssociateStatusItem = "MenuAssociateStatusItem";
 
         #endregion
+
+        #region New Jazz DatePickerLocators
+
+        public static string NewReactJSjazzDatePickerTrigger = "NewReactJSjazzDatePickerTrigger";
+        public static string NewReactJSjazzInnerMonthPickerMonth = "NewReactJSjazzInnerMonthPickerMonth";
+        public static string NewReactJSjazzInnerMonthPickerYear = "NewReactJSjazzInnerMonthPickerYear";
+        public static string NewReactJSjazzDatePickerPreviousMonth = "NewReactJSjazzDatePickerPreviousMonth";
+        public static string NewReactJSjazzDatePickerNextMonth = "NewReactJSjazzDatePickerNextMonth";
+        public static string NewReactJSjazzDatePickerDayItem = "NewReactJSjazzDatePickerDayItem";
+        
+        #endregion
     } 
 }

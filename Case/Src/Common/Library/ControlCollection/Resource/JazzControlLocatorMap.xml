@@ -13,6 +13,9 @@
     <add key="AlarmConfigration" value = "//a[text()='能源']" type="XPath"/>
     <add key="AlarmHierarchyTreeButton" value = "//div[@class='jazz-dataselectmainpanel']/div[@class='header']/div[@class='jazz-hierarchybutton']/div[@class='hiername']" type="XPath"/>
     <add key="AlarmViewButton" value = "//div[@class='jazz-alarm-chart-toolbar-container']/div[@class='jazz-flat-button']//span[text()='查看']" type="XPath"/>
+    <add key="DashboardFolderWidgetNameButton" value = "//div[@class='node-content-text' and text()='$#nameIndex']" type="XPath"/>
+    <add key="FolderOrWidgetDropDownButton" value = "//div[@class='jazz-alarm-chart-toolbar-container']//span[@class='icon-arrow-down']" type="XPath"/>
+    <add key="ExportFromDropDownButton" value = "//div[text()='导出']" type="XPath"/>
 
   </ReactJS-Button>
   
@@ -37,7 +40,7 @@
             
       <navigator>
             <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
-            <add key="ButtonNavigatorEnergyView" value="header-btn-energyservice" type="ID"/>
+            <add key="ButtonNavigatorEnergyView" value="header-btn-jump-energyservice" type="ID"/>
             <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
             <add key="ButtonNavigatorPlatformSettings" value="header-btn-spsetting" type="ID"/>
             <add key="AlarmSettings" value="header-btn-alarm" type="ID"/>
@@ -1444,4 +1447,9 @@
     <add key="AssociateStatusMenuCheckItem" value="//div[@id='st-tag-assoc-form-targetEl']/div[contains(@id,'taggrid') and contains(@class,'x-grid-with-row-lines')]" type="XPath"/>
   </Associate>
   <!--MenuCheckItem End-->
+
+  <!--New Jazz Energy view Toolbar begin-->
+  <add key="NewReactJSJazzDatePickerStartDate" value="//div[@class='jazz-alarm-chart-toolbar']/div[2]/div[@class='jazz-full-border-datepicker-container'][1]" type="XPath"/>
+  <add key="NewReactJSJazzDatePickerEndDate" value="//div[@class='jazz-alarm-chart-toolbar']/div[2]/div[@class='jazz-full-border-datepicker-container'][2]" type="XPath"/>
+  <!--New Jazz Energy view Toolbar end-->
 </WebElement>

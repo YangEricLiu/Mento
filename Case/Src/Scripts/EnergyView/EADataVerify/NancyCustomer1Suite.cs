@@ -64,7 +64,7 @@ namespace Mento.Script.EnergyView.EADataVerify
             TimeManager.Pause(10000);
 
             //Set date range
-            EnergyViewToolbar.NewJazz_SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 31));
+            EnergyViewToolbar.NewJazz_SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 31), "10:00");
             TimeManager.ShortPause();
 
 

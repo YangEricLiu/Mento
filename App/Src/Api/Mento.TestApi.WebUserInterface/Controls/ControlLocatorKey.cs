@@ -198,11 +198,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region New Jazz DatePickerLocators
 
         public static string NewReactJSjazzDatePickerTrigger = "NewReactJSjazzDatePickerTrigger";
+        public static string NewReactJSjazzTimePickerTrigger = "NewReactJSjazzTimePickerTrigger";
         public static string NewReactJSjazzInnerMonthPickerMonth = "NewReactJSjazzInnerMonthPickerMonth";
         public static string NewReactJSjazzInnerMonthPickerYear = "NewReactJSjazzInnerMonthPickerYear";
         public static string NewReactJSjazzDatePickerPreviousMonth = "NewReactJSjazzDatePickerPreviousMonth";
         public static string NewReactJSjazzDatePickerNextMonth = "NewReactJSjazzDatePickerNextMonth";
         public static string NewReactJSjazzDatePickerDayItem = "NewReactJSjazzDatePickerDayItem";
+        public static string NewReactJSjazzDatePickerTimeItem = "NewReactJSjazzDatePickerTimeItem";
         
         #endregion
     } 

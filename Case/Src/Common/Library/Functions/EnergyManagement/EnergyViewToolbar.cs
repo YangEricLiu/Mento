@@ -416,6 +416,22 @@ namespace Mento.ScriptCommon.Library.Functions
             NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime);
         }
 
+        public void NewJazz_SetDateRange(DateTime startTime, DateTime endTime, string time)
+        {
+            int startHour = startTime.Hour, startMinute = startTime.Minute, endHour = endTime.Hour, endMinute = endTime.Minute;
+
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime, time);
+
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime, time);
+        }
+
+        public void NewJazz_SetDateRange(string startTime, string endTime, string time)
+        {
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime, time);
+
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime, time);
+        }
+
         #endregion
 
         #endregion

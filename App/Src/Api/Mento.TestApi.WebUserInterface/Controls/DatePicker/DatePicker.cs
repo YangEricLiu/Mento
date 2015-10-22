@@ -421,9 +421,22 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        protected IWebElement NewJazz_SelectTimeTrigger
+        {
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzTimePickerTrigger));
+            }
+        }
+
         public void NewJazz_DisplayDatePickerItems()
         {
             this.NewJazz_SelectTrigger.Click();
+        }
+
+        public void NewJazz_DisplayTimePickerItems()
+        {
+            this.NewJazz_SelectTimeTrigger.Click();
         }
 
         private string NewJazz_GetDate()
@@ -544,6 +557,52 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+        public void NewJazz_SelectDateItem(DateTime date, string time)
+        {
+            if (!String.IsNullOrEmpty(date.ToString()))
+            {
+                NewJazz_DisplayDatePickerItems();
+                TimeManager.MediumPause();
+
+                NewJazz_SelectTime(time);
+                TimeManager.MediumPause();
+
+                NewJazz_NavigateToMonth(date);
+                TimeManager.LongPause();
+
+                var locator = NewJazz_GetDatePickerDayLocator(date.Day.ToString());
+                FindChild(locator).Click();
+            }
+        }
+
+        public void NewJazz_SelectDateItem(string date, string time)
+        {
+            if (!String.IsNullOrEmpty(date))
+            {
+                DateTime dateTime = ConvertStringToDateTime(date);
+
+                NewJazz_DisplayDatePickerItems();
+                TimeManager.MediumPause();
+
+                NewJazz_SelectTime(time);
+                TimeManager.MediumPause();
+
+                NewJazz_NavigateToMonth(dateTime);
+                TimeManager.LongPause();
+
+                var locator = NewJazz_GetDatePickerDayLocator(dateTime.Day.ToString());
+                FindChild(locator).Click();
+            }
+        }
+
+        public void NewJazz_SelectTime(string time)
+        {
+            NewJazz_DisplayTimePickerItems();
+            TimeManager.MediumPause();
+
+            var locator = NewJazz_GetDatePickerTimeLocator(time);
+            FindChild(locator).Click();
+        }
 
         #region New Jazz Protect Method
 
@@ -566,6 +625,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
             string itemRealValue = ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
 
             return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzDatePickerDayItem), DATEPICKERITEMVARIABLENAME, itemRealValue);
+        }
+
+        protected virtual Locator NewJazz_GetDatePickerTimeLocator(string itemKey)
+        {
+            string itemRealValue = ComboBoxItemRepository.GetComboBoxItemRealValue(itemKey);
+
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzDatePickerTimeItem), DATEPICKERITEMVARIABLENAME, itemRealValue);
         }
 
         #endregion

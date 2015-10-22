@@ -165,10 +165,12 @@
 
     <!--New Jazz DatePicker-->
   <add key="NewReactJSjazzDatePickerTrigger" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div/input" type ="XPath"/>
+  <add key="NewReactJSjazzTimePickerTrigger" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[3]/div" type ="XPath"/>
   <add key="NewReactJSjazzInnerMonthPickerMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div/div/div/span[1]" type ="XPath"/>
   <add key="NewReactJSjazzInnerMonthPickerYear" value = "//div[@class='mui-date-picker-calendar-toolbar']/div/div/div/span[3]" type ="XPath"/>
   <add key="NewReactJSjazzDatePickerPreviousMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[2]/button[2]" type ="XPath"/>
   <add key="NewReactJSjazzDatePickerNextMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[3]/button[1]" type ="XPath"/>
-  <add key="NewReactJSjazzDatePickerDayItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div/div[2]/div/div//button/span[text()='$#itemKey']" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerDayItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[2]/div[2]/div/div//button/span[text()='$#itemKey']" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerTimeItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[2]/div/div/div/button/span[text()='$#itemKey']" type ="XPath"/>
 
 </WebElement>

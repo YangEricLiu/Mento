@@ -1414,26 +1414,24 @@ namespace Mento.Utility
 
         #region New Jazz -- Compare Excel Files
 
-        static public void CompareFiles(string expectedFilePath, string actualFilePath, string failedFilePath, string sheetName)
+        static public Boolean NewJazz_CompareExcelFilesToDataTable(string expectedFilePath, string actualFilePath, string sheetName, out DataTable dtOut)
         {
             ExcelHelper expHandler = new ExcelHelper(expectedFilePath);
             ExcelHelper actHandler = new ExcelHelper(actualFilePath);
-            ExcelHelper failHandler = new ExcelHelper(failedFilePath);
+            Boolean isEqual = true;
+            DataTable dt = new DataTable();
 
             expHandler.OpenOrCreate();
             actHandler.OpenOrCreate();
-            failHandler.OpenOrCreate();
 
             Excel.Worksheet expSheet = expHandler.NewJazzGetWorksheet(sheetName);
             Excel.Worksheet actSheet = actHandler.NewJazzGetWorksheet(sheetName);
-            Excel.Worksheet failSheet = failHandler.NewJazzGetWorksheet(sheetName);
-
 
             Excel.Range currentCell = (Excel.Range)expSheet.Cells[1, 1];
-            bool temp = (bool)currentCell.MergeCells;
+            bool isMerge = (bool)currentCell.MergeCells;
             int mergeRows = 0;
 
-            if (temp)
+            if (isMerge)
             {
                 Excel.Range MergeArea = currentCell.MergeArea;
                 mergeRows = MergeArea.Cells.Count;
@@ -1445,11 +1443,27 @@ namespace Mento.Utility
             int actRowsCount = actSheet.Cells.CurrentRegion.Rows.Count;
             int actColumnsCount = actSheet.Cells.CurrentRegion.Columns.Count;
 
+            for (int j = 0; j < expSheet.Cells.CurrentRegion.Columns.Count; j++)
+            {
+                dt.Columns.Add("C" + j.ToString());
+            }
+
+            int tempMergeRows = mergeRows;
+            string compareMessage;
+
+            if (!isMerge || mergeRows == 0)
+                tempMergeRows = 3;
+
             //在两个文件的行列数相等的情况的逐个单元格比较
             if (expRowsCount == actRowsCount && expColumnsCount == actColumnsCount)
             {
                 for (int i = 1; i < (expRowsCount + 1); i++)
                 {
+                    DataRow myRow = dt.NewRow();
+
+                    Excel.Range timeCell = (Excel.Range)expSheet.Cells[i, 1];
+                    string timeValue = timeCell.Text.ToString();
+
                     for (int j = 1; j < (expColumnsCount + 1); j++)
                     {
                         if (i <= mergeRows && j == 1)
@@ -1461,13 +1475,99 @@ namespace Mento.Utility
                         Excel.Range actCell = (Excel.Range)actSheet.Cells[i, j];
                         string actValue = actCell.Text.ToString();
 
-                        if (extValue == actValue)
+                        if (i <= tempMergeRows && extValue == actValue)
                         {
-                            Console.Out.WriteLine("The " + i.ToString() + " Row and " + j.ToString() + " Columns value is equal, which is " + extValue + " : " + actValue);
-                            Console.Out.WriteLine("\n");
+                            myRow[j - 1] = extValue;
+                        }
+                        else if (extValue != actValue)
+                        {
+                            myRow[0] = timeValue;
+                            compareMessage = "期望值:" + extValue + "\n" + "实际值:" + actValue;
+                            myRow[j - 1] = compareMessage;
                         }
                     }
+
+                    dt.Rows.Add(myRow);
                 }
+            }
+
+            expHandler.KillExcelProcess();
+            actHandler.KillExcelProcess();
+
+            int dtRows = dt.Rows.Count;
+
+            //滤掉空行
+            int m = tempMergeRows; 
+
+            while (m < dtRows)
+            {
+                if (String.IsNullOrEmpty(dt.Rows[m][0].ToString().Trim()))
+                {
+                    dt.Rows[m]["C0"] = "d";
+                }
+
+                m++;
+            }
+
+            foreach (DataRow r in dt.Select("C0='d'"))
+            {
+                r.Delete();
+            }
+
+
+            dt.AcceptChanges();
+
+            dtOut = dt.Copy();
+
+            return isEqual;
+        }
+
+        public static void NewJazz_ExportDataTableToExcel(DataTable data, string fileName, string sheetName)
+        {
+            FileInfo excelFile = new FileInfo(fileName);
+            if (!excelFile.Directory.Exists)
+                excelFile.Directory.Create();
+
+            //Open excel file which restore scripts data
+            ExcelHelper handler = new ExcelHelper(fileName, true);
+
+            handler.OpenOrCreate();
+
+            //Get Worksheet object 
+            Microsoft.Office.Interop.Excel.Worksheet sheet = handler.AddWorksheet(sheetName);
+
+            //Import data from the start
+            handler.NewJazz_ImportDataTable(sheet, data);
+
+            handler.Save();
+            //handler.Dispose();
+            handler.KillExcelProcess();
+        }
+
+        private void NewJazz_ImportDataTable(Excel.Worksheet sheet, DataTable table)
+        {
+            if (table != null)
+            {
+
+                int columns = table.Columns.Count;
+                int rows = table.Rows.Count;
+
+                //add data for each row
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < columns; j++)
+                    {
+                        sheet.Cells[i + 1, j + 1] = table.Rows[i][j];
+
+                        Excel.Range colorCell = (Excel.Range)sheet.Cells[i + 1, j + 1];
+                        string colorValue = colorCell.Text.ToString();
+
+                        if (colorValue.Contains("期望值"))
+                            colorCell.Interior.ColorIndex = 27;
+                    }
+                }
+
+                sheet.get_Range("A1", "M1").ColumnWidth = 20;
             }
         }
 

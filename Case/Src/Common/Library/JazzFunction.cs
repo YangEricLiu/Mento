@@ -393,6 +393,20 @@ namespace Mento.ScriptCommon.Library
             }
         }
 
+
+        private static NewJazzEnergyAnalysis _NewJazzEnergyAnalysis;
+        public static NewJazzEnergyAnalysis NewJazzEnergyAnalysis
+        {
+            get
+            {
+                if (_NewJazzEnergyAnalysis == null)
+                    _NewJazzEnergyAnalysis = new NewJazzEnergyAnalysis();
+
+                return _NewJazzEnergyAnalysis;
+            }
+        }
+
+
         private static UserSettings _UserSettings;
         public static UserSettings UserSettings
         {

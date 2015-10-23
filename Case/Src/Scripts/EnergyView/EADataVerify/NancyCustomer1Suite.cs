@@ -49,9 +49,8 @@ namespace Mento.Script.EnergyView.EADataVerify
             TimeManager.LongPause();
         }
 
-        private static EnergyAnalysisPanel EnergyAnalysis = JazzFunction.EnergyAnalysisPanel;
+        private static NewJazzEnergyAnalysis EnergyAnalysis = JazzFunction.NewJazzEnergyAnalysis;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
-        private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
         [Category("P1_Emma")]
@@ -60,23 +59,27 @@ namespace Mento.Script.EnergyView.EADataVerify
         public void DataVerifyP1V1V2V3(EnergyViewOptionData input)
         {
             //选择图表
-            JazzButton.GetOneButton(JazzControlLocatorKey.DashboardFolderWidgetNameButton, "能耗分析").Click();
-            TimeManager.Pause(10000);
+            //JazzButton.GetOneButton(JazzControlLocatorKey.DashboardFolderWidgetNameButton, "P1V1V2V3_月").Click();
+            //TimeManager.Pause(10000);
 
             //Set date range
-            EnergyViewToolbar.NewJazz_SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 31), "10:00");
-            TimeManager.ShortPause();
+            //EnergyViewToolbar.NewJazz_SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 31), "10:00");
+            //TimeManager.ShortPause();
 
 
             //打开下拉框
             //JazzButton.FolderOrWidgetDropDownButton.Click();
-            //TimeManager.MediumPause();
+            //TimeManager.MediumPause();                                           
 
             //JazzButton.ExportFromDropDownButton.Click();
             //TimeManager.Pause(15000);
             //TimeManager.LongPause();
 
-            //ExcelHelper.CompareFiles(@"E:\Emma\v2100\ExpectedData\P1V1V2V3_周.xls", @"E:\Emma\v2100\ActualData\P1V1V2V3_周.xls", "Sheet1");
+            DataTable test = new DataTable();
+
+            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("P1V1V2V3_月.xls", "P1V1V2V3_月.xls", "F_P1V1V2V3_月.xls");
+            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("P1V1V2V3_周.xls", "P1V1V2V3_周.xls", "F_P1V1V2V3_周.xls");
+            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("能耗分析.xls", "能耗分析.xls", "F_能耗分析.xls");
         }
     }
 }

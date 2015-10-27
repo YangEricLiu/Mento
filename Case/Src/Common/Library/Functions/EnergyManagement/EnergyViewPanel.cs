@@ -16,9 +16,15 @@ namespace Mento.ScriptCommon.Library.Functions
     public abstract class EnergyViewPanel
     {
         #region Controls
+
+        //Add new widget button
+        private static Button NewWidget = JazzButton.NewWidgetButton;
+        private static Button HierarchyFoldingButton = JazzButton.EnergyViewHierarchyFoldingButton;
+
         //Select hierarchy button
         private static Button SelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
         private static HierarchyTree HierarchyTree = JazzTreeView.EnergyViewHierarchyTree;
+        private static HierarchyTree NewJazzHierarchyTree = JazzTreeView.NewJazzEnergyViewHierarchyTree;
 
         private static ToggleButton EnergyDisplayStepMinButton = JazzButton.EnergyDisplayStepMinButton;
         private static ToggleButton EnergyDisplayStepHourButton = JazzButton.EnergyDisplayStepHourButton;
@@ -45,6 +51,15 @@ namespace Mento.ScriptCommon.Library.Functions
             {DisplayStep.Week, "$@EM.UseWeek"},
             {DisplayStep.Month, "$@EM.UseMonth"},
             {DisplayStep.Year, "$@EM.UseYear"},
+        };
+
+        private static Dictionary<WidgetType, string> WidgetTypeItem = new Dictionary<WidgetType, string>()
+        {
+            {WidgetType.EnergyAnalysis, "能耗分析"},
+            {WidgetType.UnitIndicator, "单位指标"},
+            {WidgetType.Radio, "时段能耗比"},
+            {WidgetType.Labeling, "能效标识"},
+            {WidgetType.Ranking, "集团排名"},
         };
 
         //Chart
@@ -95,6 +110,19 @@ namespace Mento.ScriptCommon.Library.Functions
             Button stepButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonDisplayStepWindow, DisplayStepItem[step]);
 
             stepButton.Click();
+        }
+
+        /// <summary>
+        /// Click new widget type button displayed on dropdownlist
+        /// </summary>
+        /// <param name="name"></param>
+        public void ClickNewWidgetTypeButton(WidgetType type)
+        {
+            NewWidget.Click();
+            TimeManager.ShortPause();
+
+            Button EnergyAnalysisButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetTypeWindow, WidgetTypeItem[type]);
+            EnergyAnalysisButton.Click();
         }
 
         /// <summary>
@@ -276,6 +304,29 @@ namespace Mento.ScriptCommon.Library.Functions
             {
                 return false;
             }    
+        }
+
+        public Boolean NewJazz_SelectHierarchy(string[] hierarchyNames)
+        {
+            try
+            {
+                HierarchyFoldingButton.Click();
+                if (!SelectHierarchyButton.IsExisted())
+                {
+                     HierarchyFoldingButton.Click();
+                }
+                SelectHierarchyButton.Click();
+                TimeManager.ShortPause();
+                //HierarchyTree.WaitControlDisplayed(15);
+                //HierarchyTree.SelectNode(hierarchyNames);
+                NewJazzHierarchyTree.SelectNode(hierarchyNames);
+                JazzMessageBox.LoadingMask.WaitSubMaskLoading();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -1297,10 +1348,12 @@ namespace Mento.ScriptCommon.Library.Functions
         {
             throw new NotImplementedException();
         }
+
     }
 
     public enum TagTabs { HierarchyTag, SystemDimensionTab, AreaDimensionTab, }
     public enum DisplayStep { Min, Hour, Day, Week, Month, Year, Default,Raw}
+    public enum WidgetType { EnergyAnalysis,UnitIndicator,Radio,Labeling,Ranking }
 
     
 }

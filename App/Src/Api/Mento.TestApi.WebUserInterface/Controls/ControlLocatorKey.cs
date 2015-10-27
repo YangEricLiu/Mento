@@ -51,6 +51,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #region Alarm ReactJS TreeView locators
 
         public static string AlarmTreeNode = "AlarmTreeNode";
+        public static string NewJazzTreeNode = "NewJazzTreeNode";
 
         #endregion
 

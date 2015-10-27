@@ -46,7 +46,8 @@ namespace Mento.ScriptCommon.Library
         {
             InitializeExecutionContext();
             JazzBrowseManager.OpenJazz();
-            TimeManager.Pause(WAITLONGTIME);
+            //TimeManager.Pause(WAITLONGTIME);
+            TimeManager.LongPause();
             JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
             // Ali pop window 
         }

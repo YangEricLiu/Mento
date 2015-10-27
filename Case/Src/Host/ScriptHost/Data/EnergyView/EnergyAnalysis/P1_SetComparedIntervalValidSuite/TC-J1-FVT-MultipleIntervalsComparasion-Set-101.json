@@ -2,7 +2,7 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
+			"Hierarchies":["NancyCustomer1","园区测试多层级", "楼宇BC"],
 			"TagNames":["V1_BuildingBC"],
 			"failedFileName":["F-MultipleIntervalsComparasionDataView101_V1_BuildingBC.xls"],
 			"BaseStartDate":["2013-01-01"],

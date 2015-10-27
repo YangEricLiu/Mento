@@ -200,10 +200,13 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string UserDefinedTime = "UserDefinedTime";
         public static string RelativeTime = "RelativeTime";
+
+        public static string ButtonWidgetTypeWindow = "ButtonWidgetTypeWindow";
         #endregion
 
         #region energy analysis
-
+        public static string ButtonNewWidget = "ButtonNewWidget";
+        public static string ButtonEnergyViewHierarchyFolding = "ButtonEnergyViewHierarchyFolding";
         public static string ButtonEnergyViewSelectHierarchy = "ButtonEnergyViewSelectHierarchy";
         public static string ButtonEnergyViewSelectSystemDimension = "ButtonEnergyViewSelectSystemDimension";
         public static string ButtonEnergyViewSelectAreaDimension = "ButtonEnergyViewSelectAreaDimension";
@@ -1094,6 +1097,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         public static string HierarchyTreeEnergyView = "HierarchyTreeEnergyView";
+        public static string NewJazzHierarchyTreeEnergyView = "NewJazzHierarchyTreeEnergyView";
         public static string HierarchyTreeHierarchySettings = "HierarchyTreeHierarchySettings";
         public static string HierarchyTreeHierarchySettingsDimension = "HierarchyTreeHierarchySettingsDimension";
         public static string HierarchyTreeAssociation = "HierarchyTreeAssociation";

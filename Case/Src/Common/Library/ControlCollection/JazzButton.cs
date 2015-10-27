@@ -332,7 +332,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         #region Energy Analysis
-
+        public static Button NewWidgetButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonNewWidget); }
+        }
+        public static Button EnergyViewHierarchyFoldingButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewHierarchyFolding); }
+        }
         public static Button EnergyViewSelectHierarchyButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonEnergyViewSelectHierarchy);}

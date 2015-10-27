@@ -27,9 +27,14 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [SetUp]
         public void CaseSetUp()
         {
-            HomePagePanel.SelectCustomer("NancyCustomer1");
-            TimeManager.LongPause();
-            EnergyAnalysis.NavigateToEnergyAnalysis();
+            //HomePagePanel.SelectCustomer("NancyCustomer1");
+            //TimeManager.LongPause();
+            //EnergyAnalysis.NavigateToEnergyAnalysis();
+            //TimeManager.MediumPause();
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+            TimeManager.Pause(3000);
+            JazzBrowseManager.SwitchToWidnow("能源");
+            TimeManager.Pause(2000);
             TimeManager.MediumPause();
         }
 
@@ -50,6 +55,19 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
         [MultipleTestDataSource(typeof(TimeSpansData[]), typeof(P1_SetComparedIntervalValidSuite), "TC-J1-FVT-MultipleIntervalsComparasion-Set-101")]
         public void AddAbsoluteComparedIntervalsWhenOriginalIsAbsolute(TimeSpansData input)
         {
+            //New a EA widget
+            EnergyAnalysis.ClickNewWidgetTypeButton(WidgetType.EnergyAnalysis);
+
+            //Set date range
+            //EnergyViewToolbar.NewJazz_SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 31), "10:00");
+            //TimeManager.ShortPause();
+
+            //Select one tag and view data view
+            EnergyAnalysis.NewJazz_SelectHierarchy(input.InputData.Hierarchies);
+
+
+
+
             //Select one tag and view data view
             EnergyAnalysis.SelectHierarchy(input.InputData.Hierarchies);
             JazzMessageBox.LoadingMask.WaitSubMaskLoading();

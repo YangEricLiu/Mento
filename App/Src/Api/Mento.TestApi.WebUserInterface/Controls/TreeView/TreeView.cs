@@ -207,6 +207,14 @@ namespace Mento.TestApi.WebUserInterface.Controls
             ClickNode(nodePath.Last());
         }
 
+        public void NewJazzSelectNode(string[] nodePath)
+        {
+
+            List<string> parentNodes = nodePath.ToList();
+            ExpandNodePath(parentNodes.ToArray());
+            ClickNode(nodePath.Last());
+        }
+
         public Boolean ClickNode(string nodeText)
         {
             // Greenie modified
@@ -230,6 +238,18 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             //if the node is not expanded, click expand icon
             if (!IsNodeExpanded(nodeText))
+            {
+                ClickNodeExpander(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
+            }
+        }
+
+        public void NewJazzExpandNode(string nodeText)
+        {
+            //if the node is not expanded, click expand icon
+            if (!NewJazzIsNodeExpanded(nodeText))
             {
                 ClickNodeExpander(nodeText);
 
@@ -269,7 +289,25 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 TimeManager.Pause(500);
             }
         }
+        public void NewJazzExpandNodePath(string[] nodesText)
+        {
+            for (int i = 0; i < nodesText.Length; i++)
+            {
+                Locator nextNodeLocator = (i < nodesText.Length - 1) ? GetTreeNodeLocator(nodesText[i + 1]) : null;
 
+                //click item
+                //ExpandNode(nodesText[i]);
+
+                //wait the next item appear
+                if (nextNodeLocator != null)
+                {
+                    NewJazzExpandNode(nodesText[i]);
+                    ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
+                    TimeManager.Pause(500);
+                }
+                TimeManager.Pause(500);
+            }
+        }
         public void CollapseNode(string nodeText)
         {
             //if the node is expanded, click expand icon
@@ -302,6 +340,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
         
         public bool IsNodeExpanded(string nodeText)
+        {
+            IWebElement node = GetTreeNodeElement(nodeText);
+
+            return node.GetAttribute("class").Split(' ').Contains(TREENODEEXPANDCLASS);
+        }
+
+        public bool NewJazzIsNodeExpanded(string nodeText)
         {
             IWebElement node = GetTreeNodeElement(nodeText);
 

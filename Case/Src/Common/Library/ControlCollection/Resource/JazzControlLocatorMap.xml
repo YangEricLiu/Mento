@@ -181,7 +181,9 @@
       </UserProfile>
       
       <energyview>
-          <add key="ButtonEnergyViewSelectHierarchy" value="em-hier-tree-btn" type="ID"/>
+          <add key="ButtonNewWidget" value="//div[@class='jazz-folder-leftpanel-header']/div[2]" type="XPath"/>
+          <add key="ButtonEnergyViewHierarchyFolding" value="//div[@class='jazz-dataselectpanel']/button" type="XPath"/>
+          <add key="ButtonEnergyViewSelectHierarchy" value="//div[@class='jazz-dataselectmainpanel']/div[@class='header']/div[@class='jazz-hierarchybutton']" type="XPath"/>
           <add key="ButtonEnergyViewSelectSystemDimension" value="//div[@id='em-content-west-region-body']//div[starts-with(@id,'panel') and contains(@class,'x-tabpanel-child') and not(contains(@style,'display: none;'))]//div[starts-with(@id,'menubuttontree') and em/button/span]" type="XPath"/>
           <add key="ButtonEnergyViewSelectAreaDimension" value="//div[@id='em-content-west-region-body']//div[starts-with(@id,'panel') and contains(@class,'x-tabpanel-child') and not(contains(@style,'display: none;'))]//div[starts-with(@id,'menubuttontree') and em/button/span]" type="XPath"/>
           <add key="ButtonRankSelectSystemDimension" value="em-rank-sdim-button" type="ID"/>
@@ -273,6 +275,8 @@
 
           <add key="UserDefinedTime" value="//li[@role='option' and text()='$@Common.DateRange.Customerize']" type="XPath"/>
           <add key="RelativeTime" value="//li[@role='option' and text()='$@Common.DateRange.RelativedTime']" type="XPath"/>
+
+          <add key="ButtonWidgetTypeWindow" value="//div/div/a/div/div[span[@class='icon-energy-analysis'] and div[text()='$#nameIndex']]" type="XPath"/>
       </energyview>
       
       <homepage>
@@ -1008,6 +1012,7 @@
   
   <TreeView>
       <add key="HierarchyTreeEnergyView" value="//div[@id='em-hier-tree-body']/div/table" type="XPath"/>
+      <add key="NewJazzHierarchyTreeEnergyView" value="//div[@class='tree-field']/div/div[@class='pop-tree-node-container']" type="XPath"/>
       <add key="HierarchyTreeHierarchySettings" value="//div[@id='st-hier-tree-body']/div/table" type="XPath"/>
       <add key="HierarchyTreeHierarchySettingsDimension" value="//div[@id='st-hier-tree-body']/div/table" type="XPath"/>
       <add key="HierarchyTreeAssociation" value="//div[@id='st-hier-tree-body']/div/table" type="XPath"/>

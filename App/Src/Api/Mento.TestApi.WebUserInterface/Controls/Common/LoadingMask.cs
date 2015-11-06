@@ -7,6 +7,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class LoadingMask : JazzControl
     {
+        #region Old Jazz       
+
         private static Locator LoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.LoadingMask);
         private static Locator SubMaskLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.SubMaskLoadingLocator);
         private static Locator ChartMaskerLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.ChartMaskerLoadingLocator);
@@ -179,5 +181,31 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 //throw;
             }
         }
+
+        #endregion
+
+        #region New Jazz
+
+        private static Locator NewJazzChartMaskerLoadingLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzChartMaskerLoadingLocator);
+
+        public void NewJazz_WaitChartMaskerLoading(int maxtime = 0)
+        {
+            try
+            {
+                ElementHandler.Wait(NewJazzChartMaskerLoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
+
+                TimeManager.ShortPause();
+
+                ElementHandler.Wait(NewJazzChartMaskerLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 30 : maxtime);
+                TimeManager.ShortPause();
+            }
+            catch (Exception ex)
+            {
+                //throw;
+            }
+        }
+
+
+        #endregion
     }
 }

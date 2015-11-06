@@ -156,5 +156,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Grid SubscribeUserListGrid{ get { return GetControl<Grid>(JazzControlLocatorKey.GridSubscribeUserList);}}
 
         #endregion
+
+        #region New Jazz Tag List
+
+        public static Grid NewJazz_GetOneGrid(string key, int positionIndex)
+        {
+            return GetControl<Grid>(key, positionIndex);
+        }
+
+        public static Grid NewJazzTaglistGrid { get { return GetControl<Grid>(JazzControlLocatorKey.NewReactJSjazzGridTaglist); } }
+
+        #endregion
     }
 }

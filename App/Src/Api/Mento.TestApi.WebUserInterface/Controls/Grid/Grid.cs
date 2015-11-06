@@ -12,6 +12,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class Grid : JazzControl
     {
+
+        #region Old Jazz      
+
         private static string CELLINDEXVARIABLE = "cellIndex";
         private static string CELLTEXTVARIABLE = "cellText";
         private static string CELLTEXTVARIABLE1 = "cellText1";
@@ -1643,6 +1646,251 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return FindChildren(locator).Count() > 0;
         }
+        #endregion
+
+        #endregion
+
+        #region New Jazz
+
+        private static Locator svgTagNameLocator= new Locator("svg", ByType.TagName);
+
+        #region Left taglist panel        
+
+        public bool NewJazzIsPageToolBarExisted()
+        {
+            return this.Exists(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingToolbar));
+        }
+
+        protected IWebElement NewJazzPagingToolbar
+        {
+            get
+            {
+                return FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingToolbar));
+            }
+        }
+
+
+        public void NewJazzGotoPage(int pageIndex)
+        {
+            IWebElement pageJumpButton = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingJumpButton));
+            IWebElement pageJumpButtonOnFloat = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingJumpButtonOnFloat));
+            IWebElement GridPagingTextBox = FindChild(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingTextBox));
+
+            pageJumpButton.Click();
+            TimeManager.ShortPause();
+
+            GridPagingTextBox.SendKeys(pageIndex.ToString());
+            TimeManager.ShortPause();
+
+            pageJumpButtonOnFloat.Click();
+            TimeManager.MediumPause();
+        }
+
+        protected int NewJazzCurrentPage
+        {
+            get
+            {
+                Locator currentPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingCurrentPageTextBox);
+                IWebElement currentPageElement = ElementHandler.FindElement(currentPageLocator, container: NewJazzPagingToolbar);
+
+                return Convert.ToInt32(currentPageElement.Text);
+            }
+        }
+
+        public int NewJazzPageCount
+        {
+            get
+            {
+                //get page count locator
+                Locator pageCountLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingTotalPage);
+
+                IWebElement pageCountElement = ElementHandler.FindElement(pageCountLocator, container: NewJazzPagingToolbar);
+
+                if (String.IsNullOrEmpty(pageCountElement.Text))
+                    return -1;
+
+                return Convert.ToInt32(pageCountElement.Text);
+            }
+        }
+
+        
+        public void NewJazzCheckRowCheckbox(string cellText, bool Paging = true)
+        {
+            //Emma add on 2013-12-10
+            if (NewJazzIsPageToolBarExisted() && (NewJazzCurrentPage > 1))
+            {
+                NewJazzGotoPage(1);
+                TimeManager.LongPause();
+            }
+
+            var checker = this.NewJazzGetRowChecker(cellText, Paging);
+
+            if (!this.NewJazzIsRowChecked(cellText, Paging))
+            {
+                checker.Click();
+            }
+        }
+
+        public void NewJazzUncheckRowCheckbox(string cellText, bool Paging = true)
+        {
+            var checker = this.NewJazzGetRowChecker(cellText, Paging);
+
+            if (this.NewJazzIsRowChecked(cellText, Paging))
+            {
+                checker.Click();
+            }
+        }
+
+        protected virtual IWebElement NewJazzGetRowChecker(string cellText, bool Paging = true)
+        {
+            var checkerLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridRowChecker);
+
+            Hashtable variables = new Hashtable() { { CELLTEXTVARIABLE, cellText } };
+
+            if (NewJazzIsPageToolBarExisted() && Paging)
+            {
+                int i = 0;
+
+                while (i < NewJazzPageCount)
+                {
+                    if (NewJazzIsRowExistOnCurrentPage(cellText))
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        NewJazzNextPage();
+                        TimeManager.LongPause();
+                        i++;
+                    }
+                }
+            }
+
+            return FindChild(Locator.GetVariableLocator(checkerLocator, variables));
+        }
+
+        public bool NewJazzIsRowChecked(string cellText, bool Paging = true)
+        {
+            var checkerStatusLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridRowCheckerStatus);
+
+            Hashtable variables = new Hashtable() { { CELLTEXTVARIABLE, cellText } };
+
+            var checkerStatus = FindChild(Locator.GetVariableLocator(checkerStatusLocator, variables));
+
+            IWebElement[] checkersStatus= ElementHandler.FindElements(svgTagNameLocator, container: checkerStatus);
+
+            return checkersStatus[1].GetAttribute("style").Contains("opacity: 1;");
+        }
+
+        public bool NewJazzIsRowExistOnCurrentPage(string cellText)
+        {
+            var rowLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridRow);
+
+            Hashtable variables = new Hashtable() { { CELLTEXTVARIABLE, cellText } };
+            try
+            {
+                FindChild(Locator.GetVariableLocator(rowLocator, variables));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public void  NewJazzNextPage()
+        {
+            Locator nextPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingNextPageButton);
+            ElementHandler.FindElement(nextPageLocator, container: NewJazzPagingToolbar).Click();
+
+            TimeManager.MediumPause();
+        }
+
+        public void NewJazzPreviousPage()
+        {
+            Locator previousPageLocator = ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzGridPagingPreviousPageButton);
+            ElementHandler.FindElement(previousPageLocator, container: NewJazzPagingToolbar).Click();
+
+            TimeManager.MediumPause();
+        }
+
+        #endregion
+
+        #region Baseline auto calculation
+
+        protected IWebElement[] NewJazz_CurrentRows
+        {
+            get
+            {
+                return FindChildren(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzBaselineGridRows));
+            }
+        }
+
+
+        public DataTable NewJazz_BaselineGetCurrentPageData()
+        {
+            DataTable data = new DataTable();
+
+            var timeCellLocator = new Locator("td/span", ByType.XPath);
+            var valueCellLocator1 = new Locator("td[2]/div/div/input", ByType.XPath);
+            var valueCellLocator2 = new Locator("td[3]/div/div/input", ByType.XPath);
+            var UOMCellLocator1 = new Locator("td[2]/div/div[2]", ByType.XPath);
+            var UOMCellLocator2 = new Locator("td[3]/div/div[2]", ByType.XPath);
+
+            data.Columns.Add("时间");
+            data.Columns.Add("工作日");
+            data.Columns.Add("非工作日");
+
+            for (int i = 1; i < NewJazz_CurrentRows.Length; i++  )
+            {
+                DataRow dataRow = data.NewRow();
+                IWebElement timeCell = ElementHandler.FindElement(timeCellLocator, container: NewJazz_CurrentRows[i]);
+                IWebElement valueCell1 = ElementHandler.FindElement(valueCellLocator1, container: NewJazz_CurrentRows[i]);
+                IWebElement valueCell2 = ElementHandler.FindElement(valueCellLocator2, container: NewJazz_CurrentRows[i]);
+                IWebElement UOMCell1 = ElementHandler.FindElement(UOMCellLocator1, container: NewJazz_CurrentRows[i]);
+                IWebElement UOMCell2 = ElementHandler.FindElement(UOMCellLocator2, container: NewJazz_CurrentRows[i]);
+
+                dataRow[0] = timeCell.Text;
+                dataRow[1] = valueCell1.GetAttribute("value").ToString() + " " + UOMCell1.Text;
+                dataRow[2] = valueCell2.GetAttribute("value").ToString() + " " + UOMCell2.Text;
+
+                data.Rows.Add(dataRow);
+            }
+
+            return data;
+        }
+
+        public void NewJazz_ReviseBaselineAutoCalValue(int row, int column, string value)
+        {
+            DataTable data = new DataTable();
+
+            var valueCellLocator1 = new Locator("td[2]/div/div/input", ByType.XPath);
+            var valueCellLocator2 = new Locator("td[3]/div/div/input", ByType.XPath);
+
+            if (column == 1)
+            {
+                IWebElement valueCell1 = ElementHandler.FindElement(valueCellLocator1, container: NewJazz_CurrentRows[row]);
+                valueCell1.SendKeys(value);
+            }
+            else if (column == 2)
+            {
+                IWebElement valueCell2 = ElementHandler.FindElement(valueCellLocator2, container: NewJazz_CurrentRows[row]);
+                valueCell2.SendKeys(value);
+            }
+        }
+
+
+        public DataTable NewJazz_BaselineGetAllData()
+        {
+            DataTable data = new DataTable();
+
+            data = NewJazz_BaselineGetCurrentPageData();
+
+            return data;
+        }
+
+        #endregion
+
         #endregion
     }
 }

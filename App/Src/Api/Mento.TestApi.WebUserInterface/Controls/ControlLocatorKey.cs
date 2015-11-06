@@ -7,6 +7,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     internal static class ControlLocatorKey
     {
+        #region Old Jazz     
+
         #region Common locators
         public static string LoadingMask = "LoadingMask";
         public static string SubMaskLoadingLocator = "SubMaskLoadingLocator";
@@ -196,6 +198,10 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         #endregion
 
+        #endregion
+
+        #region New Jazz
+
         #region New Jazz DatePickerLocators
 
         public static string NewReactJSjazzDatePickerTrigger = "NewReactJSjazzDatePickerTrigger";
@@ -207,6 +213,41 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string NewReactJSjazzDatePickerDayItem = "NewReactJSjazzDatePickerDayItem";
         public static string NewReactJSjazzDatePickerTimeItem = "NewReactJSjazzDatePickerTimeItem";
         
+        #endregion
+
+        #region New Jazz Tree View
+
+        public static string NewReactJSjazzTreeNode = "NewReactJSjazzTreeNode";
+        public static string NewReactJSjazzTreeNodeImage = "NewReactJSjazzTreeNodeImage";
+
+        public static string NewReactJSjazzFolderTreeNode = "NewReactJSjazzFolderTreeNode";
+        public static string NewReactJSjazzFolderTreeNodeImage = "NewReactJSjazzFolderTreeNodeImage";
+
+        #endregion
+
+        #region New Jazz Grid
+
+        public static string NewReactJSjazzGridPagingToolbar = "NewReactJSjazzGridPagingToolbar";
+        public static string NewReactJSjazzGridPagingCurrentPageTextBox = "NewReactJSjazzGridPagingCurrentPageTextBox";
+        public static string NewReactJSjazzGridPagingTotalPage = "NewReactJSjazzGridPagingTotalPage";
+        public static string NewReactJSjazzGridPagingJumpButton = "NewReactJSjazzGridPagingJumpButton";
+        public static string NewReactJSjazzGridPagingJumpButtonOnFloat = "NewReactJSjazzGridPagingJumpButtonOnFloat";
+        public static string NewReactJSjazzGridPagingTextBox = "NewReactJSjazzGridPagingTextBox";
+        public static string NewReactJSjazzGridRowChecker = "NewReactJSjazzGridRowChecker";
+        public static string NewReactJSjazzGridRow = "NewReactJSjazzGridRow";
+        public static string NewReactJSjazzGridRowCheckerStatus = "NewReactJSjazzGridRowCheckerStatus";
+        public static string NewReactJSjazzGridPagingPreviousPageButton = "NewReactJSjazzGridPagingPreviousPageButton";
+        public static string NewReactJSjazzGridPagingNextPageButton = "NewReactJSjazzGridPagingNextPageButton";
+        public static string NewReactJSjazzBaselineGridRows = "NewReactJSjazzBaselineGridRows";
+
+        #endregion
+
+        #region New Jazz Loading Mask
+
+        public static string NewReactJSjazzChartMaskerLoadingLocator = "NewReactJSjazzChartMaskerLoadingLocator";
+
+        #endregion
+
         #endregion
     } 
 }

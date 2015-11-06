@@ -717,5 +717,21 @@ namespace Mento.ScriptCommon.Library
                 return _WidgetMaxChartDialog;
             }
         }
+
+        #region New Jazz
+
+        private static FolderWidgetPanel _FolderWidgetPanel;
+        public static FolderWidgetPanel FolderWidgetPanel
+        {
+            get
+            {
+                if (_FolderWidgetPanel == null)
+                    _FolderWidgetPanel = new FolderWidgetPanel();
+
+                return _FolderWidgetPanel;
+            }
+        }
+
+        #endregion
     }
 }

@@ -19,6 +19,7 @@ namespace Mento.ScriptCommon.Library
     {
         private static int WAITLONGTIME = 30000;
         public static List<DashboardInformation> CaseDownDashboardInfos = new List<DashboardInformation>();
+        public static string mainWindowHandle = JazzBrowseManager.GetMainWindowHandle();
 
 
         public static void Initialize()
@@ -46,7 +47,7 @@ namespace Mento.ScriptCommon.Library
         {
             InitializeExecutionContext();
             JazzBrowseManager.OpenJazz();
-            //TimeManager.Pause(WAITLONGTIME);
+            TimeManager.Pause(WAITLONGTIME);
             TimeManager.LongPause();
             JazzFunction.LoginPage.LoginWithOption(userName, passWord, customer);
             // Ali pop window 

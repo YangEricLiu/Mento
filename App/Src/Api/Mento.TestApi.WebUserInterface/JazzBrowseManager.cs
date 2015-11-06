@@ -41,6 +41,26 @@ namespace Mento.TestApi.WebUserInterface
         {
             BrowserHandler.switchToWindow(windowTitle);
         }
+
+        public static void CloseTheWidnow(string windowTitle)
+        {
+            BrowserHandler.CloseTheWindow(windowTitle);
+        }
+
+        public static void CloseTheCurrentWidnow()
+        {
+            BrowserHandler.CloseTheCurrentWindow();
+        }
+
+        public static void SwitchToWindowByHandle(string windowHandle)
+        {
+            BrowserHandler.switchToWindowByHandle(windowHandle);
+        }
+
+        public static string GetMainWindowHandle()
+        {
+            return BrowserHandler.GetMainWindowHandle();
+        }
         
         
         private static void ClickHttpsSecurityWarning()

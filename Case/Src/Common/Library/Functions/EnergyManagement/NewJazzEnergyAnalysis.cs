@@ -22,6 +22,24 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Controls
 
+        //Add new widget button
+        private static Button NewWidget = JazzButton.NewWidgetButton;
+        private static Button NewJazzHierarchyFoldingButton = JazzButton.EnergyViewHierarchyFoldingButton;
+
+        //Select hierarchy button
+        private static Button NewJazzSelectHierarchyButton = JazzButton.EnergyViewSelectHierarchyButton;
+        private static HierarchyTree NewJazzHierarchyTree = JazzTreeView.NewJazzEnergyViewHierarchyTree;
+        private static Grid NewJazzTaglistGrid = JazzGrid.NewJazzTaglistGrid;
+
+        private static Dictionary<WidgetType, string> WidgetTypeItem = new Dictionary<WidgetType, string>()
+        {
+            {WidgetType.EnergyAnalysis, "能耗分析"},
+            {WidgetType.UnitIndicator, "单位指标"},
+            {WidgetType.Radio, "时段能耗比"},
+            {WidgetType.Labeling, "能效标识"},
+            {WidgetType.Ranking, "集团排名"},
+        };
+
         #endregion
 
         internal NewJazzEnergyAnalysis()
@@ -36,9 +54,57 @@ namespace Mento.ScriptCommon.Library.Functions
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyAnalysis);
         }
        
-        #endregion      
+        #endregion  
+    
+        #region tag operation
 
-        #region data view operation
+        public void NewJazz_CheckTags(string[] tagNames)
+        {
+            foreach (var tagName in tagNames)
+            {
+                NewJazzTaglistGrid.NewJazzCheckRowCheckbox(tagName);
+
+                TimeManager.MediumPause();
+            }
+        }
+
+        /// <summary>
+        /// Check one tag on left region
+        /// </summary>
+        /// <param name="tagName"></param>
+        public void NewJazz_CheckTag(string tagName)
+        {
+            NewJazzTaglistGrid.NewJazzCheckRowCheckbox(tagName);
+            TimeManager.ShortPause();
+        }
+
+        /// <summary>
+        /// Uncheck the tags on left region
+        /// </summary>
+        /// <param name="tagNames"></param>
+        public void NewJazz_UncheckTags(string[] tagNames)
+        {
+            foreach (var tagName in tagNames)
+            {
+                NewJazzTaglistGrid.NewJazzUncheckRowCheckbox(tagName);
+
+                TimeManager.MediumPause();
+            }
+        }
+
+        /// <summary>
+        /// Uncheck the tag on left region
+        /// </summary>
+        /// <param name="tagName"></param>
+        public void NewJazz_UncheckTag(string tagName)
+        {
+            NewJazzTaglistGrid.NewJazzUncheckRowCheckbox(tagName);
+            TimeManager.ShortPause();
+        }
+
+        #endregion
+
+        #region data operation
 
         public bool NewJazz_CompareExcelFilesOfEnergyAnalysis(string expectedFileName, string actualFileName, string failedFileName)
         {
@@ -70,7 +136,38 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         #endregion
-      
+
+        #region pre-operation
+
+        public void ClickNewWidgetTypeButton(WidgetType type)
+        {
+            NewWidget.Click();
+            TimeManager.ShortPause();
+
+            Button EnergyAnalysisButton = JazzButton.GetOneButton(JazzControlLocatorKey.ButtonWidgetTypeWindow, WidgetTypeItem[type]);
+            EnergyAnalysisButton.Click();
+        }
+
+        public void NewJazz_SelectHierarchy(string[] hierarchyNames)
+        {
+            NewJazzHierarchyFoldingButton.Click();
+            TimeManager.MediumPause();
+
+            if (!NewJazzSelectHierarchyButton.IsExisted())
+            {
+                NewJazzHierarchyFoldingButton.Click();
+                TimeManager.MediumPause();
+            }
+
+            NewJazzSelectHierarchyButton.Click();
+            TimeManager.MediumPause();
+
+            NewJazzHierarchyTree.NewJazzSelectNode(hierarchyNames);
+        }
+
+        
+        #endregion
+
 
         #region private mothod
 

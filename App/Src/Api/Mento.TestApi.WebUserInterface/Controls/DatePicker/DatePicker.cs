@@ -509,6 +509,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
+
         private void NewJazz_ClickNTimesDatePickerPreviousMonthButton(int clickTime)
         {
             for (int i = 0; i < clickTime; i++)

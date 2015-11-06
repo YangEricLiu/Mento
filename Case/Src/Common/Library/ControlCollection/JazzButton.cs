@@ -9,6 +9,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzButton : JazzControlCollection
     {
+        #region Old Jazz
+        
+
         #region Get Position Button Method
         public static Button GetOneButton(string key, int positionIndex)
         {
@@ -40,65 +43,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             return GetControl<DashboardButton>(key, positionIndex);
         }
         #endregion
-
-        #region Pop
-
-        public static Button PopLoginSubmitButton
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonLoginSubmit); }
-        }
-
-        public static MenuButton PopMenuButtonCustomer
-        {
-            get { return GetControl<MenuButton>(JazzControlLocatorKey.PopMenuButtonCustomer); }
-        }
-
-
-        public static Button PopbButtonConfirm
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.PopbButtonConfirm); }
-        }
-
-        public static SplitButton PopButtonUserManagement
-        {
-            get { return GetControl<SplitButton>(JazzControlLocatorKey.PopButtonUserManagement); }
-        }
-
-        public static Button PopButtonAddUser
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonAddUser); }
-        }
-
-        #endregion
-
-        #region ReactJS
-
-        public static Button AlarmConfigrationButton
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.AlarmConfigration); }
-        }
-
-        public static Button AlarmHierarchyTreeButton
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.AlarmHierarchyTreeButton); }
-        }
-
-        public static Button AlarmViewButton
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.AlarmViewButton); }
-        }
-
-        public static Button FolderOrWidgetDropDownButton
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.FolderOrWidgetDropDownButton); }
-        }
-
-        public static Button ExportFromDropDownButton
-        {
-            get { return GetControl<Button>(JazzControlLocatorKey.ExportFromDropDownButton); }
-        }
-
-        #endregion
+    
 
         #region Login buttons
         public static Button LoginSubmitButton
@@ -2061,6 +2006,139 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static Button MaxWidgetRightCommentButton 
         {
             get { return  GetControl<Button>(JazzControlLocatorKey.ButtonMaxWidgetRightComment);}
+        }
+
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region New Jazz
+
+        #region Get button by parameter
+
+        public static Button NewJazz_GetOneButton(string key, int positionIndex)
+        {
+            return GetControl<Button>(key, positionIndex);
+        }
+
+        #endregion
+
+        #region Pop
+
+        public static Button PopLoginSubmitButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonLoginSubmit); }
+        }
+
+        public static MenuButton PopMenuButtonCustomer
+        {
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.PopMenuButtonCustomer); }
+        }
+
+
+        public static Button PopbButtonConfirm
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopbButtonConfirm); }
+        }
+
+        public static SplitButton PopButtonUserManagement
+        {
+            get { return GetControl<SplitButton>(JazzControlLocatorKey.PopButtonUserManagement); }
+        }
+
+        public static Button PopButtonAddUser
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.PopButtonAddUser); }
+        }
+
+        #endregion
+
+        #region ReactJS
+
+        public static Button AlarmConfigrationButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.AlarmConfigration); }
+        }
+
+        public static Button AlarmHierarchyTreeButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.AlarmHierarchyTreeButton); }
+        }
+
+        public static Button AlarmViewButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.AlarmViewButton); }
+        }
+
+        public static Button FolderOrWidgetDropDownButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.FolderOrWidgetDropDownButton); }
+        }
+
+        public static Button ExportFromDropDownButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.ExportFromDropDownButton); }
+        }
+
+        #endregion
+
+        #region New Jazz Energy View Toolbar
+
+        public static MenuButton NewReactJSJazzEnergyViewPredefinedTimeButton
+        {
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.NewReactJSJazzEnergyViewPredefinedTimeButton); }
+        }
+
+        public static MenuButton NewReactJSJazzEnergyViewAssistButton
+        {
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.NewReactJSJazzEnergyViewAssistButton); }
+        }
+
+        public static Button NewReactJSJazzEnergyViewCheckDataButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzEnergyViewCheckDataButton); }
+        }
+
+        public static MenuButton NewReactJSJazzBaselineSelectYearButton
+        {
+            get { return GetControl<MenuButton>(JazzControlLocatorKey.NewReactJSJazzBaselineSelectYearButton); }
+        }
+
+        public static Button NewReactJSJazzBaselineSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzBaselineSaveButton); }
+        }
+
+        public static Button NewReactJSJazzBaselineCancelButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzBaselineCancelButton); }
+        }
+
+        public static Button NewReactJSJazzBaselineEditButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzBaselineEditButton); }
+        }
+
+        public static Button NewReactJSJazzBaselineAddTimeSettingButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzBaselineAddTimeSettingButton); }
+        }
+
+        public static Button NewReactJSjazzBaselineConfigButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSjazzBaselineConfigButton); }
+        }
+
+        public static Button NewReactJSjazzBaselineCalValueReviseButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSjazzBaselineCalValueReviseButton); }
+        }
+
+        public static Button NewReactJSjazzBaselineAlarmConfigButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSjazzBaselineAlarmConfigButton); }
         }
 
         #endregion

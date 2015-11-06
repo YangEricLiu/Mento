@@ -8,6 +8,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class Button : JazzControl
     {
+        #region Old Jazz       
+
         protected IWebElement ButtonInput
         {
             get 
@@ -89,6 +91,15 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return ElementHandler.Exists(this._RootLocator);
         }
 
-        
+        #endregion
+
+        #region New Jazz
+
+        public bool NewJazz_IsDisabled()
+        {
+            return this.RootElement.GetAttribute("class").Contains("disabled");
+        }
+
+        #endregion
     }
 }

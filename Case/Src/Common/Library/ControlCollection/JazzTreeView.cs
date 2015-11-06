@@ -8,6 +8,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzTreeView : JazzControlCollection
     {
+        #region Old Tree
+        
         #region Pop
 
 
@@ -24,7 +26,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static AreaDimensionTree EnergyViewAreaDimensionTree { get { return GetControl<AreaDimensionTree>(JazzControlLocatorKey.AreaDimensionTreeEnergyView);}}
 
-        public static HierarchyTree NewJazzEnergyViewHierarchyTree { get { return GetControl<HierarchyTree>(JazzControlLocatorKey.NewJazzHierarchyTreeEnergyView); } }
         public static HierarchyTree EnergyViewHierarchyTree { get { return GetControl<HierarchyTree>(JazzControlLocatorKey.HierarchyTreeEnergyView);}}
 
         public static HierarchyTree WidgetSaveHierarchyTree { get { return GetControl<HierarchyTree>(JazzControlLocatorKey.WidgetSaveHierarchyTree);}}
@@ -68,6 +69,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #region HomePage
 
         public static HierarchyTree AllDashboardsTree { get { return GetControl<HierarchyTree>(JazzControlLocatorKey.AllDashboardsTree);}}
+
+        #endregion
+
+        #endregion
+
+        #region New Jazz
+
+        public static HierarchyTree NewJazzEnergyViewHierarchyTree { get { return GetControl<HierarchyTree>(JazzControlLocatorKey.NewJazzHierarchyTreeEnergyView); } }
+        public static HierarchyTree NewJazzFolderTree { get { return GetControl<HierarchyTree>(JazzControlLocatorKey.NewJazzFolderTree); } }
 
         #endregion
     }

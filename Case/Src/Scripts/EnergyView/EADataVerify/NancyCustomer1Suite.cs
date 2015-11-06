@@ -58,28 +58,44 @@ namespace Mento.Script.EnergyView.EADataVerify
         [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(NancyCustomer1Suite), "TC-J1-FVT-EADataVerify-101-1")]
         public void DataVerifyP1V1V2V3(EnergyViewOptionData input)
         {
-            //选择图表
-            //JazzButton.GetOneButton(JazzControlLocatorKey.DashboardFolderWidgetNameButton, "P1V1V2V3_月").Click();
-            //TimeManager.Pause(10000);
+            //Select a existed widget
+            JazzButton.GetOneButton(JazzControlLocatorKey.DashboardFolderWidgetNameButton, "调试用图表").Click();
+            TimeManager.Pause(10000);
 
-            //Set date range
-            //EnergyViewToolbar.NewJazz_SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 31), "10:00");
-            //TimeManager.ShortPause();
+            //Open taglist panel
 
+            EnergyAnalysis.NewJazz_SelectHierarchy(input.InputData.Hierarchies);
 
-            //打开下拉框
-            //JazzButton.FolderOrWidgetDropDownButton.Click();
-            //TimeManager.MediumPause();                                           
+            TimeManager.Pause(5000);
 
-            //JazzButton.ExportFromDropDownButton.Click();
-            //TimeManager.Pause(15000);
-            //TimeManager.LongPause();
+            EnergyAnalysis.NewJazz_CheckTag("AutoVAdd10");
+            TimeManager.Pause(5000);
 
-            DataTable test = new DataTable();
+            EnergyViewToolbar.NewJazz_ClickView();
 
-            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("P1V1V2V3_月.xls", "P1V1V2V3_月.xls", "F_P1V1V2V3_月.xls");
-            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("P1V1V2V3_周.xls", "P1V1V2V3_周.xls", "F_P1V1V2V3_周.xls");
-            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("能耗分析.xls", "能耗分析.xls", "F_能耗分析.xls");
+            EnergyViewToolbar.NewJazz_SelectAssistMenuItem(NewJazzEnergyViewToolbarOption.BaselineConfigration);
+            TimeManager.Pause(5000);
+
+            EnergyViewToolbar.NewJazz_SelectBaselineYearMenuItem("2012");
+            TimeManager.Pause(5000);
+
+            EnergyViewToolbar.NewJazz_ClickBaselineEditButton();
+            TimeManager.Pause(5000);
+
+            EnergyViewToolbar.NewJazz_ClickBaselineAddTimeSettingButton();
+            TimeManager.Pause(5000);
+
+            EnergyViewToolbar.NewJazz_BaselineSetDateRange(new DateTime(2012, 1, 1), new DateTime(2012, 2, 1), 1);
+            TimeManager.Pause(5000);
+
+            EnergyViewToolbar.NewJazz_BaselineClickAutoCal(1);
+            TimeManager.Pause(5000);
+
+            EnergyViewToolbar.NewJazz_BaselineClickReCal(1);
+            TimeManager.Pause(5000);
+
+            EnergyViewToolbar.NewJazz_ExportBaselineDataTableToExcel("testBaeline.xls", 1);
+            TimeManager.Pause(5000);
         }
     }
 }

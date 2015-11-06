@@ -9,15 +9,14 @@ using Mento.ScriptCommon.Library;
 using Mento.ScriptCommon.Library.Functions;
 
 namespace Mento.Script.EnergyView
-{
+{  
     [SetUpFixture]
     public class AssemblyInitialize
     {
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("SchneiderElectricChina", "P@ssw0rdChina", "NancyCustomer1");
-            //TestAssemblyInitializer.InitializeWithOption("EmmaDataVerify", "123456Qq", "NancyCustomer1");
+            TestAssemblyInitializer.InitializeWithOption("EmmaDataVerify", "123456Qq", "NancyCostCustomer2");
         }
 
         [TearDown]

@@ -10,6 +10,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public class MenuButton : Button
     {
+        #region Old Jazz
+
         //for english version
         //private static string MenuItemLocatorFormat = "//div[contains(@id, 'menuitem') and a/span[contains(@class, 'x-menu-item-text') and contains(text(),'{0}')]]";
 
@@ -218,6 +220,69 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(MoreMenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
         }
+
+        #endregion
+
+        #endregion
+
+        #region New Jazz
+
+        #region New Jazz Energy View Toolbar
+
+        private static string NewJazzPredefinedTimeMenuItemLocatorFormat = "div[2]/div/span[text()='{0}']";
+        private static string NewJazzAssistMenuItemLocatorFormat = "div/span/div/div/div/div/a/div/div/div[text()='{0}']";
+        private static string NewJazzBaselineYeatrMenuItemLocatorFormat = "div[2]/div/span[text()='{0}']";
+
+
+        public void NewJazzSelectPredefinedTimeItem(string itemName)
+        {
+            this.Click();
+            TimeManager.ShortPause();
+
+            Locator itemLocator = NewJazzGetPredefinedTimeMenuItemLocator(itemName);
+            ElementHandler.Click(FindChild(itemLocator));
+
+            TimeManager.ShortPause();
+        }
+
+        public void NewJazzSelectAssistItem(string itemName)
+        {
+            this.Click();
+            TimeManager.ShortPause();
+
+            Locator itemLocator = NewJazzGetAssistMenuItemLocator(itemName);
+            ElementHandler.Click(FindChild(itemLocator));
+
+            TimeManager.ShortPause();
+        }
+
+        public void NewJazzSelectBaselineYearItem(string itemName)
+        {
+            this.Click();
+            TimeManager.ShortPause();
+
+            Locator itemLocator = NewJazzGetBaselineYearMenuItemLocator(itemName);
+            ElementHandler.Click(FindChild(itemLocator));
+
+            TimeManager.ShortPause();
+        }
+
+        private Locator NewJazzGetPredefinedTimeMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(NewJazzPredefinedTimeMenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
+        }
+
+        private Locator NewJazzGetAssistMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(NewJazzAssistMenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
+        }
+
+        private Locator NewJazzGetBaselineYearMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(NewJazzBaselineYeatrMenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
+        }
+
+        #endregion
 
         #endregion
     }

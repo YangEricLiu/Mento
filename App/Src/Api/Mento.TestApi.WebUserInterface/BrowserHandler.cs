@@ -88,6 +88,26 @@ namespace Mento.TestApi.WebUserInterface
         {
             DriverFactory.switchToWindow(DriverFactory.Instance, windowTitle);
         }
+
+        public static void switchToWindowByHandle(string windowTitle)
+        {
+            DriverFactory.switchToWindowByHandle(DriverFactory.Instance, windowTitle);
+        }
+
+        public static void CloseTheWindow(string windowTitle)
+        {
+            DriverFactory.CloseTheWindow(DriverFactory.Instance, windowTitle);
+        }
+
+        public static void CloseTheCurrentWindow()
+        {
+            DriverFactory.CloseTheCurrentWindow(DriverFactory.Instance);
+        }
+
+        public static string GetMainWindowHandle()
+        {
+            return DriverFactory.GetMainWindowHandle(DriverFactory.Instance);
+        }
     }
 
 
@@ -161,6 +181,30 @@ namespace Mento.TestApi.WebUserInterface
             return driver;
         }
 
+        public static string GetMainWindowHandle(IWebDriver driver)
+        {
+            String currentHandle = driver.CurrentWindowHandle;
+
+            return currentHandle;
+        }
+
+        public static Boolean switchToWindowByHandle(IWebDriver driver, string windowHandle)
+        {
+            Boolean flag = false;
+
+            try
+            {
+                driver.SwitchTo().Window(windowHandle);
+                flag = true;              
+            }
+            catch (NoSuchWindowException e)
+            {
+                flag = false;
+            }
+
+            return flag;
+        }
+
         public static Boolean switchToWindow(IWebDriver driver, string windowTitle)
         { 
             Boolean flag = false;
@@ -171,18 +215,19 @@ namespace Mento.TestApi.WebUserInterface
                 List<string> handles = driver.WindowHandles.ToList();
 
                 foreach (string s in handles) 
-                {  
-                    if (s.Equals(currentHandle))  
-                    continue; 
+                {
+                    if (s.Equals(currentHandle))
+                        continue;
 
-                    else {  
-                    driver.SwitchTo().Window(s);  
-                    if (driver.Title.Contains(windowTitle)) 
+                    else
                     {  
-                        flag = true;  
-                        break;  
+                        driver.SwitchTo().Window(s);
+                        if (driver.Title.Contains(windowTitle)) 
+                        {  
+                            flag = true;
+                            break;  
                     } else  
-                        continue;  
+                        continue;
                     }  
                 }
             }
@@ -190,6 +235,63 @@ namespace Mento.TestApi.WebUserInterface
             {  
                 flag = false;  
             } 
+
+            return flag;
+        }
+
+        //由于driver是静态的，关闭以后driver就释放了，因此，不能关闭窗口，任何一个窗口都不能关闭
+        public static Boolean CloseTheWindow(IWebDriver driver, string windowTitle)
+        {
+            Boolean flag = false;
+
+            try
+            {
+                String currentHandle = driver.CurrentWindowHandle;
+                List<string> handles = driver.WindowHandles.ToList();
+
+                foreach (string s in handles)
+                {
+                    if (s.Equals(currentHandle))
+                    {
+                        driver.Close();
+                        break;
+                    }
+                    else
+                    {
+                        driver.SwitchTo().Window(s);
+
+                        if (driver.Title.Contains(windowTitle))
+                        {
+                            flag = true;
+                            driver.Close();
+                            break;
+                        }
+                        else
+                            continue;
+                    }
+                }
+            }
+            catch (NoSuchWindowException e)
+            {
+                flag = false;
+            }
+
+            return flag;
+        }
+
+        public static Boolean CloseTheCurrentWindow(IWebDriver driver)
+        {
+            Boolean flag = true;
+
+            try
+            {
+                //关闭当前窗口
+                driver.Close();
+            }
+            catch (NoSuchWindowException e)
+            {
+                flag = false;
+            }
 
             return flag;
         }

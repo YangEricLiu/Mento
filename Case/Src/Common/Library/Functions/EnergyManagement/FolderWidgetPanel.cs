@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Mento.TestApi.WebUserInterface.Controls;
+using Mento.TestApi.WebUserInterface.ControlCollection;
+using Mento.TestApi.WebUserInterface;
+using Mento.ScriptCommon.TestData.EnergyView;
+using Mento.Framework.Exceptions;
+using Mento.ScriptCommon.Library.Functions.EnergyManagement;
+using System.Collections;
+using Mento.Framework.Configuration;
+using System.IO;
+using System.Data;
+
+namespace Mento.ScriptCommon.Library.Functions
+{
+    public class FolderWidgetPanel
+    {
+        #region New Jazz
+
+        #region New Jazz Controls
+
+        private static HierarchyTree NewJazzFolderTree = JazzTreeView.NewJazzFolderTree;
+
+        #endregion
+
+        public void NewJazz_SelectFolderOrWidget(string[] folderNames)
+        {
+            NewJazzFolderTree.NewJazz_SelectFolderOrWidget(folderNames);
+        }
+
+
+        #endregion
+
+    }
+        
+}

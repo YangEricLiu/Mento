@@ -9,6 +9,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
 {
     public abstract class TreeView : JazzControl
     {
+        #region old Jazz
+       
+
         protected const string TREENODEVARIABLENAME = "nodeText";
         protected const string TREENODEEXPANDCLASS = "x-grid-tree-node-expanded";
         protected const string TREENODECHECKEDCLASS = "x-tree-checkbox-checked";
@@ -207,13 +210,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             ClickNode(nodePath.Last());
         }
 
-        public void NewJazzSelectNode(string[] nodePath)
-        {
-
-            List<string> parentNodes = nodePath.ToList();
-            ExpandNodePath(parentNodes.ToArray());
-            ClickNode(nodePath.Last());
-        }
+        
 
         public Boolean ClickNode(string nodeText)
         {
@@ -246,17 +243,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
             }
         }
 
-        public void NewJazzExpandNode(string nodeText)
-        {
-            //if the node is not expanded, click expand icon
-            if (!NewJazzIsNodeExpanded(nodeText))
-            {
-                ClickNodeExpander(nodeText);
-
-                //pause to wait animate finish
-                TimeManager.MediumPause();
-            }
-        }
 
         public void CheckNode(string nodeText)
         {
@@ -289,25 +275,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 TimeManager.Pause(500);
             }
         }
-        public void NewJazzExpandNodePath(string[] nodesText)
-        {
-            for (int i = 0; i < nodesText.Length; i++)
-            {
-                Locator nextNodeLocator = (i < nodesText.Length - 1) ? GetTreeNodeLocator(nodesText[i + 1]) : null;
-
-                //click item
-                //ExpandNode(nodesText[i]);
-
-                //wait the next item appear
-                if (nextNodeLocator != null)
-                {
-                    NewJazzExpandNode(nodesText[i]);
-                    ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
-                    TimeManager.Pause(500);
-                }
-                TimeManager.Pause(500);
-            }
-        }
+        
         public void CollapseNode(string nodeText)
         {
             //if the node is expanded, click expand icon
@@ -340,13 +308,6 @@ namespace Mento.TestApi.WebUserInterface.Controls
         }
         
         public bool IsNodeExpanded(string nodeText)
-        {
-            IWebElement node = GetTreeNodeElement(nodeText);
-
-            return node.GetAttribute("class").Split(' ').Contains(TREENODEEXPANDCLASS);
-        }
-
-        public bool NewJazzIsNodeExpanded(string nodeText)
         {
             IWebElement node = GetTreeNodeElement(nodeText);
 
@@ -447,6 +408,175 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             return checkboxInput;
         }
+
+        #endregion
+
+        #endregion
+
+        #region New Jazz
+
+
+        protected const string NEWJAZZTREENODEEXPANDCLASS = "icon-hierarchy-fold";
+
+        public void NewJazzSelectNode(string[] nodePath)
+        {
+
+            List<string> parentNodes = nodePath.ToList();
+            NewJazzExpandNodePath(parentNodes.ToArray());
+            NewJazzClickNode(nodePath.Last());
+        }
+
+        public void NewJazz_SelectFolderOrWidget(string[] nodePath)
+        {
+
+            List<string> parentNodes = nodePath.ToList();
+            NewJazz_ExpandFolderPath(parentNodes.ToArray());
+            NewJazz_ClickFolderNode(nodePath.Last());
+        }
+
+        public void NewJazzExpandNodePath(string[] nodesText)
+        {
+            for (int i = 0; i < nodesText.Length; i++)
+            {
+                Locator nextNodeLocator = (i < nodesText.Length - 1) ? NewJazzGetTreeNodeLocator(nodesText[i + 1]) : null;
+
+                //wait the next item appear
+                if (nextNodeLocator != null)
+                {
+                    NewJazzExpandNode(nodesText[i]);
+                    //ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
+                    TimeManager.Pause(500);
+                }
+                TimeManager.Pause(500);
+            }
+        }
+
+        public void NewJazz_ExpandFolderPath(string[] nodesText)
+        {
+            for (int i = 0; i < nodesText.Length; i++)
+            {
+                Locator nextNodeLocator = (i < nodesText.Length - 1) ? NewJazzGetFolderTreeNodeLocator(nodesText[i + 1]) : null;
+
+                //wait the next item appear
+                if (nextNodeLocator != null)
+                {
+                    NewJazz_ExpandFolderNode(nodesText[i]);
+                    //ElementHandler.Wait(nextNodeLocator, WaitType.ToAppear, container: this.RootElement);
+                    TimeManager.Pause(500);
+                }
+                TimeManager.Pause(500);
+            }
+        }
+
+        public void NewJazzExpandNode(string nodeText)
+        {
+            //if the node is not expanded, click expand icon
+            if (NewJazzIsNodeExpanded(nodeText))
+            {
+                NewJazzClickNodeExpander(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
+            }
+        }
+
+        public void NewJazz_ExpandFolderNode(string nodeText)
+        {
+            //if the node is not expanded, click expand icon
+            if (NewJazzIsFolderNodeExpanded(nodeText))
+            {
+                NewJazzClickFolderNodeExpander(nodeText);
+
+                //pause to wait animate finish
+                TimeManager.MediumPause();
+            }
+        }
+
+        public void NewJazzClickNode(string nodeText)
+        {
+            // Greenie modified
+            TimeManager.LongPause();
+            this.NewJazzGetTreeNodeElement(nodeText).Click();
+
+        }
+
+        public void NewJazz_ClickFolderNode(string nodeText)
+        {
+            // Greenie modified
+            TimeManager.LongPause();
+            this.NewJazzGetFolderTreeNodeElement(nodeText).Click();
+
+        }
+
+        #region private methods
+
+        protected virtual Locator NewJazzGetTreeNodeLocator(string nodeText)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzTreeNode), TREENODEVARIABLENAME, nodeText);
+        }
+
+        protected virtual Locator NewJazzGetFolderTreeNodeLocator(string nodeText)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzFolderTreeNode), TREENODEVARIABLENAME, nodeText);
+        }
+
+        protected virtual Locator NewJazzGetTreeNodeExpanderLocator(string nodeText)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzTreeNodeImage), TREENODEVARIABLENAME, nodeText);
+        }
+
+        protected virtual Locator NewJazzGetFolderTreeNodeExpanderLocator(string nodeText)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzFolderTreeNodeImage), TREENODEVARIABLENAME, nodeText);
+        }
+
+        private void NewJazzClickNodeExpander(string nodeText)
+        {
+            IWebElement node = NewJazzGetTreeNodeExpanderElement(nodeText);
+            node.Click();
+        }
+
+        private void NewJazzClickFolderNodeExpander(string nodeText)
+        {
+            IWebElement node = NewJazzGetFolderTreeNodeExpanderElement(nodeText);
+            node.Click();
+        }
+
+        protected virtual IWebElement NewJazzGetTreeNodeElement(string nodeText)
+        {
+            return base.FindChild(NewJazzGetTreeNodeLocator(nodeText));
+        }
+
+        protected virtual IWebElement NewJazzGetFolderTreeNodeElement(string nodeText)
+        {
+            return base.FindChild(NewJazzGetFolderTreeNodeLocator(nodeText));
+        }
+
+        protected virtual IWebElement NewJazzGetTreeNodeExpanderElement(string nodeText)
+        {
+            return base.FindChild(NewJazzGetTreeNodeExpanderLocator(nodeText));
+        }
+
+        protected virtual IWebElement NewJazzGetFolderTreeNodeExpanderElement(string nodeText)
+        {
+            return base.FindChild(NewJazzGetFolderTreeNodeExpanderLocator(nodeText));
+        }
+
+        public bool NewJazzIsNodeExpanded(string nodeText)
+        {
+            IWebElement node = NewJazzGetTreeNodeExpanderElement(nodeText);
+
+            return node.GetAttribute("class").Contains(NEWJAZZTREENODEEXPANDCLASS);
+        }
+
+        public bool NewJazzIsFolderNodeExpanded(string nodeText)
+        {
+            IWebElement node = NewJazzGetFolderTreeNodeExpanderElement(nodeText);
+
+            return node.GetAttribute("class").Contains(NEWJAZZTREENODEEXPANDCLASS);
+        }
+
+        #endregion
 
         #endregion
     }

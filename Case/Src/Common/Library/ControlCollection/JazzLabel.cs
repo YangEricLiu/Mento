@@ -8,6 +8,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public sealed class JazzLabel : JazzControlCollection
     {
+        #region Old Jazz      
+
         #region Get Position Label Method
         public static Label GetOneLabel(string key, int positionIndex)
         {
@@ -113,5 +115,14 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #endregion
 
+        #endregion
+
+
+        #region New Jazz
+
+        public static Label NewReactJSJazzBaselineTimeOverlap { get { return GetControl<Label>(JazzControlLocatorKey.NewReactJSJazzBaselineTimeOverlap); } }
+
+
+        #endregion
     }
 }

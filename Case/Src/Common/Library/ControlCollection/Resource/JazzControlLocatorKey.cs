@@ -1097,7 +1097,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         #endregion
 
         public static string HierarchyTreeEnergyView = "HierarchyTreeEnergyView";
-        public static string NewJazzHierarchyTreeEnergyView = "NewJazzHierarchyTreeEnergyView";
         public static string HierarchyTreeHierarchySettings = "HierarchyTreeHierarchySettings";
         public static string HierarchyTreeHierarchySettingsDimension = "HierarchyTreeHierarchySettingsDimension";
         public static string HierarchyTreeAssociation = "HierarchyTreeAssociation";
@@ -1613,10 +1612,65 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region New Jazz
 
-        #region New Jazz Date Picker
+        #region New Jazz Energy View Toolbar
 
         public static string NewReactJSJazzDatePickerStartDate = "NewReactJSJazzDatePickerStartDate";
         public static string NewReactJSJazzDatePickerEndDate = "NewReactJSJazzDatePickerEndDate";
+        public static string NewReactJSJazzEnergyViewPredefinedTimeButton = "NewReactJSJazzEnergyViewPredefinedTimeButton";
+        public static string NewReactJSJazzEnergyViewAssistButton = "NewReactJSJazzEnergyViewAssistButton";
+        public static string NewReactJSJazzEnergyViewCheckDataButton = "NewReactJSJazzEnergyViewCheckDataButton";
+
+
+        #region New jazz Baseline
+
+
+        public static string NewReactJSjazzBaselineConfigButton = "NewReactJSjazzBaselineConfigButton";
+        public static string NewReactJSJazzBaselineDatePickerStartDate = "NewReactJSJazzBaselineDatePickerStartDate";
+        public static string NewReactJSJazzBaselineDatePickerEndDate = "NewReactJSJazzBaselineDatePickerEndDate";
+        public static string NewReactJSJazzBaselineAutoReCalLinkButton = "NewReactJSJazzBaselineAutoReCalLinkButton";
+        public static string NewReactJSJazzBaselineAutoCalRadioButton = "NewReactJSJazzBaselineAutoCalRadioButton";
+        public static string NewReactJSJazzBaselineManualCalRadioButton = "NewReactJSJazzBaselineManualCalRadioButton";
+        public static string NewReactJSJazzBaselineSelectYearButton = "NewReactJSJazzBaselineSelectYearButton";
+        public static string NewReactJSJazzBaselineSaveButton = "NewReactJSJazzBaselineSaveButton";
+        public static string NewReactJSJazzBaselineCancelButton = "NewReactJSJazzBaselineCancelButton";
+        public static string NewReactJSJazzBaselineEditButton = "NewReactJSJazzBaselineEditButton";
+        public static string NewReactJSJazzBaselineAddTimeSettingButton = "NewReactJSJazzBaselineAddTimeSettingButton";
+        public static string NewReactJSjazzBaselineAutoCalGrid = "NewReactJSjazzBaselineAutoCalGrid";
+        public static string NewReactJSJazzBaselineTimeOverlap = "NewReactJSJazzBaselineTimeOverlap";
+
+       
+        public static string NewReactJSjazzBaselineCalValueReviseButton = "NewReactJSjazzBaselineCalValueReviseButton";
+        public static string NewReactJSJazzBaselineCalReviseEditButton = "NewReactJSJazzBaselineCalReviseEditButton";
+        public static string NewReactJSJazzBaselineAnnualCalculationValue = "NewReactJSJazzBaselineAnnualCalculationValue";
+        public static string NewReactJSJazzBaselineJanuaryCalculationValue = "NewReactJSJazzBaselineJanuaryCalculationValue";
+        public static string NewReactJSJazzBaselineFebruaryCalculationValue = "NewReactJSJazzBaselineFebruaryCalculationValue";
+        public static string NewReactJSJazzBaselineMarchCalculationValue = "NewReactJSJazzBaselineMarchCalculationValue";
+        public static string NewReactJSJazzBaselineAprilCalculationValue = "NewReactJSJazzBaselineAprilCalculationValue";
+        public static string NewReactJSJazzBaselineMayCalculationValue = "NewReactJSJazzBaselineMayCalculationValue";
+        public static string NewReactJSJazzBaselineJuneCalculationValue = "NewReactJSJazzBaselineJuneCalculationValue";
+        public static string NewReactJSJazzBaselineJulyCalculationValue = "NewReactJSJazzBaselineJulyCalculationValue";
+        public static string NewReactJSJazzBaselineAugustCalculationValue = "NewReactJSJazzBaselineAugustCalculationValue";
+        public static string NewReactJSJazzBaselineSeptemberCalculationValue = "NewReactJSJazzBaselineSeptemberCalculationValue";
+        public static string NewReactJSJazzBaselineOctoberCalculationValue = "NewReactJSJazzBaselineOctoberCalculationValue";
+        public static string NewReactJSJazzBaselineNovemberCalculationValue = "NewReactJSJazzBaselineNovemberCalculationValue";
+        public static string NewReactJSJazzBaselineDecemberCalculationValue = "NewReactJSJazzBaselineDecemberCalculationValue";
+
+
+        public static string NewReactJSjazzBaselineAlarmConfigButton = "NewReactJSjazzBaselineAlarmConfigButton";
+        #endregion
+
+        #endregion
+
+        #region New Jazz Grid
+
+        public static string NewReactJSjazzGridTaglist = "NewReactJSjazzGridTaglist";
+
+        #endregion
+
+        #region New Jazz Tree
+
+        public static string NewJazzHierarchyTreeEnergyView = "NewJazzHierarchyTreeEnergyView";
+        public static string NewJazzFolderTree = "NewJazzFolderTree";
 
         #endregion
 

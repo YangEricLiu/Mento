@@ -86,6 +86,7 @@
     <Compile Include="Functions\CustomerSettings\BatchModifyDialog.cs" />
     <Compile Include="Functions\EnergyManagement\CarbonUsagePanel.cs" />
     <Compile Include="Functions\EnergyManagement\ChartViewOperation.cs" />
+    <Compile Include="Functions\EnergyManagement\FolderWidgetPanel.cs" />
     <Compile Include="Functions\EnergyManagement\NewJazzEnergyAnalysis.cs" />
     <Compile Include="Functions\EnergyManagement\IndustryLabellingPanel.cs" />
     <Compile Include="Functions\HomePage\ShareInfoWindow.cs" />

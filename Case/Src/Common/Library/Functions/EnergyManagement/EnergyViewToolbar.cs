@@ -9,6 +9,9 @@ using Mento.ScriptCommon.TestData.EnergyView;
 using Mento.Framework.Exceptions;
 using Mento.ScriptCommon.Library.Functions.EnergyManagement;
 using System.Collections;
+using Mento.Framework.Configuration;
+using System.IO;
+using System.Data;
 
 namespace Mento.ScriptCommon.Library.Functions
 {
@@ -390,6 +393,27 @@ namespace Mento.ScriptCommon.Library.Functions
         //EndDatePicker
         private static DatePicker NewJazz_EndDatePicker = JazzDatePicker.NewReactJSJazzDatePickerEndDate;
 
+        private static Button NewJazz_BaselineCalReviseButton = JazzButton.NewReactJSjazzBaselineCalValueReviseButton;
+        private static Label NewJazz_BaselineTimeOverlap = JazzLabel.NewReactJSJazzBaselineTimeOverlap;
+
+        //基准值修正值
+        private static TextField Annual = JazzTextField.NewReactJSJazzBaselineAnnualCalculationValue;
+        private static TextField January = JazzTextField.NewReactJSJazzBaselineJanuaryCalculationValue;
+        private static TextField February = JazzTextField.NewReactJSJazzBaselineFebruaryCalculationValue;
+        private static TextField March = JazzTextField.NewReactJSJazzBaselineMarchCalculationValue;
+        private static TextField April = JazzTextField.NewReactJSJazzBaselineAprilCalculationValue;
+        private static TextField May = JazzTextField.NewReactJSJazzBaselineMayCalculationValue;
+        private static TextField June = JazzTextField.NewReactJSJazzBaselineJuneCalculationValue;
+        private static TextField July = JazzTextField.NewReactJSJazzBaselineJulyCalculationValue;
+        private static TextField August = JazzTextField.NewReactJSJazzBaselineAugustCalculationValue;
+        private static TextField September = JazzTextField.NewReactJSJazzBaselineSeptemberCalculationValue;
+        private static TextField October = JazzTextField.NewReactJSJazzBaselineOctoberCalculationValue;
+        private static TextField November = JazzTextField.NewReactJSJazzBaselineNovemberCalculationValue;
+        private static TextField December = JazzTextField.NewReactJSJazzBaselineDecemberCalculationValue;
+        #endregion
+
+        #region New Jazz Date Picker
+        
         public string NewJazz_GetStartDate()
         {
             return NewJazz_StartDatePicker.GetValue();
@@ -430,10 +454,379 @@ namespace Mento.ScriptCommon.Library.Functions
             NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime, time);
 
             NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime, time);
+        }    
+
+        #endregion
+
+        #region New Jazz Other
+
+        #region New Jazz Controls
+
+        private static MenuButton NewJazzEnergyViewPredefinedTimeButton = JazzButton.NewReactJSJazzEnergyViewPredefinedTimeButton;
+        private static MenuButton NewJazzEnergyViewAssistButton = JazzButton.NewReactJSJazzEnergyViewAssistButton;
+        private static Button NewJazzEnergyViewCheckDataButton = JazzButton.NewReactJSJazzEnergyViewCheckDataButton;
+        private static MenuButton NewJazzBaselineSelectYearButton = JazzButton.NewReactJSJazzBaselineSelectYearButton;
+        private static Button NewJazzBaselineEditButton = JazzButton.NewReactJSJazzBaselineEditButton;
+        private static Button NewJazzBaselineSaveButton = JazzButton.NewReactJSJazzBaselineSaveButton;
+        private static Button NewJazzBaselineCancelButton = JazzButton.NewReactJSJazzBaselineCancelButton;
+        private static Button NewJazzBaselineAddTimeSettingButton = JazzButton.NewReactJSJazzBaselineAddTimeSettingButton;
+
+
+        private static Dictionary<NewJazzEnergyViewToolbarOption, string> NewwJazzMenuItems = new Dictionary<NewJazzEnergyViewToolbarOption, string>()
+        {
+            {NewJazzEnergyViewToolbarOption.Last7Days,"$@Common.DateRange.Last7Day"},
+            {NewJazzEnergyViewToolbarOption.Last30Day,"$@Common.DateRange.Last30Day"},
+            {NewJazzEnergyViewToolbarOption.Last12Month,"$@Common.DateRange.Last12Month"},
+            {NewJazzEnergyViewToolbarOption.Today,"$@Common.DateRange.Today"},
+            {NewJazzEnergyViewToolbarOption.Yesterday,"$@Common.DateRange.Yesterday"},
+            {NewJazzEnergyViewToolbarOption.ThisWeek,"$@Common.DateRange.ThisWeek"},
+            {NewJazzEnergyViewToolbarOption.LastWeek,"$@Common.DateRange.LastWeek"},
+            {NewJazzEnergyViewToolbarOption.ThisMonth,"$@Common.DateRange.ThisMonth"},
+            {NewJazzEnergyViewToolbarOption.LastMonth,"$@Common.DateRange.LastMonth"},
+            {NewJazzEnergyViewToolbarOption.ThisYear,"$@Common.DateRange.ThisYear"},
+            {NewJazzEnergyViewToolbarOption.LastYear,"$@Common.DateRange.LastYear"},
+
+            {NewJazzEnergyViewToolbarOption.TimeInterval, "历史对比"},
+            {NewJazzEnergyViewToolbarOption.BaselineConfigration, "基准值设置"},
+            {NewJazzEnergyViewToolbarOption.DataSum, "数据求和"},
+            {NewJazzEnergyViewToolbarOption.WeatherInfomation, "天气信息"},
+        };
+
+        #endregion
+
+
+        public void NewJazz_SelectPredfinedTimeMenuItem(NewJazzEnergyViewToolbarOption itemName)
+        {
+            NewJazzEnergyViewPredefinedTimeButton.NewJazzSelectPredefinedTimeItem(NewwJazzMenuItems[itemName]);
+            TimeManager.ShortPause();
+        }
+
+        public void NewJazz_SelectAssistMenuItem(NewJazzEnergyViewToolbarOption itemName)
+        {
+            NewJazzEnergyViewAssistButton.NewJazzSelectAssistItem(NewwJazzMenuItems[itemName]);
+            TimeManager.ShortPause();
+        }
+
+        public void NewJazz_ClickView()
+        {
+            NewJazzEnergyViewCheckDataButton.Click();
+            JazzMessageBox.LoadingMask.NewJazz_WaitChartMaskerLoading();
+            TimeManager.LongPause();
+        }
+
+        #endregion
+
+        #region New Jazz Baseline Configration
+
+        private string BSPath = "Baseline";
+
+        #region Baseline config page
+        
+        public void NewJazz_BaselineSetDateRange(DateTime startTime, DateTime endTime, int position)
+        {
+            DatePicker baselineStartDatePicker = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSJazzBaselineDatePickerStartDate, position);
+            baselineStartDatePicker.NewJazz_SelectDateItem(startTime);
+
+            DatePicker baselineEndDatePicker = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSJazzBaselineDatePickerEndDate, position);
+            baselineEndDatePicker.NewJazz_SelectDateItem(endTime);
+        }
+
+        public void NewJazz_BaselineSetDateRange(string startTime, string endTime, int position)
+        {
+            DatePicker baselineStartDatePicker = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSJazzBaselineDatePickerStartDate, position);
+            baselineStartDatePicker.NewJazz_SelectDateItem(startTime);
+
+            DatePicker baselineEndDatePicker = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSJazzBaselineDatePickerEndDate, position);
+            baselineEndDatePicker.NewJazz_SelectDateItem(endTime);
+        }
+
+        public void NewJazz_BaselineClickAutoCal(int position)
+        {
+            Button BaselineAutoCalRatioButton = JazzButton.NewJazz_GetOneButton(JazzControlLocatorKey.NewReactJSJazzBaselineAutoCalRadioButton, position);
+            BaselineAutoCalRatioButton.Click();
+            TimeManager.Pause(3000);
+        }
+
+        public void NewJazz_BaselineClickReCal(int position)
+        {
+            Button BaselineAutoReCalLinkButton = JazzButton.NewJazz_GetOneButton(JazzControlLocatorKey.NewReactJSJazzBaselineAutoReCalLinkButton, position);
+            BaselineAutoReCalLinkButton.Click();
+            TimeManager.Pause(5000);
+        }
+            
+
+        public void NewJazz_SelectBaselineYearMenuItem(string itemName)
+        {
+            NewJazzBaselineSelectYearButton.NewJazzSelectBaselineYearItem(itemName);
+            TimeManager.ShortPause();
+        }
+
+        public void NewJazz_ClickBaselineEditButton()
+        {
+            NewJazzBaselineEditButton.Click();
+            TimeManager.LongPause();
+        }
+
+        public bool NewJazz_IsConfigEditButtonDisabled()
+        {
+            return NewJazzBaselineEditButton.NewJazz_IsDisabled();
+        }
+
+        public void NewJazz_ClickBaselineSaveButton()
+        {
+            NewJazzBaselineSaveButton.Click();
+            TimeManager.LongPause();
+        }
+
+        public bool NewJazz_IsConfigSaveButtonDisabled()
+        {
+            return NewJazzBaselineSaveButton.NewJazz_IsDisabled();
+        }
+
+        public void NewJazz_ClickBaselineCancelButton()
+        {
+            NewJazzBaselineCancelButton.Click();
+            TimeManager.LongPause();
+        }
+
+        public void NewJazz_ClickBaselineAddTimeSettingButton()
+        {
+            NewJazzBaselineAddTimeSettingButton.Click();
+            TimeManager.LongPause();
+        }
+
+        public void NewJazz_ExportBaselineDataTableToExcel(string fileName, int position)
+        {
+            if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
+            {
+                Grid baselineGrid = JazzGrid.NewJazz_GetOneGrid(JazzControlLocatorKey.NewReactJSjazzBaselineAutoCalGrid, position);
+
+                DataTable data = baselineGrid.NewJazz_BaselineGetAllData();
+
+                //Export to excel
+                string actualFileName = Path.Combine(BSPath, fileName);
+                JazzFunction.DataViewOperation.NewJazz_MoveBaselineDataSheetToExcel(data, actualFileName, "自动计算平均值");
+            }
+        }
+
+        public bool NewJazz_CompareAutoConfigBaseline(string expectedFileName, string failedFileName, int position)
+        {
+            if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
+            {
+                string filePath = Path.Combine(BSPath, expectedFileName); ;
+
+                Grid baselineGrid = JazzGrid.NewJazz_GetOneGrid(JazzControlLocatorKey.NewReactJSjazzBaselineAutoCalGrid, position);
+
+                DataTable actualData = baselineGrid.NewJazz_BaselineGetAllData();
+                DataTable expectedDataTable = JazzFunction.DataViewOperation.ImportExpectedFileToDataTable(filePath, "自动计算平均值");
+
+                return JazzFunction.DataViewOperation.NewJazz_CompareDataTables(expectedDataTable, actualData, failedFileName);
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public void NewJazz_ReviseAutoCalValue(int row, int column, string value, int position)
+        {
+            Grid baselineGrid = JazzGrid.NewJazz_GetOneGrid(JazzControlLocatorKey.NewReactJSjazzBaselineAutoCalGrid, position);
+
+            baselineGrid.NewJazz_ReviseBaselineAutoCalValue(row, column, value);
+        }
+
+        #region Error Message
+
+        public string NewJazz_GetTimeOverlapMessage()
+        {
+            return NewJazz_BaselineTimeOverlap.GetLabelTextValue(); 
         }
 
         #endregion
 
         #endregion
+
+        #region Baseline Revise
+
+        public void NewJazz_BaselineClickCalReviseTab()
+        {
+            NewJazz_BaselineCalReviseButton.Click();
+        }
+
+        public string NewJazz_GetMonthValue(int month)
+        {
+            switch (month)
+            { 
+                case (int)AllMonth.Annual:
+                    return Annual.GetValue();
+                case (int)AllMonth.January:
+                    return January.GetValue();
+                case (int)AllMonth.February:
+                    return February.GetValue();
+                case (int)AllMonth.March:
+                    return March.GetValue();
+                case (int)AllMonth.April:
+                    return April.GetValue();
+                case (int)AllMonth.May:
+                    return May.GetValue();
+                case (int)AllMonth.June:
+                    return June.GetValue();
+                case (int)AllMonth.July:
+                    return July.GetValue();
+                case (int)AllMonth.August:
+                    return August.GetValue();
+                case (int)AllMonth.September:
+                    return September.GetValue();
+                case (int)AllMonth.October:
+                    return October.GetValue();
+                case (int)AllMonth.November:
+                    return November.GetValue();
+                case (int)AllMonth.December:
+                    return December.GetValue();
+                default:
+                    return Annual.GetValue();
+            }
+        }
+
+        public void NewJazz_SetMonthValue(int month, string value)
+        {
+            switch (month)
+            {
+                case (int)AllMonth.Annual:
+                    Annual.Fill(value);
+                    break;
+                case (int)AllMonth.January:
+                    January.Fill(value);
+                    break;
+                case (int)AllMonth.February:
+                    February.Fill(value);
+                    break;
+                case (int)AllMonth.March:
+                    March.Fill(value);
+                    break;
+                case (int)AllMonth.April:
+                    April.Fill(value);
+                    break;
+                case (int)AllMonth.May:
+                    May.Fill(value);
+                    break;
+                case (int)AllMonth.June:
+                    June.Fill(value);
+                    break;
+                case (int)AllMonth.July:
+                    July.Fill(value);
+                    break;
+                case (int)AllMonth.August:
+                    August.Fill(value);
+                    break;
+                case (int)AllMonth.September:
+                    September.Fill(value);
+                    break;
+                case (int)AllMonth.October:
+                    October.Fill(value);
+                    break;
+                case (int)AllMonth.November:
+                    November.Fill(value);
+                    break;
+                case (int)AllMonth.December:
+                    December.Fill(value);
+                    break;
+                default:
+                    Annual.Fill(value);
+                    break;
+            }
+        }
+
+        public bool NewJazz_CompareReviseValue(string[] actualReviseValue)
+        {
+            bool isEqual = true;
+            string sourceValue;
+            string actulValue;
+
+            for (int i = 0; i < 13; i++)
+            { 
+                sourceValue = actualReviseValue[i].Trim();
+                actulValue = NewJazz_GetMonthValue(i).Trim();
+
+                if (!String.Equals(sourceValue, actulValue))
+                    isEqual = false;
+            }
+                return isEqual;
+        }
+
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region TXT File Operation
+
+        public void OpenTXTFile(string fileName, string failedData)
+        {
+            string filePath = Path.Combine(ExecutionConfig.failedDataViewExcelFileDirectory, BSPath);
+
+            string actualFileName = Path.Combine(filePath, fileName);
+
+            if (!File.Exists(actualFileName))
+            {
+
+                FileStream fs1 = new FileStream("F:\\TestTxt.txt", FileMode.Create, FileAccess.Write);//创建写入文件 
+                StreamWriter sw = new StreamWriter(fs1);
+                sw.WriteLine(failedData);//开始写入值
+
+                sw.Close();
+                fs1.Close();
+
+            }
+            else
+            {
+                FileStream fs = new FileStream("actualFileName", FileMode.Open, FileAccess.Write);
+                StreamWriter sr = new StreamWriter(fs);
+                sr.WriteLine(failedData);//开始写入值
+                sr.Close();
+                fs.Close();
+            }
+        }
+
+        #endregion
+
     }
+
+        public enum NewJazzEnergyViewToolbarOption
+        {
+            Last7Days,
+            Last30Day,
+            Last12Month,
+            Today,
+            Yesterday,
+            ThisWeek,
+            LastWeek,
+            ThisMonth,
+            LastMonth,
+            ThisYear,
+            LastYear,
+
+            TimeInterval,
+            BaselineConfigration,
+            DataSum,
+            WeatherInfomation,
+        }
+
+        public enum AllMonth
+        {
+            Annual = 0,
+            January = 1,
+            February = 2,
+            March = 3,
+            April = 4,
+            May = 5,
+            June = 6,
+            July = 7,
+            August = 8,
+            September = 9,
+            October = 10,
+            November = 11,
+            December = 12,
+        }
 }

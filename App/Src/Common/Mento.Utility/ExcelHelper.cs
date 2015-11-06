@@ -1407,6 +1407,10 @@ namespace Mento.Utility
             }
             sheet.Cells[rowIndex, columnIndex + 6] = data.formatActualResponseBody;
             sheet.Cells[rowIndex, columnIndex + 7] = data.result;
+
+            if (data.result.Contains("Fail:"))
+                sheet.Cells[rowIndex, columnIndex + 7].Interior.ColorIndex = 3;
+
             sheet.Cells[rowIndex, columnIndex + 8] = data.resultReport;
         }
 

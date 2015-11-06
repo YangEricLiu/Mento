@@ -65,6 +65,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region New Jazz 
 
+        #region New Jazz Get datapicker by position
+
+        public static DatePicker NewJazz_GetOneDatePicker(string key, int positionIndex)
+        {
+            return GetControl<DatePicker>(key, positionIndex);
+        }
+
+        #endregion
+
         #region  New Jazz Energy View
 
         public static DatePicker NewReactJSJazzDatePickerStartDate { get { return GetControl<DatePicker>(JazzControlLocatorKey.NewReactJSJazzDatePickerStartDate); } }

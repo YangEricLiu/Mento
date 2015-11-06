@@ -169,9 +169,36 @@
   <add key="NewReactJSjazzTimePickerTrigger" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[3]/div" type ="XPath"/>
   <add key="NewReactJSjazzInnerMonthPickerMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div/div/div/span[1]" type ="XPath"/>
   <add key="NewReactJSjazzInnerMonthPickerYear" value = "//div[@class='mui-date-picker-calendar-toolbar']/div/div/div/span[3]" type ="XPath"/>
-  <add key="NewReactJSjazzDatePickerPreviousMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[2]/button[2]" type ="XPath"/>
-  <add key="NewReactJSjazzDatePickerNextMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[3]/button[1]" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerPreviousMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[2]/button" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerNextMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[3]/button" type ="XPath"/>
   <add key="NewReactJSjazzDatePickerDayItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[2]/div[2]/div/div//button/span[text()='$#itemKey']" type ="XPath"/>
   <add key="NewReactJSjazzDatePickerTimeItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[2]/div/div/div/button/span[text()='$#itemKey']" type ="XPath"/>
+
+  <!--New Jazz TreeView-->
+  <add key = "NewReactJSjazzTreeNode" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'tree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]" type = "XPath"/>
+  <add key = "NewReactJSjazzTreeNodeImage" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'tree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]/div[@class='arrow']/div[@class='hasChild']/div" type = "XPath"/>
+
+  <add key = "NewReactJSjazzFolderTreeNode" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'jazz-foldertree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]" type = "XPath"/>
+  <add key = "NewReactJSjazzFolderTreeNodeImage" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'jazz-foldertree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]/div[contains(@class,'jazz-foldertree-arrow')]/div[@class='hasChild']/div" type = "XPath"/>
+
+
+  <!--New Jazz Grid-->
+  <add key = "NewReactJSjazzGridPagingToolbar" value = "//div[@class = 'buttonBar']/div[@class='page-num']" type="XPath"/>
+  <add key = "NewReactJSjazzGridPagingCurrentPageTextBox" value = "span[1]" type="XPath"/>
+  <add key = "NewReactJSjazzGridPagingTotalPage" value = "span[3]" type="XPath"/>
+  <add key = "NewReactJSjazzGridPagingJumpButton" value = "//div[@class = 'page-jump']/div[@class='jump-btn']" type="XPath"/>
+  <add key = "NewReactJSjazzGridPagingJumpButtonOnFloat" value = "//div[@class = 'page-jump-box']/div[@class='jump-input']/button/div/span" type="XPath"/>
+  <add key = "NewReactJSjazzGridPagingTextBox" value = "//div[@class = 'page-jump-box']/div[@class='jump-input']/div[2]/input" type="XPath"/>
+  <add key = "NewReactJSjazzGridRowChecker" value = "//div[@class='jazz-dataselectmainpanel']/div[3]/div/div[2]/div[@class='taglist' and @title='$#cellText']/div/input" type ="XPath"/>
+  <add key = "NewReactJSjazzGridRow" value = "//div[@class='jazz-dataselectmainpanel']/div[3]/div/div[2]/div[@class='taglist' and @title='$#cellText']" type ="XPath"/>
+  <add key = "NewReactJSjazzGridRowCheckerStatus" value = "//div[@class='jazz-dataselectmainpanel']/div[3]/div/div[2]/div[@class='taglist' and @title='$#cellText']/div/div/div[2]/div" type ="XPath"/>
+  <add key = "NewReactJSjazzGridPagingPreviousPageButton" value="../div[@class='pre-btn']" type="XPath"/>
+  <add key = "NewReactJSjazzGridPagingNextPageButton" value="../div[@class='next-btn']" type="XPath"/>
+  <add key = "NewReactJSjazzBaselineGridRows" value = "div/div[@class='jazz-setting-basic-calcsetting']/table/tbody/tr" type ="XPath"/>
+
+
+  <!--New Jazz Mask-->
+  <add key="NewReactJSjazzChartMaskerLoadingLocator" value = "//div[@class='jazz-energy-panel']/div[contains(@style, 'margin: auto;')]/div/div/svg/circle" type ="XPath"/>
+
 
 </WebElement>

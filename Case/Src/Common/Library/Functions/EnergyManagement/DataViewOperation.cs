@@ -13,6 +13,8 @@ namespace Mento.ScriptCommon.Library.Functions
 {
     public class DataViewOperation
     {
+        #region Old Jazz
+
         public string sheetNameFailed = "SheetNot";
         public string sheetNameExpected = "SheetExpected";
         public string sheetNameHeader = "Header";
@@ -422,7 +424,54 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion
 
-        
+        #endregion
 
+        #region New Jazz
+
+        public void NewJazz_MoveBaselineDataSheetToExcel(DataTable data, string fileName, string sheetName)
+        {
+            string filePath = Path.Combine(ExecutionConfig.expectedDataViewExcelFileDirectory, fileName);
+
+            ExcelHelper.ExportToExcel(data, filePath, sheetName);
+        }
+
+        public bool NewJazz_CompareDataTables(DataTable expectedDataTable, DataTable actualDataTable, string fileName)
+        {
+            bool areEqual = true;
+            DataTable diversityTable = new DataTable();
+
+            foreach (DataColumn column in expectedDataTable.Columns)
+            {
+                diversityTable.Columns.Add(column.ColumnName);
+            }
+
+            for (int i = 0; i < expectedDataTable.Rows.Count; i++)
+            {
+                for (int j = 0; j < expectedDataTable.Columns.Count; j++)
+                {
+                    if (!String.Equals(expectedDataTable.Rows[i][j].ToString(), actualDataTable.Rows[i][j].ToString()))
+                    {
+                        areEqual = false;
+
+                        DataRow myRow = diversityTable.NewRow();
+
+                        myRow[0] = i + 2;
+
+                        myRow[j + 1] = "期望值:" + expectedDataTable.Rows[i][j].ToString() + "\n" + "实际值:" + actualDataTable.Rows[i][j].ToString();
+
+                        diversityTable.Rows.Add(myRow);
+                    }
+                }
+            }
+
+            if (!areEqual)
+            {
+                ExportFailedDataToExcel(diversityTable, fileName, sheetNameFailed);
+            }
+
+            return areEqual;
+        }
+
+        #endregion
     }
 }

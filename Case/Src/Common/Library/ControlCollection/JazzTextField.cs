@@ -8,6 +8,9 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 {
     public class JazzTextField : JazzControlCollection
     {
+        #region Old Jazz
+        
+
         #region Get Position TextField Method
 
         public static TextField GetOneTextField(string key, int positionIndex)
@@ -231,5 +234,26 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         
         #endregion
 
+        #endregion
+
+
+        #region New Jazz
+
+        public static TextField NewReactJSJazzBaselineAnnualCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineAnnualCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineJanuaryCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineJanuaryCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineFebruaryCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineFebruaryCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineMarchCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineMarchCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineAprilCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineAprilCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineMayCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineMayCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineJuneCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineJuneCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineJulyCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineJulyCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineAugustCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineAugustCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineSeptemberCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineSeptemberCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineOctoberCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineOctoberCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineNovemberCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineNovemberCalculationValue); } }
+        public static TextField NewReactJSJazzBaselineDecemberCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineDecemberCalculationValue); } }
+
+
+        #endregion
     }
 }

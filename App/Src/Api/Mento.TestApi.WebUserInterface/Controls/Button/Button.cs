@@ -100,6 +100,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
             return this.RootElement.GetAttribute("class").Contains("disabled");
         }
 
+        public string NewJazz_GetButtonText()
+        {
+            return this.RootElement.Text;
+        }
+
         #endregion
     }
 }

@@ -1473,7 +1473,7 @@
 
   <!--New Jazz Grid end-->
 
-  <!--New Jazz target baseline begin-->
+  <!--New Jazz baseline begin-->
   <add key="NewReactJSjazzBaselineConfigButton" value = "//div[@class='jazz-tabs']/div/div/div[text()='基准值配置']" type ="XPath"/>
   <add key="NewReactJSJazzBaselineDatePickerStartDate" value="//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]//div[@class='jazz-setting-basic-datepicker-container'][1]" type="XPath"/>
   <add key="NewReactJSJazzBaselineDatePickerEndDate" value="//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]//div[@class='jazz-setting-basic-datepicker-container'][2]" type="XPath"/>
@@ -1489,9 +1489,25 @@
   <add key="NewReactJSJazzBaselineEditButton" value="//div[@class='jazz-tabs']/div/div[3]/div/div/div[3]/button[contains(@class,'jazz-setting-basic-editbutton') and span[text()='编辑']]" type="XPath"/>
   <add key="NewReactJSJazzBaselineAddTimeSettingButton" value="//div[@class='jazz-setting-basic-content']/div/div[3]/div/div/button/div/span" type="XPath"/>
   <add key="NewReactJSjazzBaselineAutoCalGrid" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div/div[@class='jazz-setting-basic-clear']" type ="XPath"/>
-  
+  <add key="NewReactJSjazzBaselineDeleteTimeSpanButton" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div/div/button" type ="XPath"/>
+
+  <add key="NewReactJSjazzBaselineWorkdaySelectMenuItem" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div/div[@class='jazz-setting-basic-clear']/div[2]/div[3]/div/div[$#PositionIndexTwo]/div[@class='jazz-setting-daytimeSelector']" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineNonWorkdaySelectMenuItem" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div/div[@class='jazz-setting-basic-clear']/div[2]/div[5]/div/div[$#PositionIndexTwo]/div[@class='jazz-setting-daytimeSelector']" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineWorkdayInputBox" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div/div[@class='jazz-setting-basic-clear']/div[2]/div[3]/div/div[$#PositionIndexTwo]/div[4]/input" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineNonWorkdayInputBox" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div/div[@class='jazz-setting-basic-clear']/div[2]/div[5]/div/div[$#PositionIndexTwo]/div[4]/input" type ="XPath"/>
+
+  <add key="NewReactJSjazzBaselineExtraDateAddButton" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div[2]/div/div/button" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineExtraStartDatePicker" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div[2]/div/div[2]/div[$#PositionIndexTwo]/div/div[@class='jazz-setting-basic-datepicker-container'][1]" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineExtraEndDatePicker" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div[2]/div/div[2]/div[$#PositionIndexTwo]/div/div[@class='jazz-setting-basic-datepicker-container'][2]" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineExtraStartTimeMenu" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div[2]/div/div[2]/div[$#PositionIndexTwo]/div/div[@class='jazz-setting-daytimeSelector'][1]" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineExtraEndTimeMenu" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div[2]/div/div[2]/div[$#PositionIndexTwo]/div/div[@class='jazz-setting-daytimeSelector'][2]" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineExtraInputBox" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div[2]/div/div[2]/div[$#PositionIndexTwo]/div[4]/div/div/input" type ="XPath"/>
+  <add key="NewReactJSjazzBaselineExtraDateDeleteButton" value = "//div[@class='jazz-tabs']//div[@class='jazz-setting-basic-content']/div/div[3]/div/div[2]/div[$#positionIndex]/div[2]/div/div[2]/div[$#PositionIndexTwo]/div/button" type ="XPath"/>
+
   <add key="NewReactJSjazzBaselineCalValueReviseButton" value = "//div[@class='jazz-tabs']/div/div/div[text()='计算值修正']" type ="XPath"/>
-  <add key="NewReactJSJazzBaselineCalReviseEditButton" value="//div[@class='jazz-tabs']/div/div[3]/div[2]/div[@class='jazz-setting-baseline-container']/div[2]/div/div/button/div/div/span[text()=' 编辑 ']" type="XPath"/> 
+  <add key="NewReactJSJazzBaselineCalReviseEditButton" value="//div[@class='jazz-tabs']/div/div[3]/div[2]/div[@class='jazz-setting-baseline-container']/div[2]/div/div/button/div/div/span[text()='编辑']" type="XPath"/>   
+  <add key="NewReactJSJazzBaselineCalReviseSaveButton" value="//div[@class='jazz-tabs']/div/div[3]/div[2]/div[@class='jazz-setting-baseline-container']/div[2]/div[2]/div/button/div/div/span[text()='保存']" type="XPath"/>
+  <add key="NewReactJSJazzBaselineCalReviseCancelButton" value="//div[@class='jazz-tabs']/div/div[3]/div[2]/div[@class='jazz-setting-baseline-container']/div[2]/div[2]/div[2]/button/div/div/span[text()='放弃']" type="XPath"/>
   <add key="NewReactJSJazzBaselineAnnualCalculationValue" value="//div[@class='jazz-tabs']//div[@class='jazz-setting-baseline-content']/div[3]/div/input" type="XPath"/>
   <add key="NewReactJSJazzBaselineJanuaryCalculationValue" value="//div[@class='jazz-tabs']//div[@class='jazz-setting-baseline-content']/div[5]/table[1]/tbody/tr/td[1]//input" type="XPath"/>
   <add key="NewReactJSJazzBaselineFebruaryCalculationValue" value="//div[@class='jazz-tabs']//div[@class='jazz-setting-baseline-content']/div[5]/table[1]/tbody/tr/td[2]//input" type="XPath"/>
@@ -1506,7 +1522,14 @@
   <add key="NewReactJSJazzBaselineNovemberCalculationValue" value="//div[@class='jazz-tabs']//div[@class='jazz-setting-baseline-content']/div[5]/table[6]/tbody/tr/td[1]//input" type="XPath"/>
   <add key="NewReactJSJazzBaselineDecemberCalculationValue" value="//div[@class='jazz-tabs']//div[@class='jazz-setting-baseline-content']/div[5]/table[6]/tbody/tr/td[2]//input" type="XPath"/>
 
-
   <add key="NewReactJSjazzBaselineAlarmConfigButton" value = "//div[@class='jazz-tabs']/div/div/div[text()='报警设置']" type ="XPath"/>
-  <!--New Jazz target baseline end-->
+
+  <add key="NewReactJSjazzBaselineCloseButton" value = "//div[@class='jazz-energy-panel']/div[2]/div/div[5]/div/div/div/button" type ="XPath"/>
+  <!--New Jazz baseline end-->
+
+  <!--New Jazz Login Page begin-->
+  
+  <add key="SwitchLanguageLoginPageButton" value="//div[@class='footer-txtln']/a[@class='switchLang']" type="XPath"/>
+
+  <!--New Jazz Login Page end-->
 </WebElement>

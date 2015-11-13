@@ -2023,6 +2023,16 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             return GetControl<Button>(key, positionIndex);
         }
 
+        public static Button NewJazz_GetOneButton(string key, int positionIndex, int positionIndexTwo)
+        {
+            return GetControl<Button>(key, positionIndex, positionIndexTwo);
+        }
+
+        public static MenuButton NewJazz_GetOneMenuButton(string key, int positionIndex, int positionIndexTwo)
+        {
+            return GetControl<MenuButton>(key, positionIndex, positionIndexTwo);
+        }
+
         #endregion
 
         #region Pop
@@ -2086,6 +2096,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region New Jazz Energy View Toolbar
 
+        #region Baseline Config     
+
         public static MenuButton NewReactJSJazzEnergyViewPredefinedTimeButton
         {
             get { return GetControl<MenuButton>(JazzControlLocatorKey.NewReactJSJazzEnergyViewPredefinedTimeButton); }
@@ -2130,15 +2142,57 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         {
             get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSjazzBaselineConfigButton); }
         }
+      
+        public static Button NewReactJSjazzBaselineCloseButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSjazzBaselineCloseButton); }
+        }
+
+        #endregion
+
+
+        #region Baseline Revise
 
         public static Button NewReactJSjazzBaselineCalValueReviseButton
         {
             get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSjazzBaselineCalValueReviseButton); }
         }
 
+        public static Button NewReactJSJazzBaselineCalReviseSaveButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzBaselineCalReviseSaveButton); }
+        }
+
+        public static Button NewReactJSJazzBaselineCalReviseCancelButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzBaselineCalReviseCancelButton); }
+        }
+
+        public static Button NewReactJSJazzBaselineCalReviseEditButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSJazzBaselineCalReviseEditButton); }
+        }
+
+
+        #endregion
+
+
+        #region Baseline Alarm
+
         public static Button NewReactJSjazzBaselineAlarmConfigButton
         {
             get { return GetControl<Button>(JazzControlLocatorKey.NewReactJSjazzBaselineAlarmConfigButton); }
+        }
+
+        #endregion
+
+        #endregion
+
+        #region New Jazz Login Page
+
+        public static Button SwitchLanguageLoginPageButton
+        {
+            get { return GetControl<Button>(JazzControlLocatorKey.SwitchLanguageLoginPageButton); }
         }
 
         #endregion

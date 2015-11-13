@@ -393,10 +393,18 @@ namespace Mento.ScriptCommon.Library.Functions
         //EndDatePicker
         private static DatePicker NewJazz_EndDatePicker = JazzDatePicker.NewReactJSJazzDatePickerEndDate;
 
-        private static Button NewJazz_BaselineCalReviseButton = JazzButton.NewReactJSjazzBaselineCalValueReviseButton;
         private static Label NewJazz_BaselineTimeOverlap = JazzLabel.NewReactJSJazzBaselineTimeOverlap;
 
+        //基准值配置
+        private static Button NewJazz_BaselineConfigButton = JazzButton.NewReactJSjazzBaselineConfigButton;
+
+
         //基准值修正值
+        private static Button NewJazz_BaselineCalReviseButton = JazzButton.NewReactJSjazzBaselineCalValueReviseButton;
+        private static Button NewJazz_BaselineCalReviseSaveButton = JazzButton.NewReactJSJazzBaselineCalReviseSaveButton;
+        private static Button NewJazz_BaselineCalReviseCancelButton = JazzButton.NewReactJSJazzBaselineCalReviseCancelButton;
+        private static Button NewJazz_BaselineCalReviseEditButton = JazzButton.NewReactJSJazzBaselineCalReviseEditButton;
+
         private static TextField Annual = JazzTextField.NewReactJSJazzBaselineAnnualCalculationValue;
         private static TextField January = JazzTextField.NewReactJSJazzBaselineJanuaryCalculationValue;
         private static TextField February = JazzTextField.NewReactJSJazzBaselineFebruaryCalculationValue;
@@ -414,46 +422,48 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region New Jazz Date Picker
         
+        //获取开始时间
         public string NewJazz_GetStartDate()
         {
             return NewJazz_StartDatePicker.GetValue();
         }
 
+        //获取结束时间
         public string NewJazz_GetEndDate()
         {
             return NewJazz_EndDatePicker.GetValue();
         }
 
-        public void NewJazz_SetDateRange(DateTime startTime, DateTime endTime)
+        //设置始末时间
+        public void NewJazz_SetDateRange(DateTime startDate, DateTime endDate)
         {
-            int startHour = startTime.Hour, startMinute = startTime.Minute, endHour = endTime.Hour, endMinute = endTime.Minute;
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startDate);
 
-            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime);
-
-            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime);
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endDate);
         }
 
-        public void NewJazz_SetDateRange(string startTime, string endTime)
+        //设置始末时间
+        public void NewJazz_SetDateRange(string startDate, string endDate)
         {
-            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime);
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startDate);
 
-            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime);
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endDate);
         }
 
-        public void NewJazz_SetDateRange(DateTime startTime, DateTime endTime, string time)
+        //设置始末时间
+        public void NewJazz_SetDateRange(DateTime startDate, DateTime endDate, string startTime, string endTime)
         {
-            int startHour = startTime.Hour, startMinute = startTime.Minute, endHour = endTime.Hour, endMinute = endTime.Minute;
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startDate, startTime);
 
-            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime, time);
-
-            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime, time);
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endDate, endTime);
         }
 
-        public void NewJazz_SetDateRange(string startTime, string endTime, string time)
+        //设置始末时间
+        public void NewJazz_SetDateRange(string startDate, string endDate, string startTime, string endTime)
         {
-            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startTime, time);
+            NewJazz_StartDatePicker.NewJazz_SelectDateItem(startDate, startTime);
 
-            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endTime, time);
+            NewJazz_EndDatePicker.NewJazz_SelectDateItem(endDate, endTime);
         }    
 
         #endregion
@@ -494,24 +504,26 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #endregion
 
-
+        //选择时间段
         public void NewJazz_SelectPredfinedTimeMenuItem(NewJazzEnergyViewToolbarOption itemName)
         {
             NewJazzEnergyViewPredefinedTimeButton.NewJazzSelectPredefinedTimeItem(NewwJazzMenuItems[itemName]);
             TimeManager.ShortPause();
         }
 
-        public void NewJazz_SelectAssistMenuItem(NewJazzEnergyViewToolbarOption itemName)
-        {
-            NewJazzEnergyViewAssistButton.NewJazzSelectAssistItem(NewwJazzMenuItems[itemName]);
-            TimeManager.ShortPause();
-        }
-
+        //点击查看按钮
         public void NewJazz_ClickView()
         {
             NewJazzEnergyViewCheckDataButton.Click();
             JazzMessageBox.LoadingMask.NewJazz_WaitChartMaskerLoading();
             TimeManager.LongPause();
+        }
+
+        //选择辅助功能
+        public void NewJazz_SelectAssistMenuItem(NewJazzEnergyViewToolbarOption itemName)
+        {
+            NewJazzEnergyViewAssistButton.NewJazzSelectAssistItem(NewwJazzMenuItems[itemName]);
+            TimeManager.ShortPause();
         }
 
         #endregion
@@ -521,7 +533,37 @@ namespace Mento.ScriptCommon.Library.Functions
         private string BSPath = "Baseline";
 
         #region Baseline config page
-        
+
+        //切换到 "基准值配置" tab页
+        public void NewJazz_BaselineClickConfigTab()
+        {
+            NewJazz_BaselineConfigButton.Click();
+        }
+
+        //选择年
+        public void NewJazz_SelectBaselineYearMenuItem(string itemName)
+        {
+            NewJazzBaselineSelectYearButton.NewJazzSelectBaselineYearItem(itemName);
+            TimeManager.ShortPause();
+        }
+
+        //点击添加“时段设置”
+        public void NewJazz_ClickBaselineAddTimeSettingButton()
+        {
+            NewJazzBaselineAddTimeSettingButton.Click();
+            TimeManager.LongPause();
+        }
+
+        //点击删除某个时间段设置
+        public void NewJazz_ClickDeleteTimeSpanButton(int position)
+        {
+            Button timeSpanDelete = JazzButton.GetOneButton(JazzControlLocatorKey.NewReactJSjazzBaselineDeleteTimeSpanButton, position);
+            timeSpanDelete.Click();
+
+            TimeManager.LongPause();
+        }
+
+        //选择基准值设置时间段
         public void NewJazz_BaselineSetDateRange(DateTime startTime, DateTime endTime, int position)
         {
             DatePicker baselineStartDatePicker = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSJazzBaselineDatePickerStartDate, position);
@@ -531,6 +573,7 @@ namespace Mento.ScriptCommon.Library.Functions
             baselineEndDatePicker.NewJazz_SelectDateItem(endTime);
         }
 
+        //选择基准值设置时间段
         public void NewJazz_BaselineSetDateRange(string startTime, string endTime, int position)
         {
             DatePicker baselineStartDatePicker = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSJazzBaselineDatePickerStartDate, position);
@@ -540,6 +583,76 @@ namespace Mento.ScriptCommon.Library.Functions
             baselineEndDatePicker.NewJazz_SelectDateItem(endTime);
         }
 
+        //选择 “手工设置基准值”
+        public void NewJazz_BaselineClickManualCal(int position)
+        {
+            Button BaselineManualCalRatioButton = JazzButton.NewJazz_GetOneButton(JazzControlLocatorKey.NewReactJSJazzBaselineManualCalRadioButton, position);
+            BaselineManualCalRatioButton.Click();
+            TimeManager.Pause(3000);
+        }
+
+        //添加工作日时间段和值
+        public void NewJazz_BaselineSelectWorkDayMenuItem(int positionIndex, int positionIndexTwo, string value, string time = null)
+        {
+            MenuButton BaselineWorkDayMenuButton = JazzButton.NewJazz_GetOneMenuButton(JazzControlLocatorKey.NewReactJSjazzBaselineWorkdaySelectMenuItem, positionIndex, positionIndexTwo);
+
+            BaselineWorkDayMenuButton.NewJazzSelectBaselineTimeItem(time);
+
+            TextField BaselineWorkDayTextField = JazzTextField.NewJazz_GetOneTextField(JazzControlLocatorKey.NewReactJSjazzBaselineWorkdayInputBox, positionIndex, positionIndexTwo);
+            BaselineWorkDayTextField.Fill(value);
+            TimeManager.MediumPause();
+        }
+
+        //添加非工作日时间段和值
+        public void NewJazz_BaselineSelectNonWorkDayMenuItem(int positionIndex, int positionIndexTwo, string value, string time = null)
+        {
+            MenuButton BaselineNonWorkDayMenuButton = JazzButton.NewJazz_GetOneMenuButton(JazzControlLocatorKey.NewReactJSjazzBaselineNonWorkdaySelectMenuItem, positionIndex, positionIndexTwo);
+
+            BaselineNonWorkDayMenuButton.NewJazzSelectBaselineTimeItem(time);
+
+            TextField BaselineNonWorkDayTextField = JazzTextField.NewJazz_GetOneTextField(JazzControlLocatorKey.NewReactJSjazzBaselineNonWorkdayInputBox, positionIndex, positionIndexTwo);
+            BaselineNonWorkDayTextField.Fill(value);
+            TimeManager.MediumPause();
+        }
+
+        //点击添加补充日期
+        public void NewJazz_ClickAddBaselineExtraDate(int position1)
+        {
+            Button BaselineAddExtraDate = JazzButton.NewJazz_GetOneButton(JazzControlLocatorKey.NewReactJSjazzBaselineExtraDateAddButton, position1);
+            BaselineAddExtraDate.Click();
+            TimeManager.MediumPause();
+        }
+
+        //删除补充日期
+        public void NewJazz_ClickDeleteBaselineExtraDate(int position1, int position2)
+        {
+            Button BaselineDeleteExtraDateButton = JazzButton.NewJazz_GetOneButton(JazzControlLocatorKey.NewReactJSjazzBaselineExtraDateDeleteButton, position1);
+            BaselineDeleteExtraDateButton.Click();
+            TimeManager.MediumPause();
+        }
+
+        //设置补充日期时间和值
+        public void NewJazz_BaselineSetExtraDateValue(int position1, int position2, string startDate, string endDate, string startTime, string endTime, string value)
+        {
+            DatePicker BaselineExtraStartDate = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSjazzBaselineExtraStartDatePicker, position1, position2);
+            BaselineExtraStartDate.NewJazz_SelectDateItem(startDate);
+            
+            MenuButton BaselineExtraStartTime = JazzButton.NewJazz_GetOneMenuButton(JazzControlLocatorKey.NewReactJSjazzBaselineExtraStartTimeMenu, position1, position2);
+            BaselineExtraStartTime.NewJazzSelectBaselineTimeItem(startTime);
+
+            DatePicker BaselineExtraEndDate = JazzDatePicker.NewJazz_GetOneDatePicker(JazzControlLocatorKey.NewReactJSjazzBaselineExtraEndDatePicker, position1, position2);
+            BaselineExtraEndDate.NewJazz_SelectDateItem(endDate);
+
+            MenuButton BaselineExtraEndTime = JazzButton.NewJazz_GetOneMenuButton(JazzControlLocatorKey.NewReactJSjazzBaselineExtraEndTimeMenu, position1, position2);
+            BaselineExtraEndTime.NewJazzSelectBaselineTimeItem(endTime);
+          
+
+            TextField BaselineExtraValueInput = JazzTextField.NewJazz_GetOneTextField(JazzControlLocatorKey.NewReactJSjazzBaselineExtraInputBox, position1, position2);
+            BaselineExtraValueInput.NewJazz_Append(value);
+        }
+
+
+        //选择 “计算所选数据平均值为基准数据”
         public void NewJazz_BaselineClickAutoCal(int position)
         {
             Button BaselineAutoCalRatioButton = JazzButton.NewJazz_GetOneButton(JazzControlLocatorKey.NewReactJSJazzBaselineAutoCalRadioButton, position);
@@ -547,54 +660,15 @@ namespace Mento.ScriptCommon.Library.Functions
             TimeManager.Pause(3000);
         }
 
+        //点击“重新计算”linkbutton
         public void NewJazz_BaselineClickReCal(int position)
         {
             Button BaselineAutoReCalLinkButton = JazzButton.NewJazz_GetOneButton(JazzControlLocatorKey.NewReactJSJazzBaselineAutoReCalLinkButton, position);
             BaselineAutoReCalLinkButton.Click();
             TimeManager.Pause(5000);
         }
-            
 
-        public void NewJazz_SelectBaselineYearMenuItem(string itemName)
-        {
-            NewJazzBaselineSelectYearButton.NewJazzSelectBaselineYearItem(itemName);
-            TimeManager.ShortPause();
-        }
-
-        public void NewJazz_ClickBaselineEditButton()
-        {
-            NewJazzBaselineEditButton.Click();
-            TimeManager.LongPause();
-        }
-
-        public bool NewJazz_IsConfigEditButtonDisabled()
-        {
-            return NewJazzBaselineEditButton.NewJazz_IsDisabled();
-        }
-
-        public void NewJazz_ClickBaselineSaveButton()
-        {
-            NewJazzBaselineSaveButton.Click();
-            TimeManager.LongPause();
-        }
-
-        public bool NewJazz_IsConfigSaveButtonDisabled()
-        {
-            return NewJazzBaselineSaveButton.NewJazz_IsDisabled();
-        }
-
-        public void NewJazz_ClickBaselineCancelButton()
-        {
-            NewJazzBaselineCancelButton.Click();
-            TimeManager.LongPause();
-        }
-
-        public void NewJazz_ClickBaselineAddTimeSettingButton()
-        {
-            NewJazzBaselineAddTimeSettingButton.Click();
-            TimeManager.LongPause();
-        }
-
+        //自动计算表格导入到excel文件中
         public void NewJazz_ExportBaselineDataTableToExcel(string fileName, int position)
         {
             if (ExecutionConfig.isCreateExpectedDataViewExcelFile)
@@ -609,6 +683,16 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        //自动计算表格中，修改数值
+        public void newJazz_SetBaselineAutoCalValue(int row, int column, string value, int position)
+        {
+            Grid baselineGrid = JazzGrid.NewJazz_GetOneGrid(JazzControlLocatorKey.NewReactJSjazzBaselineAutoCalGrid, position);
+
+            baselineGrid.NewJazz_ReviseBaselineAutoCalValue(row, column, value);
+        }
+
+
+        //比较自动计算数值
         public bool NewJazz_CompareAutoConfigBaseline(string expectedFileName, string failedFileName, int position)
         {
             if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
@@ -628,15 +712,51 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        public void NewJazz_ReviseAutoCalValue(int row, int column, string value, int position)
+        //点击编辑按钮
+        public void NewJazz_ClickBaselineEditButton()
         {
-            Grid baselineGrid = JazzGrid.NewJazz_GetOneGrid(JazzControlLocatorKey.NewReactJSjazzBaselineAutoCalGrid, position);
-
-            baselineGrid.NewJazz_ReviseBaselineAutoCalValue(row, column, value);
+            NewJazzBaselineEditButton.Click();
+            TimeManager.LongPause();
         }
+
+        //判断编辑按钮是否不可用
+        public bool NewJazz_IsConfigEditButtonDisabled()
+        {
+            return NewJazzBaselineEditButton.NewJazz_IsDisabled();
+        }
+
+        //点击保存按钮
+        public void NewJazz_ClickBaselineSaveButton()
+        {
+            NewJazzBaselineSaveButton.Click();
+            TimeManager.LongPause();
+        }
+
+        //判断保存按钮是否不可用
+        public bool NewJazz_IsConfigSaveButtonDisabled()
+        {
+            return NewJazzBaselineSaveButton.NewJazz_IsDisabled();
+        }
+
+        //点击取消按钮
+        public void NewJazz_ClickBaselineCancelButton()
+        {
+            NewJazzBaselineCancelButton.Click();
+            TimeManager.LongPause();
+        }
+                
+        
+        //关闭基准值配置弹出窗口
+        public void NewJazz_CloseBaselineConfigTab()
+        {
+            JazzButton.NewReactJSjazzBaselineCloseButton.Click();
+            TimeManager.MediumPause();
+        }
+
 
         #region Error Message
 
+        //时间段冲突提示消息
         public string NewJazz_GetTimeOverlapMessage()
         {
             return NewJazz_BaselineTimeOverlap.GetLabelTextValue(); 
@@ -648,11 +768,46 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region Baseline Revise
 
+        //点击计算值修正值tab页
         public void NewJazz_BaselineClickCalReviseTab()
         {
             NewJazz_BaselineCalReviseButton.Click();
         }
 
+        //点击保存按钮
+        public void NewJazz_RevisionClickBaselineSaveButton()
+        {
+            NewJazz_BaselineCalReviseSaveButton.Click();
+            TimeManager.LongPause();
+        }
+
+        //判断保存按钮是否不可用
+        public bool NewJazz_RevisionIsConfigSaveButtonDisabled()
+        {
+            return NewJazz_BaselineCalReviseSaveButton.NewJazz_IsDisabled();
+        }
+
+        //点击放弃按钮
+        public void NewJazz_RevisionClickBaselineCancelButton()
+        {
+            NewJazz_BaselineCalReviseCancelButton.Click();
+            TimeManager.LongPause();
+        }
+
+        //点击编辑按钮
+        public void NewJazz_RevisionClickBaselineEditButton()
+        {
+            NewJazz_BaselineCalReviseEditButton.Click();
+            TimeManager.LongPause();
+        }
+
+        //判断编辑按钮是否不可用
+        public bool NewJazz_RevisionIsConfigEditButtonDisabled()
+        {
+            return NewJazz_BaselineCalReviseEditButton.NewJazz_IsDisabled();
+        }
+
+        //获得年 和 每月的计算值
         public string NewJazz_GetMonthValue(int month)
         {
             switch (month)
@@ -688,6 +843,7 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
+        //修改年 和 每月的计算值
         public void NewJazz_SetMonthValue(int month, string value)
         {
             switch (month)
@@ -737,21 +893,37 @@ namespace Mento.ScriptCommon.Library.Functions
             }
         }
 
-        public bool NewJazz_CompareReviseValue(string[] actualReviseValue)
+        //比较年 和每月的计算值
+        public bool NewJazz_CompareReviseValue(string[] actualReviseValue, string fileName)
         {
             bool isEqual = true;
             string sourceValue;
             string actulValue;
+            string resultValue = "\"" + actualReviseValue[0].Trim() + "\"";
+
+            for (int j = 1; j < 13; j++)
+            {
+                resultValue = resultValue  + "," + "\"" + actualReviseValue[j].Trim() + "\"";
+            }
+
+            resultValue = resultValue + "\r\n";
+
+            resultValue = resultValue + "    " + "期望结果" + "\t" + "\t" + "实际结果" + "\r\n";
 
             for (int i = 0; i < 13; i++)
             { 
                 sourceValue = actualReviseValue[i].Trim();
                 actulValue = NewJazz_GetMonthValue(i).Trim();
 
+                resultValue =  resultValue + i.ToString() + ".  " + sourceValue + "\t" + "\t" + actulValue + "\r\n";
+
                 if (!String.Equals(sourceValue, actulValue))
                     isEqual = false;
             }
-                return isEqual;
+
+            NewJazz_ExportToTXTFile(fileName, resultValue);
+
+            return isEqual;
         }
 
         #endregion
@@ -762,7 +934,8 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region TXT File Operation
 
-        public void OpenTXTFile(string fileName, string failedData)
+        //将出错的导入到txt文件中
+        private void NewJazz_ExportToTXTFile(string fileName, string failedData)
         {
             string filePath = Path.Combine(ExecutionConfig.failedDataViewExcelFileDirectory, BSPath);
 
@@ -771,7 +944,7 @@ namespace Mento.ScriptCommon.Library.Functions
             if (!File.Exists(actualFileName))
             {
 
-                FileStream fs1 = new FileStream("F:\\TestTxt.txt", FileMode.Create, FileAccess.Write);//创建写入文件 
+                FileStream fs1 = new FileStream(actualFileName, FileMode.Create, FileAccess.Write);//创建写入文件 
                 StreamWriter sw = new StreamWriter(fs1);
                 sw.WriteLine(failedData);//开始写入值
 
@@ -781,7 +954,7 @@ namespace Mento.ScriptCommon.Library.Functions
             }
             else
             {
-                FileStream fs = new FileStream("actualFileName", FileMode.Open, FileAccess.Write);
+                FileStream fs = new FileStream(actualFileName, FileMode.Open, FileAccess.Write);
                 StreamWriter sr = new StreamWriter(fs);
                 sr.WriteLine(failedData);//开始写入值
                 sr.Close();

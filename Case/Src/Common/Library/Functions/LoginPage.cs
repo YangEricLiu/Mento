@@ -17,7 +17,10 @@ namespace Mento.ScriptCommon.Library.Functions
         internal LoginPage()
         {
         }
-        private static int WAITVERYLONGTIME = 2000;
+
+        #region Old Jazz
+
+        private static int WAITVERYLONGTIME = 10000;
         private static Locator HomePageNavigationLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.ButtonNavigatorHomePage);
         private static Locator OptionWindowLocator = JazzControlLocatorRepository.GetLocator(JazzControlLocatorKey.WindowLoginOption);
         private static ComboBox LoginCustomerOption = JazzComboBox.LoginCustomerOptionComboBox;
@@ -160,11 +163,10 @@ namespace Mento.ScriptCommon.Library.Functions
         public void LoginWithOption(string userName, string passWord, string customerName)
         {
             JazzTextField.LoginUserNameTextField.Fill(userName);
-            //JazzTextField.LoginUserNameTextField.Fill(userName + "_2");
             JazzTextField.LoginPasswordTextField.Fill(passWord);
 
             JazzButton.LoginSubmitButton.Click();
-            //TimeManager.Pause(WAITVERYLONGTIME);
+            TimeManager.Pause(WAITVERYLONGTIME);
 
             if (String.IsNullOrEmpty(customerName))
             {
@@ -304,5 +306,23 @@ namespace Mento.ScriptCommon.Library.Functions
                 }
             }
         }
+
+        #endregion
+
+        #region New Jazz
+
+        private static Button SwitchLanguageLoginPageButton = JazzButton.SwitchLanguageLoginPageButton;
+
+        public void SwitchLanguageOnLoginPage()
+        {
+            if (SwitchLanguageLoginPageButton.NewJazz_GetButtonText().Contains("中文版"))
+            { 
+                SwitchLanguageLoginPageButton.Click();
+                TimeManager.LongPause();
+                TimeManager.LongPause();
+            }
+        }          
+
+        #endregion
     }
 }

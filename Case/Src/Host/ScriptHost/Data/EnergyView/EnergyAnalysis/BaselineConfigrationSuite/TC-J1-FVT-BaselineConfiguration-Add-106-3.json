@@ -2,17 +2,25 @@
 	{
 		"InputData":
 		{
+			"Customer":"NancyCostCustomer2",
 			"WidgetPath":["仪表盘", "基准值配置测试", "不配置基准值"],
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
 			"TagNames":["BuildingB_P3_Coal"],
+			"ManualTimeRange":[{
+				"StartDate":"2015-4-1",
+				"EndDate":"2015-4-1",	
+			}],
 			"BaselineTimeRange":[{
 				"StartDate":"2015-4-1",
 				"EndDate":"2015-4-1",	
 			}],
-			"ReviseValue":["1440","","","","1440","","","","","","","",""],
+			"ReviseValue":[["1440","","","","1440","","","","","","","",""],["10000","1440","","","","","","","","","","",""]],
+			"failedFileName":["TC-J1-FVT-BaselineConfiguration-Add-106-3-1.xls"],
+			"FailedBaselineReviseValueTxt":["TC-J1-FVT-BaselineConfiguration-Add-106-3-1.txt", "TC-J1-FVT-BaselineConfiguration-Add-106-3-2.txt"],
 		},
 		"ExpectedData":
 		{
+			"expectedFileName":["TC-J1-FVT-BaselineConfiguration-Add-106-3-1.xls"],
 		}
 	}
 ]

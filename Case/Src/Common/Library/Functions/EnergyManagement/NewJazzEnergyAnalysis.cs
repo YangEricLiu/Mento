@@ -106,14 +106,14 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region data operation
 
-        public bool NewJazz_CompareExcelFilesOfEnergyAnalysis(string expectedFileName, string actualFileName, string failedFileName)
+        public bool NewJazz_CompareExcelFilesOfEnergyAnalysis(string compareFileName, string failedFileName)
         {
             bool isCompareEqual = true;
 
             if (ExecutionConfig.isCompareExpectedDataViewExcelFile)
             {
-                string extFilePath = Path.Combine(extEAPath, expectedFileName);
-                string actFilePath = Path.Combine(actEAPath, actualFileName);
+                string extFilePath = Path.Combine(extEAPath, compareFileName);
+                string actFilePath = Path.Combine(actEAPath, compareFileName);
                 DataTable compDt = new DataTable();
 
                 isCompareEqual =ExcelHelper.NewJazz_CompareExcelFilesToDataTable(extFilePath, actFilePath, compSheetName, out compDt);

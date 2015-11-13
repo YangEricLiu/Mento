@@ -11,7 +11,9 @@ namespace Mento.ScriptCommon.TestData.EnergyView
     }
 
     public class EnergyAnalysisDataInput : InputTestDataBase
-    { 
+    {
+        public string Customer { get; set; }
+
         public string[] Hierarchies { get; set; }
 
         public string[] WidgetPath { get; set; }
@@ -28,9 +30,9 @@ namespace Mento.ScriptCommon.TestData.EnergyView
 
         public ManualTimeRange[] BaselineTimeRange { get; set; }
 
-        public string[] HierarchyTexts { get; set; }
+        public string[][] ReviseValue { get; set; }
 
-        public string[] ReviseValue { get; set; }
+        public string[] FailedBaselineReviseValueTxt { get; set; }
     }
 
     public class EnergyAnalysisDataOutput : ExpectedTestDataBase

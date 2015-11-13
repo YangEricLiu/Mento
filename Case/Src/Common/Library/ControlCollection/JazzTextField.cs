@@ -239,6 +239,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         #region New Jazz
 
+        #region Get Position TextField 
+        
+        public static TextField NewJazz_GetOneTextField(string key, int positionIndex, int positionIndexTwo)
+        {
+            return GetControl<TextField>(key, positionIndex, positionIndexTwo);
+        }
+
+        #endregion
+
         public static TextField NewReactJSJazzBaselineAnnualCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineAnnualCalculationValue); } }
         public static TextField NewReactJSJazzBaselineJanuaryCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineJanuaryCalculationValue); } }
         public static TextField NewReactJSJazzBaselineFebruaryCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineFebruaryCalculationValue); } }
@@ -252,7 +261,6 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static TextField NewReactJSJazzBaselineOctoberCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineOctoberCalculationValue); } }
         public static TextField NewReactJSJazzBaselineNovemberCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineNovemberCalculationValue); } }
         public static TextField NewReactJSJazzBaselineDecemberCalculationValue { get { return GetControl<TextField>(JazzControlLocatorKey.NewReactJSJazzBaselineDecemberCalculationValue); } }
-
 
         #endregion
     }

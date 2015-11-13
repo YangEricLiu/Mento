@@ -483,6 +483,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
             int numberYear = Convert.ToInt32(date.Year.ToString());
             int numberMonth = Convert.ToInt32(date.Month.ToString());
+
             int clickPrevTime = 0;
             int clickNextTime = 0;
 
@@ -515,6 +516,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             for (int i = 0; i < clickTime; i++)
             {
                 NewJazz_ClickDatePickerPreviousMonthButton();
+                TimeManager.ShortPause();
             }
         }
 
@@ -523,6 +525,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
             for (int i = 0; i < clickTime; i++)
             {
                 NewJazz_ClickDatePickerNextMonthButton();
+                TimeManager.ShortPause();
             }
         }
 
@@ -532,6 +535,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
             {
                 NewJazz_DisplayDatePickerItems();
                 TimeManager.ShortPause();
+
+                string scriptString = "arguments[0].scrollIntoView();";
+                BrowserHandler.ExecuteJavaScript(scriptString, this.RootElement);
 
                 NewJazz_NavigateToMonth(date);
                 TimeManager.LongPause();
@@ -550,6 +556,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 NewJazz_DisplayDatePickerItems();
                 TimeManager.ShortPause();
 
+                string scriptString = "arguments[0].scrollIntoView();";
+                BrowserHandler.ExecuteJavaScript(scriptString, this.RootElement);
+
                 NewJazz_NavigateToMonth(dateTime);
                 TimeManager.LongPause();
 
@@ -565,6 +574,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 NewJazz_DisplayDatePickerItems();
                 TimeManager.MediumPause();
 
+                string scriptString = "arguments[0].scrollIntoView();";
+                BrowserHandler.ExecuteJavaScript(scriptString, this.RootElement);
+
                 NewJazz_SelectTime(time);
                 TimeManager.MediumPause();
 
@@ -572,6 +584,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
                 TimeManager.LongPause();
 
                 var locator = NewJazz_GetDatePickerDayLocator(date.Day.ToString());
+
                 FindChild(locator).Click();
             }
         }
@@ -584,6 +597,9 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
                 NewJazz_DisplayDatePickerItems();
                 TimeManager.MediumPause();
+
+                string scriptString = "arguments[0].scrollIntoView();";
+                BrowserHandler.ExecuteJavaScript(scriptString, this.RootElement);
 
                 NewJazz_SelectTime(time);
                 TimeManager.MediumPause();

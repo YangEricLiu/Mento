@@ -12,6 +12,7 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
     {
         private const string CONTROL_LOCATOR_MAP_RESOURCE_NAME = "ControlCollection.Resource.JazzControlLocatorMap.xml";
         private const string JAZZCONTROLPOSITIONINDEX = "positionIndex";
+        private const string JAZZCONTROLPOSITIONINDEXTWO = "PositionIndexTwo";
         private const string JAZZCONTROLNAMEINDEX = "nameIndex";
 
         private static Dictionary<string, Locator> _LocatorDictionary;
@@ -41,6 +42,15 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             var variableLocator = GetLocator(key);
 
             Hashtable variables = new Hashtable() { { JAZZCONTROLPOSITIONINDEX, positionIndex } };
+
+            return Locator.GetVariableLocator(variableLocator, variables);
+        }
+
+        public static Locator GetLocator(string key, int positionIndex, int positionIndexTwo)
+        {
+            var variableLocator = GetLocator(key);
+
+            Hashtable variables = new Hashtable() { { JAZZCONTROLPOSITIONINDEX, positionIndex }, { JAZZCONTROLPOSITIONINDEXTWO, positionIndexTwo } };
 
             return Locator.GetVariableLocator(variableLocator, variables);
         }

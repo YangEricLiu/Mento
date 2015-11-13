@@ -171,7 +171,7 @@
   <add key="NewReactJSjazzInnerMonthPickerYear" value = "//div[@class='mui-date-picker-calendar-toolbar']/div/div/div/span[3]" type ="XPath"/>
   <add key="NewReactJSjazzDatePickerPreviousMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[2]/button" type ="XPath"/>
   <add key="NewReactJSjazzDatePickerNextMonth" value = "//div[@class='mui-date-picker-calendar-toolbar']/div[3]/button" type ="XPath"/>
-  <add key="NewReactJSjazzDatePickerDayItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[2]/div[2]/div/div//button/span[text()='$#itemKey']" type ="XPath"/>
+  <add key="NewReactJSjazzDatePickerDayItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[2]/div[2]/div/div/div/button[span[text()='$#itemKey']]" type ="XPath"/>
   <add key="NewReactJSjazzDatePickerTimeItem" value = "div[@class='jazz-viewableDatePicker jazz-viewableTextField']/div[2]/div/div[2]/div/div/div/button/span[text()='$#itemKey']" type ="XPath"/>
 
   <!--New Jazz TreeView-->

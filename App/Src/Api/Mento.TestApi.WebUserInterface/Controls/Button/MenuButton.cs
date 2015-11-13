@@ -232,6 +232,7 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private static string NewJazzPredefinedTimeMenuItemLocatorFormat = "div[2]/div/span[text()='{0}']";
         private static string NewJazzAssistMenuItemLocatorFormat = "div/span/div/div/div/div/a/div/div/div[text()='{0}']";
         private static string NewJazzBaselineYeatrMenuItemLocatorFormat = "div[2]/div/span[text()='{0}']";
+        private static string NewJazzBaselineTimeLocatorFormat = "div[2]/div/span[text()='{0}']";
 
 
         public void NewJazzSelectPredefinedTimeItem(string itemName)
@@ -261,10 +262,25 @@ namespace Mento.TestApi.WebUserInterface.Controls
             this.Click();
             TimeManager.ShortPause();
 
-            Locator itemLocator = NewJazzGetBaselineYearMenuItemLocator(itemName);
+            Locator itemLocator = NewJazzGetBaselineTimeMenuItemLocator(itemName);
             ElementHandler.Click(FindChild(itemLocator));
 
             TimeManager.ShortPause();
+        }
+
+        public void NewJazzSelectBaselineTimeItem(string itemName)
+        {
+            if (!String.IsNullOrEmpty(itemName))
+            { 
+                this.Click();
+
+                TimeManager.ShortPause();
+
+                Locator itemLocator = NewJazzGetPredefinedTimeMenuItemLocator(itemName);
+                ElementHandler.Click(FindChild(itemLocator));
+
+                TimeManager.ShortPause();
+            }
         }
 
         private Locator NewJazzGetPredefinedTimeMenuItemLocator(string itemResourceVariable)
@@ -275,6 +291,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         private Locator NewJazzGetAssistMenuItemLocator(string itemResourceVariable)
         {
             return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(NewJazzAssistMenuItemLocatorFormat, itemResourceVariable)), ByType.XPath);
+        }
+
+        private Locator NewJazzGetBaselineTimeMenuItemLocator(string itemResourceVariable)
+        {
+            return new Locator(LanguageResourceRepository.ReplaceLanguageVariables(String.Format(NewJazzBaselineTimeLocatorFormat, itemResourceVariable)), ByType.XPath);
         }
 
         private Locator NewJazzGetBaselineYearMenuItemLocator(string itemResourceVariable)

@@ -1637,10 +1637,25 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
         public static string NewReactJSJazzBaselineAddTimeSettingButton = "NewReactJSJazzBaselineAddTimeSettingButton";
         public static string NewReactJSjazzBaselineAutoCalGrid = "NewReactJSjazzBaselineAutoCalGrid";
         public static string NewReactJSJazzBaselineTimeOverlap = "NewReactJSJazzBaselineTimeOverlap";
+        public static string NewReactJSjazzBaselineDeleteTimeSpanButton = "NewReactJSjazzBaselineDeleteTimeSpanButton";
 
-       
+        public static string NewReactJSjazzBaselineWorkdaySelectMenuItem = "NewReactJSjazzBaselineWorkdaySelectMenuItem";
+        public static string NewReactJSjazzBaselineNonWorkdaySelectMenuItem = "NewReactJSjazzBaselineNonWorkdaySelectMenuItem";
+        public static string NewReactJSjazzBaselineWorkdayInputBox = "NewReactJSjazzBaselineWorkdayInputBox";
+        public static string NewReactJSjazzBaselineNonWorkdayInputBox = "NewReactJSjazzBaselineNonWorkdayInputBox";
+
+        public static string NewReactJSjazzBaselineExtraDateAddButton = "NewReactJSjazzBaselineExtraDateAddButton";
+        public static string NewReactJSjazzBaselineExtraStartDatePicker = "NewReactJSjazzBaselineExtraStartDatePicker";
+        public static string NewReactJSjazzBaselineExtraEndDatePicker = "NewReactJSjazzBaselineExtraEndDatePicker";
+        public static string NewReactJSjazzBaselineExtraStartTimeMenu = "NewReactJSjazzBaselineExtraStartTimeMenu";
+        public static string NewReactJSjazzBaselineExtraEndTimeMenu = "NewReactJSjazzBaselineExtraEndTimeMenu";
+        public static string NewReactJSjazzBaselineExtraInputBox = "NewReactJSjazzBaselineExtraInputBox";
+        public static string NewReactJSjazzBaselineExtraDateDeleteButton = "NewReactJSjazzBaselineExtraDateDeleteButton";
+      
         public static string NewReactJSjazzBaselineCalValueReviseButton = "NewReactJSjazzBaselineCalValueReviseButton";
         public static string NewReactJSJazzBaselineCalReviseEditButton = "NewReactJSJazzBaselineCalReviseEditButton";
+        public static string NewReactJSJazzBaselineCalReviseSaveButton = "NewReactJSJazzBaselineCalReviseSaveButton";
+        public static string NewReactJSJazzBaselineCalReviseCancelButton = "NewReactJSJazzBaselineCalReviseCancelButton";
         public static string NewReactJSJazzBaselineAnnualCalculationValue = "NewReactJSJazzBaselineAnnualCalculationValue";
         public static string NewReactJSJazzBaselineJanuaryCalculationValue = "NewReactJSJazzBaselineJanuaryCalculationValue";
         public static string NewReactJSJazzBaselineFebruaryCalculationValue = "NewReactJSJazzBaselineFebruaryCalculationValue";
@@ -1657,6 +1672,8 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
 
         public static string NewReactJSjazzBaselineAlarmConfigButton = "NewReactJSjazzBaselineAlarmConfigButton";
+
+        public static string NewReactJSjazzBaselineCloseButton = "NewReactJSjazzBaselineCloseButton";
         #endregion
 
         #endregion
@@ -1671,6 +1688,12 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
 
         public static string NewJazzHierarchyTreeEnergyView = "NewJazzHierarchyTreeEnergyView";
         public static string NewJazzFolderTree = "NewJazzFolderTree";
+
+        #endregion
+
+        #region New Jazz Login Page
+
+        public static string SwitchLanguageLoginPageButton = "SwitchLanguageLoginPageButton";
 
         #endregion
 

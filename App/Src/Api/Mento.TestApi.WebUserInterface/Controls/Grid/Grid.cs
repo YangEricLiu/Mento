@@ -1870,11 +1870,13 @@ namespace Mento.TestApi.WebUserInterface.Controls
             if (column == 1)
             {
                 IWebElement valueCell1 = ElementHandler.FindElement(valueCellLocator1, container: NewJazz_CurrentRows[row]);
+                valueCell1.Click();
                 valueCell1.SendKeys(value);
             }
             else if (column == 2)
             {
                 IWebElement valueCell2 = ElementHandler.FindElement(valueCellLocator2, container: NewJazz_CurrentRows[row]);
+                valueCell2.Click();
                 valueCell2.SendKeys(value);
             }
         }

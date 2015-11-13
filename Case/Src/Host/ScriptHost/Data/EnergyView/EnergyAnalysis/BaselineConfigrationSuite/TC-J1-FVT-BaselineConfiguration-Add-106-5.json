@@ -1,0 +1,24 @@
+﻿[
+	{
+		"InputData":
+		{
+			"Customer":"NancyCostCustomer2",
+			"WidgetPath":["仪表盘", "基准值配置测试", "修改基准值计算值"],
+			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
+			"TagNames":["BBV1A1"],
+			"ManualTimeRange":[{
+				"StartDate":"2015-4-3",
+				"StartTime":"03:00",
+				"EndDate":"2015-4-3",										
+				"EndTime":"23:00",	
+			}],
+			"ReviseValue":[["1440","","","","1440","","","","","","","",""]],
+			"failedFileName":["TC-J1-FVT-BaselineConfiguration-Add-106-5-1.xls"],
+			"FailedBaselineReviseValueTxt":["TC-J1-FVT-BaselineConfiguration-Add-106-5-1.txt"],
+		},
+		"ExpectedData":
+		{
+			"expectedFileName":["TC-J1-FVT-BaselineConfiguration-Add-106-5-1.xls"],
+		}
+	}
+]

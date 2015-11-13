@@ -72,6 +72,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             return GetControl<DatePicker>(key, positionIndex);
         }
 
+        public static DatePicker NewJazz_GetOneDatePicker(string key, int positionIndex, int positionIndexTwo)
+        {
+            return GetControl<DatePicker>(key, positionIndex, positionIndexTwo);
+        }
+
         #endregion
 
         #region  New Jazz Energy View

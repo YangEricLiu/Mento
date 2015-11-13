@@ -20,6 +20,11 @@ namespace Mento.TestApi.WebUserInterface.ControlCollection
             return String.IsNullOrEmpty(key) ? JazzControl.GetControl<T>() : JazzControl.GetControl<T>(locator: JazzControlLocatorRepository.GetLocator(key, positionIndex));
         }
 
+        protected static T GetControl<T>(string key, int positionIndex, int positionIndexTwo) where T : JazzControl
+        {
+            return String.IsNullOrEmpty(key) ? JazzControl.GetControl<T>() : JazzControl.GetControl<T>(locator: JazzControlLocatorRepository.GetLocator(key, positionIndex, positionIndexTwo));
+        }
+
         protected static T GetControl<T>(string key, string nameIndex) where T : JazzControl
         {
             return String.IsNullOrEmpty(key) ? JazzControl.GetControl<T>() : JazzControl.GetControl<T>(locator: JazzControlLocatorRepository.GetLocator(key, nameIndex));

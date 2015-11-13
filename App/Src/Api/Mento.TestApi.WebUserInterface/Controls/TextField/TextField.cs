@@ -11,6 +11,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
     /// </summary>
     public class TextField : JazzControl
     {
+        #region Old Jazz       
+
         public TextField(Locator locator) : base(locator) { }
         private Locator InvalidTips = new Locator("../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
         private Locator InvalidTipsForNumberField = new Locator("../../../../../../../../tbody/tr/td[contains(@class,'x-form-invalid-under')]", ByType.XPath);
@@ -138,5 +140,19 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         #endregion
 
+        #endregion
+
+        #region New Jazz
+
+        public void NewJazz_Append(string content)
+        {
+            if (content != null)
+            {
+                this.RootElement.Click();
+                this.RootElement.SendKeys(content);
+            }
+        }
+
+        #endregion
     }
 }

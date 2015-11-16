@@ -36,8 +36,8 @@ namespace Mento.Script.OpenAPI
 
         private static string appKey = "2spry01f9atshr08nljq21it";
         private static string secret = "ThDhX8hX0MccCNEGgUHI89KK7gFg=";
-        private static string pathTestCase = @"E:\OpenAPITest\OpenApi Test Cases_2.2.xlsx";
-        private static string pathCaseResult = @"E:\OpenAPITest\OpenApi Test Cases_2.2_Result.xlsx";
+        private static string pathTestCase = "OpenApi Test Cases_2.2.xlsx";
+        private static string pathCaseResult = "OpenApi Test Cases_2.2_Result.xlsx";
 
 
         //[Test]

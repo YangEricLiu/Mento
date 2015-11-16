@@ -1302,7 +1302,8 @@ namespace Mento.Utility
         public static OpenAPICases[] ImportToOpenAPICases(string filePath, string sheetName)
         {
             //Open excel file which restore data view expected data
-            ExcelHelper handler = new ExcelHelper(filePath);
+            string actFilePath = Path.Combine("E:\\OpenAPITest", filePath);
+            ExcelHelper handler = new ExcelHelper(actFilePath);
 
             var oac = new List<OpenAPICases>();
             OpenAPICases tmpoac = new OpenAPICases();
@@ -1365,17 +1366,30 @@ namespace Mento.Utility
 
         public static void ImportOpenAPICasesToExcel(OpenAPICases[] datas,string sourceFileName, string resultFileName, string sheetName)
         {
-            //Copy to a new file when the file do not exist.
-            FileInfo sourceExcelFile = new FileInfo(sourceFileName);
-            FileInfo resultExcelFile = new FileInfo(resultFileName);
+            //Copy to a new file when the file do not exist.  
+            DateTime today = new DateTime();
+            today = DateTime.Now.ToLocalTime();
+            string dashPath = today.ToString("yyyyMMddHH");
+            
+            string tmpPath= Path.Combine("E:\\OpenAPITest", dashPath);
+
+            string actSourceExcelFileName = Path.Combine("E:\\OpenAPITest", sourceFileName);
+            string actResultFileName = Path.Combine(tmpPath, resultFileName);
+
+            FileInfo sourceExcelFile = new FileInfo(actSourceExcelFileName);
+            FileInfo resultExcelFile = new FileInfo(actResultFileName);
+            
+            
+            string filePath = Path.Combine(tmpPath, sheetName);           
+            int failedRowIndex = 2;
 
             if (!resultExcelFile.Directory.Exists)
                 resultExcelFile.Directory.Create();
             if (!resultExcelFile.Exists)
-                sourceExcelFile.CopyTo(resultFileName);
+                sourceExcelFile.CopyTo(actResultFileName);
 
             //Open excel file which restore scripts data
-            ExcelHelper handler = new ExcelHelper(resultFileName);
+            ExcelHelper handler = new ExcelHelper(actResultFileName);
 
             handler.OpenOrCreate();
 
@@ -1384,7 +1398,25 @@ namespace Mento.Utility
 
             for (int i = 0; i < datas.Count(); i++)
             {
-                ImportOpenAPICaseToExcel(datas[i], mySheet, i + 2); 
+                ImportOpenAPICaseToExcel(datas[i], mySheet, i + 2);
+
+                if (datas[i].result.Contains("Fail:"))
+                {
+                    failedRowIndex = i + 2;               
+
+                    string extFilePath = Path.Combine(filePath, failedRowIndex.ToString());
+
+                    string requestFileName = Path.Combine(extFilePath, "RequestBody.txt");
+                    string expFileName = Path.Combine(extFilePath, "ExpectResponseBody.txt");
+                    string actFileName = Path.Combine(extFilePath, "ActualResponseBody.txt");
+
+                    //将所有的出错case信息放到txt文件里面，方便比较
+                    ImportFailedCaseToTXTFiles(requestFileName, datas[i].formatRequestBody);
+                    Excel.Range temp = (Excel.Range)mySheet.Cells[failedRowIndex, 17];
+                    string strValue = temp.Value.ToString();
+                    ImportFailedCaseToTXTFiles(expFileName, strValue);
+                    ImportFailedCaseToTXTFiles(actFileName, datas[i].formatActualResponseBody);
+                }
             }
 
             handler.Save();
@@ -1412,6 +1444,33 @@ namespace Mento.Utility
                 sheet.Cells[rowIndex, columnIndex + 7].Interior.ColorIndex = 3;
 
             sheet.Cells[rowIndex, columnIndex + 8] = data.resultReport;
+        }
+
+        public static void ImportFailedCaseToTXTFiles(string actualFileName, string data)
+        {
+            FileInfo actualFile = new FileInfo(actualFileName);
+            if (!actualFile.Directory.Exists)
+                actualFile.Directory.Create();
+
+            if (!File.Exists(actualFileName))
+            {
+
+                FileStream fs1 = new FileStream(actualFileName, FileMode.Create, FileAccess.Write);//创建写入文件 
+                StreamWriter sw = new StreamWriter(fs1);
+                sw.WriteLine(data);//开始写入值
+
+                sw.Close();
+                fs1.Close();
+
+            }
+            else
+            {
+                FileStream fs = new FileStream(actualFileName, FileMode.Open, FileAccess.Write);
+                StreamWriter sr = new StreamWriter(fs);
+                sr.WriteLine(data);//开始写入值
+                sr.Close();
+                fs.Close();
+            }
         }
 
         #endregion

@@ -24,60 +24,57 @@ namespace Mento.Script.EnergyView.EADataVerify
     [ManualCaseID("TC-J1-FVT-EADataVerify-101"), CreateTime("2015-10-13"), Owner("Emma")]
     public class NancyCustomer1Suite : TestSuiteBase
     {
+        public string mainWindowHandle = TestAssemblyInitializer.mainWindowHandle;
+
         [TestFixtureSetUp]
         public void FixtureCaseSetUp()
         {
             JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
-            TimeManager.Pause(10000);
+            TimeManager.Pause(20000);
 
             JazzBrowseManager.SwitchToWidnow("能源");
             TimeManager.Pause(10000);
-            TimeManager.MediumPause();
         }
 
         [SetUp]
         public void CaseSetUp()
         {
-            //EnergyAnalysis.NavigateToEnergyAnalysis();
             TimeManager.MediumPause();
         }
 
         [TearDown]
         public void CaseTearDown()
         {
-            //JazzFunction.LoginPage.RefreshJazz("NancyCustomer1");
             TimeManager.LongPause();
         }
 
         private static NewJazzEnergyAnalysis EnergyAnalysis = JazzFunction.NewJazzEnergyAnalysis;
         private static EnergyViewToolbar EnergyViewToolbar = JazzFunction.EnergyViewToolbar;
+        private static FolderWidgetPanel FolderWidget = JazzFunction.FolderWidgetPanel;
+        private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
         [Category("P1_Emma")]
         [CaseID("TC-J1-FVT-EADataVerify-101-1")]
-        [MultipleTestDataSource(typeof(EnergyViewOptionData[]), typeof(NancyCustomer1Suite), "TC-J1-FVT-EADataVerify-101-1")]
-        public void DataVerifyP1V1V2V3(EnergyViewOptionData input)
+        [MultipleTestDataSource(typeof(EnergyAnalysisData[]), typeof(NancyCustomer1Suite), "TC-J1-FVT-EADataVerify-101-1")]
+        public void DataVerify(EnergyAnalysisData input)
         {
             //选择图表
-            JazzButton.GetOneButton(JazzControlLocatorKey.DashboardFolderWidgetNameButton, "P1V1V2V3_月").Click();
+            FolderWidget.NewJazz_SelectFolderOrWidget(input.InputData.WidgetPath);
             TimeManager.Pause(10000);
 
-            //Set date range
-            EnergyViewToolbar.NewJazz_SetDateRange(new DateTime(2013, 1, 1), new DateTime(2013, 1, 31));
-            TimeManager.ShortPause();
-
+            string compareFileName = input.InputData.WidgetPath[input.InputData.WidgetPath.Length - 1];
 
             //打开下拉框
             JazzButton.FolderOrWidgetDropDownButton.Click();
             TimeManager.MediumPause();                                           
 
+            //导出数据文件
             JazzButton.ExportFromDropDownButton.Click();
-            TimeManager.Pause(15000);
-            TimeManager.LongPause();
+            TimeManager.Pause(5000);
 
-            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("P1V1V2V3_月.xls", "F_P1V1V2V3_月.xls");
-            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("P1V1V2V3_周.xls", "F_P1V1V2V3_周.xls");
-            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis("能耗分析.xls", "F_能耗分析.xls");
+            //当比较标识为真的时候，比较两个Excel文件
+            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis(compareFileName + ".xls", ("F-" + compareFileName + ".xls"));
         }
     }
 }

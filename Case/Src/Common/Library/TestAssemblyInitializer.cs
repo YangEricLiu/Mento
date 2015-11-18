@@ -17,10 +17,12 @@ namespace Mento.ScriptCommon.Library
 {
     public static class TestAssemblyInitializer
     {
+
+        #region Old Jazz
+
         private static int WAITLONGTIME = 30000;
         public static List<DashboardInformation> CaseDownDashboardInfos = new List<DashboardInformation>();
         public static string mainWindowHandle = JazzBrowseManager.GetMainWindowHandle();
-
 
         public static void Initialize()
         {
@@ -76,5 +78,27 @@ namespace Mento.ScriptCommon.Library
             bool.TryParse(ConfigurationManager.AppSettings[ConfigurationKey.ASSEMBLY_INITIALIZE_DATABASE], out isInitializeDatabase);
             return isInitializeDatabase;
         }
+
+        #endregion
+
+        #region New Jazz
+
+        public static void NewJazz_DeleteActualExcelFiles()
+        {
+            string dir = ExecutionConfig.actualDataViewExcelFileDirectory;
+
+            foreach (string d in Directory.GetFileSystemEntries(dir))
+            {
+                if (File.Exists(d))
+                {
+                    FileInfo fi = new FileInfo(d);
+                    if (fi.Attributes.ToString().IndexOf("ReadOnly") != -1)
+                        fi.Attributes = FileAttributes.Normal;
+                    File.Delete(d);//直接删除其中的文件  
+                }
+            }
+        }
+
+        #endregion
     }
 }

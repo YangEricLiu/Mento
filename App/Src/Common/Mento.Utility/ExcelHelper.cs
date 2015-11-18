@@ -1517,6 +1517,9 @@ namespace Mento.Utility
             if (!isMerge || mergeRows == 0)
                 tempMergeRows = 3;
 
+            //把actual的excel文件按照expected的excel文件的顺序重新生成
+            NewJazz_AdvancedOrgnizeExcelFile(expSheet, actSheet);
+
             //在两个文件的行列数相等的情况的逐个单元格比较
             if (expRowsCount == actRowsCount && expColumnsCount == actColumnsCount)
             {
@@ -1529,6 +1532,7 @@ namespace Mento.Utility
 
                     for (int j = 1; j < (expColumnsCount + 1); j++)
                     {
+                        //时间那项不比较一般都是第一列，头3行或者头两行，或者第一行
                         if (i <= mergeRows && j == 1)
                             continue;
 
@@ -1538,6 +1542,7 @@ namespace Mento.Utility
                         Excel.Range actCell = (Excel.Range)actSheet.Cells[i, j];
                         string actValue = actCell.Text.ToString();
 
+                        //不管数据是否一致，表头都要放到datatable中
                         if (i <= tempMergeRows && extValue == actValue)
                         {
                             myRow[j - 1] = extValue;
@@ -1585,6 +1590,110 @@ namespace Mento.Utility
             return isEqual;
         }
 
+        //把actual文件按照expected文件的列标顺序更新，方便比较
+        private static void NewJazz_AdvancedOrgnizeExcelFile(Excel.Worksheet expSheet, Excel.Worksheet actSheet)
+        {
+            DataTable dt = new DataTable();
+
+            Excel.Range currentCell = (Excel.Range)expSheet.Cells[1, 1];
+            bool isMerge = (bool)currentCell.MergeCells;
+            int mergeRows = 0;
+
+            if (isMerge)
+            {
+                Excel.Range MergeArea = currentCell.MergeArea;
+                mergeRows = MergeArea.Cells.Count;
+            }
+
+            int expRowsCount = expSheet.Cells.CurrentRegion.Rows.Count;
+            int expColumnsCount = expSheet.Cells.CurrentRegion.Columns.Count;
+
+            int actRowsCount = actSheet.Cells.CurrentRegion.Rows.Count;
+            int actColumnsCount = actSheet.Cells.CurrentRegion.Columns.Count;
+
+            int tempMergeRows = mergeRows;
+            string compareMessage;
+
+            if (!isMerge || mergeRows == 0)
+                tempMergeRows = 3;
+
+            //获取一个对应关系的映射表，字典
+            Dictionary<int, int> dictionary = new Dictionary<int, int>();
+
+            //期望文件从第二列开始
+            for (int j = 2; j < (expColumnsCount + 1); j++)
+            {
+                int tmpEuqal = j;
+
+                for (int c = 2; c < (actColumnsCount + 1); c++)
+                {
+                    Boolean columnEqual = true;
+
+                    //去比较两个excel文件的表头部分，前3行或者前两行
+                    for (int k = 1; k < (tempMergeRows + 1); k++)
+                    {
+                        Excel.Range extCell = (Excel.Range)expSheet.Cells[k, j];
+                        string extValue = extCell.Text.ToString();
+
+                        Excel.Range actCell = (Excel.Range)actSheet.Cells[k, c];
+                        string actValue = actCell.Text.ToString();
+
+                        if (!String.Equals(extValue, actValue))
+                        {
+                            columnEqual = false;
+                            break;
+                        }
+                    }
+
+                    if (columnEqual)
+                    {
+                        tmpEuqal = c;
+                        break;
+                    }
+                }
+
+                dictionary.Add(j, tmpEuqal);
+            }
+
+            dt.Columns.Add("1", typeof(string));
+
+            for (int i = 1; i < (expRowsCount + 1); i++)         
+            {
+                DataRow myRow = dt.NewRow();
+
+                Excel.Range extCell = (Excel.Range)expSheet.Cells[i, 1];
+                string extValue = extCell.Text.ToString();
+
+                myRow[0] = extValue;
+                dt.Rows.Add(myRow);
+            }
+
+            //把actual文件按照expected文件的列标顺序更新，方便比较
+            for (int j = 2; j < (actColumnsCount + 1); j++)
+            {
+                dt.Columns.Add(j.ToString(), typeof(string));
+
+                int actColumn = dictionary[j];
+
+                for (int i = 1; i < (actRowsCount + 1); i++)
+                {
+                    Excel.Range actCell = (Excel.Range)actSheet.Cells[i, actColumn];
+                    string actValue = actCell.Text.ToString();
+
+                    dt.Rows[i - 1][j - 1] = actValue;
+                }               
+            }
+
+            //再把datatable导入到actual excel 文件里面
+            for (int i = 0; i < actRowsCount; i++)
+            {
+                for (int j = 1; j < actColumnsCount; j++)
+                {
+                    actSheet.Cells[i + 1, j + 1] = dt.Rows[i][j];
+                }
+            }
+        }
+
         public static void NewJazz_ExportDataTableToExcel(DataTable data, string fileName, string sheetName)
         {
             FileInfo excelFile = new FileInfo(fileName);
@@ -1630,7 +1739,7 @@ namespace Mento.Utility
                     }
                 }
 
-                sheet.get_Range("A1", "M1").ColumnWidth = 20;
+                sheet.get_Range("A1", "M1").ColumnWidth = 30;
             }
         }
 

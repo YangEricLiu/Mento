@@ -197,6 +197,7 @@ namespace Mento.ScriptCommon.Library.Functions
                     LoginCustomerOption.SelectItem(customerName);
                     TimeManager.ShortPause();
                     LoginCustomerOptionConfirm.Click();
+                    TimeManager.LongPause();
 
                     if (JazzMessageBox.MessageBox.Exists())
                     {

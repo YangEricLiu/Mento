@@ -2,11 +2,41 @@
 	{
 		"InputData":
 		{
-			"Hierarchies":["NancyCustomer1", "园区测试多层级", "楼宇BC"],
-			"TagNames":["P1_BuildingBC"],
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-总能耗-3V-最近7天"],
 		},
 		"ExpectedData":
 		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-总用-主要区域-最近7天"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-总用-主要设备-最近7天"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-总用-其他区域-最近7天"],
+		},
+		"ExpectedData":
+		{
+			
 		}
 	}
 ]

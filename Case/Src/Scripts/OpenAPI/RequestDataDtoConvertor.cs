@@ -91,12 +91,13 @@ namespace Mento.Script.OpenAPI
                             {
                                 Cases[i].expectedResponseBody = jsonFormatResponseBody;
                                 Cases[i].formatExpectedResponseBody= jsonAndLocalTimeFormatResponseBody;
+                                Cases[i].result = "NA";
                             }
                             else
                             {
                                 Cases[i].actualResponseBody = jsonFormatResponseBody;
                                 Cases[i].formatActualResponseBody = jsonAndLocalTimeFormatResponseBody;
-
+                                Cases[i].result = "NA";
                             }            
                         }
                     }

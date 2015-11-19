@@ -1369,7 +1369,7 @@ namespace Mento.Utility
             //Copy to a new file when the file do not exist.  
             DateTime today = new DateTime();
             today = DateTime.Now.ToLocalTime();
-            string dashPath = today.ToString("yyyyMMddHH");
+            string dashPath = today.ToString("yyyyMMdd");
             
             string tmpPath= Path.Combine("E:\\OpenAPITest", dashPath);
 
@@ -1419,8 +1419,10 @@ namespace Mento.Utility
                 }
             }
 
+            mySheet.get_Range("J1", "U1").ColumnWidth = 40 ;
+            mySheet.get_Range("A2", "U45").RowHeight = 120;
+
             handler.Save();
-            //handler.Dispose();
             handler.KillExcelProcess();
         }
 

@@ -299,7 +299,7 @@ namespace Mento.Script.OpenAPI
         [MultipleTestDataSource(typeof(OpenAPIData[]), typeof(EnergyViewAPI), "TC-J1-FVT-EnergyAnalysisOpenAPI-101-1")]
         public void JazzCases(OpenAPIData input)
         {
-            bool IsUpdateFlag = false;
+            bool IsUpdateFlag = true;
             //Read test cases from excel to TestCases[]          
             OpenAPICases[] Cases = ExcelHelper.ImportToOpenAPICases(pathTestCase, input.InputData.SheetName);
 

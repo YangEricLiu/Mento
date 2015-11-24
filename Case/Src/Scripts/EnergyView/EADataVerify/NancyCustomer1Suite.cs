@@ -74,7 +74,7 @@ namespace Mento.Script.EnergyView.EADataVerify
             TimeManager.Pause(5000);
 
             //当比较标识为真的时候，比较两个Excel文件
-            EnergyAnalysis.NewJazz_CompareExcelFilesOfEnergyAnalysis(compareFileName + ".xls", ("F-" + compareFileName + ".xls"));
+            EnergyAnalysis.NewJazz_CompareExcelFiles_EnergyAnalysis(compareFileName + ".xls", ("F-" + compareFileName + ".xls"));
         }
     }
 }

@@ -106,7 +106,7 @@ namespace Mento.ScriptCommon.Library.Functions
 
         #region data operation
 
-        public bool NewJazz_CompareExcelFilesOfEnergyAnalysis(string compareFileName, string failedFileName)
+        public bool NewJazz_CompareExcelFiles_EnergyAnalysis(string compareFileName, string failedFileName)
         {
             bool isCompareEqual = true;
 

@@ -72,6 +72,13 @@ namespace Mento.Script.OpenAPI
             }
 
             return result.Replace("\\", "");
+        }
+
+        public static string GetString(String json)
+        {
+            string s = json.ToString();
+
+            return s;
         } 
     }
 }

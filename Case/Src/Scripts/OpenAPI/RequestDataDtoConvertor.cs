@@ -83,19 +83,20 @@ namespace Mento.Script.OpenAPI
                     {
                         using (var sr = new StreamReader(responseStream, Encoding.UTF8))
                         {
-                            string jsonFormatResponseBody = ConvertJson.String2Json(sr.ReadToEnd().ToString());                            
+                            string originalResponseBody = sr.ReadToEnd().ToString();
+                            string jsonFormatResponseBody = ConvertJson.String2Json(originalResponseBody);
                             string jsonAndLocalTimeFormatResponseBody = EnergyViewDataDtoConvertor.GetEnergyViewDataWithLocalTime(jsonFormatResponseBody);
                             
                             //response body save to expectedResponseBody when update cases
                             if (true == flagUpdate)
                             {
-                                Cases[i].expectedResponseBody = jsonFormatResponseBody;
+                                Cases[i].expectedResponseBody = originalResponseBody;
                                 Cases[i].formatExpectedResponseBody= jsonAndLocalTimeFormatResponseBody;
                                 Cases[i].result = "NA";
                             }
                             else
                             {
-                                Cases[i].actualResponseBody = jsonFormatResponseBody;
+                                Cases[i].actualResponseBody = originalResponseBody;
                                 Cases[i].formatActualResponseBody = jsonAndLocalTimeFormatResponseBody;
                                 Cases[i].result = "NA";
                             }            

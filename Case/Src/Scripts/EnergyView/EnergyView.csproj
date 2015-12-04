@@ -80,7 +80,9 @@
     <Compile Include="CostUsage\P1_CostUsageTOUSuite.cs" />
     <Compile Include="CostUsage\CostUsageTrendChartSuite.cs" />
     <Compile Include="CostUsage\P1_CostUsageDataViewSuite.cs" />
-    <Compile Include="EADataVerify\NancyCustomer1Suite.cs" />
+    <Compile Include="DataVerify\RatioSuite.cs" />
+    <Compile Include="DataVerify\UnitIndicatorSuite.cs" />
+    <Compile Include="DataVerify\EnergyAnalysisSuite.cs" />
     <Compile Include="EnergyAnalysis\BaselineConfigrationSuite.cs" />
     <Compile Include="EnergyAnalysis\P4_AdditionalTagsDataVerificationSuite.cs" />
     <Compile Include="EnergyAnalysis\MultipleHierarchyNodeComparisionPieChartSuite.cs" />

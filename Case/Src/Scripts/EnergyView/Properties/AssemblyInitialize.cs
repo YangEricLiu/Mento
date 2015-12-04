@@ -16,7 +16,7 @@ namespace Mento.Script.EnergyView
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("EmmaDataVerify", "123456Qq", "喜达屋酒店集团");
+            TestAssemblyInitializer.InitializeWithOption("testteam", "P@ssw0rd123456", "喜达屋酒店集团");
         }
 
         [TearDown]

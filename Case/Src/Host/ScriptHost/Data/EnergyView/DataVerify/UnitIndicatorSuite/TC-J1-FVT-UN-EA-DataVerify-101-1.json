@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "单位指标-能耗多点", "UN-EA-总能耗-3V-201511"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "单位指标-能耗多点", "UN-EA-总用-3V-201511"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "单位指标-能耗多点", "UN-EA-Ptag有断点-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

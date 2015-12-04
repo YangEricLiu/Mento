@@ -1,0 +1,42 @@
+﻿[
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-总能耗-3V-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-总用-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-后勤电梯-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "能耗分析-能耗多点计算值", "EA-Ptag有断点-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

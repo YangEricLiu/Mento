@@ -117,7 +117,8 @@ namespace Mento.ScriptCommon.Library.Functions
                 DataTable compDt = new DataTable();
 
                 isCompareEqual =ExcelHelper.NewJazz_CompareExcelFilesToDataTable(extFilePath, actFilePath, compSheetName, out compDt);
-                NewJazz_ExportFailedDataToExcel(compDt, failedFileName);
+                if (!isCompareEqual)
+                    NewJazz_ExportFailedDataToExcel(compDt, failedFileName);
             }
 
             return isCompareEqual;

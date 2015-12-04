@@ -1369,7 +1369,7 @@ namespace Mento.Utility
             //Copy to a new file when the file do not exist.  
             DateTime today = new DateTime();
             today = DateTime.Now.ToLocalTime();
-            string dashPath = today.ToString("yyyyMMdd");
+            string dashPath = today.ToString("yyyyMMddHH");
             
             string tmpPath= Path.Combine("E:\\OpenAPITest", dashPath);
 
@@ -1418,8 +1418,9 @@ namespace Mento.Utility
                     ImportFailedCaseToTXTFiles(actFileName, datas[i].formatActualResponseBody);
                 }
             }
-
+          
             mySheet.get_Range("J1", "U1").ColumnWidth = 40 ;
+            mySheet.get_Range("O1", "P1").ColumnWidth = 80;
             mySheet.get_Range("A2", "U45").RowHeight = 120;
 
             handler.Save();
@@ -1525,15 +1526,20 @@ namespace Mento.Utility
             Boolean UNRatio = false;
 
             for (int j = 2; j < (expColumnsCount + 1); j++)
-            { 
-                Excel.Range extCell = (Excel.Range)expSheet.Cells[tempMergeRows, j];
-                string extValue = extCell.Text.ToString();
+            {
+                Excel.Range extCella = (Excel.Range)expSheet.Cells[tempMergeRows, j];
+                string extValuea = extCella.Text.ToString();
+                Excel.Range extCellb = (Excel.Range)expSheet.Cells[tempMergeRows - 1, j];
+                string extValueb = extCellb.Text.ToString();
 
-                titleContent = titleContent + extValue;
+                titleContent = titleContent + extValuea + extValueb;
             }
 
             if (Regex.Matches(titleContent, @"原始值").Count > 1)
+            {              
                 UNRatio = true;
+            }
+                
 
             //把actual的excel文件按照expected的excel文件的顺序重新生成
             if (!UNRatio)
@@ -1577,6 +1583,7 @@ namespace Mento.Utility
                             myRow[0] = timeValue;
                             compareMessage = "期望值:" + extValue + "\n" + "实际值:" + actValue;
                             myRow[j - 1] = compareMessage;
+                            isEqual = false;
                         }
                     }
 
@@ -1663,10 +1670,12 @@ namespace Mento.Utility
 
             for (int j = 2; j < (expColumnsCount + 1); j++)
             {
-                Excel.Range extCell = (Excel.Range)expSheet.Cells[tempMergeRows, j];
-                string extValue = extCell.Text.ToString();
+                Excel.Range extCella = (Excel.Range)expSheet.Cells[tempMergeRows, j];
+                string extValuea = extCella.Text.ToString();
+                Excel.Range extCellb = (Excel.Range)expSheet.Cells[tempMergeRows - 1, j];
+                string extValueb = extCellb.Text.ToString();
 
-                titleContent = titleContent + extValue;
+                titleContent = titleContent + extValuea + extValueb;
             }
 
             if (Regex.Matches(titleContent, @"原始值").Count > 1)

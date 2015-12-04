@@ -15,14 +15,14 @@ using Mento.TestApi.TestData;
 using System.Data;
 using Mento.Utility;
 
-namespace Mento.Script.EnergyView.EADataVerify
+namespace Mento.Script.EnergyView.DataVerify
 {
     /// <summary>
     /// 
     /// </summary>
     [TestFixture]
-    [ManualCaseID("TC-J1-FVT-EADataVerify-101"), CreateTime("2015-10-13"), Owner("Emma")]
-    public class NancyCustomer1Suite : TestSuiteBase
+    [ManualCaseID("TC-J1-FVT-Ratio-DataVerify-101"), CreateTime("2015-10-13"), Owner("Emma")]
+    public class RatioSuite : TestSuiteBase
     {
         public string mainWindowHandle = TestAssemblyInitializer.mainWindowHandle;
 
@@ -54,14 +54,14 @@ namespace Mento.Script.EnergyView.EADataVerify
         private static HomePage HomePagePanel = JazzFunction.HomePage;
 
         [Test]
-        [Category("P1_Emma")]
-        [CaseID("TC-J1-FVT-EADataVerify-101-1")]
-        [MultipleTestDataSource(typeof(EnergyAnalysisData[]), typeof(NancyCustomer1Suite), "TC-J1-FVT-EADataVerify-101-1")]
-        public void DataVerify(EnergyAnalysisData input)
+        [Category("P3_Emma")]
+        [CaseID("TC-J1-FVT-Ratio-DataVerify-101-1")]
+        [MultipleTestDataSource(typeof(EnergyAnalysisData[]), typeof(RatioSuite), "TC-J1-FVT-Ratio-DataVerify-101-1")]
+        public void Ratio_DataVerify(EnergyAnalysisData input)
         {
             //选择图表
             FolderWidget.NewJazz_SelectFolderOrWidget(input.InputData.WidgetPath);
-            TimeManager.Pause(10000);
+            TimeManager.Pause(30000);
 
             string compareFileName = input.InputData.WidgetPath[input.InputData.WidgetPath.Length - 1];
 
@@ -71,10 +71,11 @@ namespace Mento.Script.EnergyView.EADataVerify
 
             //导出数据文件
             JazzButton.ExportFromDropDownButton.Click();
-            TimeManager.Pause(5000);
+            TimeManager.Pause(10000);
 
             //当比较标识为真的时候，比较两个Excel文件
             EnergyAnalysis.NewJazz_CompareExcelFiles_EnergyAnalysis(compareFileName + ".xls", ("F-" + compareFileName + ".xls"));
         }
+
     }
 }

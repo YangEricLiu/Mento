@@ -17,19 +17,8 @@ namespace Mento.Script.OpenAPI
             string expectedResponseBody;
             string actualResponseBody;
 
-            //string[] spliter = { "\r\n        ", "{\r\n            " };
-            //string[] EBLine = expectedResponseBodyStr.Split(spliter, 0);
-            //string[] ABLine = actualResponseBodyStr.Split(spliter, 0);
-            //if (EBLine.Length > 6)
-            //    expectedResponseBody = expectedResponseBodyStr;
-            //else
-                //expectedResponseBody = ConvertJson.String2Json(expectedResponseBodyStr);
-                expectedResponseBody = expectedResponseBodyStr;
-            //if (ABLine.Length > 6)
-            //    actualResponseBody = actualResponseBodyStr;
-            //else
-               // actualResponseBody = ConvertJson.String2Json(actualResponseBodyStr);
-                actualResponseBody = actualResponseBodyStr;
+            expectedResponseBody = expectedResponseBodyStr;
+            actualResponseBody = actualResponseBodyStr;
             
             CompareReport report = new CompareReport();
 
@@ -238,6 +227,10 @@ namespace Mento.Script.OpenAPI
         {
             string expectedStr;
             string actualStr;
+
+            string tmpExpectedStr;
+            string tmpActualStr;
+
             CompareReport report = new CompareReport();
             bool isOutResult;
 
@@ -248,11 +241,15 @@ namespace Mento.Script.OpenAPI
 
                 if (Cases[i].url.Contains("Aggregate") || Cases[i].url.Contains("Ranking") || Cases[i].requestBody.Contains("RankingType"))
                 {
-                    expectedStr = FilterStrings(expectedStr);
-                    actualStr = FilterStrings(actualStr);
+                    tmpExpectedStr = ConvertJson.String2Json(expectedStr);
+                    tmpActualStr = ConvertJson.String2Json(actualStr);
+
+                    expectedStr = FilterStrings(tmpExpectedStr);
+                    actualStr = FilterStrings(tmpActualStr);
                 }
 
                 report = CompareEnergyUseResponseBody(expectedStr, actualStr, out isOutResult);
+
                 if (true == isOutResult)
                     Cases[i].result = "Pass:" + report.errorMessage;
                 else

@@ -1,0 +1,32 @@
+﻿[
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "时间能耗比-能耗多点", "Ratio-总能耗-3V-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "时间能耗比-能耗多点", "Ratio-总用-3V-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	},
+	{
+		"InputData":
+		{
+			"WidgetPath":["仪表盘", "时间能耗比-能耗多点", "Ratio-Ptag有断点-201511-天步长"],
+		},
+		"ExpectedData":
+		{
+			
+		}
+	}
+]

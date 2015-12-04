@@ -750,7 +750,9 @@
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-5581.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-2.json" />
     <None Include="Data\EnergyView\CostUsage\CostUsageTrendChartSuite\TC-J1-FVT-CostUsage-TrendChar-002-1.json" />
-    <None Include="Data\EnergyView\EADataVerify\NancyCustomer1Suite\TC-J1-FVT-EADataVerify-101-1.json" />
+    <None Include="Data\EnergyView\DataVerify\RatioSuite\TC-J1-FVT-Ratio-DataVerify-101-1.json" />
+    <None Include="Data\EnergyView\DataVerify\UnitIndicatorSuite\TC-J1-FVT-UN-EA-DataVerify-101-1.json" />
+    <None Include="Data\EnergyView\DataVerify\EnergyAnalysisSuite\TC-J1-FVT-EA-DataVerify-101-1.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\BaselineConfigrationSuite\TC-J1-FVT-BaselineConfiguration-Add-106-6.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\BaselineConfigrationSuite\TC-J1-FVT-BaselineConfiguration-Add-106-5.json" />
     <None Include="Data\EnergyView\EnergyAnalysis\BaselineConfigrationSuite\TC-J1-FVT-BaselineConfiguration-Add-106-4.json" />

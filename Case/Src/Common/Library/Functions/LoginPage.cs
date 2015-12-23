@@ -214,7 +214,6 @@ namespace Mento.ScriptCommon.Library.Functions
                             JazzMessageBox.MessageBox.OK();
                         }
                     }
-                    ElementHandler.Wait(HomePageNavigationLocator, WaitType.ToAppear, timeout: 5);
                 }
                 else
                 {

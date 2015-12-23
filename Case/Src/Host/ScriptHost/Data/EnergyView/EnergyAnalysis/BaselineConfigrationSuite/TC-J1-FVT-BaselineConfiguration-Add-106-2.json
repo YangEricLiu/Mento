@@ -5,7 +5,7 @@
 			"Customer":"NancyCostCustomer2",
 			"WidgetPath":["仪表盘", "基准值配置测试", "不配置基准值"],
 			"Hierarchies":["NancyCostCustomer2", "组织A", "园区A", "楼宇B"],
-			"TagNames":["BBV1A1"],
+			"TagNames":["BBV2A1"],
 		},
 		"ExpectedData":
 		{

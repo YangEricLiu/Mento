@@ -177,10 +177,10 @@ namespace Mento.Script.EnergyView.EnergyAnalysis
             EnergyAnalysis.NewJazz_CheckTag(input.InputData.TagNames[0]);
             TimeManager.Pause(5000);
 
-            //var ManualTimeRange = input.InputData.ManualTimeRange;
-            ////2015-4-1 to 2015-4-1
-            //EnergyViewToolbar.NewJazz_SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
-            //TimeManager.ShortPause();
+            var ManualTimeRange = input.InputData.ManualTimeRange;
+            //2015-4-1 to 2015-4-1
+            EnergyViewToolbar.NewJazz_SetDateRange(ManualTimeRange[0].StartDate, ManualTimeRange[0].EndDate);
+            TimeManager.ShortPause();
 
             EnergyViewToolbar.NewJazz_ClickView();
 

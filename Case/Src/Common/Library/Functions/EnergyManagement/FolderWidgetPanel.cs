@@ -30,9 +30,78 @@ namespace Mento.ScriptCommon.Library.Functions
             NewJazzFolderTree.NewJazz_SelectFolderOrWidget(folderNames);
         }
 
+        #region tree opertion
+
+        public widgetsPath[] GetAllWidgetsPath()
+        {
+            List<widgetsPath> widgetsPath = new List<widgetsPath>();
+
+            TreeNode[] treeNodes = NewJazzFolderTree.NewJazz_GetAllWidgetsOfTree();
+
+            foreach (TreeNode node in treeNodes)
+            {
+                List<string> combatStringArray = new List<string>();
+
+                foreach (string path in node.nodePath)
+                {                
+                    combatStringArray.Add(path);
+                }
+
+                foreach (string widget in node.widgets)
+                {
+                    combatStringArray.Add(widget);
+
+                    widgetsPath oneWidget = new widgetsPath();
+                    oneWidget.widgetPath = combatStringArray.ToArray();
+
+                    widgetsPath.Add(oneWidget);
+
+                    combatStringArray.Remove(widget);
+                }
+            }
+
+            return widgetsPath.ToArray();
+        }
+
+        public widgetsPath[] GetWidgetsPathOfFolder(string[] folderPath)
+        {
+            List<widgetsPath> widgetsPath = new List<widgetsPath>();
+
+            string[] widgets = NewJazzFolderTree.NewJazz_GetChildrenOfFolder(folderPath);
+
+
+            List<string> combatStringArray = new List<string>();
+
+            foreach (string path in folderPath)
+            {
+                combatStringArray.Add(path);
+            }
+
+            foreach (string widget in widgets)
+            {
+                combatStringArray.Add(widget);
+
+                widgetsPath oneWidget = new widgetsPath();
+                oneWidget.widgetPath = combatStringArray.ToArray();
+
+                widgetsPath.Add(oneWidget);
+
+                combatStringArray.Remove(widget);
+            }
+
+
+            return widgetsPath.ToArray();
+        }
 
         #endregion
 
+        #endregion
+
+    }
+
+    public class widgetsPath
+    {
+        public  string[] widgetPath;
     }
         
 }

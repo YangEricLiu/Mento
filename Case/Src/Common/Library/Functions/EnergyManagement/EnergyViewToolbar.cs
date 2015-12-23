@@ -894,16 +894,16 @@ namespace Mento.ScriptCommon.Library.Functions
         }
 
         //比较年 和每月的计算值
-        public bool NewJazz_CompareReviseValue(string[] actualReviseValue, string fileName)
-        {
+        public bool NewJazz_CompareReviseValue(string[] expetedReviseValue, string fileName)
+        { 
             bool isEqual = true;
             string sourceValue;
             string actulValue;
-            string resultValue = "\"" + actualReviseValue[0].Trim() + "\"";
+            string resultValue = "\"" + NewJazz_GetMonthValue(0).Trim() + "\"";
 
             for (int j = 1; j < 13; j++)
             {
-                resultValue = resultValue  + "," + "\"" + actualReviseValue[j].Trim() + "\"";
+                resultValue = resultValue + "," + "\"" + NewJazz_GetMonthValue(j).Trim() +"\"";
             }
 
             resultValue = resultValue + "\r\n";
@@ -912,8 +912,11 @@ namespace Mento.ScriptCommon.Library.Functions
 
             for (int i = 0; i < 13; i++)
             { 
-                sourceValue = actualReviseValue[i].Trim();
+                sourceValue = expetedReviseValue[i].Trim();
                 actulValue = NewJazz_GetMonthValue(i).Trim();
+
+                if (String.IsNullOrEmpty(sourceValue))
+                    sourceValue = sourceValue + "\t";
 
                 resultValue =  resultValue + i.ToString() + ".  " + sourceValue + "\t" + "\t" + actulValue + "\r\n";
 

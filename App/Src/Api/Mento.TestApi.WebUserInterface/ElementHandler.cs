@@ -55,7 +55,11 @@ namespace Mento.TestApi.WebUserInterface
 
         public static bool Exists(Locator locator, ISearchContext container = null)
         {
-            return FindElements(locator, container: container).Count() > 0;
+            int tmp = FindElements(locator, container: container).Count();
+
+            Console.Out.WriteLine(tmp.ToString());
+
+            return tmp > 0;
         }
 
         public static bool ExistOne(Locator locator, ISearchContext container = null)
@@ -152,6 +156,19 @@ namespace Mento.TestApi.WebUserInterface
             Func<IWebDriver, bool> AppearCondition = (driver) => Displayed(locator, container: (container == null ? driver : container));
 
             Func<IWebDriver, bool> DisappearCondition = (driver) => !Displayed(locator, container: (container == null ? driver : container));
+
+            WebDriverWait wait = new WebDriverWait(DriverFactory.Instance, TimeSpan.FromSeconds(timeout));
+
+            return wait.Until<bool>(waitType == WaitType.ToAppear ? AppearCondition : DisappearCondition);
+        }
+
+        public static bool NewJazz_Wait(Locator locator, WaitType waitType, ISearchContext container = null, int timeout = TimeManager.WAITELEMENTTIMEOUT)
+        {
+            Console.Out.WriteLine(waitType.ToString());
+
+            Func<IWebDriver, bool> AppearCondition = (driver) => Exists(locator, container: (container == null ? driver : container));
+
+            Func<IWebDriver, bool> DisappearCondition = (driver) => !Exists(locator, container: (container == null ? driver : container));
 
             WebDriverWait wait = new WebDriverWait(DriverFactory.Instance, TimeSpan.FromSeconds(timeout));
 

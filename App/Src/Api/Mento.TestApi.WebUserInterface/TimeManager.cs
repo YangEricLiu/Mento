@@ -7,7 +7,7 @@ namespace Mento.TestApi.WebUserInterface
 {
     public static class TimeManager
     {
-        public const int WAITELEMENTTIMEOUT = 60; //seconds
+        public const int WAITELEMENTTIMEOUT = 10; //seconds
 
         private static int PauseFlash = 50; //mili seconds
         private static int PauseShort = 500; //mili seconds

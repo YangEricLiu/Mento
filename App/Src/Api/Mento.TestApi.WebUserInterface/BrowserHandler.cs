@@ -89,6 +89,12 @@ namespace Mento.TestApi.WebUserInterface
             DriverFactory.switchToWindow(DriverFactory.Instance, windowTitle);
         }
 
+        //临时的
+        public static void switchToEmptyWindow()
+        {
+            DriverFactory.switchToEmptyWindow(DriverFactory.Instance);
+        }
+
         public static void switchToWindowByHandle(string windowTitle)
         {
             DriverFactory.switchToWindowByHandle(DriverFactory.Instance, windowTitle);
@@ -239,6 +245,45 @@ namespace Mento.TestApi.WebUserInterface
             return flag;
         }
 
+        //临时的
+        public static Boolean switchToEmptyWindow(IWebDriver driver)
+        {
+            Boolean flag = false;
+
+            try
+            {
+                String currentHandle = driver.CurrentWindowHandle;
+                List<string> handles = driver.WindowHandles.ToList();
+
+                foreach (string s in handles)
+                {
+                    if (s.Equals(currentHandle))
+                        continue;
+
+                    else
+                    {
+                        driver.SwitchTo().Window(s);
+                        if (String.IsNullOrEmpty(driver.Title))
+                        {
+                            flag = true;
+                            break;
+                        }
+                        else
+                            continue;
+                    }
+                }
+            }
+            catch (NoSuchWindowException e)
+            {
+                flag = false;
+            }
+
+            return flag;
+        }
+
+
+        #region Close the window, not useful corrently
+        
         //由于driver是静态的，关闭以后driver就释放了，因此，不能关闭窗口，任何一个窗口都不能关闭
         public static Boolean CloseTheWindow(IWebDriver driver, string windowTitle)
         {
@@ -295,5 +340,7 @@ namespace Mento.TestApi.WebUserInterface
 
             return flag;
         }
+
+        #endregion
     }
 }

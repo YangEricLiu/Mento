@@ -16,17 +16,17 @@ namespace Mento.Script.EnergyView
         [SetUp]
         public void RunBeforeAnyTests()
         {
-            TestAssemblyInitializer.InitializeWithOption("testteam", "P@ssw0rd123456", "喜达屋酒店集团");
+            TimeManager.Pause(5000);
+
+            TestAssemblyInitializer.NewJazz_DeleteActualExcelFiles();
+
+            TestAssemblyInitializer.InitializeWithOption("EmmaDataVerify", "123456Qq", "喜达屋酒店集团");
         }
 
         [TearDown]
         public void RunAfterAnyTests()
         {
-            TestAssemblyInitializer.Desctuct();
-
-            TimeManager.Pause(5000);
-
-            TestAssemblyInitializer.NewJazz_DeleteActualExcelFiles();
+            TestAssemblyInitializer.Desctuct();          
         }
     }
 }

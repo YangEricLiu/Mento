@@ -40,7 +40,7 @@
             
       <navigator>
             <add key="ButtonNavigatorHomePage" value="header-btn-homepage" type="ID"/>
-            <add key="ButtonNavigatorEnergyView" value="header-btn-jump-energyservice" type="ID"/>
+            <add key="ButtonNavigatorEnergyView" value="//span[text()='能源']" type="XPath"/>
             <add key="ButtonNavigatorSettings" value="header-btn-setting" type="ID"/>
             <add key="ButtonNavigatorPlatformSettings" value="header-btn-spsetting" type="ID"/>
             <add key="AlarmSettings" value="header-btn-alarm" type="ID"/>

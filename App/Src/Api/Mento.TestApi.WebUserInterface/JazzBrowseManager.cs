@@ -42,6 +42,12 @@ namespace Mento.TestApi.WebUserInterface
             BrowserHandler.switchToWindow(windowTitle);
         }
 
+        //临时的
+        public static void SwitchToEmptyWidnow()
+        {
+            BrowserHandler.switchToEmptyWindow();
+        }
+
         public static void CloseTheWidnow(string windowTitle)
         {
             BrowserHandler.CloseTheWindow(windowTitle);

@@ -192,11 +192,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         {
             try
             {
-                ElementHandler.Wait(NewJazzChartMaskerLoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
+                ElementHandler.NewJazz_Wait(NewJazzChartMaskerLoadingLocator, WaitType.ToAppear, timeout: maxtime <= 0 ? 1 : maxtime);
 
                 TimeManager.ShortPause();
 
-                ElementHandler.Wait(NewJazzChartMaskerLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 30 : maxtime);
+                ElementHandler.NewJazz_Wait(NewJazzChartMaskerLoadingLocator, WaitType.ToDisappear, timeout: maxtime <= 0 ? 30 : maxtime);
                 TimeManager.ShortPause();
             }
             catch (Exception ex)

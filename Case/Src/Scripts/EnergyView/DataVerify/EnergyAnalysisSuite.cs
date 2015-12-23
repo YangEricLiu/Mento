@@ -29,11 +29,12 @@ namespace Mento.Script.EnergyView.DataVerify
         [TestFixtureSetUp]
         public void FixtureCaseSetUp()
         {
-            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
-            TimeManager.Pause(20000);
+            TimeManager.Pause(5000);
+            JazzBrowseManager.SwitchToEmptyWidnow();
+            TimeManager.Pause(2000);
 
-            JazzBrowseManager.SwitchToWidnow("能源");
-            TimeManager.Pause(10000);
+            JazzFunction.Navigator.NavigateToTarget(NavigationTarget.EnergyView);
+            TimeManager.Pause(5000);
         }
 
         [SetUp]
@@ -123,6 +124,38 @@ namespace Mento.Script.EnergyView.DataVerify
 
             //当比较标识为真的时候，比较两个Excel文件
             EnergyAnalysis.NewJazz_CompareExcelFiles_EnergyAnalysis(compareFileName + ".xls", ("F-" + compareFileName + ".xls"));
+        }
+
+        [Test]
+        [Category("P4_Emma")]
+        [CaseID("TC-J1-FVT-EA-DataVerify-101-1")]
+        [MultipleTestDataSource(typeof(EnergyAnalysisData[]), typeof(EnergyAnalysisSuite), "TC-J1-FVT-EA-DataVerify-101-1")]
+        public void DataVerify_All(EnergyAnalysisData input)
+        {
+            widgetsPath[]  actualWidget = FolderWidget.GetAllWidgetsPath();
+
+            foreach (widgetsPath widget in actualWidget)
+            {
+                string compareFileName = widget.widgetPath[widget.widgetPath.Length - 1];
+
+                Console.Out.WriteLine(compareFileName);
+
+                //选择图表
+                FolderWidget.NewJazz_SelectFolderOrWidget(widget.widgetPath);
+                JazzMessageBox.LoadingMask.NewJazz_WaitChartMaskerLoading(10);               
+
+                //打开下拉框
+                JazzButton.FolderOrWidgetDropDownButton.Click();
+                TimeManager.MediumPause();
+
+                //导出数据文件
+                JazzButton.ExportFromDropDownButton.Click();
+                TimeManager.Pause(5000);
+
+                //当比较标识为真的时候，比较两个Excel文件
+                EnergyAnalysis.NewJazz_CompareExcelFiles_EnergyAnalysis(compareFileName + ".xls", ("F-" + compareFileName + ".xls"));
+            }
+
         }
     }
 }

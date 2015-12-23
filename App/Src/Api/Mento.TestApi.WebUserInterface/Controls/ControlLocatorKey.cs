@@ -223,6 +223,8 @@ namespace Mento.TestApi.WebUserInterface.Controls
         public static string NewReactJSjazzFolderTreeNode = "NewReactJSjazzFolderTreeNode";
         public static string NewReactJSjazzFolderTreeNodeImage = "NewReactJSjazzFolderTreeNodeImage";
 
+        public static string NewReactJSjazzFolderTreeNodeAgain = "NewReactJSjazzFolderTreeNodeAgain";
+
         #endregion
 
         #region New Jazz Grid

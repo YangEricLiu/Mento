@@ -179,9 +179,16 @@
   <add key = "NewReactJSjazzTreeNodeImage" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'tree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]/div[@class='arrow']/div[@class='hasChild']/div" type = "XPath"/>
 
   <add key = "NewReactJSjazzFolderTreeNode" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'jazz-foldertree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]" type = "XPath"/>
-  <add key = "NewReactJSjazzFolderTreeNodeImage" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'jazz-foldertree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]/div[contains(@class,'jazz-foldertree-arrow')]/div[@class='hasChild']/div" type = "XPath"/>
+  <add key = "NewReactJSjazzFolderTreeNodeImage" value = "//div[@class='pop-tree-node-container']/div[contains(@class,'jazz-foldertree-node') and div[@class='content']/div[@class='tree-node-content']/div[@class='node-content-text' and text()='$#nodeText']]/div[contains(@class,'jazz-foldertree-arrow')]/div/div" type = "XPath"/>
 
+  <add key = "NewReactJSjazzFolderTreeNodeAgain" value = "//div[contains(@class,'jazz-foldertree-node') and @title='$#nodeText']/../div[contains(@class,'tree-children')]/div[@class='pop-tree-node-container']/div[contains(@class,'jazz-foldertree-node')]" type = "XPath"/>
 
+  <add key = "NewReactJSCreateTreeNodeRoot" value = "//div[@class='pop-tree-view ']/div[@class='pop-tree-node-container']/div[1]" type = "XPath"/>
+  <add key = "NewReactJSCreateTreeNodeChildrenContainer" value = "div[contains(@lass, 'tree-children')]" type = "XPath"/>
+  <add key = "NewReactJSCreateTreeNodeHasNoChild" value = "div[@class='pop-tree-node-container']/div[contains(@lass, 'jazz-foldertree-node')]/div[contains(@lass, 'jazz-foldertree-arrow')]/div[@class='hasNoChild']" type = "XPath"/>
+  <add key = "NewReactJSCreateTreeNodeChildren" value = "div[@class='pop-tree-node-container']" type = "XPath"/>
+
+  
   <!--New Jazz Grid-->
   <add key = "NewReactJSjazzGridPagingToolbar" value = "//div[@class = 'buttonBar']/div[@class='page-num']" type="XPath"/>
   <add key = "NewReactJSjazzGridPagingCurrentPageTextBox" value = "span[1]" type="XPath"/>
@@ -198,7 +205,7 @@
 
 
   <!--New Jazz Mask-->
-  <add key="NewReactJSjazzChartMaskerLoadingLocator" value = "//div[@class='jazz-energy-panel']/div[contains(@style, 'margin: auto;')]/div/div/svg/circle" type ="XPath"/>
+  <add key="NewReactJSjazzChartMaskerLoadingLocator" value = "//div[@class='jazz-energy-panel']/div[contains(@style, 'margin:auto;')]" type ="XPath"/>
 
 
 </WebElement>

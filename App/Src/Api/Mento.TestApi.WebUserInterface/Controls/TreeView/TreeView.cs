@@ -508,7 +508,70 @@ namespace Mento.TestApi.WebUserInterface.Controls
 
         }
 
+        #region 遍历仪表盘下所有的图表
+
+        //下面的代码都是建立在只有两层的结构上，即 “仪表盘-文件夹-图表”, 而且仪表盘下都是文件夹，每个文件夹下只有图表没有文件夹
+
+        private const string rootNode = "仪表盘";
+
+        public TreeNode[] NewJazz_GetAllWidgetsOfTree()
+        {
+            List<TreeNode> treeNodes = new List<TreeNode>();
+            string[] secondLeveTreeChildren = NewJazz_GetChildrenOfFolder(new string[] { rootNode });
+
+            foreach (string folderNode in secondLeveTreeChildren)
+            {
+                List<string> treeNodePath = new List<string>();
+                treeNodePath.Add(rootNode);
+                treeNodePath.Add(folderNode);
+
+                TreeNode node = new TreeNode();
+                node.nodePath = treeNodePath.ToArray();
+                node.widgets = NewJazz_GetChildrenOfFolder(node.nodePath);
+
+                treeNodes.Add(node);
+            }
+
+            return treeNodes.ToArray();
+        }
+
+        public string[] NewJazz_GetChildrenOfFolder(string[] folderPath)
+        {
+            List<string> treeChildren = new List<string>();
+
+            //展开文件夹
+            NewJazz_ExpandFolderPath(folderPath);
+            TimeManager.MediumPause();
+
+            //获取所有子文件夹或者图表
+            Locator treeNodeFolder = NewJazzGetFolderTreeNodeLocatorAgain(folderPath[folderPath.Length - 1]);
+            
+
+            IWebElement[] children = FindChildren(treeNodeFolder);
+
+            foreach (IWebElement child in children)
+            {
+                treeChildren.Add(child.GetAttribute("title"));
+            }
+
+            return treeChildren.ToArray();
+        }
+
+        #endregion        
+      
+
+        #region 未完成，将仪表盘下的树状结构保存下来并遍历
+
+        //
+
+        #endregion
+
         #region private methods
+
+        protected virtual Locator NewJazzGetFolderTreeNodeLocatorAgain(string nodeText)
+        {
+            return Locator.GetVariableLocator(ControlLocatorRepository.GetLocator(ControlLocatorKey.NewReactJSjazzFolderTreeNodeAgain), TREENODEVARIABLENAME, nodeText);
+        }
 
         protected virtual Locator NewJazzGetTreeNodeLocator(string nodeText)
         {
@@ -579,5 +642,11 @@ namespace Mento.TestApi.WebUserInterface.Controls
         #endregion
 
         #endregion
+    }
+
+    public class TreeNode
+    {
+        public string[] nodePath;
+        public string[] widgets;
     }
 }
